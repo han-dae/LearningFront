@@ -7,7 +7,7 @@ import MainFooter from "./Footer";
 import MainBoard from "./MainBoard";
 import CarouselComponent from "./CarouselComponent";
 import { render } from "@testing-library/react";
-import MainService3 from "./MainService3";
+import MainService3 from "./Test3";
 
 // 차트 확인
 class MainService2 extends Component {

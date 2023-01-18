@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Background from "./Background";
 import Category from "./Category";
 import MainHeader from "./Header";
@@ -67,8 +68,9 @@ const TestComponent = () => {
             <Category/></div>
             <InputTextArea/>
             </div>
-      
-      
+      <Link to={"/Mainservice2"}>
+      <button>next</button>
+      </Link>
     </div>
     
   );
