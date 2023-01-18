@@ -36,9 +36,7 @@ class MainService3 extends Component {
       };
     select = (e) => {
         e.preventDefault();
-        let category_select ={
-            category_name :this.state.category_name;
-        }
+      
     }
     render(){
         return(<div><MainHeader/>

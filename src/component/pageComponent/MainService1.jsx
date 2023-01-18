@@ -72,7 +72,7 @@ class MainService1 extends Component {
               onChange={this.onChange} style={{padding : "5px"}}
               />
           </div>   
-        <Link to={/MainService1}>
+        <Link to={MainService1}>
           <button>next</button>
         </Link>
       </div>
