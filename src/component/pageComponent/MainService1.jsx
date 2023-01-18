@@ -1,7 +1,6 @@
-import React from "react";
+import React,{Component} from "react";
 import MainHeader from "./Header";
 import { Link } from "react-router-dom";
-import {  Layout, theme } from "antd";
 import Background from "./Background";
 import MainFooter from "./Footer";
 import MainBoard from "./MainBoard";
@@ -72,10 +71,11 @@ class MainService1 extends Component {
               onChange={this.onChange} style={{padding : "5px"}}
               />
           </div>   
-        <Link to={MainService1}>
-          <button>next</button>
-        </Link>
+      
       </div>
+      <Link to={"/MainService2"}>
+      <button>next</button>
+      </Link>
         </div>
         )
     }

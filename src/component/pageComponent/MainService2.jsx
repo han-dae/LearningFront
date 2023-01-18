@@ -1,4 +1,4 @@
-import React from "react";
+import React,{Component} from "react";
 import MainHeader from "./Header";
 import { Link } from "react-router-dom";
 import {  Layout, theme } from "antd";
@@ -27,9 +27,9 @@ class MainService2 extends Component {
         category_seq: "",
         category_name:""
       };
-<Link to={MainService3}>
+ <Link to={"/MainService3"}>
 <button>next</button>
-</Link>
+</Link> 
     }
 }
 export default MainService2;

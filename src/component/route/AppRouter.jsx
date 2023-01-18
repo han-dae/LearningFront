@@ -4,6 +4,9 @@ import MainComponent from "../pageComponent/MainComponent";
 import Login from "../pageComponent/Login";
 import TestComponent from "../pageComponent/Test";
 import MainService1 from "../pageComponent/MainService1";
+import MainService2 from "../pageComponent/MainService2";
+import MainService3 from "../pageComponent/MainService3";
+import MainService4 from "../pageComponent/MainService4";
 
 const AppRouter =() => {
     return (

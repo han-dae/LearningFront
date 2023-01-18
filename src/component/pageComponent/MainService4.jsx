@@ -1,4 +1,4 @@
-import React from "react";
+import React,{Component} from "react";
 import MainHeader from "./Header";
 import { Link } from "react-router-dom";
 import {  Layout, theme } from "antd";
