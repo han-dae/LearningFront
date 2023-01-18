@@ -10,7 +10,7 @@ import { render } from "@testing-library/react";
 
 // 등록
 
-class MainService4 extends Component {
+class Test4 extends Component {
     constructor(props) {
       super(props);
   
@@ -29,4 +29,4 @@ class MainService4 extends Component {
       };
     }
 }
-export default MainService4;
+export default Test4;

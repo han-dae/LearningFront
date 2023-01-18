@@ -4,9 +4,9 @@ import MainComponent from "../pageComponent/MainComponent";
 import Login from "../pageComponent/Login";
 import TestComponent from "../pageComponent/Test";
 
-import MainService2 from "../pageComponent/Test2";
-import MainService3 from "../pageComponent/Test3";
-import MainService4 from "../pageComponent/Test4";
+import Test2 from "../pageComponent/Test2";
+import Test3 from "../pageComponent/Test3";
+import Test4 from "../pageComponent/Test4";
 
 const AppRouter =() => {
     return (
@@ -18,9 +18,9 @@ const AppRouter =() => {
             <Route path="/login" element={<Login/>} />
             <Route path ="/test" element={<TestComponent />} />
            
-            <Route path ="/mainService2" element={<MainService2 />} />
-            <Route path ="/mainService3" element={<MainService3 />} />
-            <Route path ="/mainService4" element={<MainService4 />} />
+            <Route path ="/test2" element={<Test2 />} />
+            <Route path ="/test3" element={<Test3 />} />
+            <Route path ="/test4" element={<Test4 />} />
         </Routes>
         </BrowserRouter></div>
     );

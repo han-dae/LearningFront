@@ -10,7 +10,7 @@ import { render } from "@testing-library/react";
 import MainService3 from "./Test3";
 
 // 차트 확인
-class MainService2 extends Component {
+class Test2 extends Component {
     constructor(props) {
       super(props);
   
@@ -32,4 +32,4 @@ class MainService2 extends Component {
 </Link> 
     }
 }
-export default MainService2;
+export default Test2;

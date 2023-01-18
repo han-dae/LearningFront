@@ -11,7 +11,7 @@ import MainService4 from "./Test4";
 
 // 영상 업로드
 
-class MainService3 extends Component {
+class Test3 extends Component {
     constructor(props) {
       super(props);
   
@@ -96,4 +96,4 @@ class MainService3 extends Component {
         )
     }
 }
-export default MainService3;
+export default Test3;
