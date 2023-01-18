@@ -1,0 +1,32 @@
+.slick-slider .banner {
+    width: 90%;
+    height: 100%;
+   background-color: transparent;
+    text-align: center;
+    opacity: 0.5;
+    padding: 10px;
+
+}
+.slick-center{
+    
+    opacity : 1;
+    padding: 10px;
+}
+.slick-slider{
+    width: 60vw;
+    margin-left: -25%;
+    align-content: center;
+    text-align: center;
+}
+.slick-track{
+    margin: auto;
+}
+    
+
+.slick-prev::before,
+  .slick-next::before {
+    
+    opacity: 0;
+    display: none;
+  }
+  

@@ -1,0 +1,10 @@
+.label{
+    text-align: right;
+}
+.btn_login{
+    padding: 5px;
+    background-color: #BB2649;
+    margin-top: 20px;
+    color: white;
+    font-size: 15px;
+}
