@@ -19,6 +19,7 @@ function MainHeader(){
               height: "70px"
             }}
           >
+            <Link to={"/"}>
             <div
               style={{
                 float: 'left',
@@ -28,7 +29,10 @@ function MainHeader(){
                 marginLeft : "12%",
                 background: 'rgba(255, 255, 0)'
               }}
-            />
+
+            /></Link>
+
+      
             <Link to={"/test"}>
                               
             <Menu
