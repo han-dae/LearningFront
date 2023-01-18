@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const USER_API_BASE_URL = "http://localhost:8080/users";
+const USER_API_BASE_URL = "http://localhost:8081/users/users";
 
 class ApiService {
   fetchUser() {
@@ -10,8 +10,8 @@ class ApiService {
     return axios.get(USER_API_BASE_URL + "/" + userID);
   }
 
-  deleteUser(userID) {
-    return axios.delete(USER_API_BASE_URL + "/" + userID);
+  deleteUser(userID, user) {
+    return axios.delete(USER_API_BASE_URL + "/" + userID.id,user);
   }
   addUser(user) {
     return axios.post(USER_API_BASE_URL, user);
