@@ -9,8 +9,8 @@ class Login extends Component {
   constructor(props){
     super(props);
     this.state={
-        id :"",
-        pw : ""
+        user_id :"",
+        user_pw : ""
     };
 }
 
@@ -25,16 +25,22 @@ class Login extends Component {
 
     let LoginUser = {
 
-      id : this.state.id,
-      pw: this.state.pw      
+      id : this.state.user_id,
+      pw: this.state.user_pw      
     };
-    ApiService.loginUser(LoginUser)
-    .then((res =>{
-        this.props.history.push("/users");
+    ApiService.LoginUser(LoginUser.id,LoginUser.pw)
+    .then((res) => {
+      let home_login = res.data;
+     console.log("완료")
+     if(home_login == "/home"){
+      <Link to ="/home"></Link>
+     }else{
+      <Link to ="/login"></Link>
+     }
     })
-    ).catch((err) => {
-        console.log("저장시 에러");
-    });
+    .catch((err) => {
+      console.log("login() 에러", err);
+    });  
   };
 
   render() {
@@ -60,8 +66,8 @@ class Login extends Component {
             <input
               type="text"
               placeholder="이름 입력"
-              name="us"
-              value={this.state.id}
+              name="user_id"
+              value={this.state.user_id}
               onChange={this.onChange}
              style={{padding : "5px"}}/>
           </div>
@@ -71,14 +77,12 @@ class Login extends Component {
             <input
               type="password"
               placeholder="비밀번호 입력"
-              name="pw"
-              value={this.state.pw}
+              name="user_pw"
+              value={this.state.user_pw}
               onChange={this.onChange} style={{padding : "5px"}}
             />
           </div>
-         <Link to={"/home"}>
           <button className="btn_login" onClick={this.LoginUser}>Login</button>
-          </Link>
         </form>
         <Join/>
       </div>
