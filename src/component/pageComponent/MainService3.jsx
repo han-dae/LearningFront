@@ -1,4 +1,4 @@
-import React from "react";
+import React,{Component} from "react";
 import MainHeader from "./Header";
 import {  Layout, theme } from "antd";
 import { Link } from "react-router-dom";
@@ -85,9 +85,9 @@ class MainService3 extends Component {
               onChange={this.onChange} style={{padding : "5px"}}
             />
           </div>
-          <Link to={MainService4}>
+           <Link to={"/MainService4"}>
           <button>next</button>
-          </Link>
+          </Link> 
         </form>
       
       </div>
