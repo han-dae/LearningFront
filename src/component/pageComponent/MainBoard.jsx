@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const MainBoard = () => {
@@ -15,7 +16,7 @@ const MainBoard = () => {
         left: "18%",
             backgroundColor: "white",
           opacity: 0.5,
-          width: "500px",
+          width: "25%",
           height: "300px",
           
           borderRadius: 30,
@@ -36,7 +37,7 @@ const MainBoard = () => {
             position : "absolute",
             backgroundColor: "white",
             opacity: 0.5,
-            width: "500px",
+            width: "25%",
             height: "300px",
             right : "20%",
             borderRadius: 30,
@@ -50,6 +51,7 @@ const MainBoard = () => {
           >
             {platform.name}
           </div>
+        
         </div>
       </div>
  
