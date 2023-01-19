@@ -7,11 +7,11 @@ import MainFooter from "./Footer";
 import MainBoard from "./MainBoard";
 import CarouselComponent from "./CarouselComponent";
 import { render } from "@testing-library/react";
-import MainService4 from "./MainService4";
+import MainService4 from "./Test4";
 
 // 영상 업로드
 
-class MainService3 extends Component {
+class Test3 extends Component {
     constructor(props) {
       super(props);
   
@@ -44,7 +44,7 @@ class MainService3 extends Component {
         
 
         <div style={{textAlign:"center" }}>
-        <h2>Login</h2>
+
         <form>
           <div>
             <label className="label">제목:</label>
@@ -96,4 +96,4 @@ class MainService3 extends Component {
         )
     }
 }
-export default MainService3;
+export default Test3;

@@ -7,10 +7,10 @@ import MainFooter from "./Footer";
 import MainBoard from "./MainBoard";
 import CarouselComponent from "./CarouselComponent";
 import { render } from "@testing-library/react";
-import MainService3 from "./MainService3";
 
-// 차트 확인
-class MainService2 extends Component {
+// 등록
+
+class Test4 extends Component {
     constructor(props) {
       super(props);
   
@@ -27,9 +27,6 @@ class MainService2 extends Component {
         category_seq: "",
         category_name:""
       };
- <Link to={"/MainService3"}>
-<button>next</button>
-</Link> 
     }
 }
-export default MainService2;
+export default Test4;
