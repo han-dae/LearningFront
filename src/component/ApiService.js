@@ -20,7 +20,7 @@ class ApiService {
     return axios.put(USER_API_BASE_URL + "/" + user.id, user);
   }
   loginUser(user) {
-    return axios.post(USER_API_BASE_URL + "/" + user.id, user.pw)
+    return axios.post(USER_API_BASE_URL+ "/" +user.user_id + "/" + user.user_pw);
   }
 }
 export default new ApiService();

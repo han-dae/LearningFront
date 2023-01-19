@@ -23,15 +23,15 @@ class Login extends Component {
   LoginUser = (e) => {
     e.preventDefault();
 
-    let LoginUser = {
+    let User = {
 
-      id : this.state.user_id,
-      pw: this.state.user_pw      
+      user_id : this.state.user_id,
+      user_pw: this.state.user_pw      
     };
-    ApiService.LoginUser(LoginUser.id,LoginUser.pw)
+    ApiService.loginUser(User)
     .then((res) => {
       let home_login = res.data;
-     console.log("완료")
+     console.log(home_login)
      if(home_login == "/home"){
       <Link to ="/home"></Link>
      }else{
