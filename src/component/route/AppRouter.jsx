@@ -5,9 +5,9 @@ import Login from "../pageComponent/Login";
 import TestComponent from "../pageComponent/Test";
 
 
-import Test2 from "../pageComponent/Test2";
-import Test3 from "../pageComponent/Test3";
-import Test4 from "../pageComponent/Test4";
+import TestComponent2 from "../pageComponent/Test2";
+import TestComponent3 from "../pageComponent/Test3";
+import TestComponent4 from "../pageComponent/Test4";
 
 
 const AppRouter =() => {
@@ -22,9 +22,9 @@ const AppRouter =() => {
             <Route path="/login" element={<Login/>} />
             <Route path ="/test" element={<TestComponent />} />
            
-            <Route path ="/test2" element={<Test2 />} />
-            <Route path ="/test3" element={<Test3 />} />
-            <Route path ="/test4" element={<Test4 />} />
+            <Route path ="/test2" element={<TestComponent2 />} />
+            <Route path ="/test3" element={<TestComponent3 />} />
+            <Route path ="/test4" element={<TestComponent4 />} />
         </Routes>
         </BrowserRouter></div>
     );

@@ -33,6 +33,7 @@ class Login extends Component {
       .then((res) => {
         let home_login = res.data;
         console.log(res.status);
+        console.log(res.data);
         //console.log("완료");
         if (res.status == 200) {
           console.log("if통과");
