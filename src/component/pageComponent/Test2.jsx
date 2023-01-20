@@ -6,7 +6,9 @@ import MainHeader from "./Header";
 import ScrollBottom from "./ScrollBottom";
 import InputTextArea from "./TextArea";
 import { RightCircleOutlined } from "@ant-design/icons";
-
+import Img1 from "../../img/graph1.png";
+import Img2 from "../../img/graph2.png";
+import Img3 from "../../img/graph3.png";
 import { Link } from "react-router-dom";
 
 const TestComponent2 = () => {
@@ -49,33 +51,33 @@ const TestComponent2 = () => {
             height: "40vh",
             marginTop: "25px",
             marginLeft: "20vw",
-            backgroundColor: "white",
+            
   
             borderRadius: 10,
           }}
-        ></div>
+        >
+          <img src={Img1} style={{width : "600px", height :"350px"}}/>
+        </div>
         <div
           className="Chart02"
           style={{
-            marginTop: "25px",
+            marginTop: "0px",
             marginLeft: "20vw",
             width: "28vw",
             height: "30vh",
             backgroundColor: "black",
           }}
-        ></div>
+          
+        ><img src={Img2} style={{width : "1100px", height :"300px"}}/></div>
 
         <div
           className="InputCategory"
-          style={{ marginTop: "-720px", marginLeft: "57vw" }}
+          style={{ marginTop: "-680px", marginLeft: "52vw" }}
         >
-          <div style={{ marginBottom: "15px" }}>
-           
-          </div>
-          <InputTextArea />
-          <div style={{ marginLeft: "-120px", marginTop: "180px" }}>
-            <h3>ReadyCast에서 분석한 결과를 확인해보세요.</h3>
-          </div>
+      
+          <img src={Img3} style={{width : "490px", height :"350px"}}/>
+      
+          
           <Link to={"/test3"}>
             <RightCircleOutlined
               style={{
