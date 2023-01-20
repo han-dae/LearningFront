@@ -30,14 +30,9 @@ const Login = (props) => {
     ApiService.loginUser(User.user_id, User.user_pw)
       .then(res => {
         console.log(res.status);
-        console.log(res);
-        //console.log("완료");
-        if (res.status == 200) {
+        console.log(res.data);
           console.log("if통과");
-          navigate('/')
-        } else {
-          window.location.reload();
-        }
+          navigate('/home/${res.data}');
       })
       .catch(err => {
         console.log("login() 에러", err);

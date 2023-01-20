@@ -1,10 +1,10 @@
 import React from "react";
 import {  Button, Layout, Menu,  } from 'antd';
-import { Link } from "react-router-dom";
-
+import { Link } from "react-router-dom"; 
+import Logininfo from "./Logininfo";
 const { Header } = Layout;
 function MainHeader(){
-  const info1 =sessionStorage.getItem('info')
+ 
 
     
       return (
@@ -59,12 +59,7 @@ function MainHeader(){
             />
             
             </Link>  
-      <Link to="/Login">
-           <Button
-           style={{float : "right", marginTop : "-50px", marginRight: "12%", backgroundColor : "#BB2649", color : "white"}}>
-              로그인
-            </Button>
-            </Link>
+            <Logininfo/>
           </Header>
          
         
