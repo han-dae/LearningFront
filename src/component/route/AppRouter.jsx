@@ -4,15 +4,19 @@ import MainComponent from "../pageComponent/MainComponent";
 import Login from "../pageComponent/Login";
 import TestComponent from "../pageComponent/Test";
 
+
 import Test2 from "../pageComponent/Test2";
 import Test3 from "../pageComponent/Test3";
 import Test4 from "../pageComponent/Test4";
+
 
 const AppRouter =() => {
     return (
         <div>
       <BrowserRouter>
         <Routes>
+            
+            
             <Route path="/" element={<MainComponent />} />
             <Route path="/home" element={<MainComponent />} />
             <Route path="/login" element={<Login/>} />

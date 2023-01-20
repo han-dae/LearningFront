@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const { Header } = Layout;
 function MainHeader(){
- 
+  const info1 =sessionStorage.getItem('info')
 
     
       return (

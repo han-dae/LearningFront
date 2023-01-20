@@ -1,15 +1,41 @@
-import React from "react";
-import { Link } from "react-router-dom";
+
+import React, { useState } from "react";
+
 import Background from "./Background";
 import Category from "./Category";
 import MainHeader from "./Header";
 import ScrollBottom from "./ScrollBottom";
 import InputTextArea from "./TextArea";
-
+import axios from "axios";
 
 const TestComponent = () => {
+
+  saveFile = (e) => {
+    e.preventDefault();
+
+    let file ={
+      filename : this.state.filename,
+      fileUrl : this.state.fileUrl
+    }
+  }
+  ApiService.saveFile(file)
+  .then((res) => {
+    this.setFile({
+      filename : this.filename,
+      fileUrl : this.fileUrl
+    })
+    
+  })
+const fileShow = (props) =>{
   return (
-    <div >
+    <>
+    <div style={{backgroundImage : "{}"}}></div></>
+  )
+}
+
+  return (
+    <div>
+        <form>
       <ScrollBottom />
       <MainHeader />
       <Background />
@@ -29,8 +55,8 @@ const TestComponent = () => {
           style={{
             display: "inline-block",
             width: "100%",
-        
-            marginTop : "-10px"
+
+            marginTop: "-10px",
           }}
         >
           <h1>Chapter1. 스크립트 분석</h1>
@@ -38,6 +64,7 @@ const TestComponent = () => {
             높은 조회 수와 매출을 기록한 스크립트에요.
           </h3>
         </div>
+
        
           </div>
           <div className="Chart01"
@@ -71,8 +98,8 @@ const TestComponent = () => {
       <Link to={"/Mainservice2"}>
       <button>next</button>
       </Link>
+</form>
     </div>
-    
   );
 };
 export default TestComponent;
