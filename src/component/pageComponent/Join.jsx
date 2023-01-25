@@ -41,6 +41,7 @@ class Join extends Component {
        });
  
   window.location.reload();
+  
   };
 
   render() {

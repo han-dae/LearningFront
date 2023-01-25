@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 
 import Background from "./Background";
@@ -7,7 +8,6 @@ import ScrollBottom from "./ScrollBottom";
 import { InboxOutlined } from '@ant-design/icons';
 import { message, Upload } from "antd";
 import { RightCircleOutlined } from "@ant-design/icons";
-
 
 import { Link } from "react-router-dom";
 import UploadPic from "./UploadPic";
@@ -27,6 +27,7 @@ const props = {
       message.success(`${info.file.name} file uploaded successfully.`);
     } else if (status === 'error') {
       message.error(`${info.file.name} file upload failed.`);
+
     }
   },
   onDrop(e) {
@@ -80,7 +81,7 @@ const TestComponent3 = () => {
   
   <div style={{ marginBottom :"30px",marginTop: "25px",marginLeft :"20vw"}}>
   
-  <input type="text" className="title" placeholder="제목을 입력해주세요" style={{width : "28vw", padding : "6px 10px 6px 10px", boxSizing :"border-box"}} ></input>
+  <input type="text" className="title" placeholder="제목을 입력해주세요" style={{width : "28vw", padding : "10px 10px 10px 10px", boxSizing :"border-box"}} ></input>
   <div style={{marginTop : "25px"}}>
   <UploadPic/>
   </div></div>
@@ -95,33 +96,35 @@ const TestComponent3 = () => {
           }}
         ></div>
 
+
         <div
-          style={{ marginTop: "-705px", marginLeft: "50vw" }}
+          style={{ marginTop: "-710px", marginLeft: "50vw" }}
         >
         <TextArea
       showCount
       maxLength={800}
       style={{
-        height: 200,
+        height: 400,
         width : 550,
         resize: 'none',
         overflowY :"scroll"
       }}
       onChange={onchange}
-      placeholder="스크립트를 적어보세요"
+      placeholder="라이브 커머스 영상, 상품정보에 대해  간략하게 설명해주세요."
     /> 
-    <div style={{marginLeft:"20px" ,marginTop :"250px"}}>
+    <div style={{marginLeft:"20px" ,marginTop :"50px"}}>
     <h3>1.판매하고자 하는 상품의 명과 이미지를 입력하세요.</h3>
       <h3>2. 라이브 커머스의 제목과 설명을 입력하세요.</h3>
       <h3>3.라이브 커머스 영상을 업로드해주세요.</h3>
       <h3>4.분석결과를 토대로 상품의 가격을 책정해주세요.</h3>
       <Link to={"/test3"}>
+      <input type="submit" name="videoSubmit" id="videoSubmit" style={{display :"none"}}/>
             <RightCircleOutlined
               style={{
                 position : "absolute",
                 bottom : "20px",
                 marginTop: "0px",
-       right : "400px",
+                right : "400px",
                 fontSize: "300%",
                 color : "black",
               }}
@@ -140,3 +143,4 @@ const TestComponent3 = () => {
   );
 };
 export default TestComponent3;
+

@@ -73,7 +73,7 @@ const TestComponent = () => {
             <Category />
           </div>
           <InputTextArea />
-          <div style={{ marginLeft: "-120px", marginTop: "180px" }}>
+          <div style={{ marginLeft: "-120px", marginTop: "100px" }}>
             <h3>1. 판매하려는 상품의 카테고리를 골라주세요.</h3>
             <h3>2. 분석 결과를 토대로 본인만의 스크립트를 작성해보세요.</h3>
           </div>

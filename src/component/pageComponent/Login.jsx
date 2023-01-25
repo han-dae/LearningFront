@@ -1,51 +1,44 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Join from "./Join";
-
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import ApiService from "../ApiService";
 import MainHeader from "./Header";
 import Background from "./Background";
 import styles from "./Login.css";
 
-class Login extends Component {
-  constructor(props) {
-    super(props);
+const Login = (props) => {
+  const [state, setState] = useState({
+    user_id :"",
+    user_pw :""
+  })
 
-    this.state = {
-      user_id: "",
-      user_pw: "",
-    };
+  const onChange = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    })
   }
 
-  onChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-  };
-  LoginUser = (e) => {
+  const navigate = useNavigate();
+  const LoginUser = (e) => {
     e.preventDefault();
 
     let User = {
-      id: this.state.user_id,
-      pw: this.state.user_pw,
+      user_id: state.user_id,
+      user_pw: state.user_pw,
     };
-    ApiService.loginUser(User.id, User.pw)
-      .then((res) => {
-        let home_login = res.data;
+    ApiService.loginUser(User.user_id, User.user_pw)
+      .then(res => {
         console.log(res.status);
         console.log(res.data);
-        //console.log("완료");
-        if (res.status == 200) {
           console.log("if통과");
-        } else {
-          <Link to="/login"></Link>;
-        }
+          navigate('/home/${res.data}');
       })
-      .catch((err) => {
+      .catch(err => {
         console.log("login() 에러", err);
       });
-  };
-  render() {
+
+  }
     return (
       <div>
         <MainHeader />
@@ -72,8 +65,8 @@ class Login extends Component {
                   type="text"
                   placeholder="이름 입력"
                   name="user_id"
-                  value={this.state.user_id}
-                  onChange={this.onChange}
+                  value={state.user_id}
+                  onChange={onChange}
                   style={{ padding: "5px" }}
                 />
               </div>
@@ -84,12 +77,12 @@ class Login extends Component {
                   type="password"
                   placeholder="비밀번호 입력"
                   name="user_pw"
-                  value={this.state.user_pw}
-                  onChange={this.onChange}
+                  value={state.user_pw}
+                  onChange={onChange}
                   style={{ padding: "5px" }}
                 />
               </div>
-              <button className="btn_login" onClick={this.LoginUser}>
+              <button className="btn_login" onClick={LoginUser}>
                 Login
               </button>
             </form>
@@ -98,6 +91,6 @@ class Login extends Component {
         </div>
       </div>
     );
-  }
+
 }
 export default Login;
