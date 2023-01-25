@@ -1,99 +1,142 @@
-import React,{Component} from "react";
-import MainHeader from "./Header";
-import {  Layout, theme } from "antd";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+
 import Background from "./Background";
-import MainFooter from "./Footer";
-import MainBoard from "./MainBoard";
-import CarouselComponent from "./CarouselComponent";
-import { render } from "@testing-library/react";
-import MainService4 from "./Test4";
+import Category from "./Category";
+import MainHeader from "./Header";
+import ScrollBottom from "./ScrollBottom";
+import { InboxOutlined } from '@ant-design/icons';
+import { message, Upload } from "antd";
+import { RightCircleOutlined } from "@ant-design/icons";
 
-// 영상 업로드
 
-class Test3 extends Component {
-    constructor(props) {
-      super(props);
-  
-      this.state = {
-        test_seq : "",
-        test_title: "",
-        test_photo: "",
-        test_price : "",
-        test_cuesheet:"",
-        test_video:"",
-        test_video_realname:"",
-        reg_dt:"",
-        user_id:"",
-        category_seq: "",
-        category_name:""
-      };
+import { Link } from "react-router-dom";
+import UploadPic from "./UploadPic";
+import InputTextArea from "./TextArea";
+import TextArea from "antd/es/input/TextArea";
+const { Dragger } = Upload;
+const props = {
+  name: 'file',
+  multiple: true,
+  action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+  onChange(info) {
+    const { status } = info.file;
+    if (status !== 'uploading') {
+      console.log(info.file, info.fileList);
     }
-    onChange = (e) => {
-        this.setState({
-          [e.target.name]: e.target.value,
-        });
-      };
-    select = (e) => {
-        e.preventDefault();
-      
+    if (status === 'done') {
+      message.success(`${info.file.name} file uploaded successfully.`);
+    } else if (status === 'error') {
+      message.error(`${info.file.name} file upload failed.`);
     }
-    render(){
-        return(<div><MainHeader/>
+  },
+  onDrop(e) {
+    console.log('Dropped files', e.dataTransfer.files);
+  },
+};
+const TestComponent3 = () => {
+  return (
+    <div>
+      <form>
+        <ScrollBottom />
+        <MainHeader />
         <Background />
-        
+        <div
+          style={{
+            marginTop: "-95vh",
+            marginLeft: "20vw",
+            width: "20vw",
+            height: "10vh",
+            paddingLeft: "10px",
+            backgroundColor: "white",
+            borderRadius: 20,
+          }}
+        >
+          <div
+            className="start"
+            style={{
+              display: "inline-block",
+              width: "100%",
 
-        <div style={{textAlign:"center" }}>
+              marginTop: "-10px",
+            }}
+          >
+             <h1>Chapter3. 영상 업로드</h1>
+            <h3 style={{ marginTop: "-25px" }}>
+              ReadyCast에 본인 영상을 업로드 해보세요.
+            </h3>
+          </div>
+        </div>
+<div style={{ marginBottom :"30px",marginTop: "25px",marginLeft :"20vw",width : "28vw", backgroundColor: "whitesmoke", borderRadius : 10}}>
+        <Dragger {...props} >
+    <p className="ant-upload-drag-icon">
+      <InboxOutlined />
+    </p>
+    <p className="ant-upload-text">일단 눌러</p>
+    <p className="ant-upload-hint">
+    이곳에 파일을 업로드해라
+    </p>
+  </Dragger>
+  </div>
+  
+  <div style={{ marginBottom :"30px",marginTop: "25px",marginLeft :"20vw"}}>
+  
+  <input type="text" className="title" placeholder="제목을 입력해주세요" style={{width : "28vw", padding : "6px 10px 6px 10px", boxSizing :"border-box"}} ></input>
+  <div style={{marginTop : "25px"}}>
+  <UploadPic/>
+  </div></div>
+        <div
+          className="Chart02"
+          style={{
+            marginTop: "25px",
+            marginLeft: "20vw",
+            width: "28vw",
+            height: "30vh",
+            backgroundColor: "black",
+          }}
+        ></div>
 
-        <form>
-          <div>
-            <label className="label">제목:</label>
-            <input
-              type="text"
-              placeholder="제목"
-              name="test_title"
-              value={this.state.test_title}
-              onChange={this.onChange}
-             style={{padding : "5px"}}/>
-          </div>
-
-          <div>
-            <label className="label">가격 :</label>
-            <input
-              type="int"
-              placeholder="가격"
-              name="test_price"
-              value={this.state.test_price}
-              onChange={this.onChange} style={{padding : "5px"}}
+        <div
+          style={{ marginTop: "-705px", marginLeft: "50vw" }}
+        >
+        <TextArea
+      showCount
+      maxLength={800}
+      style={{
+        height: 200,
+        width : 550,
+        resize: 'none',
+        overflowY :"scroll"
+      }}
+      onChange={onchange}
+      placeholder="스크립트를 적어보세요"
+    /> 
+    <div style={{marginLeft:"20px" ,marginTop :"250px"}}>
+    <h3>1.판매하고자 하는 상품의 명과 이미지를 입력하세요.</h3>
+      <h3>2. 라이브 커머스의 제목과 설명을 입력하세요.</h3>
+      <h3>3.라이브 커머스 영상을 업로드해주세요.</h3>
+      <h3>4.분석결과를 토대로 상품의 가격을 책정해주세요.</h3>
+      <Link to={"/test3"}>
+            <RightCircleOutlined
+              style={{
+                position : "absolute",
+                bottom : "20px",
+                marginTop: "0px",
+       right : "400px",
+                fontSize: "300%",
+                color : "black",
+              }}
             />
+          </Link>
+    </div>
+          <div style={{ marginBottom: "15px" }}>
+            
           </div>
-          <div>
-            <label className="label">영상첨부 :</label>
-            <input
-              type="file"
-              name="test_video"
-              value={this.state.test_video}
-              onChange={this.onChange} style={{padding : "5px"}}
-            />
-          </div>
-          <div>
-            <label className="label">썸네일이미지 :</label>
-            <input
-              type="file"
-              name="test_photo"
-              value={this.state.test_photo}
-              onChange={this.onChange} style={{padding : "5px"}}
-            />
-          </div>
-           <Link to={"/MainService4"}>
-          <button>next</button>
-          </Link> 
-        </form>
-      
-      </div>
-      </div>
-    
-        )
-    }
-}
-export default Test3;
+     
+         
+         
+        </div>
+      </form>
+    </div>
+  );
+};
+export default TestComponent3;

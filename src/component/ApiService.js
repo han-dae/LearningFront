@@ -19,8 +19,8 @@ class ApiService {
   editUser(user) {
     return axios.put(USER_API_BASE_URL + "/" + user.id, user);
   }
-  loginUser(user) {
-    return axios.post(USER_API_BASE_URL + "/" + user.id, user.pw)
+  loginUser(userID, userPW) {
+    return axios.post(USER_API_BASE_URL + "/" + userID+"&"+ userPW);
   }
 }
 export default new ApiService();
