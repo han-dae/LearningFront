@@ -8,6 +8,7 @@ import MyPage from "../pageComponent/MyPage";
 import TestComponent2 from "../pageComponent/Test2";
 import TestComponent3 from "../pageComponent/Test3";
 import TestComponent4 from "../pageComponent/Test4";
+import FileData from "../pageComponent/FileData";
 
 
 const AppRouter =() => {
@@ -25,6 +26,7 @@ const AppRouter =() => {
             <Route path ="/test2" element={<TestComponent2 />} />
             <Route path ="/test3" element={<TestComponent3 />} />
             <Route path ="/test4" element={<TestComponent4 />} />
+            <Route path="/FileData"  element={<FileData />}></Route>
         </Routes>
         </BrowserRouter></div>
     );
