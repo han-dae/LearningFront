@@ -16,7 +16,7 @@ const Logininfo = () => {
       return (
       <Link to="/Login">
            <Button
-           style={{float : "right", marginTop : "-50px", marginRight: "12%", backgroundColor : "#BB2649", color : "white"}}>
+           style={{borderRadius :"20px",width :"100px",float : "right", marginTop : "-40px", marginRight: "12%", backgroundColor : "#FE8F8D", color : "white"}}>
               로그인
             </Button>
             </Link>
@@ -24,7 +24,7 @@ const Logininfo = () => {
       return( 
       <Link to="/MyPage">
            <Button
-           style={{float : "right", marginTop : "-50px", marginRight: "12%", backgroundColor : "#BB2649", color : "white"}}>
+           style={{float : "right", marginTop : "-40px", marginRight: "12%", backgroundColor : "#FE8F8D", color : "white"}}>
               마이페이지
             </Button>
             </Link>

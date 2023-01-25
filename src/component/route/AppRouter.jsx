@@ -8,7 +8,7 @@ import MyPage from "../pageComponent/MyPage";
 import TestComponent2 from "../pageComponent/Test2";
 import TestComponent3 from "../pageComponent/Test3";
 import TestComponent4 from "../pageComponent/Test4";
-
+import Join from "../pageComponent/Join"
 
 const AppRouter =() => {
     return (
@@ -20,6 +20,7 @@ const AppRouter =() => {
             <Route path="/" element={<MainComponent />} />
             <Route path="/home" element={<MainComponent />} />
             <Route path="/login" element={<Login/>} />
+            <Route path="/join" element={<Join/>} />
             <Route path ="/test" element={<TestComponent />} />
             <Route path ="/mypage" element={<MyPage />} />
             <Route path ="/test2" element={<TestComponent2 />} />
