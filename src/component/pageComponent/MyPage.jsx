@@ -33,24 +33,24 @@ const MyPage = () => {
         <div>
             <ScrollBottom />
             <MainHeader />
-            <Background />
+            
             <Content>
                 <div>
                     <h1 style={{
                         textUnderlineOffset: "auto",
-                        marginTop: "-96vh",
+                        marginTop: "2vh",
                         marginLeft: "20vw",
                     }}> 개인정보수정
                     </h1>
                 </div>
                 <div
                     style={{
-                        marginTop: "-1vh",
+                        marginTop: "0vh",
                         marginLeft: "20vw",
                         width: "28vw",
                         height: "40vh",
                         paddingLeft: "10px",
-                        backgroundColor: "white",
+                        backgroundColor: "#F7D5D4",
                         borderRadius: 20,
                     }}>
                     <div
@@ -131,18 +131,18 @@ const MyPage = () => {
                 <div>
                     <h1 style={{
                         textUnderlineOffset: "auto",
-                        marginTop: "-46.5vh",
+                        marginTop: "-47.5vh",
                         marginLeft: "50vw",
                     }}>내가 쓴 댓글</h1>
                 </div>
                 <div
                     style={{
-                        marginTop: "-1vh",
+                        marginTop: "0vh",
                         marginLeft: "50vw",
                         width: "28.5vw",
                         height: "40vh",
                         paddingLeft: "10px",
-                        backgroundColor: "white",
+                        backgroundColor: "#F7D5D4",
                         borderRadius: 20,
                     }}>
                     <div
@@ -164,7 +164,8 @@ const MyPage = () => {
                     }}>내 영상 확인하기</h1>
                     <div
                         style={{
-                            marginLeft: "160vh"
+                            marginLeft: "160vh",
+                            marginTop: "0vh"
                         }}>
                         <button className="btn_edit" style={{ marginTop: "0vh" }}>EDIT</button>
                         <button className="btn_del" style={{ marginTop: "0vh" }}>DELETE</button>
@@ -188,20 +189,20 @@ const MyPage = () => {
                             width: "100%",
                             marginTop: "0px"
                         }}>
-                        <div style={{ marginTop: "70px" }}>
+                        <div>
                             <div
                                 className="Board1"
                                 style={{
                                     // position: "absolute",
                                     left: "18%",
-                                    backgroundColor: "white",
+                                    backgroundColor: "#F7D5D4",
                                     opacity: 0.5,
                                     width: "18%",
                                     height: "28vh",
                                     borderRadius: 30,
                                     padding: "10px",
                                     display: "inline-block",
-                                    marginTop: "-7vh",
+                                    marginTop: "0vh",
                                     marginLeft: "20vw"
                                 }}
                             >
@@ -217,7 +218,7 @@ const MyPage = () => {
                                 style={{
                                     // position: "absolute",
                                     right: "20%",
-                                    backgroundColor: "white",
+                                    backgroundColor: "#F7D5D4",
                                     opacity: 0.5,
                                     width: "18%",
                                     height: "28vh",
@@ -239,7 +240,7 @@ const MyPage = () => {
                                 style={{
                                     // position: "absolute",
                                     right: "20%",
-                                    backgroundColor: "white",
+                                    backgroundColor: "#F7D5D4",
                                     opacity: 0.5,
                                     width: "18%",
                                     height: "28vh",

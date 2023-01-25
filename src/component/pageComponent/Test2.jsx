@@ -56,7 +56,7 @@ const TestComponent2 = () => {
             borderRadius: 10,
           }}
         >
-          <img src={Img1} style={{width : "600px", height :"350px"}}/>
+          <img src={Img1} style={{width : "1100px", height :"350px"}}/>
         </div>
         <div
           className="Chart02"
@@ -75,8 +75,7 @@ const TestComponent2 = () => {
           style={{ marginTop: "-680px", marginLeft: "52vw" }}
         >
       
-          <img src={Img3} style={{width : "490px", height :"350px"}}/>
-      
+       
           
           <Link to={"/test3"}>
             <RightCircleOutlined

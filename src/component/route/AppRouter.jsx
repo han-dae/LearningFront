@@ -8,7 +8,7 @@ import MyPage from "../pageComponent/MyPage";
 import TestComponent2 from "../pageComponent/Test2";
 import TestComponent3 from "../pageComponent/Test3";
 import TestComponent4 from "../pageComponent/Test4";
-
+import Join from "../pageComponent/Join"
 
 import Test2 from "../pageComponent/Test2";
 import Test3 from "../pageComponent/Test3";
@@ -21,21 +21,22 @@ const AppRouter = () => {
     return (
         <div>
 
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<MainComponent />} />
-                    <Route path="/home" element={<MainComponent />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/test" element={<TestComponent />} />
+      <BrowserRouter>
+        <Routes>
+            
+            
+            <Route path="/" element={<MainComponent />} />
+            <Route path="/home" element={<MainComponent />} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/join" element={<Join/>} />
+            <Route path ="/test" element={<TestComponent />} />
+            <Route path ="/mypage" element={<MyPage />} />
+            <Route path ="/test2" element={<TestComponent2 />} />
+            <Route path ="/test3" element={<TestComponent3 />} />
+            <Route path ="/test4" element={<TestComponent4 />} />
+        </Routes>
+        </BrowserRouter></div>
 
-                    <Route path="/test2" element={<Test2 />} />
-                    <Route path="/test3" element={<Test3 />} />
-                    <Route path="/test4" element={<Test4 />} />
-                    <Route path="/myPage" element={<MyPage />} />
-                    <Route path="/TestPage" element={<TestPage />} />
-                    <Route path="/InputTextArea" element={<InputTextArea />} />
-                </Routes>
-            </BrowserRouter></div>
 
     );
 }

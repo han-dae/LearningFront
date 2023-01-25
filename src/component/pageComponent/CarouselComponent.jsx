@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import styles from "./CarouselComponent.css";
 import Right from "../../img/VectorRight.png";
 import Left from "../../img/VectorLeft.png";
-
+import { Link } from "react-router-dom";
 import Banner1 from "../../img/banner1.png";
 import Banner0 from "../../img/banner0.png";
 import Banner2 from "../../img/banner2.png";
@@ -53,15 +53,15 @@ const CarouselComponent = () => {
   };
 
   return (
-    <div>
+    <div><Link  to={"/test"}>
     <Slider {...settings}>
       <div className="banner" style={{width: "80vw"}}><div style={{width : "100%"}}><img src={Banner0} style={{width : "400px", height :"300px"}}/></div></div>
       <div className="banner" style={{width: "80vw"}}><div style={{width : "100%", backgroundColor : "transparent"}}><img src={Banner1} style={{width : "400px", height :"300px"}}/></div></div>
       <div className="banner" style={{width: "80vw"}}><div style={{width : "100%",  backgroundColor : "transparent"}}><img src={Banner2} style={{width : "400px", height :"300px"}}/></div></div>
       <div className="banner" style={{width: "80vw"}}><div style={{width : "100%",  backgroundColor : "transparent"}}><img src={Banner0} style={{width : "400px", height :"300px"}}/></div></div>
-      <div className="banner" style={{width: "80vw"}}><div style={{width : "100%", }}><img src={Banner1} style={{width : "400px", height :"300px"}}/></div></div>
+      <div className="banner" style={{width: "80vw"}}><div style={{width : "100%"}}><img src={Banner1} style={{width : "400px", height :"300px"}}/></div></div>
     </Slider>
-   
+    </Link>
     </div>
     
   );
