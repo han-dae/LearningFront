@@ -7,6 +7,7 @@ import MainBoard from "./MainBoard";
 import CarouselComponent from "./CarouselComponent";
 import { render } from "@testing-library/react";
 
+
 import MainComponen from "./MainComponent"
 import { Content, Header } from "antd/es/layout/layout";
 import Footer from "./Footer";
@@ -28,7 +29,7 @@ const MyPage = () => {
         pic: ""
     }
     const btnStyle = {
-        
+
     }
     return (
         <div>
@@ -48,7 +49,7 @@ const MyPage = () => {
                     style={{
                         marginTop: "-1vh",
                         marginLeft: "20vw",
-                        width: "20vw",
+                        width: "28vw",
                         height: "40vh",
                         paddingLeft: "10px",
                         backgroundColor: "white",
@@ -119,10 +120,10 @@ const MyPage = () => {
                                         //value={}
                                         onChange={onChange}
                                         placeholder="EMAIL을 입력하세요."
-                                        style={{ padding: "5px" }} 
-                                        // vw(view width), vh(view height) // % // px // @css
-                                        />
-                                        
+                                        style={{ padding: "5px" }}
+                                    // vw(view width), vh(view height) // % // px // @css
+                                    />
+
                                 </td>
                             </tr>
                             <button className="btn_info_edit">수정</button>
@@ -138,7 +139,7 @@ const MyPage = () => {
                 </div>
                 <div
                     style={{
-                        marginTop: "-0.5vh",
+                        marginTop: "-1vh",
                         marginLeft: "50vw",
                         width: "28.5vw",
                         height: "40vh",
@@ -191,19 +192,19 @@ const MyPage = () => {
                         }}>
                         <div style={{ marginTop: "70px" }}>
                             <div
-                                className="Board"
+                                className="Board1"
                                 style={{
-                                    position: "absolute",
+                                    // position: "absolute",
                                     left: "18%",
                                     backgroundColor: "white",
                                     opacity: 0.5,
-                                    width: "25%",
+                                    width: "18%",
                                     height: "28vh",
                                     borderRadius: 30,
                                     padding: "10px",
                                     display: "inline-block",
                                     marginTop: "-7vh",
-                                    marginLeft: "2vw"
+                                    marginLeft: "20vw"
                                 }}
                             >
                                 <div
@@ -214,19 +215,41 @@ const MyPage = () => {
                                 </div>
                             </div>
                             <div
-                                className="Board"
+                                className="Board2"
                                 style={{
-                                    position: "absolute",
+                                    // position: "absolute",
                                     right: "20%",
                                     backgroundColor: "white",
                                     opacity: 0.5,
-                                    width: "25%",
+                                    width: "18%",
                                     height: "28vh",
                                     borderRadius: 30,
                                     padding: "10px",
                                     display: "inline-block",
                                     marginTop: "-7vh",
-                                    marginLeft: "5vw"
+                                    marginLeft: "1vw"
+                                }}
+                            >
+                                <div
+                                    className="title"
+                                    style={{ textAlign: "center", fontSize: "25px" }}
+                                >{platform.name}</div>
+
+                            </div>
+                            <div
+                                className="Board3"
+                                style={{
+                                    // position: "absolute",
+                                    right: "20%",
+                                    backgroundColor: "white",
+                                    opacity: 0.5,
+                                    width: "18%",
+                                    height: "28vh",
+                                    borderRadius: 30,
+                                    padding: "10px",
+                                    display: "inline-block",
+                                    marginTop: "-27vh",
+                                    marginLeft: "60vw"
                                 }}
                             >
                                 <div
@@ -245,13 +268,6 @@ const MyPage = () => {
         </div>
     );
 }
-
-
-
-
-
-
-
 
 
 export default MyPage;

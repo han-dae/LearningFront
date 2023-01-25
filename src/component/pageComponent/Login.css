@@ -2,7 +2,7 @@
     text-align: right;
     
 }
-.btn_login, .btn_info_edit, .btn_upload, .btn_del, .btn_edit{
+.btn_login,.btn_join, .btn_info_edit, .btn_upload, .btn_del, .btn_edit{
     padding: 5px;
     background-color: #BB2649;
     margin-top: 20px;

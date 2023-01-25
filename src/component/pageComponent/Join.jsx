@@ -41,6 +41,7 @@ class Join extends Component {
        });
  
   window.location.reload();
+  
   };
 
   render() {
@@ -118,8 +119,7 @@ class Join extends Component {
           </div>
           </table>
           
-          <button onClick={this.saveUser}>Save
-          </button>
+          <button className="btn_join" onClick={this.saveUser}>JOIN</button>
           
         </form>
       </div>

@@ -3,16 +3,24 @@ import { Route, Routes, BrowserRouter } from "react-router-dom"
 import MainComponent from "../pageComponent/MainComponent";
 import Login from "../pageComponent/Login";
 import TestComponent from "../pageComponent/Test";
+import MyPage from "../pageComponent/MyPage";
+
+import TestComponent2 from "../pageComponent/Test2";
+import TestComponent3 from "../pageComponent/Test3";
+import TestComponent4 from "../pageComponent/Test4";
+
 
 import Test2 from "../pageComponent/Test2";
 import Test3 from "../pageComponent/Test3";
 import Test4 from "../pageComponent/Test4";
-import MyPage from "../pageComponent/MyPage";
+
 import TextArea from "antd/es/input/TextArea";
+
 
 const AppRouter = () => {
     return (
         <div>
+
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<MainComponent />} />
@@ -27,6 +35,7 @@ const AppRouter = () => {
                     <Route path="/TextArea" element={<TextArea />} />
                 </Routes>
             </BrowserRouter></div>
+
     );
 }
 
