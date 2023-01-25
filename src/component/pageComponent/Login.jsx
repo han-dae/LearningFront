@@ -1,92 +1,102 @@
-import React, { Component } from "react";
-import Join from "./Join";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+
+import {  useNavigate } from "react-router-dom";
 import ApiService from "../ApiService";
 import MainHeader from "./Header";
 import Background from "./Background";
 import styles from "./Login.css";
-class Login extends Component {
-  constructor(props){
-    super(props);
-    this.state={
-        id :"",
-        pw : ""
-    };
-}
 
+const Login = (props) => {
+  const [state, setState] = useState({
+    user_id :"",
+    user_pw :""
+  })
 
-  onChange = (e) => {
-    this.setState({
+  const onChange = (e) => {
+    setState({
+      ...state,
       [e.target.name]: e.target.value,
-    });
-  };
-  LoginUser = (e) => {
+    })
+  }
+
+  const navigate = useNavigate();
+  const LoginUser = (e) => {
     e.preventDefault();
 
-    let LoginUser = {
-
-      id : this.state.id,
-      pw: this.state.pw      
+    let User = {
+      user_id: state.user_id,
+      user_pw: state.user_pw,
     };
-    ApiService.loginUser(LoginUser)
-    .then((res =>{
-        this.props.history.push("/users");
-    })
-    ).catch((err) => {
-        console.log("저장시 에러");
-    });
-  };
+    ApiService.loginUser(User.user_id, User.user_pw)
+      .then(res => {
+        console.log(res.status);
+        console.log(res.data);
+          console.log("if통과");
+          
+          navigate('/home/');
+      })
+      .catch(err => {
+        console.log("login() 에러", err);
+      });
 
-  render() {
-    return (<div><MainHeader/>
-        <Background />
-        <div style={{width : "400px"
-        ,position : "absolute"
-        ,height : "560px",
-        backgroundColor:"white",
-        padding : "30px",
-        marginTop:"-90vh",
-    marginLeft:"40vw",
-        textAlign:"center",
-   transition : "0.1s linear"
-        }}>
-
-        
-      <div style={{textAlign:"center" }}>
-        <h2>Login</h2>
-        <form>
-          <div>
-            <label className="label">ID:</label>
-            <input
-              type="text"
-              placeholder="이름 입력"
-              name="us"
-              value={this.state.id}
-              onChange={this.onChange}
-             style={{padding : "5px"}}/>
-          </div>
-
-          <div>
-            <label className="label">Password :</label>
-            <input
-              type="password"
-              placeholder="비밀번호 입력"
-              name="pw"
-              value={this.state.pw}
-              onChange={this.onChange} style={{padding : "5px"}}
-            />
-          </div>
-         <Link to={"/home"}>
-          <button className="btn_login" onClick={this.LoginUser}>Login</button>
-          </Link>
-        </form>
-        <Join/>
-      </div>
-      </div>
- 
-      </div>
-      
-    );
   }
+    return (
+      <div>
+        <MainHeader />
+        
+        <div
+          style={{
+            width: "400px",
+            position: "absolute",
+            height: "300px",
+            backgroundColor: "#F7D5D4",
+            padding: "30px",
+          marginTop : "140px",
+            marginLeft: "40vw",
+            textAlign: "center",
+            boxShadow :"10px 10px 10px black",
+            borderRadius : "30px"
+    
+          }}
+        >
+          <div style={{ marginLeft:"50px",textAlign: "left", marginTop :"5vh" }}>
+            <h2>Login</h2>
+            <form>
+              <div>
+                <label className="label" style={{marginRight :"75px" , marginBottom:"10vh"}}>ID:</label>
+                <input
+                  type="text"
+                  placeholder="이름 입력"
+                  name="user_id"
+                  value={state.user_id}
+                  onChange={onChange}
+                  style={{ padding: "5px" }}
+                />
+              </div>
+
+              <div>
+                <label className="label" style={{marginRight :"20px"}}>Password :</label>
+                <input
+                  type="password"
+                  placeholder="비밀번호 입력"
+                  name="user_pw"
+                  value={state.user_pw}
+                  onChange={onChange}
+                  style={{ padding: "5px" }}
+                />
+              </div>
+              <button className="btn_login" onClick={LoginUser} >
+                Login
+              </button>
+              아직 회원이 아니신가요?
+            <a href={"/Join"}>회원가입</a>
+      
+            </form>
+            
+          </div>
+        </div>
+      </div>
+    );
+
 }
 export default Login;
