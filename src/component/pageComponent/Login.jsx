@@ -59,22 +59,23 @@ const Login = (props) => {
           }}
         >
           <div style={{ marginLeft:"50px",textAlign: "left", marginTop :"5vh" }}>
-            <h2>Login</h2>
+            <h2>로그인</h2>
             <form>
               <div>
-                <label className="label" style={{marginRight :"75px" , marginBottom:"10vh"}}>ID:</label>
+                <label className="label" style={{marginRight :"75px" ,padding :"5px", marginBottom:"10vh"}}>ID:</label>
                 <input
                   type="text"
                   placeholder="이름 입력"
                   name="user_id"
                   value={state.user_id}
                   onChange={onChange}
-                  style={{ padding: "5px" }}
+                  style={{ padding: "5px",marginBottom :"10px" }}
+                  
                 />
               </div>
 
               <div>
-                <label className="label" style={{marginRight :"20px"}}>Password :</label>
+                <label className="label" style={{marginRight :"20px" ,padding :"5px"}}>Password :</label>
                 <input
                   type="password"
                   placeholder="비밀번호 입력"
