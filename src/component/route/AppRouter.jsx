@@ -13,8 +13,8 @@ import TestComponent4 from "../pageComponent/Test4";
 import Test2 from "../pageComponent/Test2";
 import Test3 from "../pageComponent/Test3";
 import Test4 from "../pageComponent/Test4";
-
-import TextArea from "antd/es/input/TextArea";
+import TestPage from "../pageComponent/TestPage";
+import InputTextArea from "../pageComponent/TextArea";
 
 
 const AppRouter = () => {
@@ -32,7 +32,8 @@ const AppRouter = () => {
                     <Route path="/test3" element={<Test3 />} />
                     <Route path="/test4" element={<Test4 />} />
                     <Route path="/myPage" element={<MyPage />} />
-                    <Route path="/TextArea" element={<TextArea />} />
+                    <Route path="/TestPage" element={<TestPage />} />
+                    <Route path="/InputTextArea" element={<InputTextArea />} />
                 </Routes>
             </BrowserRouter></div>
 

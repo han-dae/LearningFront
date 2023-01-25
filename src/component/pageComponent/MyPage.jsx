@@ -28,9 +28,7 @@ const MyPage = () => {
         name: "",
         pic: ""
     }
-    const btnStyle = {
-
-    }
+    
     return (
         <div>
             <ScrollBottom />
