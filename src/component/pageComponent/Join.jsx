@@ -45,6 +45,7 @@ class Join extends Component {
 
   render() {
     return (
+
       <div>
          <MainHeader />
         <Background />
@@ -149,6 +150,7 @@ class Join extends Component {
           </form>
         </div>
         </div>
+
       </div>
     );
   }

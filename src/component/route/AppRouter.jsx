@@ -1,5 +1,5 @@
 import React from "react"
-import { Route, Routes, BrowserRouter} from "react-router-dom"
+import { Route, Routes, BrowserRouter } from "react-router-dom"
 import MainComponent from "../pageComponent/MainComponent";
 import Login from "../pageComponent/Login";
 import TestComponent from "../pageComponent/Test";
@@ -10,9 +10,17 @@ import TestComponent3 from "../pageComponent/Test3";
 import TestComponent4 from "../pageComponent/Test4";
 import Join from "../pageComponent/Join"
 
-const AppRouter =() => {
+import Test2 from "../pageComponent/Test2";
+import Test3 from "../pageComponent/Test3";
+import Test4 from "../pageComponent/Test4";
+
+import TextArea from "antd/es/input/TextArea";
+
+
+const AppRouter = () => {
     return (
         <div>
+
       <BrowserRouter>
         <Routes>
             
@@ -28,6 +36,7 @@ const AppRouter =() => {
             <Route path ="/test4" element={<TestComponent4 />} />
         </Routes>
         </BrowserRouter></div>
+
     );
 }
 
