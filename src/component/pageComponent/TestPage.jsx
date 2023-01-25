@@ -19,7 +19,6 @@ const TestPage = () => {
             <Background />
             <Content>
             </Content>
-
             <MainFooter />
         </>
     )
