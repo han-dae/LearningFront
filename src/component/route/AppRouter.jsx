@@ -17,6 +17,8 @@ import Join from "../pageComponent/Join"
 import FormService from "../pageComponent/Dont_Touch/FormService";
 import SendData from "../pageComponent/Dont_Touch/FormS1";
 
+import TextArea from "antd/es/input/TextArea";
+import View from "../pageComponent/View";
 
 function AppRouter() {
     return (
@@ -39,9 +41,11 @@ function AppRouter() {
                     <Route path="/daechan2" element={<SendData/>} />
 
 
+                    <Route path="/view" element={<View />} />
                     <Route path="/FileData" element={<FileData />}></Route>
                 </Routes>
             </BrowserRouter></div>
+
 
     );
 }
