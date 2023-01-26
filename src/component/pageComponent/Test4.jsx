@@ -90,7 +90,7 @@ return (
           borderRadius: 10,
         }}
       >
-        {/* {...onPreview(test_video)} */}
+       
       </div>
       <div
         className="itemContents"
