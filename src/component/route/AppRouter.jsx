@@ -16,9 +16,9 @@ import Join from "../pageComponent/Join"
 import Test2 from "../pageComponent/Test2";
 import Test3 from "../pageComponent/Test3";
 import Test4 from "../pageComponent/Test4";
-import TestPage from "../pageComponent/TestPage";
-import InputTextArea from "../pageComponent/TextArea";
 
+import TextArea from "antd/es/input/TextArea";
+import View from "../pageComponent/View";
 
 function AppRouter() {
     return (
@@ -37,6 +37,7 @@ function AppRouter() {
                     <Route path="/test2" element={<TestComponent2 />} />
                     <Route path="/test3" element={<TestComponent3 />} />
                     <Route path="/test4" element={<TestComponent4 />} />
+                    <Route path="/view" element={<View />} />
                     <Route path="/FileData" element={<FileData />}></Route>
                 </Routes>
             </BrowserRouter></div>
