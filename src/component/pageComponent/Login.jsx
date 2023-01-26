@@ -66,7 +66,7 @@ const Login = (props) => {
                 <label className="label" style={{marginRight :"75px" ,padding :"5px", marginBottom:"10vh"}}>ID:</label>
                 <input
                   type="text"
-                  placeholder="이름 입력"
+                  placeholder="아이디 입력"
                   name="user_id"
                   value={state.user_id}
                   onChange={onChange}
@@ -86,11 +86,13 @@ const Login = (props) => {
                   style={{ padding: "5px" }}
                 />
               </div>
-              <button className="btn_login" onClick={LoginUser} >
+              {/* <Button className="btn_login" onClick={this.saveUser} style={{ borderRadius: "20px", width: "100px", float: "right", marginRight: "30px",marginTop :"10px", backgroundColor: "#FE8F8D", color: "white" }}>Save</Button>*/}
+              <button className="btn_login" onClick={LoginUser} style={{ borderRadius: "20px", width: "100px", float: "right", marginRight: "60px",marginTop :"10px", backgroundColor: "#FE8F8D", color: "white" }} >
                 Login
               </button>
+              <p style={{fontSize :"14px", marginTop :"10px"}}>
               아직 회원이 아니신가요?
-            <a href={"/Join"}>회원가입</a>
+            <a href={"/Join"}><br/>회원가입</a></p>
       
             </form>
             
