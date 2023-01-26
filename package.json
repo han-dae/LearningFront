@@ -8,16 +8,11 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.1.4",
-<<<<<<< HEAD
-    "axios": "^1.2.3",
-
-    "chart.js": "^4.1.2",
-
-=======
     "antd-img-crop": "^4.5.2",
+    "axios": "^1.2.3",
     "chart.js": "^4.1.2",
     "next": "^13.1.2",
->>>>>>> 4555a7e17bcd867e4dfae67e45751cad4af780b1
+    "node": "^19.4.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-chartjs-2": "^5.2.0",

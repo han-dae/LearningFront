@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Join from "./Join";
+
 import {  useNavigate } from "react-router-dom";
 import ApiService from "../ApiService";
 import MainHeader from "./Header";
@@ -32,7 +32,8 @@ const Login = (props) => {
         console.log(res.status);
         console.log(res.data);
           console.log("if통과");
-          navigate('/home/${res.data}');
+          sessionStorage.setItem('info',res.data);
+          navigate('/home');
       })
       .catch(err => {
         console.log("login() 에러", err);
@@ -42,37 +43,40 @@ const Login = (props) => {
     return (
       <div>
         <MainHeader />
-        <Background />
+        
         <div
           style={{
             width: "400px",
             position: "absolute",
-            height: "560px",
-            backgroundColor: "white",
+            height: "300px",
+            backgroundColor: "#F7D5D4",
             padding: "30px",
-            marginTop: "-90vh",
+          marginTop : "140px",
             marginLeft: "40vw",
             textAlign: "center",
-            transition: "0.1s linear",
+            boxShadow :"10px 10px 10px black",
+            borderRadius : "30px"
+    
           }}
         >
-          <div style={{ textAlign: "center" }}>
-            <h2>Login</h2>
+          <div style={{ marginLeft:"50px",textAlign: "left", marginTop :"5vh" }}>
+            <h2>로그인</h2>
             <form>
               <div>
-                <label className="label">ID:</label>
+                <label className="label" style={{marginRight :"75px" ,padding :"5px", marginBottom:"10vh"}}>ID:</label>
                 <input
                   type="text"
-                  placeholder="이름 입력"
+                  placeholder="아이디 입력"
                   name="user_id"
                   value={state.user_id}
                   onChange={onChange}
-                  style={{ padding: "5px" }}
+                  style={{ padding: "5px",marginBottom :"10px" }}
+                  
                 />
               </div>
 
               <div>
-                <label className="label">Password :</label>
+                <label className="label" style={{marginRight :"20px" ,padding :"5px"}}>Password :</label>
                 <input
                   type="password"
                   placeholder="비밀번호 입력"
@@ -82,11 +86,16 @@ const Login = (props) => {
                   style={{ padding: "5px" }}
                 />
               </div>
-              <button className="btn_login" onClick={LoginUser}>
+              {/* <Button className="btn_login" onClick={this.saveUser} style={{ borderRadius: "20px", width: "100px", float: "right", marginRight: "30px",marginTop :"10px", backgroundColor: "#FE8F8D", color: "white" }}>Save</Button>*/}
+              <button className="btn_login" onClick={LoginUser} style={{ borderRadius: "20px", width: "100px", float: "right", marginRight: "60px",marginTop :"10px", backgroundColor: "#FE8F8D", color: "white" }} >
                 Login
               </button>
+              <p style={{fontSize :"14px", marginTop :"10px"}}>
+              아직 회원이 아니신가요?
+            <a href={"/Join"}><br/>회원가입</a></p>
+      
             </form>
-            <Join />
+            
           </div>
         </div>
       </div>

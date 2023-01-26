@@ -1,34 +1,44 @@
-import React, {useState}from "react";
-import {  Button, Layout, Menu,  } from 'antd';
+import React, { useState } from "react";
+import { Button, Layout, Menu, } from 'antd';
 import { Link } from "react-router-dom";
 
 
 const Logininfo = () => {
-    const info1 = sessionStorage.getItem('info');
-    console.log(info1);
-    //  const[userInfo, setUserInfo] = useState({
-    //      user_id: info1.user_id,
-    //      user_pw: info1.user_pw,
-    //  })
-    // console.log('아이디'+info1.user_id);
-    // console.log('비번'+info1.user_pw);
-    if (info1 == null){
-      return (
+  const logout = () => {
+    console.log('로그아웃클릭')
+    sessionStorage.clear();
+    window.location.reload();
+
+  }
+  const info1 = sessionStorage.getItem('info');
+
+  if (info1 == null) {
+    return (
       <Link to="/Login">
-           <Button
-           style={{float : "right", marginTop : "-50px", marginRight: "12%", backgroundColor : "#BB2649", color : "white"}}>
-              로그인
-            </Button>
-            </Link>
-    )}else{
-      return( 
-      <Link to="/MyPage">
-           <Button
-           style={{float : "right", marginTop : "-50px", marginRight: "12%", backgroundColor : "#BB2649", color : "white"}}>
-              마이페이지
-            </Button>
-            </Link>
-      )
-          }
+        <Button
+          style={{ borderRadius: "20px", width: "100px", float: "right", marginTop: "-40px", marginRight: "12%", backgroundColor: "#FE8F8D", color: "white" }}>
+          로그인
+        </Button>
+      </Link>
+    )
+  } else {
+    return (
+      <div>
+        <Link to="/MyPage">
+          <Button
+            style={{ float: "right", marginTop: "-40px", marginRight: "12%", backgroundColor: "#FE8F8D", color: "black"  }}>
+            마이페이지
+          </Button>
+        </Link>
+        <Button onClick={logout}
+          style={{ float: "right", marginTop: "-40px", marginRight: "18%", backgroundColor: "#FE8F8D", color: "black" }}>
+          로그아웃
+        </Button>
+      </div>
+    )
+  }
+
+
+
 }
 export default Logininfo;

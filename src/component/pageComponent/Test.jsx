@@ -6,8 +6,9 @@ import MainHeader from "./Header";
 import ScrollBottom from "./ScrollBottom";
 import InputTextArea from "./TextArea";
 import { RightCircleOutlined } from "@ant-design/icons";
-
+import WordCloud from "../../img/WordCloud.png";
 import { Link } from "react-router-dom";
+
 
 const TestComponent = () => {
   return (
@@ -15,15 +16,16 @@ const TestComponent = () => {
       <form>
         <ScrollBottom />
         <MainHeader />
-        <Background />
+       
+
         <div
           style={{
-            marginTop: "-95vh",
+            marginTop: "10px",
             marginLeft: "20vw",
             width: "20vw",
             height: "10vh",
             paddingLeft: "10px",
-            backgroundColor: "white",
+            backgroundColor: "#F7D5D4",
             borderRadius: 20,
           }}
         >
@@ -33,7 +35,6 @@ const TestComponent = () => {
               display: "inline-block",
               width: "100%",
 
-              marginTop: "-10px",
             }}
           >
             <h1>Chapter1. 스크립트 분석</h1>
@@ -42,50 +43,66 @@ const TestComponent = () => {
             </h3>
           </div>
         </div>
+        
         <div
           className="Chart01"
           style={{
-            width: "35vw",
-            height: "40vh",
-            marginTop: "25px",
+            width: "30vw",
+            height: "70vh",
+          marginTop : "10px",
             marginLeft: "20vw",
-            backgroundColor: "white",
+            backgroundColor: "gray",
             overflowY: "scroll",
             borderRadius: 10,
           }}
-        ></div>
-        <div
-          className="Chart02"
-          style={{
-            marginTop: "25px",
-            marginLeft: "20vw",
-            width: "28vw",
-            height: "30vh",
-            backgroundColor: "black",
-          }}
-        ></div>
+        >
+
+<>
+          
+          </>
+        </div>
 
         <div
           className="InputCategory"
-          style={{ marginTop: "-710px", marginLeft: "57vw" }}
+          style={{  marginLeft: "52vw" }}
         >
-          <div style={{ marginBottom: "15px" }}>
-            <Category />
+            <div
+              style={{
+                backgroundImage: `url(${WordCloud})`,
+                backgroundRepeat: 'no-repeat',
+                width: "500px",
+                height: "300px",
+                marginTop: "-650px",
+              }}
+            >
+   
+            </div>
+            
+          {/*<div style={{ marginBottom: "15px" }}>
+        <Category />
           </div>
           <InputTextArea />
-          <div style={{ marginLeft: "-120px", marginTop: "100px" }}>
+          <div style={{ marginLeft: "80px", marginTop: "100px" }}>
             <h3>1. 판매하려는 상품의 카테고리를 골라주세요.</h3>
             <h3>2. 분석 결과를 토대로 본인만의 스크립트를 작성해보세요.</h3>
-          </div>
+          </div>*/}
+
+         <div className="dataSpace">
+         <a href="MoreData" style={{marginLeft : "400px"}}>더보기 </a>
+         <div style={{width:"500px", height :"300px", backgroundColor :"white"}}>
+
+         </div>
+         
+         </div>
           <Link to={"/test2"}>
-          <RightCircleOutlined
+            <RightCircleOutlined
               style={{
-                position : "absolute",
-                bottom : "20px",
+                position: "absolute",
+                bottom: "50px",
                 marginTop: "0px",
-               right : "400px",
+                right: "400px",
                 fontSize: "300%",
-                color : "black",
+                color: "black",
               }}
             />
           </Link>
