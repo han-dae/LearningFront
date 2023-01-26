@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 
-import Background from "./Background";
-import Category from "./Category";
+
 import MainHeader from "./Header";
 import ScrollBottom from "./ScrollBottom";
-import InputTextArea from "./TextArea";
+
 import { RightCircleOutlined } from "@ant-design/icons";
 import Img1 from "../../img/graph1.png";
 import Img2 from "../../img/graph2.png";
-import Img3 from "../../img/graph3.png";
+
 import { Link } from "react-router-dom";
 
 const TestComponent2 = () => {
@@ -17,15 +16,15 @@ const TestComponent2 = () => {
       <form>
         <ScrollBottom />
         <MainHeader />
-        <Background />
+      
         <div
           style={{
-            marginTop: "-95vh",
+            marginTop: "10px",
             marginLeft: "20vw",
             width: "20vw",
             height: "10vh",
             paddingLeft: "10px",
-            backgroundColor: "white",
+            backgroundColor: "#F7D5D4",
             borderRadius: 20,
           }}
         >
@@ -35,7 +34,7 @@ const TestComponent2 = () => {
               display: "inline-block",
               width: "100%",
 
-              marginTop: "-10px",
+             
             }}
           >
             <h1>Chapter2. 상품가격확인</h1>

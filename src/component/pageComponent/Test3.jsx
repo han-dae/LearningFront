@@ -1,8 +1,5 @@
 
 import React, { useState } from "react";
-
-import Background from "./Background";
-import Category from "./Category";
 import MainHeader from "./Header";
 import ScrollBottom from "./ScrollBottom";
 import { InboxOutlined } from '@ant-design/icons';
@@ -11,49 +8,55 @@ import { RightCircleOutlined } from "@ant-design/icons";
 
 import { Link, useNavigate } from "react-router-dom";
 import UploadPic from "./UploadPic";
-import InputTextArea from "./TextArea";
+
 import TextArea from "antd/es/input/TextArea";
 import { Photo } from "@material-ui/icons";
 const { Dragger } = Upload;
 
 const TestComponent3 = () => {
+  
   const props = {
-    name: 'test_video',
+    name: 'file',
     multiple: true,
     onChange(info) {
-      const { status } = info.file;
-      if (status !== 'uploading') {
-        console.log(info.file, info.fileList);
-      }
-      if (status === 'done') {
-        message.success(`${info.file.name} file uploaded successfully.`);
-      } else if (status === 'error') {
-        message.error(`${info.file.name} file upload failed.`);
+        const fd = new FormData();
+        console.log("정보확인",info);
+        Object.values(info).forEach((file) => fd.append("file", file));
+        console.log('값확인',Object.keys(fd));
+        sessionStorage.setItem('file',fd);
+        //console.log('저장확인',sessionStorage.getItem('file'));
+        // const { status } = info.file;
+        // if (status !== 'uploading') {
+        //   console.log(info.file, info.fileList);
+        // }
+        // if (status === 'done') {
+        //   message.success(`${info.file.name} file uploaded successfully.`);
+        // } else if (status === 'error') {
+        //   message.error(`${info.file.name} file upload failed.`);
 
+        // }
+      },
+      onDrop(e) {
+        console.log('Dropped files', e.dataTransfer.files);
       }
-    },
-    onDrop(e) {
-      console.log('Dropped files', e.dataTransfer.files);
     }
-  }
-  const [state, setState] = useState({
-    test_seq: "",
-    test_title: "",
-    test_photo: null,
-    test_price: "",
-    test_cuesheet: "",
-    test_video: null,
-    test_video_realname: "",
-    reg_dt: "",
-    user_id: "",
-    category_seq: "",
-    category_name: ""
-  })
-  // const handleChangeFile = (event) => {
-  //   console.log(event.target.files)
-  //   setState(event.target.files);
+   const [state, setState] = useState({
+     test_seq: "",
+     test_title: "",
+     test_price: "",
+     test_cuesheet: "",
+     test_video_realname: "",
+     reg_dt: "",
+     user_id: "",
+     category_seq: "",
+     category_name: ""
+    })
+  //  const [file, setFile] = useState(null);	//파일	
+  //  const handleChangeFile = (event) => {
+  //    console.log(event.target.files)
+  //    setFile(event.target.files);
 
-  // }
+  //  }
   const onChange = (e) => {
     setState({
       ...state,
@@ -62,21 +65,22 @@ const TestComponent3 = () => {
   }
 
 
-
-
-
+  
+  
+  
   const navigate = useNavigate();
   const clicked = () => {
-    const fd = new FormData();
-    Object.values(state.test_video).forEach((file) => fd.append("file", file));
+   // console.log(fd)
+    
     let test = {
       test_title: state.test_title,
       test_photo: sessionStorage.getItem('photo'),
       test_price: state.test_price,
       test_cuesheet: state.test_cuesheet,
-      test_video: fd
+      test_video: sessionStorage.getItem('file')
     }
-    navigate('/test4',
+    
+      navigate('/test4',
       {
         state:
         {
@@ -87,22 +91,24 @@ const TestComponent3 = () => {
           test_video: test.test_video
         }
       });
-    console.log(test)
+     //sessionStorage.setItem('test_video',test.test_video);
+     //sessionStorage.setItem('test_cuesheet',test.test_cuesheet);
+    console.log('데이터 확인',test)
   }
   return (
     <div>
       <form>
         <ScrollBottom />
         <MainHeader />
-        <Background />
+
         <div
           style={{
-            marginTop: "-95vh",
+            marginTop: "10px",
             marginLeft: "20vw",
             width: "20vw",
             height: "10vh",
             paddingLeft: "10px",
-            backgroundColor: "white",
+            backgroundColor: "#F7D5D4",
             borderRadius: 20,
           }}
         >
@@ -122,7 +128,7 @@ const TestComponent3 = () => {
           </div>
         </div>
         <div style={{ marginBottom: "30px", marginTop: "25px", marginLeft: "20vw", width: "28vw", backgroundColor: "whitesmoke", borderRadius: 10 }}>
-          <Dragger>
+          <Dragger {...props} >
             <p className="ant-upload-drag-icon">
               <InboxOutlined />
             </p>
@@ -135,10 +141,10 @@ const TestComponent3 = () => {
 
         <div style={{ marginBottom: "30px", marginTop: "25px", marginLeft: "20vw" }}>
           <div>
-            <input type="text" onChange={onChange} value={state.test_title} className="title" placeholder="제목을 입력해주세요" style={{ width: "28vw", padding: "10px 10px 10px 10px", boxSizing: "border-box" }} ></input>
+            <input name="test_title" type="text" onChange={onChange} value={state.test_title} className="title" placeholder="제목을 입력해주세요" style={{ width: "28vw", padding: "10px 10px 10px 10px", boxSizing: "border-box" }} ></input>
           </div>
           <br />
-          <input type="text" onChange={onChange} value={state.test_price} className="price" placeholder="가격을 입력해주세요" style={{ width: "28vw", padding: "10px 10px 10px 10px", boxSizing: "border-box" }} ></input>
+          <input name="test_price" type="text" onChange={onChange} value={state.test_price} className="price" placeholder="가격을 입력해주세요" style={{ width: "28vw", padding: "10px 10px 10px 10px", boxSizing: "border-box" }} ></input>
           <div style={{ marginTop: "25px" }}>
             <UploadPic />
           </div></div>
@@ -157,27 +163,27 @@ const TestComponent3 = () => {
         <div
           style={{ marginTop: "-710px", marginLeft: "50vw" }}
         >
-          <TextArea
-            onChange={onChange}
-            value={state.test_cuesheet}
-            showCount
-            maxLength={800}
-            style={{
-              height: 400,
-              width: 550,
-              resize: 'none',
-              overflowY: "scroll"
-            }}
-            placeholder="큐시트작성."
-          />
-          <div style={{ marginLeft: "20px", marginTop: "50px" }}>
-            <h3>1.판매하고자 하는 상품의 명과 이미지를 입력하세요.</h3>
-            <h3>2. 라이브 커머스의 제목과 설명을 입력하세요.</h3>
-            <h3>3.라이브 커머스 영상을 업로드해주세요.</h3>
-            <h3>4.분석결과를 토대로 상품의 가격을 책정해주세요.</h3>
-
-            <Button onClick={clicked} name="videoSubmit" id="videoSubmit" style={{ display: "none" }}></Button>
-            <RightCircleOutlined
+        <TextArea
+        value={state.test_cuesheet}
+        name="test_cuesheet"
+      showCount
+      maxLength={800}
+      style={{
+        height: 400,
+        width : 550,
+        resize: 'none',
+        overflowY :"scroll"
+      }}
+      onChange={onChange}
+      placeholder="큐시트작성"
+    /> 
+    <div style={{marginLeft:"20px" ,marginTop :"50px"}}>
+    <h3>1.판매하고자 하는 상품의 명과 이미지를 입력하세요.</h3>
+      <h3>2. 라이브 커머스의 제목과 설명을 입력하세요.</h3>
+      <h3>3.라이브 커머스 영상을 업로드해주세요.</h3>
+      <h3>4.분석결과를 토대로 상품의 가격을 책정해주세요.</h3>
+      
+            <RightCircleOutlined type="button" onClick={()=>clicked()}
               style={{
                 position: "absolute",
                 bottom: "20px",
@@ -186,7 +192,9 @@ const TestComponent3 = () => {
                 fontSize: "300%",
                 color: "black",
               }}
-            />
+            >
+            </RightCircleOutlined>
+            
 
           </div>
           <div style={{ marginBottom: "15px" }}>

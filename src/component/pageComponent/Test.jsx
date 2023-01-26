@@ -16,16 +16,16 @@ const TestComponent = () => {
       <form>
         <ScrollBottom />
         <MainHeader />
-        <Background />
+       
 
         <div
           style={{
-            marginTop: "-95vh",
+            marginTop: "10px",
             marginLeft: "20vw",
             width: "20vw",
             height: "10vh",
             paddingLeft: "10px",
-            backgroundColor: "white",
+            backgroundColor: "#F7D5D4",
             borderRadius: 20,
           }}
         >
@@ -35,7 +35,6 @@ const TestComponent = () => {
               display: "inline-block",
               width: "100%",
 
-              marginTop: "-10px",
             }}
           >
             <h1>Chapter1. 스크립트 분석</h1>
@@ -50,9 +49,9 @@ const TestComponent = () => {
           style={{
             width: "30vw",
             height: "70vh",
-            marginTop: "25px",
+          marginTop : "10px",
             marginLeft: "20vw",
-            backgroundColor: "white",
+            backgroundColor: "gray",
             overflowY: "scroll",
             borderRadius: 10,
           }}
@@ -65,7 +64,7 @@ const TestComponent = () => {
 
         <div
           className="InputCategory"
-          style={{ marginTop: "-680px", marginLeft: "52vw" }}
+          style={{  marginLeft: "52vw" }}
         >
             <div
               style={{
@@ -73,7 +72,7 @@ const TestComponent = () => {
                 backgroundRepeat: 'no-repeat',
                 width: "500px",
                 height: "300px",
-                marginTop: "",
+                marginTop: "-650px",
               }}
             >
    
@@ -90,7 +89,7 @@ const TestComponent = () => {
 
          <div className="dataSpace">
          <a href="MoreData" style={{marginLeft : "400px"}}>더보기 </a>
-         <div style={{width:"500px", height :"300px", marginTop  :"20px",backgroundColor :"white"}}>
+         <div style={{width:"500px", height :"300px", backgroundColor :"white"}}>
 
          </div>
          

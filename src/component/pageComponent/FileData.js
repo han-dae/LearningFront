@@ -3,33 +3,30 @@ import axios from 'axios';
 
 function FileData() {
   const [file, setFile] = useState(null);	//파일	
-
+  
   const handleChangeFile = (event) => {
-    console.log(event.target.files)
     setFile(event.target.files);
-
-
   }
 
   function Send(){
     const fd = new FormData();
+    // 파일 데이터 저장
     Object.values(file).forEach((file) => fd.append("file", file));
-    console.log(fd);
 
-
+   
     axios.post('/test/AxiosFileTest.do', fd, {
       headers: {
         "Content-Type": `multipart/form-data; `,
       },
-      baseURL: 'http://localhost:8081/users'
+      baseURL: 'http://localhost:3000'
     })
     .then((response) => {
-
+      
     })
     .catch((error) => {
       // 예외 처리
     })
-
+  
   }
     return (
         <div>
@@ -37,12 +34,12 @@ function FileData() {
             <div>
                 fileData1:  <input type="file" id="file" onChange={handleChangeFile} multiple="multiple"></input>
             </div>
-
-
+          
+            
             <div>
                 <button onClick={()=> Send()}>Send</button>
             </div>
         </div>
     );
   }
-export default FileData;  
+export default FileData;
