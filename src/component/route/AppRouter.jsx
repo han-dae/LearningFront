@@ -19,6 +19,7 @@ import Test4 from "../pageComponent/Test4";
 
 import TextArea from "antd/es/input/TextArea";
 import View from "../pageComponent/View";
+import TestPage from "../pageComponent/TestPage";
 
 function AppRouter() {
     return (
@@ -39,6 +40,7 @@ function AppRouter() {
                     <Route path="/test4" element={<TestComponent4 />} />
                     <Route path="/view" element={<View />} />
                     <Route path="/FileData" element={<FileData />}></Route>
+                    <Route path="/testPage" element={<TestPage />} />
                 </Routes>
             </BrowserRouter></div>
 
