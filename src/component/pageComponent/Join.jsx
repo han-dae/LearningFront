@@ -48,23 +48,25 @@ class Join extends Component {
 
       <div>
          <MainHeader />
-        <Background />
+       
          <div
           style={{
             width: "400px",
             position: "absolute",
             height: "300px",
-            backgroundColor: "white",
+            backgroundColor: "#F7D5D4",
             padding: "30px",
-            marginTop: "-80vh",
+       marginTop:"140px",
             marginLeft: "40vw",
             textAlign: "left",
+            boxShadow :"10px 10px 10px black",
+            borderRadius : "30px"
            
           }}
         >
        
         <div style={{ textAlign: "left" , marginLeft : "50px" }}>
-          <h2>Join</h2>
+          <h2>회원가입</h2>
           <form>
             <table style={{ textAlign: "left" }}>
               <div>
