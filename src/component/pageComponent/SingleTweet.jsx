@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Twitter from '../pageComponent/Twitter';
+import Twitter from './Twitter';
 
 
 

@@ -18,7 +18,6 @@ const TestPage = () => {
         name: "",
         pic: ""
     }
-
     const user = {
         user_id: state.user_id,
         user_hp: state.user_hp     
