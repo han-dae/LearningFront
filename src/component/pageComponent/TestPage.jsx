@@ -10,6 +10,7 @@ import ScrollBottom from "./ScrollBottom";
 import { Content, Header } from "antd/es/layout/layout";
 
 import React from 'react'
+import Twitter from "./Twitter";
 
 const TestPage = () => {
    {/* const platform =
@@ -116,7 +117,7 @@ const TestPage = () => {
                             borderRadius: 10,
                             overflowY: "scroll"
                             }}>
-                        댓글을 작성해주세요.
+                       
                         <input className="com_input"
                         style={{
                             // marginLeft: "53vw", 
@@ -126,6 +127,7 @@ const TestPage = () => {
                             backgroundColor:"#FFECEC",
                             borderRadius: 10}} ></input>
                     </div>
+                    
                     </div>
             </Content >
             <MainFooter />
