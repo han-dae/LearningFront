@@ -19,6 +19,7 @@ import SendData from "../pageComponent/Dont_Touch/FormS1";
 import TestPage from "../pageComponent/TestPage";
 import TextArea from "antd/es/input/TextArea";
 import View from "../pageComponent/View";
+import Twitter from "../pageComponent/Twitter";
 
 function AppRouter() {
     return (
@@ -43,6 +44,7 @@ function AppRouter() {
 
 
                     <Route path="/view" element={<View />} />
+                    <Route path="/twitter" element={<Twitter />} />
                     <Route path="/FileData" element={<FileData />}></Route>
                 </Routes>
             </BrowserRouter></div>
