@@ -1,8 +1,8 @@
-import React from 'react';
+import React ,{Component}from 'react';
 import SingleTweet from '../pageComponent/SingleTweet';
 
 
-class Twitter extends React.Component {
+class Twitter extends Component {
     constructor(props){
         super(props);
         this.state = {
