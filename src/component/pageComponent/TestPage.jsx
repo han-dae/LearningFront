@@ -9,20 +9,3 @@ import { render } from "@testing-library/react";
 import ScrollBottom from "./ScrollBottom";
 import { Content, Header } from "antd/es/layout/layout";
 
-const TestPage = () => {
-
-
-    return (
-        <>
-            <ScrollBottom />
-            <MainHeader />
-            <Background />
-            <Content>
-            </Content>
-
-            <MainFooter />
-        </>
-    )
-}
-
-export default TestPage

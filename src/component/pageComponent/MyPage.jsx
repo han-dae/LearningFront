@@ -6,6 +6,8 @@ import MainFooter from "./Footer";
 import MainBoard from "./MainBoard";
 import CarouselComponent from "./CarouselComponent";
 import { render } from "@testing-library/react";
+import ApiService from "../ApiService";
+import {  useNavigate } from "react-router-dom";
 
 
 import MainComponen from "./MainComponent"
@@ -15,25 +17,52 @@ import ScrollBottom from "./ScrollBottom";
 import { setTextRange } from "typescript";
 import styles from "./Login.css";
 
-const MyPage = () => {
-    const { MainBoard, Footer } = Layout;
-
+const MyPage = (props) => {
+    const [state, setState] = useState({
+        user_id: "",
+        user_pw: "",
+        user_hp: "",
+        user_email: ""
+    })
     const onChange = (e) => {
-        this.setState({
+        setState({
+            ...state,
             [e.target.name]: e.target.value,
-        });
+        })
+    }
+    const navigate = useNavigate();
+    const updateMember = (e) => {
+        e.preventDefault();
+
+        let user = {
+            user_id: state.user_id,
+            user_pw: state.user_pw,
+            user_hp: state.user_hp,
+            user_email: state.user_email,
+        };
+        ApiService.updateMember(user)
+            .then((res) => {
+                console.log("업데이트완료");
+                navigate('/myPage');
+            })
+            .catch((err) => {
+                console.log("updateMember() 에러", err);
+            });
+
+        window.location.reload(); // 새로고침
     };
+
     const platform =
     {
         name: "",
         pic: ""
     }
-    
+
     return (
         <div>
             <ScrollBottom />
             <MainHeader />
-            
+
             <Content>
                 <div>
                     <h1 style={{
@@ -65,7 +94,7 @@ const MyPage = () => {
                         <div style={{ textAlign: "center" }}>
                             <tr>
                                 <td style={{ width: "120px" }}>
-                                    <label className="label">ID:</label>
+                                    <label className="label">ID</label>
                                 </td>
                                 <td>
                                     <input
@@ -73,14 +102,14 @@ const MyPage = () => {
                                         name="user_id"
                                         //value={}
                                         onChange={onChange}
-                                        placeholder="ID를 입력하세요."
+                                        placeholder='ID를 입력하세요.'
                                         style={{ padding: "5px" }} />
                                 </td>
                             </tr>
 
                             <tr>
                                 <td style={{ width: "120px" }}>
-                                    <label className="label">PW:</label>
+                                    <label className="label">PW</label>
                                 </td>
                                 <td>
                                     <input
@@ -95,7 +124,7 @@ const MyPage = () => {
 
                             <tr>
                                 <td>
-                                    <label className="label">H.P:</label></td>
+                                    <label className="label">H.P</label></td>
                                 <td>
                                     <input
                                         type="text"
@@ -109,7 +138,7 @@ const MyPage = () => {
 
                             <tr>
                                 <td>
-                                    <label className="label">TEl:</label>
+                                    <label className="label">EMAIL</label>
                                 </td>
                                 <td>
                                     <input
@@ -124,7 +153,7 @@ const MyPage = () => {
 
                                 </td>
                             </tr>
-                            <button className="btn_info_edit">수정</button>
+                            <button className="btn_info_edit" onClick={updateMember}>수정</button>
                         </div>
                     </div>
                 </div>
