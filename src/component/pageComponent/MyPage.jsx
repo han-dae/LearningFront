@@ -153,7 +153,7 @@ const MyPage = (props) => {
 
                                 </td>
                             </tr>
-                            <button className="btn_info_edit" onClick={updateMember}>수정</button>
+                            <button className="btn_info_edit" onClick={updateMember}>개인정보수정</button>
                         </div>
                     </div>
                 </div>
@@ -196,8 +196,8 @@ const MyPage = (props) => {
                             marginLeft: "160vh",
                             marginTop: "0vh"
                         }}>
-                        <button className="btn_edit" style={{ marginTop: "0vh" }}>EDIT</button>
-                        <button className="btn_del" style={{ marginTop: "0vh" }}>DELETE</button>
+                        <button className="btn_edit" style={{ marginTop: "0vh" }}>수정</button>
+                        <button className="btn_del" style={{ marginTop: "0vh" }}>삭제</button>
                     </div>
                 </div>
                 <div
@@ -227,7 +227,7 @@ const MyPage = (props) => {
                                     backgroundColor: "#F7D5D4",
                                     opacity: 0.5,
                                     width: "18%",
-                                    height: "28vh",
+                                    height: "25vh",
                                     borderRadius: 30,
                                     padding: "10px",
                                     display: "inline-block",
@@ -250,7 +250,7 @@ const MyPage = (props) => {
                                     backgroundColor: "#F7D5D4",
                                     opacity: 0.5,
                                     width: "18%",
-                                    height: "28vh",
+                                    height: "25vh",
                                     borderRadius: 30,
                                     padding: "10px",
                                     display: "inline-block",
@@ -272,7 +272,7 @@ const MyPage = (props) => {
                                     backgroundColor: "#F7D5D4",
                                     opacity: 0.5,
                                     width: "18%",
-                                    height: "28vh",
+                                    height: "25vh",
                                     borderRadius: 30,
                                     padding: "10px",
                                     display: "inline-block",
