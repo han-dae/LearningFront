@@ -18,10 +18,12 @@ const TestList = () => {
           }}
         >
           <div className="categoryEx">
+            
             <h1>모의 테스트 리스트</h1>
             <h3 style={{ marginTop: "-25px" }}>
               : 사용자들이 직접 시연한 영상을 볼 수 있습니다.
             </h3>
+            
           </div>
           <Link to={"/test"}>
           <Button
@@ -29,13 +31,8 @@ const TestList = () => {
           업로드
         </Button>
         </Link>
-
-
-
-
-
-
-
+        
+        <Link to={"/testPage"} style={{textDecoration: "none", color:"black"}}>
           <div
             className="videoSpace"
             style={{
@@ -90,6 +87,7 @@ const TestList = () => {
               </div>
             </div>
           </div>
+          </Link>
         </div>
       </div>
 
