@@ -1,8 +1,6 @@
 
 import React, { useState } from "react";
 
-import Background from "./Background";
-import Category from "./Category";
 import MainHeader from "./Header";
 import ScrollBottom from "./ScrollBottom";
 import { InboxOutlined } from '@ant-design/icons';
@@ -11,7 +9,7 @@ import { RightCircleOutlined } from "@ant-design/icons";
 
 import { Link } from "react-router-dom";
 import UploadPic from "./UploadPic";
-import InputTextArea from "./TextArea";
+
 import TextArea from "antd/es/input/TextArea";
 const { Dragger } = Upload;
 const props = {
@@ -40,15 +38,15 @@ const TestComponent3 = () => {
       <form>
         <ScrollBottom />
         <MainHeader />
-        <Background />
+
         <div
           style={{
-            marginTop: "-95vh",
+            marginTop: "10px",
             marginLeft: "20vw",
             width: "20vw",
             height: "10vh",
             paddingLeft: "10px",
-            backgroundColor: "white",
+            backgroundColor: "#F7D5D4",
             borderRadius: 20,
           }}
         >
@@ -117,7 +115,7 @@ const TestComponent3 = () => {
       <h3>2. 라이브 커머스의 제목과 설명을 입력하세요.</h3>
       <h3>3.라이브 커머스 영상을 업로드해주세요.</h3>
       <h3>4.분석결과를 토대로 상품의 가격을 책정해주세요.</h3>
-      <Link to={"/test3"}>
+      <Link to={"/test4"}>
       <input type="submit" name="videoSubmit" id="videoSubmit" style={{display :"none"}}/>
             <RightCircleOutlined
               style={{
