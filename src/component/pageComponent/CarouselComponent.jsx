@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 import Banner1 from "../../img/banner1.png";
 import Banner0 from "../../img/banner0.png";
 import Banner2 from "../../img/banner2.png";
-import Background from "./Background";
 const Pre = styled.div`
   width: 50px;
   height: 30px;

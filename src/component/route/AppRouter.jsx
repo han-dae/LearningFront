@@ -19,8 +19,8 @@ import TestList from "../pageComponent/TestList";
 import TextArea from "antd/es/input/TextArea";
 import TestPage from "../pageComponent/TestPage";
 
-import View from "../pageComponent/View";
 
+import Liked from "../pageComponent/Liked";
 import Twitter from "../pageComponent/Twitter";
 
 function AppRouter() {
@@ -41,7 +41,7 @@ function AppRouter() {
           <Route path="/daechan2" element={<SendData />} />
           <Route path="/testlist" element={<TestList />} />
 
-          <Route path="/view" element={<View />} />
+          <Route path="/view" element={<Liked />} />
           <Route path="/twitter" element={<Twitter />} />
           <Route path="/FileData" element={<FileData />} />
           <Route path="/testPage" element={<TestPage />} />
