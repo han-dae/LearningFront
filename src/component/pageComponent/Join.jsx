@@ -5,6 +5,7 @@ import "./Login.css";
 import Background from "./Background";
 import MainHeader from "./Header";
 import styles from "./Login.css";
+import { Button } from "antd";
 class Join extends Component {
   constructor(props) {
     super(props);
@@ -80,7 +81,7 @@ class Join extends Component {
                   <td>
                     <input
                       type="text"
-                      placeholder="이름 입력"
+                      placeholder="아이디 입력"
                       name="user_id"
                       value={this.state.user_id}
                       onChange={this.onChange}
@@ -147,8 +148,8 @@ class Join extends Component {
               </div>
             </table>
 
-            <button className="btn_login" onClick={this.saveUser}>Save</button>
-            <a href="/Login">로그인</a> 페이지로 돌아가기
+            <Button className="btn_login" onClick={this.saveUser} style={{ borderRadius: "20px", width: "100px", float: "right", marginRight: "30px",marginTop :"10px", backgroundColor: "#FE8F8D", color: "white" }}>Save</Button>
+            <p style={{fontSize :"14px"}}><a href="/Login">로그인</a> 페이지로 돌아가기</p>
           </form>
         </div>
         </div>

@@ -8,7 +8,7 @@ import MainBoard from "./MainBoard";
 import CarouselComponent from "./CarouselComponent";
 import { render } from "@testing-library/react";
 import ScrollBottom from "./ScrollBottom";
-import { RightCircleOutlined } from "@ant-design/icons";
+import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons";
 // 등록
 
 class Test4 extends Component {
@@ -126,7 +126,20 @@ class Test4 extends Component {
             <input type="checkbox" value="agree" name="agreement2" style={{marginLeft:"10px"}}/>영상 정보 공개
             </form>
           </div>
-          <Link to={"/testPage"}>
+
+          <Link to={"/test3"}>
+              <LeftCircleOutlined
+                style={{
+                  position: "absolute",
+                  bottom: "50px",
+                  marginTop: "0px",
+                  left: "400px",
+                  fontSize: "300%",
+                  color: "black",
+                }}
+              />
+            </Link>
+          <Link to={"/testlist"}>
             <RightCircleOutlined
               style={{
                 position: "absolute",

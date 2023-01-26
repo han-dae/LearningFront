@@ -16,8 +16,8 @@ import Join from "../pageComponent/Join"
 
 import FormService from "../pageComponent/Dont_Touch/FormService";
 import SendData from "../pageComponent/Dont_Touch/FormS1";
+import TestPage from "../pageComponent/TestPage";
 
-import TextArea from "antd/es/input/TextArea";
 import View from "../pageComponent/View";
 import TestPage from "../pageComponent/TestPage";
 import Twitter from "../pageComponent/Twitter";
@@ -41,11 +41,12 @@ function AppRouter() {
                     <Route path="/test4" element={<TestComponent4 />} />
                     <Route path="/daechan" element={<FormService />} />
                     <Route path="/daechan2" element={<SendData/>} />
+                    <Route path="/testlist" element={<TestPage/>} />
 
 
                     <Route path="/view" element={<View />} />
                     <Route path="/twitter" element={<Twitter />} />
-                    <Route path="/FileData" element={<FileData />}></Route>
+                    <Route path="/FileData" element={<FileData />}/>
                     <Route path="/testPage" element={<TestPage />} />
                 </Routes>
             </BrowserRouter></div>

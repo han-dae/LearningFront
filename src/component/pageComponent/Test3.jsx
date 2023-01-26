@@ -132,7 +132,7 @@ const TestComponent3 = () => {
             <h3>2. 라이브 커머스의 제목과 설명을 입력하세요.</h3>
             <h3>3.라이브 커머스 영상을 업로드해주세요.</h3>
             <h3>4.분석결과를 토대로 상품의 가격을 책정해주세요.</h3>
-            <Link to={"/test"}>
+            <Link to={"/test2"}>
               <LeftCircleOutlined
                 style={{
                   position: "absolute",
