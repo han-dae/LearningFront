@@ -19,6 +19,7 @@ import Test4 from "../pageComponent/Test4";
 
 import TextArea from "antd/es/input/TextArea";
 import View from "../pageComponent/View";
+import Twitter from "../pageComponent/Twitter";
 
 function AppRouter() {
     return (
@@ -38,6 +39,7 @@ function AppRouter() {
                     <Route path="/test3" element={<TestComponent3 />} />
                     <Route path="/test4" element={<TestComponent4 />} />
                     <Route path="/view" element={<View />} />
+                    <Route path="/twitter" element={<Twitter />} />
                     <Route path="/FileData" element={<FileData />}></Route>
                 </Routes>
             </BrowserRouter></div>
