@@ -13,6 +13,9 @@ const UploadPic = () => {
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
   };
+  const photo = new FormData();
+  Object.values(fileList).forEach((file) => photo.append("file", file));
+  sessionStorage.setItem('photo',photo)
   const onPreview = async (file) => {
     let src = file.url;
     if (!src) {
@@ -30,7 +33,6 @@ const UploadPic = () => {
   return (
     <ImgCrop rotate>
       <Upload
-        action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
         listType="picture-card"
         fileList={fileList}
         onChange={onChange}
