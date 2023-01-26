@@ -98,7 +98,7 @@ const TestComponent = () => {
             <RightCircleOutlined
               style={{
                 position: "absolute",
-                bottom: "20px",
+                bottom: "50px",
                 marginTop: "0px",
                 right: "400px",
                 fontSize: "300%",
