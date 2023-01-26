@@ -32,8 +32,8 @@ const Login = (props) => {
         console.log(res.status);
         console.log(res.data);
           console.log("if통과");
-          
-          navigate('/home/');
+          sessionStorage.setItem('info',res.data);
+          navigate('/home');
       })
       .catch(err => {
         console.log("login() 에러", err);
