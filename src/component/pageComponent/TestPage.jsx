@@ -9,7 +9,8 @@ import ScrollBottom from "./ScrollBottom";
 import { Content, Header } from "antd/es/layout/layout";
 
 import React from 'react'
-import Twitter from "./Twitter";
+import { Doughnut } from "react-chartjs-2";
+
 
 const TestPage = () => {
    {/* const platform =
@@ -115,7 +116,7 @@ const TestPage = () => {
                             borderRadius: 10,
                             overflowY: "scroll"
                             }}>
-                       
+                        댓글을 입력해주세요.
                         <input className="com_input"
                         style={{
                             // marginLeft: "53vw", 
@@ -128,6 +129,7 @@ const TestPage = () => {
                     
                     </div>
                     
+            <Doughnut/>
             </Content >
             <MainFooter />
         </div>

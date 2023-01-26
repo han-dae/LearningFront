@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 import UploadPic from "./UploadPic";
 
 import TextArea from "antd/es/input/TextArea";
+import Footer from "./Footer";
+
 const { Dragger } = Upload;
 const props = {
   name: "file",
@@ -77,8 +79,8 @@ const TestComponent3 = () => {
             <p className="ant-upload-drag-icon">
               <InboxOutlined />
             </p>
-            <p className="ant-upload-text">일단 눌러</p>
-            <p className="ant-upload-hint">이곳에 파일을 업로드해라</p>
+            <p className="ant-upload-text">Click</p>
+            <p className="ant-upload-hint">이곳에 파일을 드래그 하세요.</p>
           </Dragger>
         </div>
 
@@ -92,7 +94,7 @@ const TestComponent3 = () => {
           <input
             type="text"
             className="title"
-            placeholder="제목을 입력해주세요"
+            placeholder="영상의 제목을 입력해주세요."
             style={{
               width: "28vw",
               padding: "10px 10px 10px 10px",
@@ -103,7 +105,7 @@ const TestComponent3 = () => {
             <UploadPic />
           </div>
         </div>
-        <div
+        {/*<div
           className="Chart02"
           style={{
             marginTop: "25px",
@@ -111,8 +113,9 @@ const TestComponent3 = () => {
             width: "28vw",
             height: "30vh",
             backgroundColor: "gray",
+            
           }}
-        ></div>
+        ></div> */}
 
         <div style={{ marginTop: "-710px", marginLeft: "50vw" }}>
           <TextArea
@@ -132,6 +135,16 @@ const TestComponent3 = () => {
             <h3>2. 라이브 커머스의 제목과 설명을 입력하세요.</h3>
             <h3>3.라이브 커머스 영상을 업로드해주세요.</h3>
             <h3>4.분석결과를 토대로 상품의 가격을 책정해주세요.</h3>
+            <input
+            type="text"
+            className="price"
+            placeholder="가격을 책정해주세요."
+            style={{
+              width: "28vw",
+              padding: "10px 10px 10px 10px",
+              boxSizing: "border-box",
+            }}
+          ></input>
             <Link to={"/test2"}>
               <LeftCircleOutlined
                 style={{
@@ -166,7 +179,49 @@ const TestComponent3 = () => {
           </div>
           <div style={{ marginBottom: "15px" }}></div>
         </div>
+        <div className="testBtn" style={{ position: "absolute", bottom:"2vh", right:"36vw" }}>
+          <Link to={"/test1"}>
+            <div className='test1'
+              style={{
+                width: "5vw",
+                marginLeft: "35vw",
+                marginTop: "7vh",
+                borderBottom: "4px solid gray"
+              }}></div>
+          </Link>
+
+          <Link to={"/test2"}>
+            <div className='test2'
+              style={{
+                width: "5vw",
+                marginLeft: "41vw",
+                marginTop: "-0.5vh",
+                borderBottom: "4px solid gray"
+              }}></div>
+          </Link>
+
+          <Link to={"/test3"}>
+            <div className='test3'
+              style={{
+                width: "5vw",
+                marginLeft: "47vw",
+                marginTop: "-0.5vh",
+                borderBottom: "4px solid #F7D5D4"
+              }}></div>
+          </Link>
+
+          <Link to={"/test4"}>
+            <div className='test4'
+              style={{
+                width: "5vw",
+                marginLeft: "53vw",
+                marginTop: "-0.4vh",
+                borderBottom: "4px solid gray"
+              }}></div>
+          </Link>
+        </div>
       </form>
+      <Footer/>
     </div>
   );
 };
