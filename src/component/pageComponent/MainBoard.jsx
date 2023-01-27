@@ -1,7 +1,5 @@
 
 import React from "react";
-import SingleTweet from "./SingleTweet";
-import Twitter from "./Twitter";
 import VertiBar from "../Chart/VertiBar"
 import VertiBar2 from "../Chart/VertiBar2"
 

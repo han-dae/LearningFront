@@ -58,7 +58,7 @@ const CarouselComponent = () => {
   };
 
   return (
-    <div><Link  to={"/test"}>
+    <div><Link  to={"/test1"}>
     <Slider {...settings}>
       <div className="banner" style={{width: "80vw"}}><div style={{width : "100%"}}><img src={demo4} style={{width : "400px", height :"300px"}}/></div></div>
       <div className="banner" style={{width: "80vw"}}><div style={{width : "100%", backgroundColor : "transparent"}}><img src={demo5} style={{width : "400px", height :"300px"}}/></div></div>
