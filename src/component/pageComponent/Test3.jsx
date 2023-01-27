@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import MainHeader from "./Header";
-import ScrollBottom from "./ScrollBottom";
+import ScrollBottom from "./Dont_Touch/ScrollBottom";
 import { Button, message, Upload } from "antd";
 import { InboxOutlined, LeftCircleOutlined } from "@ant-design/icons";
 import { RightCircleOutlined } from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
 import UploadPic from "./UploadPic";
 import TextArea from "antd/es/input/TextArea";
-import { Photo } from "@material-ui/icons";
+
 import Footer from "./Footer";
 const { Dragger } = Upload;
 
@@ -97,7 +97,7 @@ const TestComponent3 = () => {
   return (
     <div>
       <form>
-        <ScrollBottom />
+    
         <MainHeader />
 
         <div
@@ -143,8 +143,9 @@ const TestComponent3 = () => {
             <p className="ant-upload-text">Click</p>
             <p className="ant-upload-hint">이곳에 파일을 드래그 하세요.</p>
           </Dragger>
+          <div style={{width : "100%", height :"20px", textAlign:"center", marginBottom :"10px"}}><h3 style={{}}>10분 이내의 영상을 업로드 해주세요.</h3></div>
         </div>
-
+        
         <div
           style={{
             marginBottom: "30px",
@@ -162,7 +163,7 @@ const TestComponent3 = () => {
               boxSizing: "border-box",
             }}
           ></input>
-          <div style={{ marginTop: "25px" }}>
+          <div style={{ marginTop: "20px" }}>
             <UploadPic />
           </div>
         </div>
@@ -178,12 +179,12 @@ const TestComponent3 = () => {
           }}
         ></div> */}
 
-        <div style={{ marginTop: "-710px", marginLeft: "50vw" }}>
+        <div style={{ marginTop: "-415px", marginLeft: "50vw" }}>
           <TextArea
             showCount
             maxLength={800}
             style={{
-              height: 400,
+              height: 300,
               width: 550,
               resize: "none",
               overflowY: "scroll",
@@ -191,22 +192,26 @@ const TestComponent3 = () => {
             onChange={onchange}
             placeholder="라이브 커머스 영상, 상품정보에 대해  간략하게 설명해주세요."
           />
-          <div style={{ marginLeft: "20px", marginTop: "50px" }}>
-            <h3>1.판매하고자 하는 상품의 명과 이미지를 입력하세요.</h3>
-            <h3>2. 라이브 커머스의 제목과 설명을 입력하세요.</h3>
-            <h3>3.라이브 커머스 영상을 업로드해주세요.</h3>
-            <h3>4.분석결과를 토대로 상품의 가격을 책정해주세요.</h3>
-            <input
+<input
             type="text"
             className="price"
             placeholder="가격을 책정해주세요."
             style={{
+              marginTop:"25px",
               width: "28vw",
               padding: "10px 10px 10px 10px",
               boxSizing: "border-box",
             }}
           ></input>
+
+          <div style={{ marginLeft: "20px", marginTop: "50px" }}>
+            <h3>1.판매하고자 하는 상품의 명과 이미지를 입력하세요.</h3>
+            <h3>2. 라이브 커머스의 제목과 설명을 입력하세요.</h3>
+            <h3>3.라이브 커머스 영상을 업로드해주세요.</h3>
+            <h3>4.분석결과를 토대로 상품의 가격을 책정해주세요.</h3>
+            
             <Link to={"/test2"}>
+              
               <LeftCircleOutlined
                 style={{
                   position: "absolute",
@@ -237,51 +242,12 @@ const TestComponent3 = () => {
                 }}
               />
             </Link>
+            </div>
           </div>
-          <div style={{ marginBottom: "15px" }}></div>
-        </div>
-        <div className="testBtn" style={{ position: "absolute", bottom:"2vh", right:"36vw" }}>
-          <Link to={"/test1"}>
-            <div className='test1'
-              style={{
-                width: "5vw",
-                marginLeft: "35vw",
-                marginTop: "7vh",
-                borderBottom: "4px solid gray"
-              }}></div>
-          </Link>
-
-          <Link to={"/test2"}>
-            <div className='test2'
-              style={{
-                width: "5vw",
-                marginLeft: "41vw",
-                marginTop: "-0.5vh",
-                borderBottom: "4px solid gray"
-              }}></div>
-          </Link>
-
-          <Link to={"/test3"}>
-            <div className='test3'
-              style={{
-                width: "5vw",
-                marginLeft: "47vw",
-                marginTop: "-0.5vh",
-                borderBottom: "4px solid #F7D5D4"
-              }}></div>
-          </Link>
-
-          <Link to={"/test4"}>
-            <div className='test4'
-              style={{
-                width: "5vw",
-                marginLeft: "53vw",
-                marginTop: "-0.4vh",
-                borderBottom: "4px solid gray"
-              }}></div>
-          </Link>
-        </div>
+         
       </form>
+
+      
       <Footer/>
     </div>
   );
