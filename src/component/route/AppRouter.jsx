@@ -34,6 +34,7 @@ function AppRouter() {
           <Route path="/home" element={<MainComponent />} />
           <Route path="/login" element={<Login />} />
           <Route path="/join" element={<Join />} />
+          
           <Route path="/test1" element={<TestComponent />} />
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/test2" element={<TestComponent2 />} />

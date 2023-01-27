@@ -34,7 +34,7 @@ function MainHeader() {
           ></div>
         </Link>
         <div style={{ marginLeft :"340px",marginTop : "-50px",width: "50%", height: "80%" }} className="categoryList">
-          <Link to={"/test"} style={{color :"black"}}><div style={{display :"inline-block", margin : "10px 20px 10px 20px" ,borderBottom : "4px solid #F7D5D4",fontSize :"18px" ,fontWeight :"bold",paddingBottom : "10px"}}>모의 테스트</div></Link>
+          <Link to={"/test1"} style={{color :"black"}}><div style={{display :"inline-block", margin : "10px 20px 10px 20px" ,borderBottom : "4px solid #F7D5D4",fontSize :"18px" ,fontWeight :"bold",paddingBottom : "10px"}}>모의 테스트</div></Link>
           <Link to={"/testlist"} style={{color :"black"}}><div style={{display :"inline-block",margin : "10px 20px 10px 20px", borderBottom : "4px solid #F7D5D4",paddingBottom : "10px",fontSize :"18px" ,fontWeight :"bold"}}>모의 테스트 리스트</div></Link>
         </div>
         <div style={{ position: "relative", right: "0px" }}>

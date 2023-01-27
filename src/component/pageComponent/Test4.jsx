@@ -6,7 +6,7 @@ import MainFooter from "./Footer";
 import MainBoard from "./MainBoard";
 import CarouselComponent from "./CarouselComponent";
 import { render } from "@testing-library/react";
-import ScrollBottom from "./ScrollBottom";
+import ScrollBottom from "./Dont_Touch/ScrollBottom";
 import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons";
 import Footer from "./Footer";
 // 등록
@@ -34,7 +34,7 @@ class Test4 extends Component {
     return (
       <div>
         <form>
-          <ScrollBottom />
+     
           <MainHeader />
 
           <div

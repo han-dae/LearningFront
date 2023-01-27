@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Category from "./Category";
 import MainHeader from "./Header";
-import ScrollBottom from "./ScrollBottom";
+import ScrollBottom from "./Dont_Touch/ScrollBottom";
 import InputTextArea from "./TextArea";
 import { RightCircleOutlined } from "@ant-design/icons";
 import WordCloud from "../../img/WordCloud.png";
@@ -14,7 +14,7 @@ const TestComponent = () => {
   return (
     <div>
       <form>
-        <ScrollBottom />
+        
         <MainHeader />
 
 
