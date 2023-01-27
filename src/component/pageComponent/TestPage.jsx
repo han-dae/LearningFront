@@ -5,7 +5,7 @@ import MainFooter from "./Footer";
 import MainBoard from "./MainBoard";
 import CarouselComponent from "./CarouselComponent";
 import { render } from "@testing-library/react";
-import ScrollBottom from "./ScrollBottom";
+import ScrollBottom from "./Dont_Touch/ScrollBottom";
 import { Content, Header } from "antd/es/layout/layout";
 
 import React from 'react'
