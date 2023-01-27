@@ -9,6 +9,7 @@ import UploadPic from "./UploadPic";
 import TextArea from "antd/es/input/TextArea";
 
 import Footer from "./Footer";
+import axios from "axios";
 const { Dragger } = Upload;
 
 
@@ -19,10 +20,20 @@ const TestComponent3 = () => {
     multiple: true,
     onChange(info) {
         const fd = new FormData();
-        console.log("정보확인",info);
-        Object.values(info).forEach((file) => fd.append("file", file));
-        console.log('값확인',Object.keys(fd));
-        sessionStorage.setItem('file',fd);
+        const cofig ={
+          header: { 'content-type': 'multipart/form-data' },
+        }
+
+        fd.append("file", info[0]);
+        axios.post('/data/file', fd, cofig).then((Response)=>{
+          if(Response.data.succes){
+            console.log(Response.data)
+          }else{
+            console.log('실패')
+          }
+        })
+        //console.log('값확인',Object.keys(fd));
+        //sessionStorage.setItem('file',fd);
         //console.log('저장확인',sessionStorage.getItem('file'));
         // const { status } = info.file;
         // if (status !== 'uploading') {
@@ -34,10 +45,10 @@ const TestComponent3 = () => {
         //   message.error(`${info.file.name} file upload failed.`);
 
         // }
-      },
-      onDrop(e) {
-        console.log('Dropped files', e.dataTransfer.files);
       }
+      // onDrop(e) {
+      //   console.log('Dropped files', e.dataTransfer.files);
+      // }
     }
    const [state, setState] = useState({
      test_seq: "",
