@@ -7,7 +7,7 @@ import { RightCircleOutlined } from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
 import UploadPic from "./UploadPic";
 import TextArea from "antd/es/input/TextArea";
-import { Photo } from "@material-ui/icons";
+
 import Footer from "./Footer";
 const { Dragger } = Upload;
 
