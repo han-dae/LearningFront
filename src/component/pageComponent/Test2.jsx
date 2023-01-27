@@ -13,6 +13,23 @@ import Footer from "./Footer";
 
 
 const TestComponent2 = () => {
+  const [state, setState] = useState({
+     test_cuesheet:""
+    
+  })
+  const onChange = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    })
+  }
+  const cuesheetSave =() =>{
+     
+    const test_cuesheet = state.test_cuesheet; 
+    console.log(test_cuesheet);
+    sessionStorage.setItem('cuesheet',test_cuesheet);
+    console.log(sessionStorage.getItem('cuesheet'));
+  }
   return (
     <div>
       <form>
@@ -71,6 +88,8 @@ const TestComponent2 = () => {
 
         <div style={{  marginLeft: "24vw" }}>
           <TextArea
+            name="test_cuesheet"
+            value={state.test_cuesheet}
             showCount
             maxLength={800}
             style={{
@@ -79,7 +98,7 @@ const TestComponent2 = () => {
               resize: "none",
               overflowY: "scroll",
             }}
-            onChange={onchange}
+            onChange={onChange}
             placeholder="위 그래프를 토대로 스크립트를 작성해보세요."
           />
         </div>
@@ -101,6 +120,7 @@ const TestComponent2 = () => {
           </Link>
           <Link to={"/test3"}>
             <RightCircleOutlined
+            onClick={cuesheetSave}
               style={{
                 position: "absolute",
                 bottom: "50px",
