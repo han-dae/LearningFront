@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import MainHeader from "./Header";
-import MainFooter from "./Footer";
 import { Button } from "antd";
 import { Link } from "react-router-dom";
 import Liked from "./Liked";
 import ApiService from "../ApiService";
-import { render } from "@testing-library/react";
 const TestList = () => {
   const [Test, setTest] = useState({
     category_seq: "",
@@ -157,7 +155,8 @@ const TestList = () => {
           </div>
         </div>
       </div>
-      {/*<MainFooter />*/}
+     
+      {/**/}
     </div>
     
   );
