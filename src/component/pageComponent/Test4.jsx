@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import MainHeader from "./Header";
 import { Link } from "react-router-dom";
 import { Layout, theme } from "antd";
-import Background from "./Background";
 import MainFooter from "./Footer";
 import MainBoard from "./MainBoard";
 import CarouselComponent from "./CarouselComponent";
 import { render } from "@testing-library/react";
 import ScrollBottom from "./ScrollBottom";
 import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons";
+import Footer from "./Footer";
 // 등록
 
 class Test4 extends Component {
@@ -151,7 +151,50 @@ class Test4 extends Component {
               }}
             />
           </Link>
+          <div className="testBtn" style={{ position: "absolute", bottom:"2vh", right:"36vw" }}>
+          <Link to={"/test1"}>
+            <div className='test1'
+              style={{
+                width: "5vw",
+                marginLeft: "35vw",
+                marginTop: "7vh",
+                borderBottom: "4px solid gray"
+              }}></div>
+          </Link>
+
+          <Link to={"/test2"}>
+            <div className='test2'
+              style={{
+                width: "5vw",
+                marginLeft: "41vw",
+                marginTop: "-0.5vh",
+                borderBottom: "4px solid gray"
+              }}></div>
+          </Link>
+
+          <Link to={"/test3"}>
+            <div className='test3'
+              style={{
+                width: "5vw",
+                marginLeft: "47vw",
+                marginTop: "-0.5vh",
+                borderBottom: "4px solid gray"
+              }}></div>
+          </Link>
+
+          <Link to={"/test4"}>
+            <div className='test4'
+              style={{
+                width: "5vw",
+                marginLeft: "53vw",
+                marginTop: "-0.4vh",
+                borderBottom: "4px solid #F7D5D4"
+              }}></div>
+          </Link>
+        </div>
+          
         </form>
+        <Footer/>
       </div>
     );
   }

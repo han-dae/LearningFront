@@ -1,6 +1,7 @@
 
 import React from "react";
 
+
 const MainBoard = () => {
   const platform = 
   {
@@ -55,7 +56,9 @@ const MainBoard = () => {
           </div>
         
         </div>
+        
       </div>
+      
  
   );
 };
