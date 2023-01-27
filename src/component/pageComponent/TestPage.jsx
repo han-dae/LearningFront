@@ -9,7 +9,7 @@ import ScrollBottom from "./Dont_Touch/ScrollBottom";
 import { Content, Header } from "antd/es/layout/layout";
 
 import React from 'react'
-import { Doughnut } from "react-chartjs-2";
+
 
 
 const TestPage = () => {
@@ -129,7 +129,7 @@ const TestPage = () => {
                     
                     </div>
                     
-            <Doughnut/>
+         
             </Content >
             <MainFooter />
         </div>
