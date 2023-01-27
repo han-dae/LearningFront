@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ApiService from "../ApiService";
 import MainHeader from "./Header";
 import styles from "./Login.css";
 
 const Login = (props) => {
   const [state, setState] = useState({
-    user_id :"",
-    user_pw :""
-  })
+    user_id: "",
+    user_pw: "",
+  });
 
   const onChange = (e) => {
     setState({
       ...state,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   const navigate = useNavigate();
   const LoginUser = (e) => {
@@ -27,78 +27,104 @@ const Login = (props) => {
       user_pw: state.user_pw,
     };
     ApiService.loginUser(User.user_id, User.user_pw)
-      .then(res => {
+      .then((res) => {
         console.log(res.status);
         console.log(res.data);
-          console.log("if통과");
-          sessionStorage.setItem('info',res.data);
-          navigate('/home');
+        console.log("if통과");
+        sessionStorage.setItem("info", res.data);
+        navigate("/home");
       })
-      .catch(err => {
+      .catch((err) => {
         console.log("login() 에러", err);
       });
+  };
+  return (
+    <div>
+      <MainHeader />
 
-  }
-    return (
-      <div>
-        <MainHeader />
-        
+      <div
+        style={{
+          width: "400px",
+          position: "absolute",
+          height: "300px",
+          backgroundColor: "#F7D5D4",
+          padding: "30px",
+          marginTop: "140px",
+          marginLeft: "40vw",
+          textAlign: "center",
+          boxShadow: "10px 10px 10px black",
+          borderRadius: "30px",
+        }}
+      >
         <div
-          style={{
-            width: "400px",
-            position: "absolute",
-            height: "300px",
-            backgroundColor: "#F7D5D4",
-            padding: "30px",
-          marginTop : "140px",
-            marginLeft: "40vw",
-            textAlign: "center",
-            boxShadow :"10px 10px 10px black",
-            borderRadius : "30px"
-    
-          }}
+          style={{ marginLeft: "50px", textAlign: "left", marginTop: "5vh" }}
         >
-          <div style={{ marginLeft:"50px",textAlign: "left", marginTop :"5vh" }}>
-            <h2>로그인</h2>
-            <form>
-              <div>
-                <label className="label" style={{marginRight :"75px" ,padding :"5px", marginBottom:"10vh"}}>ID:</label>
-                <input
-                  type="text"
-                  placeholder="아이디 입력"
-                  name="user_id"
-                  value={state.user_id}
-                  onChange={onChange}
-                  style={{ padding: "5px",marginBottom :"10px" }}
-                  
-                />
-              </div>
+          <h2>로그인</h2>
+          <form>
+            <div>
+              <label
+                className="label"
+                style={{
+                  marginRight: "75px",
+                  padding: "5px",
+                  marginBottom: "10vh",
+                }}
+              >
+                ID:
+              </label>
+              <input
+                type="text"
+                placeholder="아이디 입력"
+                name="user_id"
+                value={state.user_id}
+                onChange={onChange}
+                style={{ padding: "5px", marginBottom: "10px" }}
+              />
+            </div>
 
-              <div>
-                <label className="label" style={{marginRight :"20px" ,padding :"5px"}}>Password :</label>
-                <input
-                  type="password"
-                  placeholder="비밀번호 입력"
-                  name="user_pw"
-                  value={state.user_pw}
-                  onChange={onChange}
-                  style={{ padding: "5px" }}
-                />
-              </div>
-              {/* <Button className="btn_login" onClick={this.saveUser} style={{ borderRadius: "20px", width: "100px", float: "right", marginRight: "30px",marginTop :"10px", backgroundColor: "#FE8F8D", color: "white" }}>Save</Button>*/}
-              <button className="btn_login" onClick={LoginUser} style={{ borderRadius: "20px", width: "100px", float: "right", marginRight: "60px",marginTop :"10px", backgroundColor: "#FE8F8D", color: "white" }} >
-                Login
-              </button>
-              <p style={{fontSize :"14px", marginTop :"10px"}}>
+            <div>
+              <label
+                className="label"
+                style={{ marginRight: "20px", padding: "5px" }}
+              >
+                Password :
+              </label>
+              <input
+                type="password"
+                placeholder="비밀번호 입력"
+                name="user_pw"
+                value={state.user_pw}
+                onChange={onChange}
+                style={{ padding: "5px" }}
+              />
+            </div>
+            {/* <Button className="btn_login" onClick={this.saveUser} style={{ borderRadius: "20px", width: "100px", float: "right", marginRight: "30px",marginTop :"10px", backgroundColor: "#FE8F8D", color: "white" }}>Save</Button>*/}
+            <button
+              className="btn_login"
+              onClick={LoginUser}
+              style={{
+                borderRadius: "20px",
+                width: "100px",
+                float: "right",
+                marginRight: "60px",
+                marginTop: "10px",
+                backgroundColor: "#FE8F8D",
+                color: "white",
+              }}
+            >
+              Login
+            </button>
+            <p style={{ fontSize: "14px", marginTop: "10px" }}>
               아직 회원이 아니신가요?
-            <a href={"/Join"}><br/>회원가입</a></p>
-      
-            </form>
-            
-          </div>
+              <a href={"/Join"}>
+                <br />
+                회원가입
+              </a>
+            </p>
+          </form>
         </div>
       </div>
-    );
-
-}
+    </div>
+  );
+};
 export default Login;
