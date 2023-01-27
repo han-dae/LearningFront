@@ -5,7 +5,11 @@ import EmptyHeart from "../../img/heart0.png"
 const Liked =() => {
 
     const [liked, setLike] = useState(false)
+    
+
     const img = liked ? FullHeart : EmptyHeart;
+
+     
 return(
 
     <button onClick={() => setLike(!liked)}>

@@ -31,7 +31,7 @@ const CarouselComponent = () => {
     infinite: true,
     speed: 300,
     slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     centerMode :true,
     centerPadding : '10px',
     autoplay: true,

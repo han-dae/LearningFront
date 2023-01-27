@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Category from "./Category";
 import MainHeader from "./Header";
@@ -8,9 +8,39 @@ import { RightCircleOutlined } from "@ant-design/icons";
 import WordCloud from "../../img/WordCloud.png";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
-
+import ApiService from "../ApiService";
+import reactStringReplace from 'react-string-replace';
 
 const TestComponent = () => {
+const [Guide,setGuide] = useState({
+  guide_seq :"",
+  cuesheet :"",
+  design :"",
+  price :"",
+  used :"",
+  category_seq :"",
+
+});
+
+
+  useEffect(() => {
+    ApiService.cuesheet()
+      .then((res) => {
+        console.log(res.status);
+        console.log(res.data);
+        setGuide(res.data);
+        console.log(res.data[0]);
+      })
+      .catch((err) => {
+        console.log("cuesheet() 에러", err);
+      });
+  }, []);
+  let cueSheet = Object.values(Guide);
+  
+
+
+
+
   return (
     <div>
       <form>
@@ -51,15 +81,15 @@ const TestComponent = () => {
             height: "70vh",
             marginTop: "10px",
             marginLeft: "20vw",
-            backgroundColor: "gray",
+            opacity :"0.5",
+            backgroundColor: "black",
             overflowY: "scroll",
             borderRadius: 10,
+            fontSize :"24px",
+            color :"white"
           }}
         >
-
-          <>
-
-          </>
+          {cueSheet[0].cuesheet}
         </div>
 
         <div
