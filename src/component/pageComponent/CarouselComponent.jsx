@@ -31,7 +31,7 @@ const CarouselComponent = () => {
     infinite: true,
     speed: 300,
     slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     centerMode :true,
     centerPadding : '10px',
     autoplay: true,
@@ -55,9 +55,9 @@ const CarouselComponent = () => {
     <div><Link  to={"/test1"}>
     <Slider {...settings}>
       <div className="banner" style={{width: "80vw"}}><div style={{width : "100%"}}><img src={Banner0} style={{width : "400px", height :"300px"}}/></div></div>
-      <div className="banner" style={{width: "80vw"}}><div style={{width : "100%", backgroundColor : "transparent"}}><img src={Banner1} style={{width : "400px", height :"300px"}}/></div></div>
-      <div className="banner" style={{width: "80vw"}}><div style={{width : "100%",  backgroundColor : "transparent"}}><img src={Banner2} style={{width : "400px", height :"300px"}}/></div></div>
-      <div className="banner" style={{width: "80vw"}}><div style={{width : "100%",  backgroundColor : "transparent"}}><img src={Banner0} style={{width : "400px", height :"300px"}}/></div></div>
+      <div className="banner" style={{width: "80vw"}}><div style={{width : "100%"}}><img src={Banner1} style={{width : "400px", height :"300px"}}/></div></div>
+      <div className="banner" style={{width: "80vw"}}><div style={{width : "100%"}}><img src={Banner2} style={{width : "400px", height :"300px"}}/></div></div>
+      <div className="banner" style={{width: "80vw"}}><div style={{width : "100%"}}><img src={Banner0} style={{width : "400px", height :"300px"}}/></div></div>
       <div className="banner" style={{width: "80vw"}}><div style={{width : "100%"}}><img src={Banner1} style={{width : "400px", height :"300px"}}/></div></div>
     </Slider>
     </Link>
