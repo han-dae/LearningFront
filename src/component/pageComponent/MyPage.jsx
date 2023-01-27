@@ -94,11 +94,9 @@ const MyPage = (props) => {
                         <div style={{ textAlign: "center" }}>
                             <tr>
                                 <td style={{ width: "120px" }}>
-                                    <label className="label">ID</label>
+                                   
                                 </td>
-                                <td>
-                                   <p>{sessionStorage.getItem('info')}</p>
-                                </td>
+                                
                             </tr>
 
                             <tr>
