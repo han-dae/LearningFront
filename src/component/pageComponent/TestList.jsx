@@ -3,11 +3,13 @@ import MainHeader from "./Header";
 import MainFooter from "./Footer";
 import { Button } from "antd";
 import { Link } from "react-router-dom";
+import Liked from "./Liked";
 const TestList = () => {
   return (
     <div>
       <MainHeader />
       <div style={{ marginTop: "80px" }}>
+        
         <div
           style={{
             marginTop: "0",
@@ -44,6 +46,7 @@ const TestList = () => {
             }}
           >
             <div className="videoContents">
+           
               {/* 비디오 컨텐츠 넣는곳*/}
               <div
                 style={{
@@ -52,9 +55,10 @@ const TestList = () => {
                   backgroundColor: "white",
                 }}
               >영상</div>
+               
               <div className="ExSpace" style={{ marginLeft :"10px",width: "380px" }}>
                 {/* 비디오 설명 넣는곳*/}
-
+                <div className="liked" style={{marginTop :"-310px", float :"right"}}><Liked/></div>
                 <p style={{ fontSize: "16px" }}>
                   [뷰티쓱세일]공동판매구역 랑콤편! 전 구매고객 럭키 박스 증정
                 </p>

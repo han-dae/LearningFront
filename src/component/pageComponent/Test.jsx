@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import Background from "./Background";
 import Category from "./Category";
 import MainHeader from "./Header";
 import ScrollBottom from "./ScrollBottom";

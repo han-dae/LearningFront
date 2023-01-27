@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import {  useNavigate } from "react-router-dom";
 import ApiService from "../ApiService";
 import MainHeader from "./Header";
-import Background from "./Background";
 import styles from "./Login.css";
 
 const Login = (props) => {
