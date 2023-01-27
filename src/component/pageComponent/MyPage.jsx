@@ -12,7 +12,7 @@ import {  useNavigate } from "react-router-dom";
 import MainComponen from "./MainComponent"
 import { Content, Header } from "antd/es/layout/layout";
 import Footer from "./Footer";
-import ScrollBottom from "./ScrollBottom";
+import ScrollBottom from "./Dont_Touch/ScrollBottom";
 import { setTextRange } from "typescript";
 import styles from "./Login.css";
 
@@ -59,7 +59,7 @@ const MyPage = (props) => {
 
     return (
         <div>
-            <ScrollBottom />
+            
             <MainHeader />
 
             <Content>

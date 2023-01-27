@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import MainHeader from "./Header";
-import ScrollBottom from "./ScrollBottom";
+import ScrollBottom from "./Dont_Touch/ScrollBottom";
 
 import { RightCircleOutlined, LeftCircleOutlined } from "@ant-design/icons";
 import Img1 from "../../img/graph1.png";
@@ -33,7 +33,7 @@ const TestComponent2 = () => {
   return (
     <div>
       <form>
-        <ScrollBottom />
+        
         <MainHeader />
 
         <div
