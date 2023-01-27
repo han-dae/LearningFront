@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MainHeader from "./Header";
+import { uploadFile } from "../fileAPI";
 import ScrollBottom from "./Dont_Touch/ScrollBottom";
 import { Button, message, Upload } from "antd";
 import { InboxOutlined, LeftCircleOutlined } from "@ant-design/icons";
@@ -9,58 +10,67 @@ import UploadPic from "./UploadPic";
 import TextArea from "antd/es/input/TextArea";
 
 import Footer from "./Footer";
-import axios from "axios";
 const { Dragger } = Upload;
 
 
 const TestComponent3 = () => {
-  
+
   const props = {
     name: 'file',
     multiple: true,
     onChange(info) {
+      const upload = async (e) => {
+        e.preventDefault();
         const fd = new FormData();
-        const cofig ={
+        const config = {
           header: { 'content-type': 'multipart/form-data' },
         }
-
-        fd.append("file", info[0]);
-        axios.post('/data/file', fd, cofig).then((Response)=>{
-          if(Response.data.succes){
-            console.log(Response.data)
-          }else{
-            console.log('실패')
-          }
-        })
-        //console.log('값확인',Object.keys(fd));
-        //sessionStorage.setItem('file',fd);
-        //console.log('저장확인',sessionStorage.getItem('file'));
-        // const { status } = info.file;
-        // if (status !== 'uploading') {
-        //   console.log(info.file, info.fileList);
-        // }
-        // if (status === 'done') {
-        //   message.success(`${info.file.name} file uploaded successfully.`);
-        // } else if (status === 'error') {
-        //   message.error(`${info.file.name} file upload failed.`);
-
-        // }
+        fd.append("file", info, config)
+        await uploadFile(fd);
       }
-      // onDrop(e) {
-      //   console.log('Dropped files', e.dataTransfer.files);
+
+
+      //console.log('값확인',Object.keys(fd));
+      //sessionStorage.setItem('file',fd);
+      //console.log('저장확인',sessionStorage.getItem('file'));
+      // const { status } = info.file;
+      // if (status !== 'uploading') {
+      //   console.log(info.file, info.fileList);
+      // }
+      // if (status === 'done') {
+      //   message.success(`${info.file.name} file uploaded successfully.`);
+      // } else if (status === 'error') {
+      //   message.error(`${info.file.name} file upload failed.`);
+
       // }
     }
-   const [state, setState] = useState({
-     test_seq: "",
-     test_title: "",
-     test_price: "",
-     test_cuesheet: "",
-     test_video_realname: "",
-     reg_dt: "",
-     user_id: "",
-     category_seq: "",
-     category_name: ""
-    })
+    // onDrop(e) {
+    //   console.log('Dropped files', e.dataTransfer.files);
+  }
+  const multer = require('multer');
+  const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, 'uploads/');
+    },
+    filename: (req, file, cb) => {
+      const newFileName = file.originalname;
+      cb(null, newFileName);
+    }
+  });
+  const upload = multer({ storage: storage });
+  //}
+
+  const [state, setState] = useState({
+    test_seq: "",
+    test_title: "",
+    test_price: "",
+    test_cuesheet: "",
+    test_video_realname: "",
+    reg_dt: "",
+    user_id: "",
+    category_seq: "",
+    category_name: ""
+  })
   //  const [file, setFile] = useState(null);	//파일	
   //  const handleChangeFile = (event) => {
   //    console.log(event.target.files)
@@ -75,13 +85,13 @@ const TestComponent3 = () => {
   }
 
 
-  
-  
-  
+
+
+
   const navigate = useNavigate();
   const clicked = () => {
-   // console.log(fd)
-    
+    // console.log(fd)
+
     let test = {
       test_title: state.test_title,
       test_photo: sessionStorage.getItem('photo'),
@@ -89,8 +99,8 @@ const TestComponent3 = () => {
       test_cuesheet: state.test_cuesheet,
       test_video: sessionStorage.getItem('file')
     }
-    
-      navigate('/test4',
+
+    navigate('/test4',
       {
         state:
         {
@@ -101,14 +111,14 @@ const TestComponent3 = () => {
           test_video: test.test_video
         }
       });
-     //sessionStorage.setItem('test_video',test.test_video);
-     //sessionStorage.setItem('test_cuesheet',test.test_cuesheet);
-    console.log('데이터 확인',test)
+    //sessionStorage.setItem('test_video',test.test_video);
+    //sessionStorage.setItem('test_cuesheet',test.test_cuesheet);
+    console.log('데이터 확인', test)
   }
   return (
     <div>
       <form>
-    
+
         <MainHeader />
 
         <div
@@ -128,7 +138,7 @@ const TestComponent3 = () => {
               display: "inline-block",
               width: "100%",
 
-            
+
             }}
           >
             <h1>Chapter3. 영상 업로드</h1>
@@ -154,9 +164,9 @@ const TestComponent3 = () => {
             <p className="ant-upload-text">Click</p>
             <p className="ant-upload-hint">이곳에 파일을 드래그 하세요.</p>
           </Dragger>
-          <div style={{width : "100%", height :"20px", textAlign:"center", marginBottom :"10px"}}><h3 style={{}}>10분 이내의 영상을 업로드 해주세요.</h3></div>
+          <div style={{ width: "100%", height: "20px", textAlign: "center", marginBottom: "10px" }}><h3 style={{}}>10분 이내의 영상을 업로드 해주세요.</h3></div>
         </div>
-        
+
         <div
           style={{
             marginBottom: "30px",
@@ -203,12 +213,12 @@ const TestComponent3 = () => {
             onChange={onchange}
             placeholder="라이브 커머스 영상, 상품정보에 대해  간략하게 설명해주세요."
           />
-<input
+          <input
             type="text"
             className="price"
             placeholder="가격을 책정해주세요."
             style={{
-              marginTop:"25px",
+              marginTop: "25px",
               width: "28vw",
               padding: "10px 10px 10px 10px",
               boxSizing: "border-box",
@@ -220,9 +230,9 @@ const TestComponent3 = () => {
             <h3>2. 라이브 커머스의 제목과 설명을 입력하세요.</h3>
             <h3>3.라이브 커머스 영상을 업로드해주세요.</h3>
             <h3>4.분석결과를 토대로 상품의 가격을 책정해주세요.</h3>
-            
+
             <Link to={"/test2"}>
-              
+
               <LeftCircleOutlined
                 style={{
                   position: "absolute",
@@ -253,12 +263,12 @@ const TestComponent3 = () => {
                 }}
               />
             </Link>
-            </div>
           </div>
-         
+        </div>
+
       </form>
-      
-      <Footer/>
+
+      <Footer />
     </div>
   );
 };
