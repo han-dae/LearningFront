@@ -34,12 +34,13 @@ const MyPage = (props) => {
         e.preventDefault();
 
         let user = {
-            user_id: state.user_id,
+            user_id: sessionStorage.getItem('info'),
             user_pw: state.user_pw,
             user_hp: state.user_hp,
             user_email: state.user_email,
         };
-        ApiService.updateMember(user)
+       
+        ApiService.editUser(user)
             .then((res) => {
                 console.log("업데이트완료");
                 navigate('/myPage');
@@ -96,13 +97,7 @@ const MyPage = (props) => {
                                     <label className="label">ID</label>
                                 </td>
                                 <td>
-                                    <input
-                                        type="text"
-                                        name="user_id"
-                                        //value={}
-                                        onChange={onChange}
-                                        placeholder='ID를 입력하세요.'
-                                        style={{ padding: "5px" }} />
+                                   <p>{sessionStorage.getItem('info')}</p>
                                 </td>
                             </tr>
 

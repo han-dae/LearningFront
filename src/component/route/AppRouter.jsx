@@ -17,11 +17,13 @@ import FormService from "../pageComponent/Dont_Touch/FormService";
 import SendData from "../pageComponent/Dont_Touch/FormS1";
 import TestList from "../pageComponent/TestList";
 import TextArea from "antd/es/input/TextArea";
+import Comment from "../pageComponent/Comment"
+
 import TestPage from "../pageComponent/TestPage";
 
 
 import Liked from "../pageComponent/Liked";
-import Twitter from "../pageComponent/Twitter";
+
 
 function AppRouter() {
   return (
@@ -41,8 +43,7 @@ function AppRouter() {
           <Route path="/daechan" element={<FormService />} />
           <Route path="/daechan2" element={<SendData />} />
           <Route path="/testlist" element={<TestList />} />
-          <Route path="/view" element={<Liked />} />
-          <Route path="/twitter" element={<Twitter />} />
+          <Route path="/liked" element={<Liked />} />
           <Route path="/FileData" element={<FileData />} />
           <Route path="/testPage" element={<TestPage />} />
         </Routes>
