@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import ApiService from "../ApiService";
 import "./Login.css";
-import Background from "./Background";
 import MainHeader from "./Header";
 import styles from "./Login.css";
 import { Button } from "antd";

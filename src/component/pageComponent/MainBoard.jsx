@@ -1,7 +1,6 @@
 
 import React from "react";
-import SingleTweet from "./SingleTweet";
-import Twitter from "./Twitter";
+
 
 const MainBoard = () => {
   const platform = 

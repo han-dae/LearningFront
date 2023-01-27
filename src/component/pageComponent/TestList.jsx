@@ -3,11 +3,13 @@ import MainHeader from "./Header";
 import MainFooter from "./Footer";
 import { Button } from "antd";
 import { Link } from "react-router-dom";
+import Liked from "./Liked";
 const TestList = () => {
   return (
     <div>
       <MainHeader />
       <div style={{ marginTop: "80px" }}>
+        
         <div
           style={{
             marginTop: "0",
@@ -18,10 +20,12 @@ const TestList = () => {
           }}
         >
           <div className="categoryEx">
+            
             <h1>모의 테스트 리스트</h1>
             <h3 style={{ marginTop: "-25px" }}>
               : 사용자들이 직접 시연한 영상을 볼 수 있습니다.
             </h3>
+            
           </div>
           <Link to={"/test"}>
           <Button
@@ -29,13 +33,8 @@ const TestList = () => {
           업로드
         </Button>
         </Link>
-
-
-
-
-
-
-
+        
+        <Link to={"/testPage"} style={{textDecoration: "none", color:"black"}}>
           <div
             className="videoSpace"
             style={{
@@ -47,6 +46,7 @@ const TestList = () => {
             }}
           >
             <div className="videoContents">
+           
               {/* 비디오 컨텐츠 넣는곳*/}
               <div
                 style={{
@@ -55,9 +55,10 @@ const TestList = () => {
                   backgroundColor: "white",
                 }}
               >영상</div>
+               
               <div className="ExSpace" style={{ marginLeft :"10px",width: "380px" }}>
                 {/* 비디오 설명 넣는곳*/}
-
+                <div className="liked" style={{marginTop :"-310px", float :"right"}}><Liked/></div>
                 <p style={{ fontSize: "16px" }}>
                   [뷰티쓱세일]공동판매구역 랑콤편! 전 구매고객 럭키 박스 증정
                 </p>
@@ -90,6 +91,7 @@ const TestList = () => {
               </div>
             </div>
           </div>
+          </Link>
         </div>
       </div>
 

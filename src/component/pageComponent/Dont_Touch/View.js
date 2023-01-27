@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-//import './main.css';
-
-import axios from 'axios';
+import Heart1 from "../../img/heart.png";
+import Heart0 from "../../img/heart0.png";
 
 class View extends Component {
     constructor(props) {
         super(props)
         this.state = {
 
-            data: [],
+            data: ["fefe","fewf"],
             date: "",
-            none_like: 'https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2013/png/iconmonstr-thumb-10.png&r=171&g=171&b=171',
-            like: 'https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2013/png/iconmonstr-thumb-10.png&r=171&g=53&b=53'
+            none_like: {Heart0},
+            like: {Heart1}
         }
     }
 
@@ -47,7 +46,7 @@ _toggleLike = async function(){
                             <img src={none_like} onClick={() => this._toggleLike()}/>
                             <h5> 좋아요 </h5>
                         </div>
-                        <div> {/* right empty*/} </div>
+                        <div> {} </div>
                     </div>
                 </div>
                 : null

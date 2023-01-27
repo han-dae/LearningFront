@@ -17,11 +17,13 @@ import FormService from "../pageComponent/Dont_Touch/FormService";
 import SendData from "../pageComponent/Dont_Touch/FormS1";
 import TestList from "../pageComponent/TestList";
 import TextArea from "antd/es/input/TextArea";
+import Comment from "../pageComponent/Comment"
+
 import TestPage from "../pageComponent/TestPage";
 
-import View from "../pageComponent/View";
 
-import Twitter from "../pageComponent/Twitter";
+import Liked from "../pageComponent/Liked";
+
 
 function AppRouter() {
   return (
@@ -32,7 +34,8 @@ function AppRouter() {
           <Route path="/home" element={<MainComponent />} />
           <Route path="/login" element={<Login />} />
           <Route path="/join" element={<Join />} />
-          <Route path="/test" element={<TestComponent />} />
+          
+          <Route path="/test1" element={<TestComponent />} />
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/test2" element={<TestComponent2 />} />
           <Route path="/test3" element={<TestComponent3 />} />
@@ -40,15 +43,14 @@ function AppRouter() {
           <Route path="/daechan" element={<FormService />} />
           <Route path="/daechan2" element={<SendData />} />
           <Route path="/testlist" element={<TestList />} />
-
-          <Route path="/view" element={<View />} />
-          <Route path="/twitter" element={<Twitter />} />
+          <Route path="/liked" element={<Liked />} />
           <Route path="/FileData" element={<FileData />} />
           <Route path="/testPage" element={<TestPage />} />
         </Routes>
       </BrowserRouter>
     </div>
   );
+
 }
 
 export default AppRouter;

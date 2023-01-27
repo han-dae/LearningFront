@@ -1,26 +1,46 @@
 import React, { useState } from "react";
 
 import MainHeader from "./Header";
-import ScrollBottom from "./ScrollBottom";
+import ScrollBottom from "./Dont_Touch/ScrollBottom";
 
 import { RightCircleOutlined, LeftCircleOutlined } from "@ant-design/icons";
 import Img1 from "../../img/graph1.png";
 import Img2 from "../../img/graph2.png";
 
 import { Link } from "react-router-dom";
+import TextArea from "antd/es/input/TextArea";
+import Footer from "./Footer";
+
 
 const TestComponent2 = () => {
+  const [state, setState] = useState({
+     test_cuesheet:""
+    
+  })
+  const onChange = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    })
+  }
+  const cuesheetSave =() =>{
+     
+    const test_cuesheet = state.test_cuesheet; 
+    console.log(test_cuesheet);
+    sessionStorage.setItem('cuesheet',test_cuesheet);
+    console.log(sessionStorage.getItem('cuesheet'));
+  }
   return (
     <div>
       <form>
-        <ScrollBottom />
+        
         <MainHeader />
 
         <div
           style={{
             marginTop: "10px",
             marginLeft: "20vw",
-            width: "20vw",
+            width: "50vh",
             height: "10vh",
             paddingLeft: "10px",
             backgroundColor: "#F7D5D4",
@@ -31,12 +51,12 @@ const TestComponent2 = () => {
             className="start"
             style={{
               display: "inline-block",
-              width: "100%",
+              width: "50vh",
             }}
           >
-            <h1>Chapter2. 상품가격확인</h1>
+            <h1 style={{ marginTop: "1vh" }}>Chapter2. 스크립트 작성</h1>
             <h3 style={{ marginTop: "-25px" }}>
-              ReadyCast에서 으로 분석한 결과에요.
+              ReadyCast에서 "카테고리"으로 분석한 결과에요.
             </h3>
           </div>
         </div>
@@ -51,9 +71,9 @@ const TestComponent2 = () => {
             borderRadius: 10,
           }}
         >
-          <img src={Img1} style={{ width: "1100px", height: "350px" }} />
+          <img src={Img2} style={{ width: "1100px", height: "350px" }} />
         </div>
-        <div
+        {/*  <div
           className="Chart02"
           style={{
             marginTop: "0px",
@@ -62,10 +82,26 @@ const TestComponent2 = () => {
             height: "30vh",
             backgroundColor: "black",
           }}
-        >
+        > 
           <img src={Img2} style={{ width: "1100px", height: "300px" }} />
-        </div>
+        </div> */}
 
+        <div style={{  marginLeft: "24vw" }}>
+          <TextArea
+            name="test_cuesheet"
+            value={state.test_cuesheet}
+            showCount
+            maxLength={800}
+            style={{
+              height: "30vh",
+              width: "50vw",
+              resize: "none",
+              overflowY: "scroll",
+            }}
+            onChange={onChange}
+            placeholder="위 그래프를 토대로 스크립트를 작성해보세요."
+          />
+        </div>
         <div
           className="InputCategory"
           style={{ marginTop: "-680px", marginLeft: "52vw" }}
@@ -84,6 +120,7 @@ const TestComponent2 = () => {
           </Link>
           <Link to={"/test3"}>
             <RightCircleOutlined
+            onClick={cuesheetSave}
               style={{
                 position: "absolute",
                 bottom: "50px",
@@ -95,7 +132,49 @@ const TestComponent2 = () => {
             />
           </Link>
         </div>
+        <div className="testBtn" style={{ marginTop:"79vh", position: "absolute", bottom:"2vh", right:"36vw" }}>
+          <Link to={"/test1"}>
+            <div className='test1'
+              style={{
+                width: "5vw",
+                marginLeft: "35vw",
+                marginTop: "7vh",
+                borderBottom: "4px solid gray"
+              }}></div>
+          </Link>
+
+          <Link to={"/test2"}>
+            <div className='test2'
+              style={{
+                width: "5vw",
+                marginLeft: "41vw",
+                marginTop: "-0.5vh",
+                borderBottom: "4px solid #F7D5D4"
+              }}></div>
+          </Link>
+
+          <Link to={"/test3"}>
+            <div className='test3'
+              style={{
+                width: "5vw",
+                marginLeft: "47vw",
+                marginTop: "-0.5vh",
+                borderBottom: "4px solid gray"
+              }}></div>
+          </Link>
+
+          <Link to={"/test4"}>
+            <div className='test4'
+              style={{
+                width: "5vw",
+                marginLeft: "53vw",
+                marginTop: "-0.4vh",
+                borderBottom: "4px solid gray"
+              }}></div>
+          </Link>
+        </div>
       </form>
+      <Footer/>
     </div>
   );
 };
