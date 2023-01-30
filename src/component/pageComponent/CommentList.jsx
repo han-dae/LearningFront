@@ -16,7 +16,7 @@ const CommenList = ({ com }) => {
         }}>
             {com.map((item, idx) => (
                 <p key={'num' + idx + item.text}>
-                    '아이디' : 
+                    {item.user_id}
                     {item.text}
                     <span style={smallText}> {item.time}</span>
                 </p>
