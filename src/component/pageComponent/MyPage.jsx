@@ -171,7 +171,7 @@ const MyPage = (props) => {
                     }}>
                     <div>
                         
-                            <div key={`${com.user_id}_${index}`}>
+                            <div key={`${com.user_id}`}>
                                 <div>
                                     <p>{com.userName}</p>
                                     <button onClick={() => removeCom(com.id)}>삭제</button>
