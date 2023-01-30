@@ -12,10 +12,23 @@ const AddComment = ({ handelComment }) => {
 
   const btnHandle = () => {
     console.log('현재 댓글', value)
+
     handelComment(value)
+    
     setValue('')
   }
-
+  useEffect(() => {
+    ApiService.sendComment()
+      .then((res) => {
+        console.log(res.status);
+        console.log(res.data);
+        setTest(res.data);
+      })
+      .catch((err) => {
+        console.log("send() 에러", err);
+      });
+  })
+  
   const enterHandle = (e) => {
     console.log(e.code)
     e.code === 'Enter' && btnHandle()
