@@ -9,19 +9,24 @@ import WordCloud from "../../img/WordCloud.png";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import ApiService from "../ApiService";
-import reactStringReplace from 'react-string-replace';
+import { Button, Select } from "antd";
 
 const TestComponent = () => {
-const [Guide,setGuide] = useState({
-  guide_seq :"",
-  cuesheet :"",
-  design :"",
-  price :"",
-  used :"",
-  category_seq :"",
+  const onChange = (value) => {
+    console.log(`selected ${value}`);
+  };
+  const onSearch = (value) => {
+    console.log("search:", value);
+  };
 
-});
-
+  const [Guide, setGuide] = useState({
+    guide_seq: "",
+    cuesheet: "",
+    design: "",
+    price: "",
+    used: "",
+    category_seq: "",
+  });
 
   useEffect(() => {
     ApiService.cuesheet()
@@ -36,17 +41,11 @@ const [Guide,setGuide] = useState({
       });
   }, []);
   let cueSheet = Object.values(Guide);
-  
-
-
-
 
   return (
     <div>
       <form>
-        
         <MainHeader />
-
 
         <div
           style={{
@@ -64,7 +63,6 @@ const [Guide,setGuide] = useState({
             style={{
               display: "inline-block",
               width: "100%",
-
             }}
           >
             <h1>Chapter1. 스크립트 분석</h1>
@@ -73,7 +71,33 @@ const [Guide,setGuide] = useState({
             </h3>
           </div>
         </div>
-
+        <div>
+        <Select
+    showSearch
+    placeholder="카테고리를 선택해주세요"
+    optionFilterProp="children"
+    onChange={onChange}
+    onSearch={onSearch}
+    filterOption={(input, option) =>
+      (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+    }
+    options={[
+      {
+        value: 21,
+        label: '침구류',
+      },
+      {
+        value: 22,
+        label: '이불',
+      },
+      {
+        value: 23,
+        label: '의자',
+      },
+    ]}
+    style={{width : "20vw", marginLeft :"20vw", marginTop:"10px"}}
+  /><Button style={{width:"8vw", marginLeft: "10px"}} onClick={""}>큐시트 가져오기</Button>
+        </div>
         <div
           className="Chart01"
           style={{
@@ -81,32 +105,27 @@ const [Guide,setGuide] = useState({
             height: "70vh",
             marginTop: "10px",
             marginLeft: "20vw",
-            opacity :"0.5",
+            opacity: "0.5",
             backgroundColor: "black",
             overflowY: "scroll",
             borderRadius: 10,
-            fontSize :"24px",
-            color :"white"
+            fontSize: "24px",
+            color: "white",
           }}
         >
           {cueSheet[0].cuesheet}
         </div>
 
-        <div
-          className="InputCategory"
-          style={{ marginLeft: "52vw" }}
-        >
+        <div className="InputCategory" style={{ marginLeft: "52vw" }}>
           <div
             style={{
               backgroundImage: `url(${WordCloud})`,
-              backgroundRepeat: 'no-repeat',
+              backgroundRepeat: "no-repeat",
               width: "500px",
               height: "300px",
               marginTop: "-650px",
             }}
-          >
-
-          </div>
+          ></div>
 
           {/*<div style={{ marginBottom: "15px" }}>
         <Category />
@@ -118,14 +137,18 @@ const [Guide,setGuide] = useState({
           </div>*/}
 
           <div className="dataSpace">
-            <a href="MoreData" style={{ marginLeft: "400px" }}>더보기 </a>
-            <div style={{ width: "500px", height: "300px", backgroundColor: "white" }}>
+            <a href="MoreData" style={{ marginLeft: "400px" }}>
+              더보기{" "}
+            </a>
+            <div
+              style={{
+                width: "500px",
+                height: "300px",
+                backgroundColor: "white",
+              }}
+            ></div>
 
-            </div>
-
-            <div className="chart_dh">
-
-            </div>
+            <div className="chart_dh"></div>
           </div>
           <Link to={"/test2"}>
             <RightCircleOutlined
@@ -141,45 +164,56 @@ const [Guide,setGuide] = useState({
           </Link>
         </div>
 
-        <div className="testBtn" style={{ position: "absolute", bottom:"2vh", right:"36vw" }}>
+        <div
+          className="testBtn"
+          style={{ position: "absolute", bottom: "2vh", right: "36vw" }}
+        >
           <Link to={"/test1"}>
-            <div className='test1'
+            <div
+              className="test1"
               style={{
                 width: "5vw",
                 marginLeft: "35vw",
                 marginTop: "7vh",
-                borderBottom: "4px solid #F7D5D4"
-              }}></div>
+                borderBottom: "4px solid #F7D5D4",
+              }}
+            ></div>
           </Link>
 
           <Link to={"/test2"}>
-            <div className='test2'
+            <div
+              className="test2"
               style={{
                 width: "5vw",
                 marginLeft: "41vw",
                 marginTop: "-0.5vh",
-                borderBottom: "4px solid gray"
-              }}></div>
+                borderBottom: "4px solid gray",
+              }}
+            ></div>
           </Link>
 
           <Link to={"/test3"}>
-            <div className='test3'
+            <div
+              className="test3"
               style={{
                 width: "5vw",
                 marginLeft: "47vw",
                 marginTop: "-0.5vh",
-                borderBottom: "4px solid gray"
-              }}></div>
+                borderBottom: "4px solid gray",
+              }}
+            ></div>
           </Link>
 
           <Link to={"/test4"}>
-            <div className='test4'
+            <div
+              className="test4"
               style={{
                 width: "5vw",
                 marginLeft: "53vw",
                 marginTop: "-0.4vh",
-                borderBottom: "4px solid gray"
-              }}></div>
+                borderBottom: "4px solid gray",
+              }}
+            ></div>
           </Link>
         </div>
       </form>
