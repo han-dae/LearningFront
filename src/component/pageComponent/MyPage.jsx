@@ -54,7 +54,7 @@ const MyPage = (props) => {
     };
     // 내 댓글 수정
     const [com, setCom] = useState([])
-    const removeCom = (user_id) => { // 코멘트 삭제
+    const removeCom = (user_id) => { // 삭제
         return setCom(com.filter((com) => com.id !== user_id));
     };
 
@@ -66,6 +66,16 @@ const MyPage = (props) => {
         pic: ""
     }
 
+    const btnStlyed = {  
+        borderRadius: "20px",
+        width: "50px",
+        float: "right",
+        marginRight: "60px",
+       //  marginTop: "10px",
+        backgroundColor: "#FE8F8D",
+        color: "white",
+        border:'white'
+      }
     return (
         <div>
 
@@ -111,7 +121,7 @@ const MyPage = (props) => {
                                         name="user_pw"
                                         //value={}
                                         onChange={onChange}
-                                        placeholder="PW를 입력하세요."
+                                        placeholder="수정할 PW 입력"
                                         style={{ padding: "5px" }} />
                                 </td>
                             </tr>
@@ -125,7 +135,7 @@ const MyPage = (props) => {
                                         name="user_hp"
                                         //value={}
                                         onChange={onChange}
-                                        placeholder="H.P를 입력하세요."
+                                        placeholder="수정할 H.P 입력"
                                         style={{ padding: "5px" }} />
                                 </td>
                             </tr>
@@ -140,7 +150,7 @@ const MyPage = (props) => {
                                         name="user_email"
                                         //value={}
                                         onChange={onChange}
-                                        placeholder="EMAIL을 입력하세요."
+                                        placeholder="수정할 Email 입력"
                                         style={{ padding: "5px" }}
 
                                     />
@@ -174,10 +184,9 @@ const MyPage = (props) => {
                             <div key={`${com.user_id}`}>
                                 <div>
                                     <p>{com.userName}</p>
-                                    <button onClick={() => removeCom(com.id)}>삭제</button>
-
+                                    <button onClick={() => removeCom(com.id)} className="btn_comDel" style={{marginLeft:'27vw'}}>X</button>
                                 </div>
-                                내용: {com.content}
+                                {com.content}
                             </div>
                     
                     </div>
