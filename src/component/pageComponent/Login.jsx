@@ -31,8 +31,13 @@ const Login = (props) => {
         console.log(res.status);
         console.log(res.data);
         console.log("if통과");
-        sessionStorage.setItem("info", res.data);
-        navigate("/home");
+        if(res.data ==''){
+          alert('로그인실패');
+          window.location.reload();
+        }else{
+          sessionStorage.setItem("info", res.data);
+          navigate("/home");
+        }
       })
       .catch((err) => {
         console.log("login() 에러", err);

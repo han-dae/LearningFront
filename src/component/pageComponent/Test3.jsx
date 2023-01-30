@@ -9,25 +9,40 @@ import UploadPic from "./UploadPic";
 import TextArea from "antd/es/input/TextArea";
 
 import Footer from "./Footer";
+import axios from "axios";
 const { Dragger } = Upload;
 
 
 const TestComponent3 = () => {
-
+  const [content, setContent] = useState("");
+  const [uploadedImg, setUploadedImg] = useState({
+  fileName: "",
+  fillPath: ""
+  });
+  
   const props = {
     name: 'file',
     multiple: true,
-    // onChange(info) {
-    //   const upload = async (e) => {
-    //     e.preventDefault();
-    //     const fd = new FormData();
-    //     const config = {
-    //       header: { 'content-type': 'multipart/form-data' },
-    //     }
-    //     fd.append("file", info, config)
-    //     await uploadFile(fd);
-    //   }
-  }
+     onChange(info) {
+      const BASE_URL = 'http://localhost:3000'
+      
+        const formData = new FormData();
+        formData.append("file", info); 
+        axios
+          .post("/upload", formData)
+          .then(res => {
+            const { fileName } = res.data;
+            console.log(fileName);
+            setUploadedImg({ fileName, filePath: `${BASE_URL}/file/${fileName}` });
+            alert("The file is successfully uploaded");
+          })
+          .catch(err => {
+            console.error(err);
+          });
+      
+         
+        
+  }}
 
   //console.log('값확인',Object.keys(fd));
   //sessionStorage.setItem('file',fd);
@@ -95,8 +110,8 @@ const TestComponent3 = () => {
       test_title: state.test_title,
       test_photo: sessionStorage.getItem('photo'),
       test_price: state.test_price,
-      test_cuesheet: state.test_cuesheet,
-      test_video: sessionStorage.getItem('file')
+      test_cuesheet: sessionStorage.getItem('cuesheet'),
+      test_video: fdata
     }
 
     navigate('/test4',
@@ -174,6 +189,8 @@ const TestComponent3 = () => {
           }}
         >
           <input
+          name="test_title"
+          value={state.test_title}
             type="text"
             className="title"
             placeholder="영상의 제목을 입력해주세요."
@@ -213,6 +230,8 @@ const TestComponent3 = () => {
             placeholder="라이브 커머스 영상, 상품정보에 대해  간략하게 설명해주세요."
           />
           <input
+          name="test_price"
+          value={state.test_price}
             type="text"
             className="price"
             placeholder="가격을 책정해주세요."
@@ -243,15 +262,10 @@ const TestComponent3 = () => {
                 }}
               />
             </Link>
-            <Link to={"/test4"}>
-              <input
-                type="submit"
-                name="videoSubmit"
-                id="videoSubmit"
-                style={{ display: "none" }}
-              />
 
               <RightCircleOutlined
+               onClick={clicked}
+               type="Button"
                 style={{
                   position: "absolute",
                   bottom: "50px",
@@ -261,7 +275,7 @@ const TestComponent3 = () => {
                   color: "black",
                 }}
               />
-            </Link>
+            
           </div>
         </div>
 
