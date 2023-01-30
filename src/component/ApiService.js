@@ -26,7 +26,7 @@ class ApiService {
   loginConfirm(){
     return axios.get(USER_API_BASE_URL+"/");
   }
-  cuesheet(value){
+  cuesheet(){
     return axios.get(GUIDE_API_BASE_URL);
   }
 
