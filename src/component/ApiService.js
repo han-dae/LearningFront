@@ -31,7 +31,7 @@ class ApiService {
   cuesheet(value){
     return axios.get(GUIDE_API_BASE_URL);
   }
-  sendComment() {
+  sendComment(value) {
     return axios.get(COMMENT_API_BASE_URL);
   }
   design(){
