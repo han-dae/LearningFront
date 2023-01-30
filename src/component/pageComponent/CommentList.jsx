@@ -6,7 +6,7 @@ const CommenList = ({ com }) => {
         color: 'gray',
         fonSize: '8px'
     }
-    console.log('현재 아이디', )
+    
    
     return (
         <div style={{
