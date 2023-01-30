@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CommenList = ({ com }) => {
+const CommentList = ({ com }) => {
     console.log(com)
     const smallText = {
         color: 'gray',
@@ -16,8 +16,10 @@ const CommenList = ({ com }) => {
         }}>
             {com.map((item, idx) => (
                 <p key={'num' + idx + item.text}>
+                    
                     {item.user_id}
                     {item.text}
+
                     <span style={smallText}> {item.time}</span>
                 </p>
             ))}
@@ -25,4 +27,4 @@ const CommenList = ({ com }) => {
     )
 }
 
-export default CommenList
+export default CommentList
