@@ -24,8 +24,7 @@ const TestComponent3 = () => {
     name: 'file',
     multiple: true,
      onChange(info) {
-      const BASE_URL = 'http://localhost:3000'
-      
+      const BASE_URL = 'http://localhost:3000';
         const formData = new FormData();
         formData.append("file", info); 
         axios
