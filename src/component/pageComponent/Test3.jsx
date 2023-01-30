@@ -111,7 +111,7 @@ const TestComponent3 = () => {
       test_photo: sessionStorage.getItem('photo'),
       test_price: state.test_price,
       test_cuesheet: sessionStorage.getItem('cuesheet'),
-      test_video: fdata
+      // test_video: 
     }
 
     navigate('/test4',
