@@ -4,12 +4,12 @@ import MainHeader from "./Header";
 import ScrollBottom from "./Dont_Touch/ScrollBottom";
 
 import { RightCircleOutlined, LeftCircleOutlined } from "@ant-design/icons";
-import Img1 from "../../img/graph1.png";
-import Img2 from "../../img/graph2.png";
+
 
 import { Link } from "react-router-dom";
 import TextArea from "antd/es/input/TextArea";
 import Footer from "./Footer";
+
 
 
 const TestComponent2 = () => {
@@ -30,6 +30,7 @@ const TestComponent2 = () => {
     sessionStorage.setItem('cuesheet',test_cuesheet);
     console.log(sessionStorage.getItem('cuesheet'));
   }
+  
   return (
     <div>
       <form>
@@ -71,7 +72,7 @@ const TestComponent2 = () => {
             borderRadius: 10,
           }}
         >
-          <img src={Img2} style={{ width: "1100px", height: "350px" }} />
+         
         </div>
         {/*  <div
           className="Chart02"
