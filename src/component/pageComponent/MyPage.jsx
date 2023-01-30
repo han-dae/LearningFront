@@ -58,17 +58,7 @@ const MyPage = (props) => {
         return setCom(com.filter((com) => com.id !== user_id));
     };
 
-    const editCom = (user_id, inputWord) => { // 코멘트 수정
-        return setCom(com.map((com) => {
-            if (com.id === user_id) {
-                return {
-                    ...com,
-                    text: inputWord,
-                };
-            }
-            return com;
-        }));
-    };
+  
     // 내 영상 리스트
     const platform =
     {
@@ -180,18 +170,16 @@ const MyPage = (props) => {
                         borderRadius: 20,
                     }}>
                     <div>
-                        {com.map((com, index) => (
+                        
                             <div key={`${com.user_id}_${index}`}>
                                 <div>
                                     <p>{com.userName}</p>
                                     <button onClick={() => removeCom(com.id)}>삭제</button>
-                                    <button onClick={() => editCom(com.id, com)}>
-                                        수정
-                                    </button>
+
                                 </div>
                                 내용: {com.content}
                             </div>
-                        ))}
+                    
                     </div>
                     <div
                         className="com_edit"
