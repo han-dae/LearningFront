@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 
 
 const AddComment = ({ handelComment }) => {
@@ -16,6 +16,18 @@ const AddComment = ({ handelComment }) => {
     setValue('')
   }
 
+  {/*useEffect(() => {
+    ApiService.sendComment()
+      .then((res) => {
+        console.log(res.status);
+        console.log(res.data);
+        setTest(res.data);
+      })
+      .catch((err) => {
+        console.log("send() 에러", err);
+      });
+  })*/}
+  
   const enterHandle = (e) => {
     console.log(e.code)
     e.code === 'Enter' && btnHandle()

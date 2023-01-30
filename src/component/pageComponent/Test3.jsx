@@ -98,10 +98,6 @@ const TestComponent3 = () => {
     })
   }
 
-
-
-
-
   const navigate = useNavigate();
   const clicked = () => {
     // console.log(fd)

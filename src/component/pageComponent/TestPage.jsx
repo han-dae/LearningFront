@@ -29,12 +29,9 @@ const TestPage = () => {
     
     const handelComment = (newCom) => {
         console.log('handleComment', newCom)
-        let user_id = {
-            user_id: sessionStorage.getItem('info').id
-        }
+       
         let currentTime = new Date().toLocaleTimeString()    
         setCom(com.concat({ 
-            id: user_id,
             text: newCom, 
             time: currentTime }))
     }

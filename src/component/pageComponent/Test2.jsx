@@ -4,12 +4,14 @@ import MainHeader from "./Header";
 import ScrollBottom from "./Dont_Touch/ScrollBottom";
 
 import { RightCircleOutlined, LeftCircleOutlined } from "@ant-design/icons";
-import Img1 from "../../img/graph1.png";
-import Img2 from "../../img/graph2.png";
+
 
 import { Link } from "react-router-dom";
 import TextArea from "antd/es/input/TextArea";
 import Footer from "./Footer";
+import Chart from 'chart.js/auto';
+import { Line } from 'react-chartjs-2';
+
 
 
 const TestComponent2 = () => {
@@ -30,6 +32,40 @@ const TestComponent2 = () => {
     sessionStorage.setItem('cuesheet',test_cuesheet);
     console.log(sessionStorage.getItem('cuesheet'));
   }
+  const reviewchart = () => {
+
+    let data =  {
+        labels: ['7-8', '8-9', '9-10', '10-11', '11-12', '17-18', '18-19', '19-20' ],
+        datasets: [
+          {
+            type: 'bar',
+            label: '디자인',
+            backgroundColor: 'rgb(255, 99, 132)',
+            data: [50,60,70,80],
+            borderColor: 'red',
+            borderWidth: 2,
+          },
+          {
+            type: 'bar',
+            label: '사용감',
+            backgroundColor: 'rgb(75, 192, 192)',
+            data: [50,60,70,80],
+          },
+          {
+            type: 'bar',
+            label: '가격',
+            backgroundColor: 'rgb(75, 192, 192)',
+            data: [50,60,70,80],
+          },
+        ],
+      };
+      return (
+        <div>
+            <Line type="line" data={[50,60,70,80]} />
+          </div>
+      );
+  }
+  
   return (
     <div>
       <form>
@@ -71,7 +107,7 @@ const TestComponent2 = () => {
             borderRadius: 10,
           }}
         >
-          <img src={Img2} style={{ width: "1100px", height: "350px" }} />
+         
         </div>
         {/*  <div
           className="Chart02"
