@@ -6,7 +6,7 @@ import MainBoard from "./MainBoard";
 import CarouselComponent from "./CarouselComponent";
 import { render } from "@testing-library/react";
 import ApiService from "../ApiService";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 import MainComponen from "./MainComponent"
@@ -17,6 +17,7 @@ import { setTextRange } from "typescript";
 import styles from "./Login.css";
 
 const MyPage = (props) => {
+    // 개인정보 수정
     const [state, setState] = useState({
         user_id: "",
         user_pw: "",
@@ -39,7 +40,7 @@ const MyPage = (props) => {
             user_hp: state.user_hp,
             user_email: state.user_email,
         };
-       
+
         ApiService.editUser(user)
             .then((res) => {
                 console.log("업데이트완료");
@@ -51,7 +52,24 @@ const MyPage = (props) => {
 
         window.location.reload(); // 새로고침
     };
+    // 내 댓글 수정
+    const [com, setCom] = useState([])
+    const removeCom = (user_id) => { // 코멘트 삭제
+        return setCom(com.filter((com) => com.id !== user_id));
+    };
 
+    const editCom = (user_id, inputWord) => { // 코멘트 수정
+        return setCom(com.map((com) => {
+            if (com.id === user_id) {
+                return {
+                    ...com,
+                    text: inputWord,
+                };
+            }
+            return com;
+        }));
+    };
+    // 내 영상 리스트
     const platform =
     {
         name: "",
@@ -60,7 +78,7 @@ const MyPage = (props) => {
 
     return (
         <div>
-            
+
             <MainHeader />
 
             <Content>
@@ -92,12 +110,6 @@ const MyPage = (props) => {
 
 
                         <div style={{ textAlign: "center" }}>
-                            <tr>
-                                <td style={{ width: "120px" }}>
-                                   
-                                </td>
-                                
-                            </tr>
 
                             <tr>
                                 <td style={{ width: "120px" }}>
@@ -140,7 +152,7 @@ const MyPage = (props) => {
                                         onChange={onChange}
                                         placeholder="EMAIL을 입력하세요."
                                         style={{ padding: "5px" }}
-                                    // vw(view width), vh(view height) // % // px // @css
+
                                     />
 
                                 </td>
@@ -164,8 +176,23 @@ const MyPage = (props) => {
                         height: "40vh",
                         paddingLeft: "10px",
                         backgroundColor: "#F7D5D4",
+                        opacity: 0.5,
                         borderRadius: 20,
                     }}>
+                    <div>
+                        {com.map((com, index) => (
+                            <div key={`${com.user_id}_${index}`}>
+                                <div>
+                                    <p>{com.userName}</p>
+                                    <button onClick={() => removeCom(com.id)}>삭제</button>
+                                    <button onClick={() => editCom(com.id, com)}>
+                                        수정
+                                    </button>
+                                </div>
+                                내용: {com.content}
+                            </div>
+                        ))}
+                    </div>
                     <div
                         className="com_edit"
                         style={{
