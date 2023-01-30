@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import MainHeader from "./Header";
-import { uploadFile } from "../fileAPI";
 import ScrollBottom from "./Dont_Touch/ScrollBottom";
 import { Button, message, Upload } from "antd";
 import { InboxOutlined, LeftCircleOutlined } from "@ant-design/icons";
@@ -18,47 +17,47 @@ const TestComponent3 = () => {
   const props = {
     name: 'file',
     multiple: true,
-    onChange(info) {
-      const upload = async (e) => {
-        e.preventDefault();
-        const fd = new FormData();
-        const config = {
-          header: { 'content-type': 'multipart/form-data' },
-        }
-        fd.append("file", info, config)
-        await uploadFile(fd);
-      }
-
-
-      //console.log('값확인',Object.keys(fd));
-      //sessionStorage.setItem('file',fd);
-      //console.log('저장확인',sessionStorage.getItem('file'));
-      // const { status } = info.file;
-      // if (status !== 'uploading') {
-      //   console.log(info.file, info.fileList);
-      // }
-      // if (status === 'done') {
-      //   message.success(`${info.file.name} file uploaded successfully.`);
-      // } else if (status === 'error') {
-      //   message.error(`${info.file.name} file upload failed.`);
-
-      // }
-    }
-    // onDrop(e) {
-    //   console.log('Dropped files', e.dataTransfer.files);
+    // onChange(info) {
+    //   const upload = async (e) => {
+    //     e.preventDefault();
+    //     const fd = new FormData();
+    //     const config = {
+    //       header: { 'content-type': 'multipart/form-data' },
+    //     }
+    //     fd.append("file", info, config)
+    //     await uploadFile(fd);
+    //   }
   }
-  const multer = require('multer');
-  const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null, 'uploads/');
-    },
-    filename: (req, file, cb) => {
-      const newFileName = file.originalname;
-      cb(null, newFileName);
-    }
-  });
-  const upload = multer({ storage: storage });
-  //}
+
+  //console.log('값확인',Object.keys(fd));
+  //sessionStorage.setItem('file',fd);
+  //console.log('저장확인',sessionStorage.getItem('file'));
+  // const { status } = info.file;
+  // if (status !== 'uploading') {
+  //   console.log(info.file, info.fileList);
+  // }
+  // if (status === 'done') {
+  //   message.success(`${info.file.name} file uploaded successfully.`);
+  // } else if (status === 'error') {
+  //   message.error(`${info.file.name} file upload failed.`);
+
+  // }
+
+  // onDrop(e) {
+  //   console.log('Dropped files', e.dataTransfer.files);
+
+  // const multer = require('multer');
+  // const storage = multer.diskStorage({
+  //   destination: (req, file, cb) => {
+  //     cb(null, 'uploads/');
+  //   },
+  //   filename: (req, file, cb) => {
+  //     const newFileName = file.originalname;
+  //     cb(null, newFileName);
+  //   }
+  // });
+  // const upload = multer({ storage: storage });
+  // //}
 
   const [state, setState] = useState({
     test_seq: "",
@@ -271,5 +270,5 @@ const TestComponent3 = () => {
       <Footer />
     </div>
   );
-};
+}
 export default TestComponent3;
