@@ -9,7 +9,6 @@ import WordCloud from "../../img/WordCloud.png";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import ApiService from "../ApiService";
-import reactStringReplace from 'react-string-replace';
 
 const TestComponent = () => {
 const [Guide,setGuide] = useState({
