@@ -10,15 +10,23 @@ import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import ApiService from "../ApiService";
 import { Button, Select } from "antd";
-
+import WordCloud0 from "../../img/wordCloud/wc0.png"
+import WordCloud1 from "../../img/wordCloud/wc1.png"
+import WordCloud2 from "../../img/wordCloud/wc2.png"
 const TestComponent = () => {
-  const onChange = (value) => {
-    console.log(`selected ${value}`);
-  };
-  const onSearch = (value) => {
-    console.log("search:", value);
-  };
-
+  const [Category, setCategory] = useState("0");
+  const WordCloud = [
+    {id : 0,
+    url : WordCloud0
+    },
+    {id : 1,
+      url : WordCloud1
+      },
+      {id : 2,
+        url : WordCloud2
+        }    
+  ]
+  const [WordCloudNum, setWordCloudNum] = useState("");
   const [Guide, setGuide] = useState({
     guide_seq: "",
     cuesheet: "",
@@ -27,7 +35,6 @@ const TestComponent = () => {
     used: "",
     category_seq: "",
   });
-
   useEffect(() => {
     ApiService.cuesheet()
       .then((res) => {
@@ -41,9 +48,33 @@ const TestComponent = () => {
       });
   }, []);
   let cueSheet = Object.values(Guide);
+  console.log(cueSheet);
+
+  const onChange = (value) => {
+    console.log(`selected ${value}`);
+    console.log(cueSheet[value]);
+    setCategory(cueSheet[value]);
+    setWordCloudNum(value);
+  };
+
+  const OnSearch = () => {
+    console.log("실행됨");
+    //setSelect(value);
+  };
+
+ //console.log(Category.cuesheet);
+console.log("이걸로 확인" ,WordCloudNum); 
+console.log(WordCloudNum);
+console.log(WordCloud[WordCloudNum]);
+let WcUrl = WordCloud[WordCloudNum].url;
+console.log(WcUrl);
+
+
 
   return (
     <div>
+  
+      
       <form>
         <MainHeader />
 
@@ -56,6 +87,7 @@ const TestComponent = () => {
             paddingLeft: "10px",
             backgroundColor: "#F7D5D4",
             borderRadius: 20,
+            overflow: "hidden",
           }}
         >
           <div
@@ -72,37 +104,39 @@ const TestComponent = () => {
           </div>
         </div>
         <div>
-        <Select
-    showSearch
-    placeholder="카테고리를 선택해주세요"
-    optionFilterProp="children"
-    onChange={onChange}
-    onSearch={onSearch}
-    filterOption={(input, option) =>
-      (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
-    }
-    options={[
-      {
-        value: 21,
-        label: '침구류',
-      },
-      {
-        value: 22,
-        label: '이불',
-      },
-      {
-        value: 23,
-        label: '의자',
-      },
-    ]}
-    style={{width : "20vw", marginLeft :"20vw", marginTop:"10px"}}
-  /><Button style={{width:"8vw", marginLeft: "10px"}} onClick={""}>큐시트 가져오기</Button>
+          <Select
+            showSearch
+            placeholder="카테고리를 선택해주세요"
+            optionFilterProp="children"
+            onChange={onChange}
+            filterOption={(input, option) =>
+              (option?.label ?? "").toLowerCase().includes(input.toLowerCase())
+            }
+            options={[
+              {
+                value: 0,
+                label: "침구류",
+              },
+              {
+                value: 1,
+                label: "이불",
+              },
+              {
+                value: 2,
+                label: "의자",
+              },
+            ]}
+            style={{ width: "20vw", marginLeft: "20vw", marginTop: "10px" }}
+          />
+       
+          
         </div>
+     
         <div
           className="Chart01"
           style={{
             width: "30vw",
-            height: "70vh",
+            height: "60vh",
             marginTop: "10px",
             marginLeft: "20vw",
             opacity: "0.5",
@@ -112,20 +146,18 @@ const TestComponent = () => {
             fontSize: "24px",
             color: "white",
           }}
-        >
-          {cueSheet[0].cuesheet}
-        </div>
+        ><h3 style={{fontSize :"20px"}}>{Category.cuesheet}</h3></div>
 
         <div className="InputCategory" style={{ marginLeft: "52vw" }}>
-          <div
+          <div className="WordCloud1"
             style={{
-              backgroundImage: `url(${WordCloud})`,
+              backgroundImage: `url(${WcUrl})` ,
               backgroundRepeat: "no-repeat",
-              width: "500px",
-              height: "300px",
-              marginTop: "-650px",
+              width: "700px",
+              height: "500px",
+              marginTop: "-750px",
             }}
-          ></div>
+          >{WcUrl}</div>
 
           {/*<div style={{ marginBottom: "15px" }}>
         <Category />
@@ -137,9 +169,7 @@ const TestComponent = () => {
           </div>*/}
 
           <div className="dataSpace">
-            <a href="MoreData" style={{ marginLeft: "400px" }}>
-              더보기{" "}
-            </a>
+          
             <div
               style={{
                 width: "500px",
