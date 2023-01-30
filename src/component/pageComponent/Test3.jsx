@@ -98,10 +98,6 @@ const TestComponent3 = () => {
     })
   }
 
-
-
-
-
   const navigate = useNavigate();
   const clicked = () => {
     // console.log(fd)
@@ -111,7 +107,7 @@ const TestComponent3 = () => {
       test_photo: sessionStorage.getItem('photo'),
       test_price: state.test_price,
       test_cuesheet: sessionStorage.getItem('cuesheet'),
-      // test_video: 
+     // test_video: fdata
     }
 
     navigate('/test4',

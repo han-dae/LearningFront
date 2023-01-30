@@ -26,15 +26,12 @@ const TestPage = () => {
         text: '',
         time: ''
     }])
-    let user = {
-        user_id: sessionStorage.getItem('info')
-    }
+    
     const handelComment = (newCom) => {
         console.log('handleComment', newCom)
-        let currentTime = new Date().toLocaleTimeString()
-        
+       
+        let currentTime = new Date().toLocaleTimeString()    
         setCom(com.concat({ 
-            id: sessionStorage.getItem('info').id,
             text: newCom, 
             time: currentTime }))
     }
