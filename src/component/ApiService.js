@@ -4,7 +4,7 @@ const USER_API_BASE_URL = "http://localhost:8081/users/users";
 const TEST_API_BASE_URL = "http://localhost:8081/users/test";
 const GUIDE_API_BASE_URL = "http://localhost:8081/users/guide";
 const COMMENT_API_BASE_URL = "http://localhost:8081/users/comment";
-const TFIDF_API_BASE_URL = "http://localhost:8081/users/tfidf";
+const DESIGN_API_BASE_URL = "http://localhost:8081/users/design";
 class ApiService {
   fetchUser() {
     return axios.get(USER_API_BASE_URL);
@@ -35,7 +35,7 @@ class ApiService {
     return axios.get(COMMENT_API_BASE_URL);
   }
   design(){
-    return axios.get(TFIDF_API_BASE_URL);
+    return axios.get(DESIGN_API_BASE_URL);
   }
 
 
