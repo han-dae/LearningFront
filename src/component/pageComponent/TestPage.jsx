@@ -10,182 +10,173 @@ import ApiService from "../ApiService";
 // import { UserContext } from "../datas/User/UserContextAPI";
 
 const TestPage = () => {
-  const [TestDetail, setTestDetail] = useState({
-    category_seq: "",
-    reg_dt: "",
-    test_cuesheet: "",
-    test_photo: "",
-    test_price: "",
-    test_seq: "",
-    test_title: "",
-    test_video: "",
-    test_video_realname: "",
-    user_id: "",
-  });
+    const [TestDetail, setTestDetail] = useState({
+        category_seq: "",
+        reg_dt: "",
+        test_cuesheet: "",
+        test_photo: "",
+        test_price: "",
+        test_seq: "",
+        test_title: "",
+        test_video: "",
+        test_video_realname: "",
+        user_id: "",
+    });
 
-  {
-    /* const platform =
     {
-        name: "",
-        pic: ""
+        /* const platform =
+        {
+            name: "",
+            pic: "" }
+        */
     }
-    const user = {
-        user_id: this.state.user_id,
-        user_hp: this.state.user_hp     
-    }
-    */
-  }
-  console.log(window.location.search);
-  let qs = queryString.parse(window.location.search);
-  let test_seq = qs.test_seq;
-  console.log(test_seq);
-  useEffect(() => {
-    ApiService.detailTest(test_seq)
-      .then((res) => {
-        console.log(res.status);
-        console.log(res.data);
-        setTestDetail(res.data);
-      })
-      .catch((err) => {
-        console.log("load() 에러", err);
-      });
-  }, []);
 
-  const [com, setCom] = useState([
-    {
-      text: "",
-      time: "",
-    },
-  ]);
+    console.log(window.location.search);
+    let qs = queryString.parse(window.location.search);
+    let test_seq = qs.test_seq;
+    console.log(test_seq);
+    useEffect(() => {
+        ApiService.detailTest(test_seq)
+            .then((res) => {
+                console.log(res.status);
+                console.log(res.data);
+                setTestDetail(res.data);
+            })
+            .catch((err) => {
+                console.log("load() 에러", err);
+            });
+    }, []);
 
-  const handelComment = (newCom) => {
-    console.log("handleComment", newCom);
+    // 댓글 작성
+    const [com, setCom] = useState({
+            user_id:"",
+            text: "",
+            time: "",
+    });
+    // console.log('현재 아이디', user_id)
+    const handelComment = (newCom) => {
+        console.log("handleComment", newCom);
+        let comList = Object.values(com)
+        let user_id = sessionStorage.getItem('info')
+        let currentTime = new Date().toLocaleTimeString();
+        setCom(
+            comList.concat({
+                user_id: user_id,
+                text : newCom,
+                time : currentTime,
+            })
+        );
+    };
 
-    let currentTime = new Date().toLocaleTimeString();
-    setCom(
-      com.concat({
-        text: newCom,
-        time: currentTime,
-      })
-    );
-  };
+    return (
+        <div>
+            <ScrollBottom />
+            <MainHeader />
+            <Content>
+                <div className="right">
+                    <div
+                        className="video"
+                        style={{
+                            width: "700px",
+                            height: "69vh",
+                            marginTop: "82px",
+                            marginLeft: "15vw",
+                            backgroundColor: "gray",
+                            borderRadius: 10,
+                        }}
+                    ></div>
+                    <div style={{ marginLeft: "15%" }}>
+                        <div
+                            className="nameSpace"
+                            style={{ marginTop: "-15px", marginleft: "15%" }}
+                        >
+                            <p style={{ fontSize: "24px" }}>{TestDetail.test_title}</p>
+                        </div>
 
+                        <div
+                            className="userName"
+                            style={{ fontSize: "18px", marginleft: "35%", marginTop: "-1%" }}
+                        >
+                            작성자 : {TestDetail.user_id}
+                        </div>
+                        <div
+                            className="telNumber"
+                            style={{
+                                width: "20vw",
+                                marginLeft: "10%",
+                                marginTop: "-1.5%",
+                                fontSize: "18px",
+                            }}
+                        >
+                            {TestDetail.reg_dt}
+                        </div>
+                        <div
+                            className="price"
+                            style={{
+                                width: "20vw",
+                                marginLeft: "37%",
+                                marginTop: "-1.5%",
+                                fontSize: "25px",
+                                fontFamily: "bold",
+                            }}
+                        >
+                            {TestDetail.test_price} 원
+                        </div>
+                    </div>
+                </div>
 
-  
-  
-  
-  return (
-    <div>
-      <ScrollBottom />
-      <MainHeader />
-      
-      <Content>
-    
-             
-        <div className="right">
-          <div
-            className="video"
-            style={{
-              width: "700px",
-              height: "69vh",
-              marginTop: "82px",
-              marginLeft: "15vw",
-              backgroundColor: "gray",
-              borderRadius: 10,
-            }}
-          ></div>
-          <div style={{ marginLeft: "15%" }}>
-            <div
-              className="nameSpace"
-              style={{ marginTop: "-15px", marginleft: "15%" }}
-            >
-              <p style={{ fontSize: "24px" }}>{TestDetail.test_title}</p>
-            </div>
+                <div className="left">
+                    <div
+                        className="img1"
+                        style={{
+                            width: "350px",
+                            height: "25vh",
+                            marginTop: "-78.5vh",
+                            marginLeft: "53vw",
+                            backgroundColor: "gray",
+                            borderRadius: 10,
+                        }}
+                    ></div>
+                    <div
+                        className="img2"
+                        style={{
+                            width: "350px",
+                            height: "25vh",
+                            marginTop: "-25vh",
+                            marginLeft: "72vw",
+                            backgroundColor: "gray",
+                            borderRadius: 10,
+                        }}
+                    ></div>
+                    <div
+                        className="prod_info"
+                        style={{
+                            fontSize: "18px",
+                            marginLeft: "53vw",
+                            marginTop: "1vh",
+                            width: "713px",
+                            height: "20vh",
+                            backgroundColor: "#FFECEC",
+                            borderRadius: 10,
+                        }}
+                    >
+                        {TestDetail.test_cuesheet}
+                    </div>
 
-            <div
-              className="userName"
-              style={{ fontSize: "18px", marginleft: "35%", marginTop: "-1%" }}
-            >
-              작성자 : {TestDetail.user_id}
-            </div>
-            <div
-              className="telNumber"
-              style={{
-                width: "20vw",
-                marginLeft: "10%",
-                marginTop: "-1.5%",
-                fontSize: "18px",
-              }}
-            >
-              {TestDetail.reg_dt}
-            </div>
-            <div
-              className="price"
-              style={{
-                width: "20vw",
-                marginLeft: "37%",
-                marginTop: "-1.5%",
-                fontSize: "25px",
-                fontFamily: "bold",
-              }}
-            >
-              {TestDetail.test_price} 원
-            </div>
-          </div>
-        </div>
+                    <div
+                        className="price"
+                        style={{
+                            width: "20vw",
+                            marginLeft: "53vw",
+                            marginTop: "1vh",
+                            fontSize: "25px",
+                            fontFamily: "bold",
+                        }}
+                    >
+                        가격 : {TestDetail.test_price} 원
+                    </div>
 
-        <div className="left">
-          <div
-            className="img1"
-            style={{
-              width: "350px",
-              height: "25vh",
-              marginTop: "-78.5vh",
-              marginLeft: "53vw",
-              backgroundColor: "gray",
-              borderRadius: 10,
-            }}
-          ></div>
-          <div
-            className="img2"
-            style={{
-              width: "350px",
-              height: "25vh",
-              marginTop: "-25vh",
-              marginLeft: "72vw",
-              backgroundColor: "gray",
-              borderRadius: 10,
-            }}
-          ></div>
-          <div
-            className="prod_info"
-            style={{
-              fontSize: "18px",
-              marginLeft: "53vw",
-              marginTop: "1vh",
-              width: "713px",
-              height: "20vh",
-              backgroundColor: "#FFECEC",
-              borderRadius: 10,
-            }}
-          >
-            {TestDetail.test_cuesheet}
-          </div>
-
-          <div
-            className="price"
-            style={{
-              width: "20vw",
-              marginLeft: "53vw",
-              marginTop: "1vh",
-              fontSize: "25px",
-              fontFamily: "bold",
-            }}
-          >
-            가격 : {TestDetail.test_price} 원
-          </div>
-
-          {/* <div className="comment" 
+                    {/* <div className="comment" 
                         style={{
                             fontSize: "18px", 
                             marginLeft: "53vw", 
@@ -208,29 +199,29 @@ const TestPage = () => {
                                
                             </input>
                         </div>*/}
-          <div
-            style={{
-              fontSize: "8px",
-              marginLeft: "53vw",
-              marginTop: "1vh",
-              width: "700px",
-              height: "25vh",
-              backgroundColor: "#FFECEC",
-              borderRadius: 10,
-              overflowY: "scroll",
-            }}
-          >
-            <AddComment handelComment={handelComment} />
-            <CommenList com={com} />
-          </div>
-        </div>
-        
-     
-      </Content>
+                    <div
+                        style={{
+                            fontSize: "8px",
+                            marginLeft: "53vw",
+                            marginTop: "1vh",
+                            width: "700px",
+                            height: "25vh",
+                            backgroundColor: "#FFECEC",
+                            borderRadius: 10,
+                            overflowY: "scroll",
+                        }}
+                    >
+                        <AddComment handelComment={handelComment} />
+                        <CommenList com={com} />
+                    </div>
+                </div>
 
-      <MainFooter />
-    </div>
-  );
-};
+
+            </Content>
+
+            <MainFooter />
+        </div>
+    );
+}
 
 export default TestPage;
