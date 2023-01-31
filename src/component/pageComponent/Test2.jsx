@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import MainHeader from "./Header";
-import ScrollBottom from "./Dont_Touch/ScrollBottom";
 
 import { RightCircleOutlined, LeftCircleOutlined } from "@ant-design/icons";
 
@@ -9,8 +8,8 @@ import { RightCircleOutlined, LeftCircleOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import TextArea from "antd/es/input/TextArea";
 import Footer from "./Footer";
-import Chart from 'chart.js/auto';
-import { Line } from 'react-chartjs-2';
+import { BarChart } from "recharts";
+
 
 
 
@@ -32,39 +31,7 @@ const TestComponent2 = () => {
     sessionStorage.setItem('cuesheet',test_cuesheet);
     console.log(sessionStorage.getItem('cuesheet'));
   }
-  const reviewchart = () => {
 
-    let data =  {
-        labels: ['7-8', '8-9', '9-10', '10-11', '11-12', '17-18', '18-19', '19-20' ],
-        datasets: [
-          {
-            type: 'bar',
-            label: '디자인',
-            backgroundColor: 'rgb(255, 99, 132)',
-            data: [50,60,70,80],
-            borderColor: 'red',
-            borderWidth: 2,
-          },
-          {
-            type: 'bar',
-            label: '사용감',
-            backgroundColor: 'rgb(75, 192, 192)',
-            data: [50,60,70,80],
-          },
-          {
-            type: 'bar',
-            label: '가격',
-            backgroundColor: 'rgb(75, 192, 192)',
-            data: [50,60,70,80],
-          },
-        ],
-      };
-      return (
-        <div>
-            <Line type="line" data={[50,60,70,80]} />
-          </div>
-      );
-  }
   
   return (
     <div>
@@ -109,18 +76,23 @@ const TestComponent2 = () => {
         >
          
         </div>
-        {/*  <div
-          className="Chart02"
+        <div
+          id="chart"
           style={{
             marginTop: "0px",
             marginLeft: "20vw",
             width: "28vw",
             height: "30vh",
-            backgroundColor: "black",
+            border: "1px solid black",
           }}
         > 
-          <img src={Img2} style={{ width: "1100px", height: "300px" }} />
-        </div> */}
+          <BarChart width={500}
+        height={400}
+        data={data}
+        margin={{
+          top: 20, right: 80, bottom: 20, left: 20,
+        }}/>
+        </div>
 
         <div style={{  marginLeft: "24vw" }}>
           <TextArea
