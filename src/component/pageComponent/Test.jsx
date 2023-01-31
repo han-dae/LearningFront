@@ -39,6 +39,7 @@ const TestComponent = () => {
         console.log(res.data);
         setGuide(res.data);
         console.log(res.data[0]);
+        sessionStorage.setItem('category_seq',res.data[0].category_seq);
       })
       .catch((err) => {
         console.log("cuesheet() 에러", err);
