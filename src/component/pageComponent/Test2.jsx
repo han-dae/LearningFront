@@ -76,23 +76,8 @@ const TestComponent2 = () => {
         >
          
         </div>
-        <div
-          id="chart"
-          style={{
-            marginTop: "0px",
-            marginLeft: "20vw",
-            width: "28vw",
-            height: "30vh",
-            border: "1px solid black",
-          }}
-        > 
-          <BarChart width={500}
-        height={400}
-        data={data}
-        margin={{
-          top: 20, right: 80, bottom: 20, left: 20,
-        }}/>
-        </div>
+       
+    
 
         <div style={{  marginLeft: "24vw" }}>
           <TextArea
