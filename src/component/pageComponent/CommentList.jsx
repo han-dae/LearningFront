@@ -7,15 +7,13 @@ const CommentList = ({ com }) => {
         fonSize: '8px'
     }
     
+    let comList = Object.values(com)
    
     return (
-        <div style={{
-           // marginLeft: "53vw",
-            //marginTop: "3vh",
-           // width: "700px",
-        }}>
-            {com.map((item, idx) => (
+        <div>
+            {comList.map((item, idx) => (
                 <p key={'num' + idx + item.text}> 
+                    {item.user_id}
                     {item.text}
                     <span style={smallText}> {item.time}</span>
                 </p>
