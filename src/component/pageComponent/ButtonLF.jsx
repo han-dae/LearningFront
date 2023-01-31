@@ -8,7 +8,8 @@ const ButtonLF100 = (props) => {
                 width: "100px",
                 backgroundColor: "#FE8F8D",
                 color: "white",
-                padding:"1px 1px 1px 1px"
+                padding:"1px 1px 1px 1px",
+                margin:"3px"
             }}>
             {props.value}
         </Button>
@@ -23,7 +24,8 @@ const ButtonLF50 = (props) => {
                 width: "50px",
                 backgroundColor: "#FE8F8D",
                 color: "white",
-                padding:"1px 1px 1px 1px"
+                padding:"1px 1px 1px 1px",
+                margin:"3px"
             }}>
             {props.value}
         </Button>
