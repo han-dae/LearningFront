@@ -285,7 +285,7 @@ const MyPage = (props) => {
                                     borderRadius: 30,
                                     padding: "10px",
                                     display: "inline-block",
-                                    marginTop: "0vh",
+                                    marginTop: "1vh",
                                     marginLeft: "20vw"
                                 }}
                             >
@@ -309,7 +309,7 @@ const MyPage = (props) => {
                                     borderRadius: 30,
                                     padding: "10px",
                                     display: "inline-block",
-                                    marginTop: "-7vh",
+                                    marginTop: "0vh",
                                     marginLeft: "1vw"
                                 }}
                             >
@@ -331,8 +331,8 @@ const MyPage = (props) => {
                                     borderRadius: 30,
                                     padding: "10px",
                                     display: "inline-block",
-                                    marginTop: "-27vh",
-                                    marginLeft: "60vw"
+                                    marginTop: "0vh",
+                                    marginLeft: "1vw"
                                 }}
                             >
                                 <div

@@ -34,10 +34,10 @@ const AddComment = ({ handelComment }) => {
   }
   const btnStlyed = {  
       borderRadius: "20px",
-      width: "50px",
+      width: "67px",
       float: "right",
       marginRight: "60px",
-     //  marginTop: "10px",
+      marginTop: '26vh',
       backgroundColor: "#FE8F8D",
       color: "white",
       border:'white'
@@ -54,12 +54,14 @@ const AddComment = ({ handelComment }) => {
           width: "625px",
           //height:"5vh",
           backgroundColor: "#FFECEC",
-          borderRadius: 10
+          borderRadius: 10,
+          marginTop: '26vh',
+          fontSize:'8px'
         }}
         onChange={inputHaldle}
         value={value}
         onKeyPress={enterHandle} >
-
+        
       </input>
       <button onClick={btnHandle} style={btnStlyed} >댓글</button>
       </div>
