@@ -166,6 +166,8 @@ console.log(WcUrl);
             <div className="chart_dh">
               <div style={{ width: 500, height: 300 }}></div>
             </div>
+
+           
           </div>
           <Link to={"/test2"}>
             <RightCircleOutlined

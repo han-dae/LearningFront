@@ -42,6 +42,13 @@ class ApiService {
   loadTest(){
     return axios.get(TEST_API_BASE_URL);
   }
+  loadMyTest(user_id) {
+    console.log(TEST_API_BASE_URL + "/Mypage");
+    console.log(user_id);
+
+    console.log(typeof(user_id));
+    return axios.post(TEST_API_BASE_URL + "/Mypage", user_id);
+  }
   detailTest(test_seq) {
     console.log("api 이동 ",TEST_API_BASE_URL + "/" + test_seq);
     return axios.get(TEST_API_BASE_URL + "/" + test_seq);
