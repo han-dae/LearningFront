@@ -14,6 +14,7 @@ function FileData() {
   function Send(){
     const fd = new FormData();
     Object.values(file).forEach((file) => fd.append("file", file));
+    console.log(file);
     console.log(fd);
 
 

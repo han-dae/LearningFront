@@ -14,34 +14,45 @@ const { Dragger } = Upload;
 
 
 const TestComponent3 = () => {
-  const [content, setContent] = useState("");
-  const [uploadedImg, setUploadedImg] = useState({
-  fileName: "",
-  fillPath: ""
-  });
-  
+  // const [content, setContent] = useState("");
+  // const [uploadedImg, setUploadedImg] = useState({
+  // fileName: "",
+  // fillPath: ""
+  // });
+
   const props = {
     name: 'file',
     multiple: true,
-     onChange(info) {
-      const BASE_URL = 'http://localhost:3000';
-        const formData = new FormData();
-        formData.append("file", info); 
-        axios
-          .post("/upload", formData)
-          .then(res => {
-            const { fileName } = res.data;
-            console.log(fileName);
-            setUploadedImg({ fileName, filePath: `${BASE_URL}/file/${fileName}` });
-            alert("The file is successfully uploaded");
-          })
-          .catch(err => {
-            console.error(err);
-          });
-      
-         
-        
-  }}
+    onChange(info) {
+      console.log(info);
+      console.log(info.file.name);
+      const filename = info.file.name;
+      const fd = new FormData();
+      Object.values(info.file).forEach((file) => fd.append("file", file));
+      console.log(fd);
+      sessionStorage.setItem('test_video', filename);
+      console.log('test', sessionStorage.getItem('test_video'));
+      axios.post('/test/AxiosFileTest.do', fd, {
+        headers: {
+          "Content-Type": `multipart/form-data; `,
+        },
+        baseURL: 'http://localhost:8081/users'
+      })
+        .then((response) => {
+          //console.log(response.data)
+        })
+        .catch((error) => {
+          // 예외 처리
+        })
+
+
+
+
+    }
+    // onDrop(e) {
+    //   console.log('Dropped files', e.dataTransfer.files);
+    // }
+  }
 
   //console.log('값확인',Object.keys(fd));
   //sessionStorage.setItem('file',fd);
@@ -57,8 +68,7 @@ const TestComponent3 = () => {
 
   // }
 
-  // onDrop(e) {
-  //   console.log('Dropped files', e.dataTransfer.files);
+
 
   // const multer = require('multer');
   // const storage = multer.diskStorage({
@@ -103,14 +113,13 @@ const TestComponent3 = () => {
 
   const navigate = useNavigate();
   const clicked = () => {
-    // console.log(fd)
 
     let test = {
       test_title: state.test_title,
       test_photo: sessionStorage.getItem('photo'),
       test_price: state.test_price,
       test_cuesheet: sessionStorage.getItem('cuesheet'),
-      test_video: fdata
+      test_video: sessionStorage.getItem('test_video')
     }
 
     navigate('/test4',
@@ -188,8 +197,9 @@ const TestComponent3 = () => {
           }}
         >
           <input
-          name="test_title"
-          value={state.test_title}
+            name="test_title"
+            value={state.test_title}
+            onchange={onChange}
             type="text"
             className="title"
             placeholder="영상의 제목을 입력해주세요."
@@ -229,8 +239,9 @@ const TestComponent3 = () => {
             placeholder="라이브 커머스 영상, 상품정보에 대해  간략하게 설명해주세요."
           />
           <input
-          name="test_price"
-          value={state.test_price}
+            name="test_price"
+            value={state.test_price}
+            onChange={onChange}
             type="text"
             className="price"
             placeholder="가격을 책정해주세요."
@@ -262,19 +273,19 @@ const TestComponent3 = () => {
               />
             </Link>
 
-              <RightCircleOutlined
-               onClick={clicked}
-               type="Button"
-                style={{
-                  position: "absolute",
-                  bottom: "50px",
-                  marginTop: "0px",
-                  right: "400px",
-                  fontSize: "300%",
-                  color: "black",
-                }}
-              />
-            
+            <RightCircleOutlined
+              onClick={clicked}
+              type="Button"
+              style={{
+                position: "absolute",
+                bottom: "50px",
+                marginTop: "0px",
+                right: "400px",
+                fontSize: "300%",
+                color: "black",
+              }}
+            />
+
           </div>
         </div>
 

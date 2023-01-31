@@ -1,8 +1,7 @@
-const path = createRequire("path");
-const express = createRequire("express");
+import path from "path";
+import express from "express";
 const app = express();
-const multer = createRequire("multer");
-const { createRequire } = createRequire("module");
+import multer from "multer";
 const PORT = 3000;
 app.use(express.static("public"));
 const storage = multer.diskStorage({
@@ -12,12 +11,13 @@ const storage = multer.diskStorage({
   }
 });
 
-const upload = multer({
-  storage: storage,
+ const upload = multer({
+   storage: storage,
   limits: { fileSize: 100000000 }
-});
+ });
 
-app.post("/upload", upload.single("img"), function(req, res, next) {
+pp.post('/upload', upload.single('file'), (req, res) => {
+  console.log(req.file);
   res.send({
     fileName: req.file.filename
   });

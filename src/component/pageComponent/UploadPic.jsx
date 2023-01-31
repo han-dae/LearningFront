@@ -34,11 +34,11 @@ const UploadPic = () => {
     <ImgCrop rotate>
       <Upload
         listType="picture-card"
-        fileList={fileList}
+        //fileList={fileList}l
         onChange={onChange}
         onPreview={onPreview}
       >
-        {fileList.length < 5 && '+ Upload'}
+        {fileList.length <2 && '+ Upload'}
       </Upload>
     </ImgCrop>
   );
