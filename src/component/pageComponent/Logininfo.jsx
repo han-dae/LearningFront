@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Layout, Menu, } from 'antd';
 import { Link } from "react-router-dom";
-
+import {ButtonLF100} from "./ButtonLF";
 
 const Logininfo = () => {
   const logout = () => {
@@ -14,26 +14,23 @@ const Logininfo = () => {
 
   if (info1 == null) {
     return (
-      <Link to="/Login">
-        <Button
-          style={{ borderRadius: "20px", width: "100px", float: "right", marginTop: "-40px", marginRight: "12%", backgroundColor: "#FE8F8D", color: "white" }}>
-          로그인
-        </Button>
-      </Link>
+      <div style={{ float: "right", marginTop: "-40px", marginRight: "12%" }}>
+        <Link to="/Login">
+          <ButtonLF100 value={'로그인'} />
+        </Link>
+      </div>
     )
   } else {
     return (
       <div>
-        <Link to="/MyPage">
-          <Button
-            style={{ borderRadius: "20px", width: "100px", float: "right", marginTop: "-40px", marginRight: "12%", backgroundColor: "#FE8F8D", color: "white" }}>
-            마이페이지
-          </Button>
-        </Link>
-        <Button onClick={logout}
-          style={{ borderRadius: "20px", width: "100px", float: "right", marginTop: "-40px", marginRight: "18%", backgroundColor: "#FE8F8D", color: "white" }}>
-          로그아웃
-        </Button>
+        <div style={{ float: "right", marginTop: "-40px", marginRight: "12%" }}>
+          <Link to="/MyPage">
+            <ButtonLF100 value={'마이페이지'} />
+          </Link>
+        </div>
+        <div style={{ float: "right", marginTop: "-40px", marginRight: "18%" }} onClick={logout}>
+          <ButtonLF100 value={'로그아웃'} />
+        </div>
       </div>
     )
   }
