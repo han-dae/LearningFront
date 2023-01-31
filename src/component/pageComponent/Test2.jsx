@@ -60,9 +60,9 @@ const TestComponent2 = () => {
         ],
       };
       return (
-        <div>
+        <reviewchart>
             <Line type="line" data={[50,60,70,80]} />
-          </div>
+          </reviewchart>
       );
   }
   
