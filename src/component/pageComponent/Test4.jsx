@@ -9,9 +9,13 @@ import { render } from "@testing-library/react";
 import ScrollBottom from "./Dont_Touch/ScrollBottom";
 import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons";
 import Footer from "./Footer";
+import axios from "axios";
+
 // 등록
 
 class Test4 extends Component {
+
+
   constructor(props) {
     super(props);
 
@@ -27,12 +31,43 @@ class Test4 extends Component {
       user_id: "",
       category_seq: "",
       category_name: "",
+      video_url:"",
     };
   }
+  submit =()=>{
+    let test ={
+      test_title : location.state.test_title,
+      test_photo : sessionStorage.getItem('test_photo'),
+      test_price : location.state.test_price,
+      test_cuesheet : sessionStorage.getItem('cuesheet'),
+      test_video : sessionStorage.getItem('test_video'),
+      test_video_realname : sessionStorage.getItem('test_video_realname')
+    }
+
+    axios.post('/test/test', test, {
+     
+      baseURL: 'http://localhost:8081/users'
+    })
+      .then((response) => {
+         
+      })
+      .catch((error) => {
+        // 예외 처리
+      })
+  }
+  componentDidMount() {
+
+    let getUrl = sessionStorage.getItem("video_url");
+    this.setState({video_url:getUrl})
+  
+}
 
   render() {
     return (
       <div>
+
+
+
         <form>
      
           <MainHeader />
@@ -66,11 +101,16 @@ class Test4 extends Component {
               height: "50vh",
               marginTop: "10px",
               marginLeft: "20vw",
-              backgroundColor: "gray",
+              backgroundColor: "white",
 
               borderRadius: 10,
             }}
-          ></div>
+          ><video src={this.state.video_url} controls autoPlay muted playsInline
+          style={{
+            width: "700px",
+            height: "50vh",
+            marginTop: "10px",
+            marginLeft: "0vw",}}></video></div>
           <div
             className="itemContents"
             style={{
@@ -87,7 +127,7 @@ class Test4 extends Component {
                 [뷰티쓱세일]공동판매구역 랑콤편! 전 구매고객 럭키 박스 증정
               </p>
             </div>
-            <div className="userName" style={{fontSize : "18px"}}>작성자</div>
+            <div className="userName" style={{fontSize : "18px"}}>작성자 : {sessionStorage.getItem('ifno')}</div>
             <div
               className="telNumber"
               style={{ width: "20vw", marginLeft: "30%", marginTop: "-21px" ,fontSize : "18px"}}
@@ -98,7 +138,7 @@ class Test4 extends Component {
               className="price"
               style={{ width: "20vw", marginLeft: "70%", marginTop: "-21px",fontSize : "18px" }}
             >
-              가격이 적히는 공간
+              가격 : {location.state.test_price}
             </div>
           </div>
 
@@ -113,7 +153,7 @@ class Test4 extends Component {
                 overflowY: "scroll",
                 backgroundColor: "greenyellow",
               }}
-            ></div>
+            >{sessionStorage.getItem('cuesheet')}</div>
             <div style={{ marginLeft: "1100px" }}>
               <h3>작성했던 스크립트와 영상을 확인해보세요.</h3>
               <h3>모두 올바르게 작성되었다면 확인을 누르세요.</h3>
@@ -139,8 +179,10 @@ class Test4 extends Component {
                 }}
               />
             </Link>
-          <Link to={"/testlist"}>
+          
             <RightCircleOutlined
+            type="Button"
+            onClick={submit}
               style={{
                 position: "absolute",
                 bottom: "50px",
@@ -150,7 +192,7 @@ class Test4 extends Component {
                 color: "black",
               }}
             />
-          </Link>
+          
           <div className="testBtn" style={{ position: "absolute", bottom:"2vh", right:"36vw" }}>
           <Link to={"/test1"}>
             <div className='test1'

@@ -1,12 +1,12 @@
 import React from 'react'
 
-const CommenList = ({ com }) => {
+const CommentList = ({ com }) => {
     console.log(com)
     const smallText = {
         color: 'gray',
         fonSize: '8px'
     }
-    console.log('현재 아이디', )
+    
    
     return (
         <div style={{
@@ -15,8 +15,7 @@ const CommenList = ({ com }) => {
            // width: "700px",
         }}>
             {com.map((item, idx) => (
-                <p key={'num' + idx + item.text}>
-                    {item.user_id}
+                <p key={'num' + idx + item.text}> 
                     {item.text}
                     <span style={smallText}> {item.time}</span>
                 </p>
@@ -25,4 +24,4 @@ const CommenList = ({ com }) => {
     )
 }
 
-export default CommenList
+export default CommentList

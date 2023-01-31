@@ -20,11 +20,21 @@ const TestComponent3 = () => {
   // fillPath: ""
   // });
 
-  const props = {
+  const props =  {
     name: 'file',
     multiple: true,
     onChange(info) {
       console.log(info);
+      console.log(URL.createObjectURL(info.file.originFileObj));
+      let video_url = URL.createObjectURL(info.file.originFileObj);
+
+      sessionStorage.setItem('video_url', video_url);
+      // const url = async(info) => {
+      //   const reader = new FileReader();
+      //   console.log(reader.readAsDataURL(info.file.originFileObj));
+      // }
+      //   url(info.file);
+      console.log(info.file)
       console.log(info.file.name);
       const filename = info.file.name;
       const fd = new FormData();
@@ -32,6 +42,8 @@ const TestComponent3 = () => {
       console.log(fd);
       sessionStorage.setItem('test_video', filename);
       console.log('test', sessionStorage.getItem('test_video'));
+
+
       axios.post('/test/AxiosFileTest.do', fd, {
         headers: {
           "Content-Type": `multipart/form-data; `,
@@ -39,7 +51,7 @@ const TestComponent3 = () => {
         baseURL: 'http://localhost:8081/users'
       })
         .then((response) => {
-          //console.log(response.data)
+           sessionStorage.setItem('test_video_realname',response.data); 
         })
         .catch((error) => {
           // 예외 처리
@@ -107,10 +119,6 @@ const TestComponent3 = () => {
     })
   }
 
-
-
-
-
   const navigate = useNavigate();
   const clicked = () => {
 
@@ -119,7 +127,9 @@ const TestComponent3 = () => {
       test_photo: sessionStorage.getItem('photo'),
       test_price: state.test_price,
       test_cuesheet: sessionStorage.getItem('cuesheet'),
-      test_video: sessionStorage.getItem('test_video')
+      test_video: sessionStorage.getItem('test_video'),
+      test_video_realname: sessionStorage.getItem('test_video_realname')
+
     }
 
     navigate('/test4',
@@ -199,7 +209,7 @@ const TestComponent3 = () => {
           <input
             name="test_title"
             value={state.test_title}
-            onchange={onChange}
+            onChange={onChange}
             type="text"
             className="title"
             placeholder="영상의 제목을 입력해주세요."
