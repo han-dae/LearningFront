@@ -6,7 +6,7 @@ const CommentList = ({ com }) => {
         color: 'gray',
         fonSize: '8px'
     }
-    console.log('현재 아이디', )
+    
    
     return (
         <div style={{
@@ -15,11 +15,8 @@ const CommentList = ({ com }) => {
            // width: "700px",
         }}>
             {com.map((item, idx) => (
-                <p key={'num' + idx + item.text}>
-                    
-                    {item.user_id}
+                <p key={'num' + idx + item.text}> 
                     {item.text}
-
                     <span style={smallText}> {item.time}</span>
                 </p>
             ))}

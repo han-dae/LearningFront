@@ -12,22 +12,12 @@ const AddComment = ({ handelComment }) => {
 
   const btnHandle = () => {
     console.log('현재 댓글', value)
-
     handelComment(value)
-    
     setValue('')
   }
-  const [state, setState] = useState({
-    user_id: "",
-    cmt_content: "",
-    cmt_seq:"",
-    test_seq:"",
-    cmt_dt:""
-  });
-  const sendcom= (props) => {
-    
-  // 댓글 저장
-    ApiService.sendComment(props.user_id, props.cmt_content)
+
+  {/*useEffect(() => {
+    ApiService.sendComment()
       .then((res) => {
         console.log(res.status);
         console.log(res.data);
@@ -36,7 +26,7 @@ const AddComment = ({ handelComment }) => {
       .catch((err) => {
         console.log("send() 에러", err);
       });
-  
+  })*/}
   
   const enterHandle = (e) => {
     console.log(e.code)
@@ -59,10 +49,10 @@ const AddComment = ({ handelComment }) => {
       <div style={{position:'absolute'}}>
       <input className="com_input"
         style={{
-           marginLeft: "53vw", 
-           marginTop: "22.5vh",
+           //marginLeft: "53vw", 
+           //marginTop: "22.5vh",
           width: "625px",
-          height:"5vh",
+          //height:"5vh",
           backgroundColor: "#FFECEC",
           borderRadius: 10
         }}
@@ -77,5 +67,5 @@ const AddComment = ({ handelComment }) => {
 
   )
       }
-    }
+    
 export default AddComment;

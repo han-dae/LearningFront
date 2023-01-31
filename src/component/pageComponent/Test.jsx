@@ -5,28 +5,23 @@ import MainHeader from "./Header";
 import ScrollBottom from "./Dont_Touch/ScrollBottom";
 import InputTextArea from "./TextArea";
 import { RightCircleOutlined } from "@ant-design/icons";
-import WordCloud from "../../img/WordCloud.png";
+
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import ApiService from "../ApiService";
 import { Button, Select } from "antd";
-import WordCloud0 from "../../img/wordCloud/wc0.png"
-import WordCloud1 from "../../img/wordCloud/wc1.png"
-import WordCloud2 from "../../img/wordCloud/wc2.png"
+import WordCloud0 from "../../img/wordCloud/wc0.png";
+import WordCloud1 from "../../img/wordCloud/wc1.png";
+import WordCloud2 from "../../img/wordCloud/wc2.png";
 const TestComponent = () => {
   const [Category, setCategory] = useState("0");
+  
   const WordCloud = [
-    {id : 0,
-    url : WordCloud0
-    },
-    {id : 1,
-      url : WordCloud1
-      },
-      {id : 2,
-        url : WordCloud2
-        }    
-  ]
-  const [WordCloudNum, setWordCloudNum] = useState("");
+    { id: 0, url: WordCloud0 },
+    { id: 1, url: WordCloud1 },
+    { id: 2, url: WordCloud2 },
+  ];
+  
   const [Guide, setGuide] = useState({
     guide_seq: "",
     cuesheet: "",
@@ -35,6 +30,8 @@ const TestComponent = () => {
     used: "",
     category_seq: "",
   });
+ 
+  const [WordCloudNum, setWordCloudNum] = useState("0");
   useEffect(() => {
     ApiService.cuesheet()
       .then((res) => {
@@ -57,24 +54,15 @@ const TestComponent = () => {
     setWordCloudNum(value);
   };
 
-  const OnSearch = () => {
-    console.log("실행됨");
-    //setSelect(value);
-  };
+  //console.log(Category.cuesheet);
+ console.log("이걸로 확인", WordCloudNum);
 
- //console.log(Category.cuesheet);
-console.log("이걸로 확인" ,WordCloudNum); 
-console.log(WordCloudNum);
-console.log(WordCloud[WordCloudNum]);
-let WcUrl = WordCloud[WordCloudNum].url;
+  console.log(WordCloud[WordCloudNum]);
+  let WcUrl = (WordCloud[WordCloudNum].url);
 console.log(WcUrl);
-
-
 
   return (
     <div>
-  
-      
       <form>
         <MainHeader />
 
@@ -128,10 +116,8 @@ console.log(WcUrl);
             ]}
             style={{ width: "20vw", marginLeft: "20vw", marginTop: "10px" }}
           />
-       
-          
         </div>
-     
+
         <div
           className="Chart01"
           style={{
@@ -146,7 +132,9 @@ console.log(WcUrl);
             fontSize: "24px",
             color: "white",
           }}
-        ><h3 style={{fontSize :"20px"}}>{Category.cuesheet}</h3></div>
+        >
+          <h3 style={{ fontSize: "20px" }}>{Category.cuesheet}</h3>
+        </div>
 
         <div className="InputCategory" style={{ marginLeft: "52vw" }}>
           <div className="WordCloud1"
@@ -157,19 +145,10 @@ console.log(WcUrl);
               height: "500px",
               marginTop: "-750px",
             }}
-          >{WcUrl}</div>
-
-          {/*<div style={{ marginBottom: "15px" }}>
-        <Category />
-          </div>
-          <InputTextArea />
-          <div style={{ marginLeft: "80px", marginTop: "100px" }}>
-            <h3>1. 판매하려는 상품의 카테고리를 골라주세요.</h3>
-            <h3>2. 분석 결과를 토대로 본인만의 스크립트를 작성해보세요.</h3>
-          </div>*/}
+          ></div>
+          
 
           <div className="dataSpace">
-          
             <div
               style={{
                 width: "500px",
