@@ -12,24 +12,26 @@ import {
     ResponsiveContainer,
 } from 'recharts';
 
+
 const data = [
     {
-        
+      
         percent: 17,
-        key:'Naver'
-    },{
+        key: 'Naver'
+    }, {
         
         percent: 15,
-        key:'SSG'
-    },{
+        key: 'SSG'
+    }, {
         
         percent: 13,
-        key:'Coupang'
-    },{
+        key: 'Coupang'
+    }, {
         
         percent: 6,
-        key:'Lotte'
+        key: 'Lotte'
     }
+
 ];
 
 export default class Example extends PureComponent {
@@ -52,12 +54,12 @@ export default class Example extends PureComponent {
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
                         type="number"
-                        display="none" 
+                        display="none"
                         label={{ value: '', offset: 30, angle: 0, position: 'bottom' }}
                     />
                     <YAxis
                         dataKey="key"
-                        display="none" 
+                        display="none"
                         type="category" />
                     <Tooltip />
                     <Legend />
@@ -65,8 +67,8 @@ export default class Example extends PureComponent {
                     <Bar
                         dataKey="percent"
                         fill="#413ea0"
-                        isAnimationActive={false} 
-                           
+                        isAnimationActive={false}
+
                     />
 
                 </ComposedChart>
