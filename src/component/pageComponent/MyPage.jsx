@@ -297,7 +297,7 @@ const MyPage = (props) => {
                                     borderRadius: 30,
                                     padding: "10px",
                                     display: "inline-block",
-                                    marginTop: "-27vh",
+                                    marginTop: "-7vh",
                                     marginLeft: "60vw"
                                 }}
                             >
