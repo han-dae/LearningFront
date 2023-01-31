@@ -111,7 +111,7 @@ const MyPage = (props) => {
                         <div style={{
                             marginLeft: "18%"
                         }}>
-                            <table>
+                            <table style={{ borderSpacing: "10px" }}>
                                 <tr>
                                     <td style={{ width: "120px" }}>
                                         <label className="label">PW</label>
@@ -155,7 +155,7 @@ const MyPage = (props) => {
                                     </td>
                                 </tr>
                             </table>
-                            <div onClick={updateMember} style={{marginLeft:"47%"}}>
+                            <div onClick={updateMember} style={{ marginLeft: "47%" }}>
                                 <ButtonLF100 value={"정보 수정"} />
                             </div>
                         </div>
