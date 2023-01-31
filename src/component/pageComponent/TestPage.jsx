@@ -200,8 +200,7 @@ const TestPage = () => {
                             </input>
                         </div>*/}
                     <div
-                        style={{
-                            fontSize: "8px",
+                        style={{  
                             marginLeft: "53vw",
                             marginTop: "1vh",
                             width: "700px",
@@ -211,7 +210,7 @@ const TestPage = () => {
                             overflowY: "scroll",
                         }}
                     >
-                        <AddComment handelComment={handelComment} />
+                        <AddComment handelComment={handelComment} style={{marginTop:'-3vh'}}/>
                         <CommenList com={com} />
                     </div>
                 </div>
