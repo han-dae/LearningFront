@@ -31,20 +31,51 @@ class Test4 extends Component {
       user_id: "",
       category_seq: "",
       category_name: "",
+      test_content:"",
       video_url:"",
     };
   }
-  submit =()=>{
+  componentDidMount() {
+    
+
+    console.log('category_seq',sessionStorage.getItem('category_seq'));
+
+    let getUrl = sessionStorage.getItem("video_url");
+    let test_title = sessionStorage.getItem('test_title');
+    let test_photo = sessionStorage.getItem("photo");
+    let test_price = sessionStorage.getItem('test_price');
+    let test_cuesheet = sessionStorage.getItem("cuesheet");
+    let test_video = sessionStorage.getItem("test_video");
+    let test_video_realname = sessionStorage.getItem("test_video_realname");
+    let user_id = sessionStorage.getItem('info');
+    let test_content = sessionStorage.getItem('test_content');
+    let category_seq = sessionStorage.getItem('category_seq');
+    
+    this.setState({video_url:getUrl});
+    this.setState({test_title : test_title});
+    this.setState({test_photo : test_photo});
+    this.setState({test_price : test_price});
+    this.setState({test_cuesheet : test_cuesheet});
+    this.setState({test_video : test_video});
+    this.setState({test_video_realname : test_video_realname});
+    this.setState({user_id : user_id});
+    this.setState({test_content : test_content});
+    this.setState({category :category_seq});
+  }
+  submit = () => {
     let test ={
-      test_title : location.state.test_title,
-      test_photo : sessionStorage.getItem('test_photo'),
-      test_price : location.state.test_price,
-      test_cuesheet : sessionStorage.getItem('cuesheet'),
-      test_video : sessionStorage.getItem('test_video'),
-      test_video_realname : sessionStorage.getItem('test_video_realname')
+      test_title : this.state.test_title,
+      test_photo : this.state.test_photo,
+      test_price : this.state.test_price,
+      test_cuesheet : this.state.test_cuesheet,
+      test_video : this.state.test_video,
+      test_video_realname : this.state.test_video_realname,
+      test_content : this.state.test_content,
+      user_id : this.state.user_id,
+      test_seq : this.state.category_seq
     }
 
-    axios.post('/test/test', test, {
+    axios.post('/test/test',test, {
      
       baseURL: 'http://localhost:8081/users'
     })
@@ -55,12 +86,6 @@ class Test4 extends Component {
         // 예외 처리
       })
   }
-  componentDidMount() {
-
-    let getUrl = sessionStorage.getItem("video_url");
-    this.setState({video_url:getUrl})
-  
-}
 
   render() {
     return (
@@ -127,7 +152,7 @@ class Test4 extends Component {
                 [뷰티쓱세일]공동판매구역 랑콤편! 전 구매고객 럭키 박스 증정
               </p>
             </div>
-            <div className="userName" style={{fontSize : "18px"}}>작성자 : {sessionStorage.getItem('ifno')}</div>
+            <div className="userName" style={{fontSize : "18px"}}>작성자 : {this.state.user_id}</div>
             <div
               className="telNumber"
               style={{ width: "20vw", marginLeft: "30%", marginTop: "-21px" ,fontSize : "18px"}}
@@ -138,7 +163,7 @@ class Test4 extends Component {
               className="price"
               style={{ width: "20vw", marginLeft: "70%", marginTop: "-21px",fontSize : "18px" }}
             >
-              가격 : {location.state.test_price}
+              가격 : {this.state.test_price}
             </div>
           </div>
 
@@ -153,7 +178,7 @@ class Test4 extends Component {
                 overflowY: "scroll",
                 backgroundColor: "greenyellow",
               }}
-            >{sessionStorage.getItem('cuesheet')}</div>
+            >{this.state.test_cuesheet}</div>
             <div style={{ marginLeft: "1100px" }}>
               <h3>작성했던 스크립트와 영상을 확인해보세요.</h3>
               <h3>모두 올바르게 작성되었다면 확인을 누르세요.</h3>
@@ -182,7 +207,7 @@ class Test4 extends Component {
           
             <RightCircleOutlined
             type="Button"
-            onClick={submit}
+            onClick={this.submit}
               style={{
                 position: "absolute",
                 bottom: "50px",

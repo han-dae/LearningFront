@@ -122,15 +122,18 @@ const TestComponent3 = () => {
 
   const navigate = useNavigate();
   const clicked = () => {
+    sessionStorage.setItem('test_title',state.test_title);
+    sessionStorage.setItem('test_price',state.test_price);
+    sessionStorage.setItem('test_content',state.test_content);
 
     let test = {
-      test_title: state.test_title,
+      test_title: sessionStorage.getItem('test_title'),
       test_photo: sessionStorage.getItem('photo'),
-      test_price: state.test_price,
+      test_price: sessionStorage.getItem('test_price'),
       test_cuesheet: sessionStorage.getItem('cuesheet'),
       test_video: sessionStorage.getItem('test_video'),
       test_video_realname: sessionStorage.getItem('test_video_realname'),
-      test_content : state.test_content
+      test_content : sessionStorage.getItem('test_content')
 
     }
 
