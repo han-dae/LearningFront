@@ -14,35 +14,57 @@ const { Dragger } = Upload;
 
 
 const TestComponent3 = () => {
-  const [content, setContent] = useState("");
-  const [uploadedImg, setUploadedImg] = useState({
-  fileName: "",
-  fillPath: ""
-  });
-  
-  const props = {
+  // const [content, setContent] = useState("");
+  // const [uploadedImg, setUploadedImg] = useState({
+  // fileName: "",
+  // fillPath: ""
+  // });
+
+  const props =  {
     name: 'file',
     multiple: true,
-     onChange(info) {
-      const BASE_URL = 'http://localhost:3000'
-      
-        const formData = new FormData();
-        formData.append("file", info); 
-        axios
-          .post("/upload", formData)
-          .then(res => {
-            const { fileName } = res.data;
-            console.log(fileName);
-            setUploadedImg({ fileName, filePath: `${BASE_URL}/file/${fileName}` });
-            alert("The file is successfully uploaded");
-          })
-          .catch(err => {
-            console.error(err);
-          });
-      
-         
-        
-  }}
+    onChange(info) {
+      console.log(info);
+      console.log(URL.createObjectURL(info.file.originFileObj));
+      let video_url = URL.createObjectURL(info.file.originFileObj);
+
+      sessionStorage.setItem('video_url', video_url);
+      // const url = async(info) => {
+      //   const reader = new FileReader();
+      //   console.log(reader.readAsDataURL(info.file.originFileObj));
+      // }
+      //   url(info.file);
+      console.log(info.file)
+      console.log(info.file.name);
+      const filename = info.file.name;
+      const fd = new FormData();
+      Object.values(info.file).forEach((file) => fd.append("file", file));
+      console.log(fd);
+      sessionStorage.setItem('test_video', filename);
+      console.log('test', sessionStorage.getItem('test_video'));
+
+
+      axios.post('/test/AxiosFileTest.do', fd, {
+        headers: {
+          "Content-Type": `multipart/form-data; `,
+        },
+        baseURL: 'http://localhost:8081/users'
+      })
+        .then((response) => {
+           sessionStorage.setItem('test_video_realname',response.data); 
+        })
+        .catch((error) => {
+          // 예외 처리
+        })
+
+
+
+
+    }
+    // onDrop(e) {
+    //   console.log('Dropped files', e.dataTransfer.files);
+    // }
+  }
 
   //console.log('값확인',Object.keys(fd));
   //sessionStorage.setItem('file',fd);
@@ -58,8 +80,7 @@ const TestComponent3 = () => {
 
   // }
 
-  // onDrop(e) {
-  //   console.log('Dropped files', e.dataTransfer.files);
+
 
   // const multer = require('multer');
   // const storage = multer.diskStorage({
@@ -83,7 +104,8 @@ const TestComponent3 = () => {
     reg_dt: "",
     user_id: "",
     category_seq: "",
-    category_name: ""
+    category_name: "",
+    test_content : ""
   })
   //  const [file, setFile] = useState(null);	//파일	
   //  const handleChangeFile = (event) => {
@@ -100,14 +122,19 @@ const TestComponent3 = () => {
 
   const navigate = useNavigate();
   const clicked = () => {
-    // console.log(fd)
+    sessionStorage.setItem('test_title',state.test_title);
+    sessionStorage.setItem('test_price',state.test_price);
+    sessionStorage.setItem('test_content',state.test_content);
 
     let test = {
-      test_title: state.test_title,
+      test_title: sessionStorage.getItem('test_title'),
       test_photo: sessionStorage.getItem('photo'),
-      test_price: state.test_price,
+      test_price: sessionStorage.getItem('test_price'),
       test_cuesheet: sessionStorage.getItem('cuesheet'),
-     // test_video: fdata
+      test_video: sessionStorage.getItem('test_video'),
+      test_video_realname: sessionStorage.getItem('test_video_realname'),
+      test_content : sessionStorage.getItem('test_content')
+
     }
 
     navigate('/test4',
@@ -118,7 +145,8 @@ const TestComponent3 = () => {
           test_photo: test.test_photo,
           test_price: test.test_price,
           test_cuesheet: test.test_cuesheet,
-          test_video: test.test_video
+          test_video: test.test_video,
+          test_content : test.test_content
         }
       });
     //sessionStorage.setItem('test_video',test.test_video);
@@ -185,8 +213,9 @@ const TestComponent3 = () => {
           }}
         >
           <input
-          name="test_title"
-          value={state.test_title}
+            name="test_title"
+            value={state.test_title}
+            onChange={onChange}
             type="text"
             className="title"
             placeholder="영상의 제목을 입력해주세요."
@@ -214,6 +243,8 @@ const TestComponent3 = () => {
 
         <div style={{ marginTop: "-415px", marginLeft: "50vw" }}>
           <TextArea
+          name="test_content"
+          value={state.test_content}
             showCount
             maxLength={800}
             style={{
@@ -222,12 +253,13 @@ const TestComponent3 = () => {
               resize: "none",
               overflowY: "scroll",
             }}
-            onChange={onchange}
+            onChange={onChange}
             placeholder="라이브 커머스 영상, 상품정보에 대해  간략하게 설명해주세요."
           />
           <input
-          name="test_price"
-          value={state.test_price}
+            name="test_price"
+            value={state.test_price}
+            onChange={onChange}
             type="text"
             className="price"
             placeholder="가격을 책정해주세요."
@@ -259,19 +291,19 @@ const TestComponent3 = () => {
               />
             </Link>
 
-              <RightCircleOutlined
-               onClick={clicked}
-               type="Button"
-                style={{
-                  position: "absolute",
-                  bottom: "50px",
-                  marginTop: "0px",
-                  right: "400px",
-                  fontSize: "300%",
-                  color: "black",
-                }}
-              />
-            
+            <RightCircleOutlined
+              onClick={clicked}
+              type="Button"
+              style={{
+                position: "absolute",
+                bottom: "50px",
+                marginTop: "0px",
+                right: "400px",
+                fontSize: "300%",
+                color: "black",
+              }}
+            />
+
           </div>
         </div>
 

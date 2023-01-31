@@ -34,7 +34,7 @@ export default class Example extends PureComponent {
 
     render() {
         return (
-            <ResponsiveContainer width="60%" height="55%">
+            <ResponsiveContainer width="53%" height="55%">
                 <ComposedChart
                     layout="vertical"
                     width={500}
