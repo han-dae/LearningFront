@@ -59,7 +59,7 @@ const TestList = () => {
           </div>
         
 
-          <Link to={"/test"}>
+          <Link to={"/test1"}>
             <Button
               style={{
                 borderRadius: "20px",
@@ -120,7 +120,7 @@ const TestList = () => {
                     >
                       {/* 비디오 설명 넣는곳*/}
 
-                      <p style={{ fontSize: "16px" }}>
+                      <p style={{ fontSize: "20px" , height : "45px", fontWeight :"bold"}}>
                         {value.test_title}
                       </p>
 

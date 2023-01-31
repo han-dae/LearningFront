@@ -131,6 +131,8 @@ console.log(WcUrl);
             borderRadius: 10,
             fontSize: "24px",
             color: "white",
+            whiteSpace: "pre-wrap"
+            
           }}
         >
           <h3 style={{ fontSize: "20px" }}>{Category.cuesheet}</h3>
