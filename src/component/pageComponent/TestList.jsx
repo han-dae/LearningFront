@@ -34,7 +34,7 @@ const TestList = () => {
       });
   }, []);
   let testList = Object.values(Test);
-  let TestPhoto = (testList[4]).test_photo;
+  //let TestPhoto = (testList[4]).test_photo;
   
   return (
     <div>

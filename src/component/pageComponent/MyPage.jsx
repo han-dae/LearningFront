@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MainHeader from "./Header";
 import { Layout, theme } from "antd";
 import MainFooter from "./Footer";
@@ -12,12 +12,25 @@ import { ButtonLF50, ButtonLF100 } from "./ButtonLF";
 import MainComponen from "./MainComponent"
 import { Content, Header } from "antd/es/layout/layout";
 import Footer from "./Footer";
-import ScrollBottom from "./Dont_Touch/ScrollBottom";
-import { setTextRange } from "typescript";
+
 import styles from "./Login.css";
 
 const MyPage = (props) => {
     // 개인정보 수정
+    const [MyTest, setMyTest] = useState({
+        category_seq: "",
+        reg_dt: "",
+        test_cuesheet: "",
+        test_photo: "",
+        test_price: "",
+        test_seq: "",
+        test_title: "",
+        test_video: "",
+        test_video_realname: "",
+        user_id: "",
+        test_contents :""
+      });
+
     const [state, setState] = useState({
         user_id: "",
         user_pw: "",
@@ -30,6 +43,22 @@ const MyPage = (props) => {
             [e.target.name]: e.target.value,
         })
     }
+    
+    useEffect(() => {
+        
+        ApiService.loadMyTest(sessionStorage.getItem('info'))
+          .then((res) => {
+            console.log(res.status);
+            console.log(res.data);
+
+            console.log(res.data[0]);
+            setMyTest(res.data);
+          })
+          .catch((err) => {
+            console.log("loadMyTest 에러", err);
+          });
+      }, []);
+      let testList = Object.values(MyTest);
     const navigate = useNavigate();
     const updateMember = (e) => {
         e.preventDefault();
@@ -208,8 +237,9 @@ const MyPage = (props) => {
                             textUnderlineOffset: "auto",
                             marginTop: "3vh",
                             marginLeft: "20vw",
-                            marginBottom: "0px"
+                            marginBottom: "20px"
                         }}>내 영상 확인하기</h1>
+                        
                         <div
                             style={{
                                 float: "right",
@@ -240,6 +270,9 @@ const MyPage = (props) => {
                             marginTop: "0px"
                         }}>
                         <div>
+                        {testList.map((value, idx) => (
+            <div key={idx} style={{width:"30%" , display :"inline-block" , marginLeft:"20px", marginRight :"20px"}}>
+              
                             <div
                                 className="Board1"
                                 style={{
@@ -252,7 +285,7 @@ const MyPage = (props) => {
                                     borderRadius: 30,
                                     padding: "10px",
                                     display: "inline-block",
-                                    marginTop: "0vh",
+                                    marginTop: "1vh",
                                     marginLeft: "20vw"
                                 }}
                             >
@@ -263,7 +296,8 @@ const MyPage = (props) => {
                                     {platform.name}
                                 </div>
                             </div>
-                            <div
+             </div> ))}
+                            {/* <div
                                 className="Board2"
                                 style={{
                                     // position: "absolute",
@@ -275,7 +309,7 @@ const MyPage = (props) => {
                                     borderRadius: 30,
                                     padding: "10px",
                                     display: "inline-block",
-                                    marginTop: "-7vh",
+                                    marginTop: "0vh",
                                     marginLeft: "1vw"
                                 }}
                             >
@@ -297,8 +331,8 @@ const MyPage = (props) => {
                                     borderRadius: 30,
                                     padding: "10px",
                                     display: "inline-block",
-                                    marginTop: "-27vh",
-                                    marginLeft: "60vw"
+                                    marginTop: "0vh",
+                                    marginLeft: "1vw"
                                 }}
                             >
                                 <div
@@ -306,7 +340,7 @@ const MyPage = (props) => {
                                     style={{ textAlign: "center", fontSize: "25px" }}
                                 >{platform.name}</div>
 
-                            </div>
+                            </div> */}
                         </div>
 
                     </div>

@@ -154,17 +154,11 @@ console.log(WcUrl);
       
 
           <div className="dataSpace">
-            <div
-              style={{
-                width: "500px",
-                height: "300px",
-                backgroundColor: "white",
-              }}
-            ></div>
-
-            <div className="chart_dh">
-              <div style={{ width: 500, height: 300 }}><Bar/></div>
+          <div className="chart_dh">
+              <div style={{ width: 700, height: 300 }}><Bar/></div>
             </div>
+
+           
           </div>
           <Link to={"/test2"}>
             <RightCircleOutlined

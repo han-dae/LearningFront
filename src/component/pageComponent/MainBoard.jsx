@@ -14,7 +14,10 @@ const MainBoard = () => {
     { id: 2, url: SSG },
     { id: 3, url: Coupang },
   ];
-  let LogoUrl = (LogoImg[0].url);
+  let NaverLogo = (LogoImg[0].url);
+  let LotteLogo = (LogoImg[1].url);
+  let SSGLogo = (LogoImg[2].url);
+  let CoupangLogo = (LogoImg[3].url);
   return (
     <div style={{ marginTop: "0px" }}>
       
@@ -40,6 +43,7 @@ const MainBoard = () => {
             width: 800,
             height: 400
           }}>
+            
           <h4 style={{ marginLeft: "-17vw" }}>플랫폼 점유율 비교</h4>
           <div className="logoImg"
           style={{height:'18vh',
@@ -49,28 +53,30 @@ const MainBoard = () => {
                   zIndex:3000,
                   backgroundRepeat: "no-repeat",
                 }}>
+           
+           
             <div className="NaverLogo" 
             style={{ 
-                    backgroundImage: `url(${LogoUrl})`,
                     height:'3vh',
                     marginTop:'2vh' 
-                  }}></div>
+                  }}><img src={NaverLogo} style={{width :"60px"}}/></div>
+           
+           
             <div className="SSGLogo"
             style={{ 
-              backgroundImage: `url(${LogoImg})`,
               height:'3vh',
               marginTop:'0.5vh'
-              }}></div>
+              }}><img src={SSGLogo} style={{width :"60px"}}/></div>
             <div className="CoupangLogo"
-            style={{ backgroundImage: `url(${LogoImg})`,
+            style={{ 
                     height: '3vh',
                     marginTop: '0.5vh'
-                  }}></div>
+                  }}><img src={CoupangLogo} style={{width :"60px"}}/></div>
             <div className="LotteLogo"
-            style={{ backgroundImage: `url(${LogoImg})`,
+            style={{ 
                     height: '3vh',
                     marginTop: '0.5vh'
-                  }}></div>
+                  }}><img src={LotteLogo} style={{width :"60px"}}/></div>
 
           </div>
           <VertiBar />
