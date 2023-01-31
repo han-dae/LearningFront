@@ -12,7 +12,6 @@ import { Select } from "antd";
 import WordCloud0 from "../../img/wordCloud/wc0.png";
 import WordCloud1 from "../../img/wordCloud/wc1.png";
 import WordCloud2 from "../../img/wordCloud/wc2.png";
-import LineChart from "./LineChart";
 import LineChart1 from "./LineChart";
 const TestComponent = () => {
   const [Category, setCategory] = useState("0");
@@ -165,7 +164,7 @@ console.log(WcUrl);
             ></div>
 
             <div className="chart_dh">
-              <div style={{ width: 500, height: 300 }}><LineChart1/></div>
+              <div style={{ width: 500, height: 300 }}></div>
             </div>
           </div>
           <Link to={"/test2"}>
