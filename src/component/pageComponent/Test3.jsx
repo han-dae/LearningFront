@@ -104,7 +104,8 @@ const TestComponent3 = () => {
     reg_dt: "",
     user_id: "",
     category_seq: "",
-    category_name: ""
+    category_name: "",
+    test_content : ""
   })
   //  const [file, setFile] = useState(null);	//파일	
   //  const handleChangeFile = (event) => {
@@ -128,7 +129,8 @@ const TestComponent3 = () => {
       test_price: state.test_price,
       test_cuesheet: sessionStorage.getItem('cuesheet'),
       test_video: sessionStorage.getItem('test_video'),
-      test_video_realname: sessionStorage.getItem('test_video_realname')
+      test_video_realname: sessionStorage.getItem('test_video_realname'),
+      test_content : state.test_content
 
     }
 
@@ -140,7 +142,8 @@ const TestComponent3 = () => {
           test_photo: test.test_photo,
           test_price: test.test_price,
           test_cuesheet: test.test_cuesheet,
-          test_video: test.test_video
+          test_video: test.test_video,
+          test_content : test.test_content
         }
       });
     //sessionStorage.setItem('test_video',test.test_video);
@@ -237,6 +240,8 @@ const TestComponent3 = () => {
 
         <div style={{ marginTop: "-415px", marginLeft: "50vw" }}>
           <TextArea
+          name="test_content"
+          value={state.test_content}
             showCount
             maxLength={800}
             style={{
@@ -245,7 +250,7 @@ const TestComponent3 = () => {
               resize: "none",
               overflowY: "scroll",
             }}
-            onChange={onchange}
+            onChange={onChange}
             placeholder="라이브 커머스 영상, 상품정보에 대해  간략하게 설명해주세요."
           />
           <input

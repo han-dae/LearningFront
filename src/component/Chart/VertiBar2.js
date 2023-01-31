@@ -15,10 +15,10 @@ import {
 
 const data = [
     {
-        name: '네이버',
+        name: 'Naver',
         price: 28
     },{
-        name: '쿠팡',
+        name: "Coupang",
         price: 21
     },{
         name: 'SSG몰',

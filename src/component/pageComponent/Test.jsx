@@ -2,17 +2,17 @@ import React, { useEffect, useState } from "react";
 
 import Category from "./Category";
 import MainHeader from "./Header";
-import ScrollBottom from "./Dont_Touch/ScrollBottom";
-import InputTextArea from "./TextArea";
+
 import { RightCircleOutlined } from "@ant-design/icons";
 
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import ApiService from "../ApiService";
-import { Button, Select } from "antd";
+import { Select } from "antd";
 import WordCloud0 from "../../img/wordCloud/wc0.png";
 import WordCloud1 from "../../img/wordCloud/wc1.png";
 import WordCloud2 from "../../img/wordCloud/wc2.png";
+import Bar from './Bar'
 const TestComponent = () => {
   const [Category, setCategory] = useState("0");
   
@@ -131,6 +131,8 @@ console.log(WcUrl);
             borderRadius: 10,
             fontSize: "24px",
             color: "white",
+            whiteSpace: "pre-wrap"
+            
           }}
         >
           <h3 style={{ fontSize: "20px" }}>{Category.cuesheet}</h3>
@@ -147,6 +149,8 @@ console.log(WcUrl);
             }}
           ></div>
           
+          
+      
 
           <div className="dataSpace">
             <div
@@ -157,7 +161,9 @@ console.log(WcUrl);
               }}
             ></div>
 
-            <div className="chart_dh"></div>
+            <div className="chart_dh">
+              <div style={{ width: 500, height: 300 }}><Bar/></div>
+            </div>
           </div>
           <Link to={"/test2"}>
             <RightCircleOutlined

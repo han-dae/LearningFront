@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import MainHeader from "./Header";
 import { Button } from "antd";
 import { Link } from "react-router-dom";
 import Liked from "./Liked";
 import ApiService from "../ApiService";
+
+import Banner0 from "../../img/banner0.png";
+
+
 const TestList = () => {
   const [Test, setTest] = useState({
     category_seq: "",
@@ -30,6 +34,8 @@ const TestList = () => {
       });
   }, []);
   let testList = Object.values(Test);
+  let TestPhoto = (testList[4]).test_photo;
+  
   return (
     <div>
       <MainHeader />
@@ -37,7 +43,7 @@ const TestList = () => {
       <div style={{ marginTop: "80px" }}>
         <div
           style={{
-            marginTop: "0",
+            marginBottom:"50px",
             marginLeft: "250px",
             width: "1400px",
             height: "400px",
@@ -53,7 +59,7 @@ const TestList = () => {
           </div>
         
 
-          <Link to={"/test"}>
+          <Link to={"/test1"}>
             <Button
               style={{
                 borderRadius: "20px",
@@ -95,16 +101,17 @@ const TestList = () => {
 
                   <div
                     style={{
+                   
                       width: "400px",
                       height: "300px",
                       backgroundColor: "white",
                       display :"inline-block"
                     }}
                   >
-                    {value.test_photo}
+                    
                   </div>
                   <Link
-                    to={"/testPage"}
+                    to={"/testPage?test_seq="+value.test_seq}
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <div
@@ -113,8 +120,8 @@ const TestList = () => {
                     >
                       {/* 비디오 설명 넣는곳*/}
 
-                      <p style={{ fontSize: "16px" }}>
-                        {value.test_cuesheet}
+                      <p style={{ fontSize: "20px" , height : "45px", fontWeight :"bold"}}>
+                        {value.test_title}
                       </p>
 
                       <div className="userName" style={{ fontSize: "14px" }}>
