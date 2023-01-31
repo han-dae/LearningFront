@@ -42,5 +42,10 @@ class ApiService {
   loadTest(){
     return axios.get(TEST_API_BASE_URL);
   }
+  detailTest(test_seq) {
+    console.log("api 이동 ",TEST_API_BASE_URL + "/" + test_seq);
+    return axios.get(TEST_API_BASE_URL + "/" + test_seq);
+  }
 }
+
 export default new ApiService();
