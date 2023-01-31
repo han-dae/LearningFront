@@ -26,12 +26,12 @@ const Logininfo = () => {
       <div>
         <Link to="/MyPage">
           <Button
-            style={{ float: "right", marginTop: "-40px", marginRight: "12%", backgroundColor: "#FE8F8D", color: "black"  }}>
+            style={{ borderRadius: "20px", width: "100px", float: "right", marginTop: "-40px", marginRight: "12%", backgroundColor: "#FE8F8D", color: "white" }}>
             마이페이지
           </Button>
         </Link>
         <Button onClick={logout}
-          style={{ float: "right", marginTop: "-40px", marginRight: "18%", backgroundColor: "#FE8F8D", color: "black" }}>
+          style={{ borderRadius: "20px", width: "100px", float: "right", marginTop: "-40px", marginRight: "18%", backgroundColor: "#FE8F8D", color: "white" }}>
           로그아웃
         </Button>
       </div>
