@@ -7,7 +7,7 @@ import CarouselComponent from "./CarouselComponent";
 import { render } from "@testing-library/react";
 import ApiService from "../ApiService";
 import { useNavigate } from "react-router-dom";
-
+import { ButtonLF50, ButtonLF100 } from "./ButtonLF";
 
 import MainComponen from "./MainComponent"
 import { Content, Header } from "antd/es/layout/layout";
@@ -58,7 +58,7 @@ const MyPage = (props) => {
         return setCom(com.filter((com) => com.id !== user_id));
     };
 
-  
+
     // 내 영상 리스트
     const platform =
     {
@@ -66,16 +66,16 @@ const MyPage = (props) => {
         pic: ""
     }
 
-    const btnStlyed = {  
+    const btnStlyed = {
         borderRadius: "20px",
         width: "50px",
         float: "right",
         marginRight: "60px",
-       //  marginTop: "10px",
+        //  marginTop: "10px",
         backgroundColor: "#FE8F8D",
         color: "white",
-        border:'white'
-      }
+        border: 'white'
+    }
     return (
         <div>
 
@@ -106,58 +106,58 @@ const MyPage = (props) => {
                             display: "inline-block",
                             width: "100%",
                             marginTop: "80px"
+
                         }}>
-
-
-                        <div style={{ textAlign: "center" }}>
-
-                            <tr>
-                                <td style={{ width: "120px" }}>
-                                    <label className="label">PW</label>
-                                </td>
-                                <td>
-                                    <input
-                                        type="text"
-                                        name="user_pw"
-                                        //value={}
-                                        onChange={onChange}
-                                        placeholder="수정할 PW 입력"
-                                        style={{ padding: "5px" }} />
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <label className="label">H.P</label></td>
-                                <td>
-                                    <input
-                                        type="text"
-                                        name="user_hp"
-                                        //value={}
-                                        onChange={onChange}
-                                        placeholder="수정할 H.P 입력"
-                                        style={{ padding: "5px" }} />
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <label className="label">EMAIL</label>
-                                </td>
-                                <td>
-                                    <input
-                                        type="text"
-                                        name="user_email"
-                                        //value={}
-                                        onChange={onChange}
-                                        placeholder="수정할 Email 입력"
-                                        style={{ padding: "5px" }}
-
-                                    />
-
-                                </td>
-                            </tr>
-                            <button className="btn_info_edit" onClick={updateMember}>개인정보수정</button>
+                        <div style={{
+                            marginLeft: "18%"
+                        }}>
+                            <table>
+                                <tr>
+                                    <td style={{ width: "120px" }}>
+                                        <label className="label">PW</label>
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="text"
+                                            name="user_pw"
+                                            //value={}
+                                            onChange={onChange}
+                                            placeholder="수정할 PW 입력"
+                                            style={{ padding: "5px" }} />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label className="label">H.P</label></td>
+                                    <td>
+                                        <input
+                                            type="text"
+                                            name="user_hp"
+                                            //value={}
+                                            onChange={onChange}
+                                            placeholder="수정할 H.P 입력"
+                                            style={{ padding: "5px" }} />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label className="label">EMAIL</label>
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="text"
+                                            name="user_email"
+                                            //value={}
+                                            onChange={onChange}
+                                            placeholder="수정할 Email 입력"
+                                            style={{ padding: "5px" }}
+                                        />
+                                    </td>
+                                </tr>
+                            </table>
+                            <div onClick={updateMember} style={{marginLeft:"47%"}}>
+                                <ButtonLF100 value={"정보 수정"} />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -180,15 +180,15 @@ const MyPage = (props) => {
                         borderRadius: 20,
                     }}>
                     <div>
-                        
-                            <div key={`${com.user_id}`}>
-                                <div>
-                                    <p>{com.userName}</p>
-                                    <button onClick={() => removeCom(com.id)} className="btn_comDel" style={{marginLeft:'27vw'}}>X</button>
-                                </div>
-                                {com.content}
+
+                        <div key={`${com.user_id}`}>
+                            <div>
+                                <p>{com.userName}</p>
+                                <button onClick={() => removeCom(com.id)} className="btn_comDel" style={{ marginLeft: '27vw' }}>X</button>
                             </div>
-                    
+                            {com.content}
+                        </div>
+
                     </div>
                     <div
                         className="com_edit"
@@ -201,19 +201,24 @@ const MyPage = (props) => {
                     </div>
                 </div>
                 <div>
-                    <h1 style={{
-                        textUnderlineOffset: "auto",
-                        marginTop: "3vh",
-                        marginLeft: "20vw",
-                        marginBottom: "0px"
-                    }}>내 영상 확인하기</h1>
-                    <div
-                        style={{
-                            marginLeft: "160vh",
-                            marginTop: "0vh"
-                        }}>
-                        <button className="btn_edit" style={{ marginTop: "0vh" }}>수정</button>
-                        <button className="btn_del" style={{ marginTop: "0vh" }}>삭제</button>
+                    <div>
+
+                        <h1 style={{
+                            display: 'inline-block',
+                            textUnderlineOffset: "auto",
+                            marginTop: "3vh",
+                            marginLeft: "20vw",
+                            marginBottom: "0px"
+                        }}>내 영상 확인하기</h1>
+                        <div
+                            style={{
+                                float: "right",
+                                marginRight: "20%",
+                                marginTop: "3vh"
+                            }}>
+                            <ButtonLF50 value={"수정"} />
+                            <ButtonLF50 value={"삭제"} />
+                        </div>
                     </div>
                 </div>
                 <div
