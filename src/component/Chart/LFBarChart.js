@@ -1,6 +1,18 @@
 import React, { PureComponent } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
+// requestbed(){
+//   const url ="http://localhost:8081/users/tfidf"
+//   const header = {"Content-type"}
+//   const data = {
+//     text : bed.state.id,
+//     value : bed.state.value
+//   }
+//   axios.get(url, data, header)
+
+// }
+
+
 const data = [
   {
     name: 'Page A',

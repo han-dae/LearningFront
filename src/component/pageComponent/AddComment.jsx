@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import ApiService from "../ApiService";
+import { useNavigate } from "react-router-dom";
+import queryString from "query-string";
 
 const AddComment = ({ handelComment }) => {
 
@@ -9,34 +11,34 @@ const AddComment = ({ handelComment }) => {
   const inputHaldle = (e) => {
     setValue(e.target.value)
   }
-
+  const navigate = useNavigate();
   const btnHandle = (e) => {
     console.log('현재 댓글', value)
     handelComment(value)
     setValue('')
-  {/* e.preventDefault();
+    e.preventDefault();
     let qs = queryString.parse(window.location.search);
-    let test_seq = qs.test_seq;
-    let Comment = {
+    const test_seq = qs.test_seq;
+
+    let comment = {
       test_seq: qs.test_seq,
       user_id: value.user_id,
       cmt_content: value.cmt_content,
       cmt_dt: value.cmt_dt
-    };*/}
+    };
+    
+    ApiService.comment(comment)
+            .then((res) => {
+                console.log("댓글 DB저장 완료");
+                navigate('/myPage');
+            })
+            .catch((err) => {
+                console.log("btnHandle() 에러", err);
+            });
+
+        window.location.reload(); // 새로고침
 
   }
-
-  {/*useEffect(() => {
-    ApiService.sendComment()
-      .then((res) => {
-        console.log(res.status);
-        console.log(res.data);
-        
-      })
-      .catch((err) => {
-        console.log("send() 에러", err);
-      });
-  })*/}
 
   const enterHandle = (e) => {
     console.log(e.code)
