@@ -33,6 +33,7 @@ const MainBoard = () => {
           borderRadius: 30,
           padding: "10px",
           display: "inline-block",
+          boxShadow :"10px 10px #b4b4b4"
         }}
       >
         
@@ -44,7 +45,7 @@ const MainBoard = () => {
             height: 400
           }}>
             
-          <h4 style={{ marginLeft: "-17vw" }}>플랫폼 점유율 비교</h4>
+          <div style={{ marginLeft: "-17vw" , fontSize :"20px",fontWeight :"bold", marginTop :"20px",marginBottom : "20px",textShadow :"3px 3px 2px gray"}}>플랫폼 점유율 비교</div>
           <div className="logoImg"
           style={{height:'18vh',
                   width:'3.5vw',
@@ -95,7 +96,7 @@ const MainBoard = () => {
           borderRadius: 30,
           padding: "10px",
           display: "inline-block",
-        
+          boxShadow :"10px 10px #b4b4b4"
 
         }}
       >
@@ -104,9 +105,10 @@ const MainBoard = () => {
           style={{
             textAlign: "center",
             width: 800,
-            height: 400
+            height: 400,
+            
           }}>
-          <h4 style={{ marginLeft: "-17vw" }}>플랫폼 매출액 비교</h4>
+          <h4 style={{ marginLeft: "-17vw" , fontSize :"20px",fontWeight :"bold", marginTop :"20px",marginBottom : "20px",textShadow :"3px 3px 2px gray"}}>플랫폼 매출액 비교</h4>
           <div className="logoImg"
           style={{height:'18vh',
                   width:'2.5vw',
@@ -114,7 +116,8 @@ const MainBoard = () => {
                   left:'1vw',
                   zIndex:3000,
                   backgroundRepeat: "no-repeat",
-                  marginTop:'1.5vh'
+                  marginTop:'1.5vh',
+                  
                 }}>
            
            

@@ -110,6 +110,7 @@ class Test4 extends Component {
               paddingLeft: "10px",
               backgroundColor: "#F7D5D4",
               borderRadius: 20,
+              boxShadow :"5px 5px #b4b4b4"
             }}
           >
             <div
@@ -117,6 +118,7 @@ class Test4 extends Component {
               style={{
                 display: "inline-block",
                 width: "100%",
+                textShadow :"2px 2px 2px gray"
               }}
             >
               <h1>Chapter4. 모의 영상 생성</h1>
@@ -148,11 +150,12 @@ class Test4 extends Component {
               marginLeft: "20vw",
               backgroundColor: "#F7D5D4",
               marginTop: "20px",
-              borderRadius :"10px"
+              borderRadius :"10px",
+              boxShadow :"3px 3px #b4b4b4"
             }}
           >
-            <div className="nameSpace" style={{ marginTop: "-20px" }}>
-              <p style={{fontSize :"24px"}}>
+            <div className="nameSpace" style={{ marginTop: "-20px" , }}>
+              <p style={{fontSize :"24px", fontWeight :"bold"}}>
                 [뷰티쓱세일]공동판매구역 랑콤편! 전 구매고객 럭키 박스 증정
               </p>
             </div>
@@ -183,16 +186,16 @@ class Test4 extends Component {
                 backgroundColor: "greenyellow",
               }}
             >{this.state.test_cuesheet}</div>
-            <div style={{ marginLeft: "1100px" }}>
-              <h3>작성했던 스크립트와 영상을 확인해보세요.</h3>
-              <h3>모두 올바르게 작성되었다면 확인을 누르세요.</h3>
+            <div style={{ marginLeft: "1140px" }}>
+              <h3>1. 작성했던 스크립트와 영상을 확인해보세요.</h3>
+              <h3>2. 모두 올바르게 작성되었다면 확인을 누르세요.</h3>
             </div>
           </div>
 
-          <div style={{marginLeft :"1100px"}}>
+          <div style={{marginLeft :"1140px"}}>
             <form >
             <input type="checkbox" value="agree" name="agreement1" style={{marginLeft:"10px"}}/>개인정보 동의하십니까
-            <input type="checkbox" value="agree" name="agreement2" style={{marginLeft:"10px"}}/>영상 정보 공개
+            <input type="checkbox" value="agree" name="agreement2" style={{marginLeft:"60px"}}/>영상 정보 공개
             </form>
           </div>
 
