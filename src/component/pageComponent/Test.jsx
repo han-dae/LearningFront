@@ -12,7 +12,9 @@ import { Select } from "antd";
 import WordCloud0 from "../../img/wordCloud/wc0.png";
 import WordCloud1 from "../../img/wordCloud/wc1.png";
 import WordCloud2 from "../../img/wordCloud/wc2.png";
-import LineChart1 from "./LineChart";
+import Chart from '../../component/Chart/LineChart';
+
+
 const TestComponent = () => {
   const [Category, setCategory] = useState("0");
   
@@ -128,41 +130,39 @@ console.log(WcUrl);
             height: "60vh",
             marginTop: "10px",
             marginLeft: "20vw",
-            opacity: "0.5",
-            backgroundColor: "black",
+            opacity: "1",
+            border : "5px solid #f7d5d4",
+            backgroundColor: "white",
             overflowY: "scroll",
             borderRadius: 10,
-            fontSize: "24px",
-            color: "white",
-            whiteSpace: "pre-wrap"
-            
+            fontSize: "10px",
+            color: "black",
+            whiteSpace: "pre-wrap",
+            padding :"5px 10px 5px 10px"
           }}
         >
-          <h3 style={{ fontSize: "20px" }}>{Category.cuesheet}</h3>
+          <h3 style={{ fontSize: "16px" }}>{Category.cuesheet}</h3>
         </div>
-
+        
         <div className="InputCategory" style={{ marginLeft: "52vw" }}>
+        <div style={{ position:"absolute",color :"black",padding :"5px 10px 5px 10px",borderRadius :"10px",display:"inline-block",marginLeft :"50px",marginTop :"180px", fontSize :"20px", fontWeight :"bold", backgroundColor :"#F7D5D4"}}>단어별 영향을 분석해봤어요.</div>
           <div className="WordCloud1"
             style={{
               backgroundImage: `url(${WcUrl})` ,
               backgroundRepeat: "no-repeat",
               width: "700px",
               height: "500px",
-              marginTop: "-750px",
+              marginTop: "-800px",
             }}
-          ></div>
+          >  
+          </div>
           
           
       
 
           <div className="dataSpace">
-            <div
-              style={{
-                width: "500px",
-                height: "300px",
-                backgroundColor: "white",
-              }}
-            ></div>
+           
+<Chart />
 
             <div className="chart_dh">
               <div style={{ width: 500, height: 300 }}></div>
