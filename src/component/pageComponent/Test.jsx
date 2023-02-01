@@ -12,16 +12,17 @@ import { Select } from "antd";
 import WordCloud0 from "../../img/wordCloud/wc0.png";
 import WordCloud1 from "../../img/wordCloud/wc1.png";
 import WordCloud2 from "../../img/wordCloud/wc2.png";
-import LineChart1 from "./LineChart";
+import Chart from "../../component/Chart/LineChart";
+
 const TestComponent = () => {
   const [Category, setCategory] = useState("0");
-  
+
   const WordCloud = [
     { id: 0, url: WordCloud0 },
     { id: 1, url: WordCloud1 },
     { id: 2, url: WordCloud2 },
   ];
-  
+
   const [Guide, setGuide] = useState({
     guide_seq: "",
     cuesheet: "",
@@ -30,7 +31,7 @@ const TestComponent = () => {
     used: "",
     category_seq: "",
   });
- 
+
   const [WordCloudNum, setWordCloudNum] = useState("0");
   useEffect(() => {
     ApiService.cuesheet()
@@ -39,13 +40,12 @@ const TestComponent = () => {
         console.log(res.data);
         setGuide(res.data);
         console.log(res.data[0]);
-        sessionStorage.setItem('category_seq',res.data[0].category_seq);
+        sessionStorage.setItem("category_seq", res.data[0].category_seq);
       })
       .catch((err) => {
         console.log("cuesheet() 에러", err);
       });
   }, []);
-
 
   let cueSheet = Object.values(Guide);
   console.log(cueSheet);
@@ -58,11 +58,11 @@ const TestComponent = () => {
   };
 
   //console.log(Category.cuesheet);
- console.log("이걸로 확인", WordCloudNum);
+  console.log("이걸로 확인", WordCloudNum);
 
   console.log(WordCloud[WordCloudNum]);
-  let WcUrl = (WordCloud[WordCloudNum].url);
-console.log(WcUrl);
+  let WcUrl = WordCloud[WordCloudNum].url;
+  console.log(WcUrl);
 
   return (
     <div>
@@ -79,6 +79,7 @@ console.log(WcUrl);
             backgroundColor: "#F7D5D4",
             borderRadius: 20,
             overflow: "hidden",
+            boxShadow :"5px 5px #b4b4b4"
           }}
         >
           <div
@@ -86,11 +87,12 @@ console.log(WcUrl);
             style={{
               display: "inline-block",
               width: "100%",
+              textShadow :"2px 2px 2px gray"
             }}
           >
-            <h1>Chapter1. 스크립트 분석</h1>
+            <h1>Chapter1. 큐시트 분석</h1>
             <h3 style={{ marginTop: "-25px" }}>
-              높은 조회 수와 매출을 기록한 스크립트에요.
+              높은 조회 수와 매출을 기록한 큐시트에요.
             </h3>
           </div>
         </div>
@@ -128,47 +130,56 @@ console.log(WcUrl);
             height: "60vh",
             marginTop: "10px",
             marginLeft: "20vw",
-            opacity: "0.5",
-            backgroundColor: "black",
+            opacity: "1",
+            border: "5px solid #f7d5d4",
+            borderRight: "none",
+            backgroundColor: "white",
             overflowY: "scroll",
-            borderRadius: 10,
-            fontSize: "24px",
-            color: "white",
-            whiteSpace: "pre-wrap"
-            
+           
+            fontSize: "10px",
+            color: "black",
+            whiteSpace: "pre-wrap",
+            padding: "5px 10px 5px 10px",
           }}
         >
-          <h3 style={{ fontSize: "20px" }}>{Category.cuesheet}</h3>
+          <h3 style={{ fontSize: "16px" }}>{Category.cuesheet}</h3>
         </div>
 
         <div className="InputCategory" style={{ marginLeft: "52vw" }}>
-          <div className="WordCloud1"
+          <div
             style={{
-              backgroundImage: `url(${WcUrl})` ,
+              position: "absolute",
+              color: "black",
+              padding: "5px 10px 5px 10px",
+              borderRadius: "10px",
+              display: "inline-block",
+              marginLeft: "50px",
+              marginTop: "150px",
+              fontSize: "18px",
+              fontWeight: "bold",
+              backgroundColor: "#F7D5D4",
+              boxShadow :"3px 3px #b4b4b4"
+            }}
+          >
+            Ready Cast에서 단어별 영향을 분석해봤어요.
+          </div>
+          <div
+            className="WordCloud1"
+            style={{
+              backgroundImage: `url(${WcUrl})`,
               backgroundRepeat: "no-repeat",
               width: "700px",
               height: "500px",
-              marginTop: "-750px",
+              marginTop: "-800px",
             }}
           ></div>
-          
-          
-      
 
           <div className="dataSpace">
-            <div
-              style={{
-                width: "500px",
-                height: "300px",
-                backgroundColor: "white",
-              }}
-            ></div>
+            <Chart />
 
             <div className="chart_dh">
               <div style={{ width: 500, height: 300 }}></div>
             </div>
-
-           
           </div>
           <Link to={"/test2"}>
             <RightCircleOutlined

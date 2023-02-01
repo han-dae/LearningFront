@@ -55,11 +55,11 @@ const TestPage = () => {
     });
     // console.log('현재 아이디', user_id)
     const handelComment = (newCom) => {
-        console.log('야야야야야야야 나와라 좀 ')
         console.log("handleComment", newCom);
         let comList = Object.values(com)
         let user_id = sessionStorage.getItem('info')
         let currentTime = new Date().toLocaleTimeString();
+        console.log('야야야야야야야 나와라 좀 ')
         setCom(
             comList.concat({
                 user_id: user_id,

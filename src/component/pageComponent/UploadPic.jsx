@@ -30,11 +30,11 @@ const UploadPic = () => {
       })
   };
   const onPreview = async (file) => {
+    console.log(file)
     let src = file.url;
     if (!src) {
       src = await new Promise((resolve) => {
         const reader = new FileReader();
-        console.log('dd',reader.readAsDataURL(file.originFileObj));
         reader.readAsDataURL(file.originFileObj);
         reader.onload = () => resolve(reader.result);
       });

@@ -1,10 +1,20 @@
 import React from "react";
 import { Button, Layout, Menu } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logininfo from "./Logininfo";
 import Logo from "../../img/Logo.png";
 const { Header } = Layout;
 function MainHeader() {
+  const navigate = useNavigate();
+  const clicked =() =>{
+    
+    let info = sessionStorage.getItem('info');
+    if(info){
+      navigate('/test1')
+    }else{
+      alert('로그인을 해주세요')
+    }
+  }
   return (
     <>
       <Header
@@ -34,7 +44,7 @@ function MainHeader() {
           ></div>
         </Link>
         <div style={{ marginLeft :"340px",marginTop : "-50px",width: "50%", height: "80%" }} className="categoryList">
-          <Link to={"/test1"} style={{color :"black"}}><div style={{display :"inline-block", margin : "10px 20px 10px 20px" ,borderBottom : "4px solid #F7D5D4",fontSize :"18px" ,fontWeight :"bold",paddingBottom : "10px"}}>모의 테스트</div></Link>
+          <Button onClick={clicked} style={{color :"black",border:"none",backgroundColor:"white"}}><div style={{display :"inline-block", margin : "10px 20px 10px 20px" ,borderBottom : "4px solid #F7D5D4",fontSize :"18px" ,fontWeight :"bold",paddingBottom : "10px"}}>모의 테스트</div></Button>
           <Link to={"/testlist"} style={{color :"black"}}><div style={{display :"inline-block",margin : "10px 20px 10px 20px", borderBottom : "4px solid #F7D5D4",paddingBottom : "10px",fontSize :"18px" ,fontWeight :"bold"}}>모의 테스트 리스트</div></Link>
         </div>
         <div style={{ position: "relative", right: "0px" }}>
