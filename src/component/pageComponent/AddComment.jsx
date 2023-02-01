@@ -11,32 +11,35 @@ const AddComment = ({ handelComment }) => {
   const inputHaldle = (e) => {
     setValue(e.target.value)
   }
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const btnHandle = (e) => {
+   //  e.preventDefault();
     console.log('현재 댓글', value)
     handelComment(value)
-    setValue('')
-    e.preventDefault();
+    console.log('handle오류', value)
     let qs = queryString.parse(window.location.search);
     const test_seq = qs.test_seq;
-
+    console.log('여기까지 오나')
     let comment = {
       test_seq: qs.test_seq,
-      user_id: value.user_id,
-      cmt_content: value.cmt_content,
-      cmt_dt: value.cmt_dt
+      user_id: sessionStorage.getItem("info"),
+      cmt_content: value,
+      cmt_dt: new Date().toLocaleTimeString()
     };
+    console.log('여기는??????',comment)
+    setValue("")
+    // ===============================================
     
     ApiService.comment(comment)
             .then((res) => {
                 console.log("댓글 DB저장 완료");
-                navigate('/myPage');
+               // navigate('/myPage');
             })
             .catch((err) => {
                 console.log("btnHandle() 에러", err);
             });
 
-        window.location.reload(); // 새로고침
+       // window.location.reload(); // 새로고침
 
   }
 
@@ -44,6 +47,7 @@ const AddComment = ({ handelComment }) => {
     console.log(e.code)
     e.code === 'Enter' && btnHandle()
   }
+
   const btnStlyed = {
     borderRadius: "20px",
     width: "67px",
@@ -73,7 +77,8 @@ const AddComment = ({ handelComment }) => {
           }}
           onChange={inputHaldle}
           value={value}
-          onKeyPress={enterHandle} >
+         // onKeyPress={enterHandle} 
+         >
 
         </input>
         <button onClick={btnHandle} style={btnStlyed} >댓글</button>
