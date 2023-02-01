@@ -9,43 +9,37 @@ import {
     Legend,
     ResponsiveContainer,
 } from "recharts";
-
+//// 이거 안사용됨
 const data = [
     {
-        name: "Page A",
+        name: "한대찬",
         uv: 4000,
         pv: 2400,
-        amt: 2400,
+        
     },
     {
-        name: "Page B",
+        name: "서창국",
         uv: 3000,
         pv: 1398,
-        amt: 2210,
+        
     },
     {
-        name: "Page C",
+        name: "박상현",
         uv: 2000,
         pv: 9800,
-        amt: 2290,
+        
     },
     {
-        name: "Page D",
+        name: "이성재",
         uv: 2780,
         pv: 3908,
-        amt: 2000,
+        
     },
     {
-        name: "Page E",
+        name: "주하영",
         uv: 1890,
         pv: 4800,
-        amt: 2181,
-    },
-    {
-        name: "Page F",
-        uv: 2390,
-        pv: 3800,
-        amt: 2500,
+        
     },
     {
         name: "Page G",
@@ -72,7 +66,7 @@ export default class Example extends PureComponent {
                         bottom: 5,
                     }}
                 >
-                    <CartesianGrid strokeDasharray="3 3" />
+                    <CartesianGrid strokeDasharray="2 2" />
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip />
