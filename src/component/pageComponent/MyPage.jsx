@@ -84,7 +84,7 @@ const MyPage = (props) => {
     // 내 댓글 수정
     const [com, setCom] = useState([])
     const removeCom = (user_id) => { // 삭제
-        return setCom(com.filter((com) => com.id !== user_id));
+        return setCom(com.filter((com) => com.user_id !== user_id));
     };
 
 
@@ -95,16 +95,7 @@ const MyPage = (props) => {
         pic: ""
     }
 
-    const btnStlyed = {
-        borderRadius: "20px",
-        width: "50px",
-        float: "right",
-        marginRight: "60px",
-        //  marginTop: "10px",
-        backgroundColor: "#FE8F8D",
-        color: "white",
-        border: 'white'
-    }
+
     return (
         <div>
 
