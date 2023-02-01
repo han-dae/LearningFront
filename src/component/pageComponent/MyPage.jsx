@@ -124,11 +124,12 @@ const MyPage = (props) => {
           style={{
             marginTop: "0vh",
             marginLeft: "20vw",
-            width: "28vw",
-            height: "40vh",
+            width: "25vw",
+            height: "30vh",
             paddingLeft: "10px",
             backgroundColor: "#F7D5D4",
             borderRadius: 20,
+            opacity:"1"
           }}
         >
           <div
@@ -144,7 +145,13 @@ const MyPage = (props) => {
                 marginLeft: "18%",
               }}
             >
-              <table style={{ borderSpacing: "10px" }}>
+              <table
+                style={{
+                  borderSpacing: "10px",
+                  marginTop: "-2vh",
+                  marginLeft: "-1vw",
+                }}
+              >
                 <tr>
                   <td style={{ width: "120px" }}>
                     <label className="label">PW</label>
@@ -191,7 +198,10 @@ const MyPage = (props) => {
                   </td>
                 </tr>
               </table>
-              <div onClick={updateMember} style={{ marginLeft: "47%" }}>
+              <div
+                onClick={updateMember}
+                style={{ marginLeft: "11vw", marginTop: "2vh" }}
+              >
                 <ButtonLF100 value={"정보 수정"} />
               </div>
             </div>
@@ -201,8 +211,8 @@ const MyPage = (props) => {
           <h1
             style={{
               textUnderlineOffset: "auto",
-              marginTop: "-47.5vh",
-              marginLeft: "50vw",
+              marginTop: "-37vh",
+              marginLeft: "47vw",
             }}
           >
             내가 쓴 댓글
@@ -210,13 +220,13 @@ const MyPage = (props) => {
         </div>
         <div
           style={{
-            marginTop: "0vh",
-            marginLeft: "50vw",
-            width: "28.5vw",
-            height: "40vh",
+            marginTop: "2.5vh",
+            marginLeft: "47vw",
+            width: "31.5vw",
+            height: "30vh",
             paddingLeft: "10px",
             backgroundColor: "#F7D5D4",
-            opacity: 0.5,
+
             borderRadius: 20,
           }}
         >
@@ -227,7 +237,7 @@ const MyPage = (props) => {
                 <button
                   onClick={() => removeCom(com.id)}
                   className="btn_comDel"
-                  style={{ marginLeft: "27vw" }}
+                  style={{ marginLeft: "30vw" }}
                 >
                   X
                 </button>
@@ -292,42 +302,32 @@ const MyPage = (props) => {
             <div
               style={{
                 display: "block",
-                width: "1130px",
-                height: "300px",
-                backgroundColor: "black",
-marginLeft :"20vw",
-                overflowY :"hidden"
+                maxHeight: "300px",
+                height :"300px",
+                backgroundColor: "#f7d5d4",
+                marginLeft: "20vw",
+                overflowY: "hidden",
+                
               }}
             >
               {testList.map((value, idx) => (
-                <div
+                <div key={idx}
                   style={{
                     display: "inline-block",
-                    backgroundColor: "#F7D5D4",
+                    backgroundColor: "white",
                     width: "300px",
                     height: "250px",
-                    marginTop :"25px",
+                    marginTop: "25px",
+                    marginBottom: "25px",
                     marginLeft: "10px",
                     marginRight: "20px",
                   }}
                 >
-                  <div
-                    key={idx}
-                    className="Board1"
-                    style={{
-                      position: "relative",
-
-                      borderRadius: 30,
-                      padding: "10px",
-
-                      marginTop: "10px",
-                      marginLeft: "20px",
-                      marginBottom :"20px"
-                    }}
-                  >fefswefsf
+                
+                    fefswefsf
+                    
                     {value.test_seq}
-                   
-                  </div>
+                  
                 </div>
               ))}
             </div>

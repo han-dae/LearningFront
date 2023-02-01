@@ -43,11 +43,12 @@ const TestComponent2 = () => {
           style={{
             marginTop: "10px",
             marginLeft: "20vw",
-            width: "50vh",
+            width: "40vh",
             height: "10vh",
             paddingLeft: "10px",
             backgroundColor: "#F7D5D4",
             borderRadius: 20,
+            boxShadow :"5px 5px #b4b4b4"
           }}
         >
           <div
@@ -55,11 +56,12 @@ const TestComponent2 = () => {
             style={{
               display: "inline-block",
               width: "50vh",
+              textShadow :"2px 2px 2px gray"
             }}
           >
-            <h1 style={{ marginTop: "1vh" }}>Chapter2. 스크립트 작성</h1>
+            <h1 style={{ marginTop: "1vh" }}>Chapter2. 큐시트 작성</h1>
             <h3 style={{ marginTop: "-25px" }}>
-              ReadyCast에서 "카테고리"으로 분석한 결과에요.
+              분석결과를 바탕으로 큐시트를 작성해보세요.
             </h3>
           </div>
         </div>

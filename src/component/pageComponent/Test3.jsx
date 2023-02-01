@@ -168,6 +168,7 @@ const TestComponent3 = () => {
             paddingLeft: "10px",
             backgroundColor: "#F7D5D4",
             borderRadius: 20,
+            boxShadow :"5px 5px #b4b4b4"
           }}
         >
           <div
@@ -175,7 +176,7 @@ const TestComponent3 = () => {
             style={{
               display: "inline-block",
               width: "100%",
-
+              textShadow :"2px 2px 2px gray"
 
             }}
           >
@@ -201,8 +202,9 @@ const TestComponent3 = () => {
             </p>
             <p className="ant-upload-text">Click</p>
             <p className="ant-upload-hint">이곳에 파일을 드래그 하세요.</p>
+            <h3 style={{}}>10분 이내의 영상을 업로드 해주세요.</h3>
           </Dragger>
-          <div style={{ width: "100%", height: "20px", textAlign: "center", marginBottom: "10px" }}><h3 style={{}}>10분 이내의 영상을 업로드 해주세요.</h3></div>
+
         </div>
 
         <div
@@ -222,11 +224,27 @@ const TestComponent3 = () => {
             style={{
               width: "28vw",
               padding: "10px 10px 10px 10px",
+              
               boxSizing: "border-box",
             }}
           ></input>
-          <div style={{ marginTop: "20px" }}>
-            <UploadPic />
+          <div style={{ marginTop: "0px" }}>
+          <input
+            name="test_price"
+            value={state.test_price}
+            onChange={onChange}
+            type="text"
+            className="price"
+            placeholder="가격을 책정해주세요."
+            style={{
+              marginTop: "25px",
+              width: "28vw",
+              padding: "10px 10px 10px 10px",
+              marginBottom : "20px",
+              boxSizing: "border-box",
+            }}
+          ></input>
+            <UploadPic/>
           </div>
         </div>
         {/*<div
@@ -241,14 +259,14 @@ const TestComponent3 = () => {
           }}
         ></div> */}
 
-        <div style={{ marginTop: "-415px", marginLeft: "50vw" }}>
+        <div style={{ marginTop: "-525px", marginLeft: "50vw" }}>
           <TextArea
           name="test_content"
           value={state.test_content}
             showCount
             maxLength={800}
             style={{
-              height: 300,
+              height: 360,
               width: 550,
               resize: "none",
               overflowY: "scroll",
@@ -256,24 +274,11 @@ const TestComponent3 = () => {
             onChange={onChange}
             placeholder="라이브 커머스 영상, 상품정보에 대해  간략하게 설명해주세요."
           />
-          <input
-            name="test_price"
-            value={state.test_price}
-            onChange={onChange}
-            type="text"
-            className="price"
-            placeholder="가격을 책정해주세요."
-            style={{
-              marginTop: "25px",
-              width: "28vw",
-              padding: "10px 10px 10px 10px",
-              boxSizing: "border-box",
-            }}
-          ></input>
+          
 
           <div style={{ marginLeft: "20px", marginTop: "50px" }}>
-            <h3>1.판매하고자 하는 상품의 명과 이미지를 입력하세요.</h3>
-            <h3>2. 라이브 커머스의 제목과 설명을 입력하세요.</h3>
+            <h3>1.영상과 이미지를 업로드하세요.</h3>
+            <h3>2.라이브 커머스의 제목과 가격을 입력하세요.</h3>
             <h3>3.라이브 커머스 영상을 업로드해주세요.</h3>
             <h3>4.분석결과를 토대로 상품의 가격을 책정해주세요.</h3>
 
