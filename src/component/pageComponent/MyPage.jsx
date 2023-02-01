@@ -123,8 +123,8 @@ const MyPage = (props) => {
                     style={{
                         marginTop: "0vh",
                         marginLeft: "20vw",
-                        width: "28vw",
-                        height: "40vh",
+                        width: "25vw",
+                        height: "30vh",
                         paddingLeft: "10px",
                         backgroundColor: "#F7D5D4",
                         borderRadius: 20,
@@ -140,9 +140,9 @@ const MyPage = (props) => {
                         <div style={{
                             marginLeft: "18%"
                         }}>
-                            <table style={{ borderSpacing: "10px" }}>
+                            <table style={{ borderSpacing: "10px", marginTop:"-2vh", marginLeft:"-1vw" }}>
                                 <tr>
-                                    <td style={{ width: "120px" }}>
+                                    <td style={{ width: "120px",  }}>
                                         <label className="label">PW</label>
                                     </td>
                                     <td>
@@ -184,8 +184,9 @@ const MyPage = (props) => {
                                     </td>
                                 </tr>
                             </table>
-                            <div onClick={updateMember} style={{ marginLeft: "47%" }}>
-                                <ButtonLF100 value={"정보 수정"} />
+                            <div onClick={updateMember} style={{ marginLeft: "11vw", marginTop:'2vh' }}>
+                                <ButtonLF100 value={"정보 수정"}
+                              />
                             </div>
                         </div>
                     </div>
@@ -193,16 +194,16 @@ const MyPage = (props) => {
                 <div>
                     <h1 style={{
                         textUnderlineOffset: "auto",
-                        marginTop: "-47.5vh",
-                        marginLeft: "50vw",
+                        marginTop: "-37vh",
+                        marginLeft: "47vw",
                     }}>내가 쓴 댓글</h1>
                 </div>
                 <div
                     style={{
-                        marginTop: "0vh",
-                        marginLeft: "50vw",
-                        width: "28.5vw",
-                        height: "40vh",
+                        marginTop: "2vh",
+                        marginLeft: "47vw",
+                        width: "31.5vw",
+                        height: "30vh",
                         paddingLeft: "10px",
                         backgroundColor: "#F7D5D4",
                         opacity: 0.5,
@@ -213,7 +214,7 @@ const MyPage = (props) => {
                         <div key={`${com.user_id}`}>
                             <div>
                                 <p>{com.userName}</p>
-                                <button onClick={() => removeCom(com.id)} className="btn_comDel" style={{ marginLeft: '27vw' }}>X</button>
+                                <button onClick={() => removeCom(com.id)} className="btn_comDel" style={{ marginLeft: '30vw' }}>X</button>
                             </div>
                             {com.content}
                         </div>
