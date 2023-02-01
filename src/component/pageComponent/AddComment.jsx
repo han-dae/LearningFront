@@ -14,11 +14,12 @@ const AddComment = ({ handelComment }) => {
   const navigate = useNavigate();
   const btnHandle = (e) => {
     console.log('현재 댓글', value)
-    handelComment(value)
-    setValue('')
-    e.preventDefault();
+    handelComment(value);
+    setValue(value);
     let qs = queryString.parse(window.location.search);
-    const test_seq = qs.test_seq;
+    e.preventDefault();
+    
+    
 
     let comment = {
       test_seq: qs.test_seq,
@@ -26,7 +27,7 @@ const AddComment = ({ handelComment }) => {
       cmt_content: value.cmt_content,
       cmt_dt: value.cmt_dt
     };
-    
+    console.log(comment,"dfefwfwef");
     ApiService.comment(comment)
             .then((res) => {
                 console.log("댓글 DB저장 완료");
@@ -36,12 +37,10 @@ const AddComment = ({ handelComment }) => {
                 console.log("btnHandle() 에러", err);
             });
 
-        window.location.reload(); // 새로고침
-
   }
 
   const enterHandle = (e) => {
-    console.log(e.code)
+    
     e.code === 'Enter' && btnHandle()
   }
   const btnStlyed = {

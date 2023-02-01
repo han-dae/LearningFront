@@ -34,8 +34,9 @@ class ApiService {
   // sendComment(value) {
   //   return axios.get(COMMENT_API_BASE_URL);
   // }
-  comment(){
-    return axios.get(COMMENT_API_BASE_URL + "/")
+  comment(comment){
+    console.log(comment);
+    return axios.post(COMMENT_API_BASE_URL + "/" , comment)
   }
   showComment(){
     return axios.get(COMMENT_API_BASE_URL + "/");
