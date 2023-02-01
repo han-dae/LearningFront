@@ -9,6 +9,13 @@ import Banner0 from "../../img/banner0.png";
 
 
 const TestList = () => {
+  const clicked = () => {
+    let info = sessionStorage.getItem('info');
+    if (info) {
+    } else {
+      <Button disabled={true}></Button>
+    }
+  }
   const [Test, setTest] = useState({
     category_seq: "",
     reg_dt: "",
@@ -20,6 +27,7 @@ const TestList = () => {
     test_video: "",
     test_video_realname: "",
     user_id: "",
+    test_content: ""
   });
 
   useEffect(() => {
@@ -35,7 +43,7 @@ const TestList = () => {
   }, []);
   let testList = Object.values(Test);
   //let TestPhoto = (testList[4]).test_photo;
-  
+
   return (
     <div>
       <MainHeader />
@@ -43,7 +51,7 @@ const TestList = () => {
       <div style={{ marginTop: "80px" }}>
         <div
           style={{
-            marginBottom:"50px",
+            marginBottom: "50px",
             marginLeft: "250px",
             width: "1400px",
             height: "400px",
@@ -57,7 +65,7 @@ const TestList = () => {
               : 사용자들이 직접 시연한 영상을 볼 수 있습니다.
             </h3>
           </div>
-        
+
 
           <Link to={"/test1"}>
             <Button
@@ -75,52 +83,60 @@ const TestList = () => {
             </Button>
           </Link>
           <div
-                className="videoSpace"
-                style={{
-                  padding: "30px 20px 30px 20px",
-                  width: "1380px",
-                  
-                  backgroundColor: "#f7d5d4",
-                  borderRadius: "20px",
-                  display :"inline-block",
-                  marginBottom : "40px",
-                  overflow :"visible"
-                }}
-              >
-          {testList.map((value, idx) => (
-            <div key={idx} style={{width:"30%" , display :"inline-block" , marginLeft:"20px", marginRight :"20px"}}>
-              
-                <div className="videoContents" style={{marginLeft :"15px"}} >
+            className="videoSpace"
+            style={{
+              padding: "30px 20px 30px 20px",
+              width: "1380px",
+
+              backgroundColor: "#f7d5d4",
+              borderRadius: "20px",
+              display: "inline-block",
+              marginBottom: "40px",
+              overflow: "visible"
+            }}
+          >
+            {testList.map((value, idx) => (
+              <div key={idx} style={{ width: "30%", display: "inline-block", marginLeft: "20px", marginRight: "20px" }}>
+
+                <div className="videoContents" style={{ marginLeft: "15px" }} >
                   {/* 비디오 컨텐츠 넣는곳*/}
+                  
+
                   <div
                     className="liked"
-                    style={{ width : "400px",marginLeft: "350px", marginBottom: "-50px" }}
+                    style={{ width: "400px", marginLeft: "350px", marginBottom: "0px" ,}}
                   >
                     <Liked />
                   </div>
 
                   <div
                     style={{
-                   
+
                       width: "400px",
                       height: "300px",
                       backgroundColor: "white",
-                      display :"inline-block"
+                      display: "inline-block"
                     }}
-                  >
-                    
+                  ><video src={value.test_video_realname} controls autoPlay muted playsInline
+                  style={{
+                    width: "400px",
+                    height: "300px"
+                  }}></video>
+
                   </div>
                   <Link
-                    to={"/testPage?test_seq="+value.test_seq}
+                    to={"/testPage?test_seq=" + value.test_seq}
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <div
                       className="ExSpace"
-                      style={{ marginLeft: "10px", width: "380px", marginBottom :"20px" }}
+                      style={{ marginLeft: "10px", width: "380px", marginBottom: "20px" }}
                     >
-                      {/* 비디오 설명 넣는곳*/}
+                      <div className="content" style={{ fontSize: "14px" }}>
+                        {value.test_content}
+                      </div>
 
-                      <p style={{ fontSize: "20px" , height : "45px", fontWeight :"bold"}}>
+                      <p style={{ fontSize: "20px", height: "45px", fontWeight: "bold" }}>
                         {value.test_title}
                       </p>
 
@@ -153,19 +169,19 @@ const TestList = () => {
                   </Link>
                 </div>
               </div>
-            
-            //testList.map((value, idx) => (
-            //  <h2 key={idx}>
-            //    {idx} : {value.test_seq}
-            //  </h2>))}
-          ))}
+
+              //testList.map((value, idx) => (
+              //  <h2 key={idx}>
+              //    {idx} : {value.test_seq}
+              //  </h2>))}
+            ))}
           </div>
         </div>
       </div>
-     
+
       {/**/}
     </div>
-    
+
   );
 };
 export default TestList;

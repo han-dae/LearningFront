@@ -24,16 +24,18 @@ const TestComponent3 = () => {
     name: 'file',
     multiple: true,
     onChange(info) {
-      console.log(info);
+      console.log(info.file);
       console.log(URL.createObjectURL(info.file.originFileObj));
       let video_url = URL.createObjectURL(info.file.originFileObj);
 
       sessionStorage.setItem('video_url', video_url);
-      // const url = async(info) => {
+      // sessionStorage.setItem('test_video_realname',video_url)
+      //   console.log(info.fileList[0].originFileObj);
       //   const reader = new FileReader();
-      //   console.log(reader.readAsDataURL(info.file.originFileObj));
-      // }
-      //   url(info.file);
+      //   reader.readAsDataURL(info.fileList[0].originFileObj);
+      //   console.log(reader.result);
+    
+  
       console.log(info.file)
       console.log(info.file.name);
       const filename = info.file.name;
