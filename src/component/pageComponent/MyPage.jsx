@@ -28,8 +28,8 @@ const MyPage = (props) => {
         test_video: "",
         test_video_realname: "",
         user_id: "",
-        test_contents :""
-      });
+        test_contents: ""
+    });
 
     const [state, setState] = useState({
         user_id: "",
@@ -43,22 +43,34 @@ const MyPage = (props) => {
             [e.target.name]: e.target.value,
         })
     }
-    
+    {/*const [com, setCom] = useState({
+        user_id: "",
+        cmt_content: "",
+        cmt_dt: "",
+    });*/}
     useEffect(() => {
-        
+       {/*} ApiService.showComment(sessionStorage.getItem('info'))
+            .then((res) => {
+                console.log(res.status)
+                console.log(res.data)
+                console.log(res.data[0])
+                //setCom(res.data)
+            })
+            .catch((err)=>{
+                console.log("comment 에러", err);
+            });*/}
         ApiService.loadMyTest(sessionStorage.getItem('info'))
-          .then((res) => {
-            console.log(res.status);
-            console.log(res.data);
-
-            console.log(res.data[0]);
-            setMyTest(res.data);
-          })
-          .catch((err) => {
-            console.log("loadMyTest 에러", err);
-          });
-      }, []);
-      let testList = Object.values(MyTest);
+            .then((res) => {
+                console.log(res.status);
+                console.log(res.data);
+                console.log(res.data[0]);
+                setMyTest(res.data);
+            })
+            .catch((err) => {
+                console.log("loadMyTest 에러", err);
+            });
+    }, []);
+    let testList = Object.values(MyTest);
     const navigate = useNavigate();
     const updateMember = (e) => {
         e.preventDefault();
@@ -131,9 +143,9 @@ const MyPage = (props) => {
                         <div style={{
                             marginLeft: "18%"
                         }}>
-                            <table style={{ borderSpacing: "10px", marginTop:"-2vh", marginLeft:"-1vw" }}>
+                            <table style={{ borderSpacing: "10px", marginTop: "-2vh", marginLeft: "-1vw" }}>
                                 <tr>
-                                    <td style={{ width: "120px",  }}>
+                                    <td style={{ width: "120px", }}>
                                         <label className="label">PW</label>
                                     </td>
                                     <td>
@@ -175,9 +187,9 @@ const MyPage = (props) => {
                                     </td>
                                 </tr>
                             </table>
-                            <div onClick={updateMember} style={{ marginLeft: "11vw", marginTop:'2vh' }}>
+                            <div onClick={updateMember} style={{ marginLeft: "11vw", marginTop: '2vh' }}>
                                 <ButtonLF100 value={"정보 수정"}
-                              />
+                                />
                             </div>
                         </div>
                     </div>
@@ -231,7 +243,7 @@ const MyPage = (props) => {
                             marginLeft: "20vw",
                             marginBottom: "20px"
                         }}>내 영상 확인하기</h1>
-                        
+
                         <div
                             style={{
                                 float: "right",
@@ -262,33 +274,33 @@ const MyPage = (props) => {
                             marginTop: "0px"
                         }}>
                         <div>
-                        {testList.map((value, idx) => (
-            <div key={idx} style={{width:"30%" , display :"inline-block" , marginLeft:"20px", marginRight :"20px"}}>
-              
-                            <div
-                                className="Board1"
-                                style={{
-                                    // position: "absolute",
-                                    left: "18%",
-                                    backgroundColor: "#F7D5D4",
-                                    opacity: 0.5,
-                                    width: "18%",
-                                    height: "25vh",
-                                    borderRadius: 30,
-                                    padding: "10px",
-                                    display: "inline-block",
-                                    marginTop: "1vh",
-                                    marginLeft: "20vw"
-                                }}
-                            >
-                                <div
-                                    className="title"
-                                    style={{ textAlign: "center", fontSize: "25px" }}
-                                >
-                                    {platform.name}
-                                </div>
-                            </div>
-             </div> ))}
+                            {testList.map((value, idx) => (
+                                <div key={idx} style={{ width: "30%", display: "inline-block", marginLeft: "20px", marginRight: "20px" }}>
+
+                                    <div
+                                        className="Board1"
+                                        style={{
+                                            // position: "absolute",
+                                            left: "18%",
+                                            backgroundColor: "#F7D5D4",
+                                            opacity: 0.5,
+                                            width: "18%",
+                                            height: "25vh",
+                                            borderRadius: 30,
+                                            padding: "10px",
+                                            display: "inline-block",
+                                            marginTop: "1vh",
+                                            marginLeft: "20vw"
+                                        }}
+                                    >
+                                        <div
+                                            className="title"
+                                            style={{ textAlign: "center", fontSize: "25px" }}
+                                        >
+                                            {platform.name}
+                                        </div>
+                                    </div>
+                                </div>))}
                             {/* <div
                                 className="Board2"
                                 style={{

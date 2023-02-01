@@ -34,7 +34,8 @@ class ApiService {
   // sendComment(value) {
   //   return axios.get(COMMENT_API_BASE_URL);
   // }
-  comment(){
+  comment(userID){
+    console.log(userID+'박상현메롱')
     return axios.get(COMMENT_API_BASE_URL + "/")
   }
   showComment(){
