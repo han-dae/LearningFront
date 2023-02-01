@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import MainHeader from "./Header";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Layout, theme } from "antd";
 import MainFooter from "./Footer";
 import MainBoard from "./MainBoard";
@@ -60,8 +60,9 @@ class Test4 extends Component {
     this.setState({test_video_realname : test_video_realname});
     this.setState({user_id : user_id});
     this.setState({test_content : test_content});
-    this.setState({category :category_seq});
+    this.setState({category_seq :category_seq});
   }
+  //navigate = useNavigate();
   submit = () => {
     let test ={
       test_title : this.state.test_title,
@@ -72,7 +73,7 @@ class Test4 extends Component {
       test_video_realname : this.state.test_video_realname,
       test_content : this.state.test_content,
       user_id : this.state.user_id,
-      test_seq : this.state.category_seq
+      category_seq : this.state.category_seq
     }
 
     axios.post('/test/test',test, {
@@ -80,7 +81,10 @@ class Test4 extends Component {
       baseURL: 'http://localhost:8081/users'
     })
       .then((response) => {
-         
+         //if(response.data == '/testlist'){
+          //this.navigate('/testlist');
+
+         //}
       })
       .catch((error) => {
         // 예외 처리
@@ -204,19 +208,20 @@ class Test4 extends Component {
                 }}
               />
             </Link>
-          
+          <Link to={"/testlist"}>
             <RightCircleOutlined
             type="Button"
             onClick={this.submit}
-              style={{
-                position: "absolute",
-                bottom: "50px",
-                marginTop: "0px",
-                right: "400px",
-                fontSize: "300%",
-                color: "black",
-              }}
+            style={{
+              position: "absolute",
+              bottom: "50px",
+              marginTop: "0px",
+              right: "400px",
+              fontSize: "300%",
+              color: "black",
+            }}
             />
+            </Link>
           
           <div className="testBtn" style={{ position: "absolute", bottom:"2vh", right:"36vw" }}>
           <Link to={"/test1"}>
