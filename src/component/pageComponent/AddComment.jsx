@@ -24,7 +24,7 @@ const AddComment = ({ handelComment }) => {
       test_seq: qs.test_seq,
       user_id: sessionStorage.getItem("info"),
       cmt_content: value,
-      cmt_dt: new Date().toLocaleTimeString()
+      // cmt_dt: new Date().toLocaleTimeString()
     };
     console.log('여기는??????',comment)
     setValue("")
