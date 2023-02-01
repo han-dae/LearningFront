@@ -17,10 +17,10 @@ const CommentList = ({ com }) => {
     return (
         <div>
             {comList.map((item, idx) => (
-                <p key={'num' + idx + item.text}> 
+                <p key={'num' + idx + item.cmt_content}> 
                     <div style={idText}>{item.user_id}</div>
-                    {item.text}
-                    <span style={timeText}> {item.time}</span>
+                    {item.cmt_content}
+                    <span style={timeText}> {item.cmt_dt}</span>
                 </p>
             ))}
         </div>

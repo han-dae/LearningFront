@@ -12,7 +12,7 @@ import { Select } from "antd";
 import WordCloud0 from "../../img/wordCloud/wc0.png";
 import WordCloud1 from "../../img/wordCloud/wc1.png";
 import WordCloud2 from "../../img/wordCloud/wc2.png";
-import Bar from './Bar'
+import LineChart1 from "./LineChart";
 const TestComponent = () => {
   const [Category, setCategory] = useState("0");
   
@@ -45,6 +45,8 @@ const TestComponent = () => {
         console.log("cuesheet() 에러", err);
       });
   }, []);
+
+
   let cueSheet = Object.values(Guide);
   console.log(cueSheet);
 
@@ -154,8 +156,16 @@ console.log(WcUrl);
       
 
           <div className="dataSpace">
-          <div className="chart_dh">
-              <div style={{ width: 700, height: 300 }}><Bar/></div>
+            <div
+              style={{
+                width: "500px",
+                height: "300px",
+                backgroundColor: "white",
+              }}
+            ></div>
+
+            <div className="chart_dh">
+              <div style={{ width: 500, height: 300 }}></div>
             </div>
 
            

@@ -52,20 +52,21 @@ const MainBoard = () => {
                   left:'1vw',
                   zIndex:3000,
                   backgroundRepeat: "no-repeat",
+                  
                 }}>
            
            
             <div className="NaverLogo" 
             style={{ 
                     height:'3vh',
-                    marginTop:'2vh' 
+                    marginTop:'2.5vh' 
                   }}><img src={NaverLogo} style={{width :"60px"}}/></div>
            
            
             <div className="SSGLogo"
             style={{ 
               height:'3vh',
-              marginTop:'0.5vh'
+              marginTop:'1vh'
               }}><img src={SSGLogo} style={{width :"60px"}}/></div>
             <div className="CoupangLogo"
             style={{ 
@@ -93,7 +94,8 @@ const MainBoard = () => {
           right: "20%",
           borderRadius: 30,
           padding: "10px",
-          display: "inline-block"
+          display: "inline-block",
+        
 
         }}
       >
@@ -105,6 +107,41 @@ const MainBoard = () => {
             height: 400
           }}>
           <h4 style={{ marginLeft: "-17vw" }}>플랫폼 매출액 비교</h4>
+          <div className="logoImg"
+          style={{height:'18vh',
+                  width:'2.5vw',
+                  position:'absolute',
+                  left:'1vw',
+                  zIndex:3000,
+                  backgroundRepeat: "no-repeat",
+                  marginTop:'1.5vh'
+                }}>
+           
+           
+            <div className="NaverLogo" 
+            style={{ 
+                    height:'3vh',
+                    marginTop:'1vh' 
+                  }}><img src={NaverLogo} style={{width :"60px"}}/></div>
+           
+           
+            <div className="CoupangLogo"
+            style={{ 
+              height:'3vh',
+              marginTop:'0.5vh'
+              }}><img src={CoupangLogo} style={{width :"60px"}}/></div>
+            <div className="SSGLogo"
+            style={{ 
+                    height: '3vh',
+                    marginTop: '0.5vh'
+                  }}><img src={SSGLogo} style={{width :"60px"}}/></div>
+            <div className="LotteLogo"
+            style={{ 
+                    height: '3vh',
+                    marginTop: '0.5vh'
+                  }}><img src={LotteLogo} style={{width :"60px"}}/></div>
+
+          </div>
           <VertiBar2 />
         </div>
 
