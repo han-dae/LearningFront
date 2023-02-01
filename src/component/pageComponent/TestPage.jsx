@@ -50,8 +50,8 @@ const TestPage = () => {
     // 댓글 작성
     const [com, setCom] = useState({
             user_id:"",
-            text: "",
-            time: "",
+            cmt_content: "",
+            cmt_dt: "",
     });
     // console.log('현재 아이디', user_id)
     const handelComment = (newCom) => {
@@ -62,8 +62,8 @@ const TestPage = () => {
         setCom(
             comList.concat({
                 user_id: user_id,
-                text : newCom,
-                time : currentTime,
+                cmt_content : newCom,
+                cmt_dt : currentTime,
             })
         );
     };
