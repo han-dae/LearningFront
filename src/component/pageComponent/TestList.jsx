@@ -6,6 +6,7 @@ import Liked from "./Liked";
 import ApiService from "../ApiService";
 
 import Banner0 from "../../img/banner0.png";
+import axios from "axios";
 
 
 const TestList = () => {
@@ -29,18 +30,23 @@ const TestList = () => {
     user_id: "",
     test_content: ""
   });
-
+  
   useEffect(() => {
     ApiService.loadTest()
-      .then((res) => {
-        console.log(res.status);
-        console.log(res.data);
-        setTest(res.data);
-      })
-      .catch((err) => {
-        console.log("load() 에러", err);
-      });
-  }, []);
+    .then((res) => {
+      console.log(res.status);
+      console.log(res.data);
+      setTest(res.data);
+    })
+    .catch((err) => {
+      console.log("load() 에러", err);
+    });
+    
+    //axios.get("http://localhost:8081/users/video",)
+
+    
+  }, 
+  []);
   let testList = Object.values(Test);
   //let TestPhoto = (testList[4]).test_photo;
 
