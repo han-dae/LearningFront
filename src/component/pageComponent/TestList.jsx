@@ -117,7 +117,8 @@ const TestList = () => {
                       backgroundColor: "white",
                       display: "inline-block"
                     }}
-                  ><video src={value.test_video_realname} controls autoPlay muted playsInline
+                  ><video src={value.test_video_realname} 
+                  controls autoPlay muted playsInline
                   style={{
                     width: "400px",
                     height: "300px"

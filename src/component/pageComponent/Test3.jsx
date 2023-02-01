@@ -30,10 +30,13 @@ const TestComponent3 = () => {
 
       sessionStorage.setItem('video_url', video_url);
       // sessionStorage.setItem('test_video_realname',video_url)
-      //   console.log(info.fileList[0].originFileObj);
-      //   const reader = new FileReader();
-      //   reader.readAsDataURL(info.fileList[0].originFileObj);
-      //   console.log(reader.result);
+         console.log(info.file.originFileObj);
+         const reader = new FileReader();
+         reader.readAsDataURL(info.file.originFileObj);
+         reader.onload= () =>{
+          const url = reader.result;
+          console.log(url);
+         }
     
   
       console.log(info.file)
