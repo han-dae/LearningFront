@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const data = [
   {
-    name: 'Page A',
+    name: '대찬',
     uv: 4000,
     pv: 2400,
     amt: 2400,

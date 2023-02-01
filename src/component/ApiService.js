@@ -34,8 +34,10 @@ class ApiService {
   // sendComment(value) {
   //   return axios.get(COMMENT_API_BASE_URL);
   // }
-  comment(){
-    return axios.get(COMMENT_API_BASE_URL + "/")
+  comment(comment){
+    console.log(comment.cmt_content+'박상현메롱')
+    console.log(COMMENT_API_BASE_URL+"/");
+    return axios.post(COMMENT_API_BASE_URL + "/", comment);
   }
   showComment(){
     return axios.get(COMMENT_API_BASE_URL + "/");
@@ -74,6 +76,7 @@ class ApiService {
     console.log("api 이동 ",TEST_API_BASE_URL + "/" + test_seq);
     return axios.get(TEST_API_BASE_URL + "/" + test_seq);
   }
+  
 }
 
 export default new ApiService();
