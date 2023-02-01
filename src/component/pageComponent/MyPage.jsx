@@ -81,28 +81,19 @@ const MyPage = (props) => {
     window.location.reload(); // 새로고침
   };
   // 내 댓글 수정
-  const [com, setCom] = useState([]);
-  const removeCom = (user_id) => {
-    // 삭제
-    return setCom(com.filter((com) => com.id !== user_id));
-  };
+  
+    const [com, setCom] = useState([])
+    const removeCom = (user_id) => { // 삭제
+        return setCom(com.filter((com) => com.user_id !== user_id));
+    };
+
 
   // 내 영상 리스트
   const platform = {
     name: "",
     pic: "",
   };
-
-  const btnStlyed = {
-    borderRadius: "20px",
-    width: "50px",
-    float: "right",
-    marginRight: "60px",
-    //  marginTop: "10px",
-    backgroundColor: "#FE8F8D",
-    color: "white",
-    border: "white",
-  };
+ 
   return (
     <div>
       <MainHeader />
@@ -331,51 +322,6 @@ const MyPage = (props) => {
                 </div>
               ))}
             </div>
-
-            {/* <div
-                                className="Board2"
-                                style={{
-                                    // position: "absolute",
-                                    right: "20%",
-                                    backgroundColor: "#F7D5D4",
-                                    opacity: 0.5,
-                                    width: "18%",
-                                    height: "25vh",
-                                    borderRadius: 30,
-                                    padding: "10px",
-                                    display: "inline-block",
-                                    marginTop: "0vh",
-                                    marginLeft: "1vw"
-                                }}
-                            >
-                                <div
-                                    className="title"
-                                    style={{ textAlign: "center", fontSize: "25px" }}
-                                >{platform.name}</div>
-
-                            </div>
-                            <div
-                                className="Board3"
-                                style={{
-                                    // position: "absolute",
-                                    right: "20%",
-                                    backgroundColor: "#F7D5D4",
-                                    opacity: 0.5,
-                                    width: "18%",
-                                    height: "25vh",
-                                    borderRadius: 30,
-                                    padding: "10px",
-                                    display: "inline-block",
-                                    marginTop: "0vh",
-                                    marginLeft: "1vw"
-                                }}
-                            >
-                                <div
-                                    className="title"
-                                    style={{ textAlign: "center", fontSize: "25px" }}
-                                >{platform.name}</div>
-
-                            </div> */}
           </div>
         </div>
       </Content>

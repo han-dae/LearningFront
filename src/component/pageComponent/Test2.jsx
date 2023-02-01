@@ -9,9 +9,30 @@ import { Link } from "react-router-dom";
 import TextArea from "antd/es/input/TextArea";
 import Footer from "./Footer";
 import { BarChart } from "recharts";
+import LFBarChart from "../Chart/LFBarChart";
 
+// function bed (){
+//   function bedreview(){
+//     var bed = [];
+//     for(var i =0; i<bed.length; i++){
+//       bed.length.push()
+//     }
+//     return bed
+//   }
+// }
 
-
+// useEffect(() => {
+//   ApiService.bed()
+//     .then((res) => {
+//       console.log(res.status);
+//       console.log(res.data);
+//       setBed(res.data);
+//       console.log(res.data[0]);
+//     })
+//     .catch((err) => {
+//       console.log("bed() 에러", err);
+//     });
+// }, []);
 
 const TestComponent2 = () => {
   const [state, setState] = useState({
@@ -79,7 +100,7 @@ const TestComponent2 = () => {
          
         </div>
        
-    
+        <LFBarChart/>
 
         <div style={{  marginLeft: "24vw" }}>
           <TextArea
