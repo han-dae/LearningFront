@@ -31,8 +31,14 @@ class ApiService {
   cuesheet(){
     return axios.get(GUIDE_API_BASE_URL);
   }
-  sendComment(value) {
-    return axios.get(COMMENT_API_BASE_URL);
+  // sendComment(value) {
+  //   return axios.get(COMMENT_API_BASE_URL);
+  // }
+  comment(){
+    return axios.get(COMMENT_API_BASE_URL + "/")
+  }
+  showComment(){
+    return axios.get(COMMENT_API_BASE_URL + "/");
   }
   bed(){
     return axios.get(TFIDF_API_BASE_URL + "/");
