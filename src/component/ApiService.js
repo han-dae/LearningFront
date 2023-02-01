@@ -4,7 +4,7 @@ const USER_API_BASE_URL = "http://localhost:8081/users/users";
 const TEST_API_BASE_URL = "http://localhost:8081/users/test";
 const GUIDE_API_BASE_URL = "http://localhost:8081/users/guide";
 const COMMENT_API_BASE_URL = "http://localhost:8081/users/comment";
-const TFIDF_API_BASE_URL = "http://localhost:8081/users/tfidf/design";
+const TFIDF_API_BASE_URL = "http://localhost:8081/users/tfidf";
 class ApiService {
   fetchUser() {
     return axios.get(USER_API_BASE_URL);
@@ -34,8 +34,23 @@ class ApiService {
   sendComment(value) {
     return axios.get(COMMENT_API_BASE_URL);
   }
-  design(){
-    return axios.get(TFIDF_API_BASE_URL);
+  bed(){
+    return axios.get(TFIDF_API_BASE_URL + "/");
+  }
+  blanket(){
+    return axios.get(TFIDF_API_BASE_URL + "/");
+  }
+  chair(){
+    return axios.get(TFIDF_API_BASE_URL + "/");
+  }
+  negabed(){
+    return axios.get(TFIDF_API_BASE_URL + "/");
+  }
+  negablanket(){
+    return axios.get(TFIDF_API_BASE_URL + "/");
+  }
+  negachair(){
+    return axios.get(TFIDF_API_BASE_URL + "/");
   }
 
 
