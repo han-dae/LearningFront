@@ -35,7 +35,6 @@ const TestPage = () => {
     let qs = queryString.parse(window.location.search);
     let test_seq = qs.test_seq;
     console.log(test_seq);
-    
     useEffect(() => {
         ApiService.detailTest(test_seq)
             .then((res) => {
@@ -49,7 +48,7 @@ const TestPage = () => {
     }, []);
 
     // 댓글 작성
-    const [com, setCom] = useState('');
+    const [com, setCom] = useState([]);
     // console.log('현재 아이디', user_id)
     const handelComment = (newCom) => {
         //console.log("handleComment", newCom);

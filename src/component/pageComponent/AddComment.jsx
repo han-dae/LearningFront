@@ -16,17 +16,17 @@ const AddComment = ({ handelComment }) => {
    //  e.preventDefault();
     console.log('현재 댓글', value)
     handelComment(value)
-    console.log('handle오류', value)
+   // console.log('handle오류', value)
     let qs = queryString.parse(window.location.search);
     const test_seq = qs.test_seq;
-    console.log('여기까지 오나')
+   // console.log('여기까지 오나')
     let comment = {
       test_seq: qs.test_seq,
       user_id: sessionStorage.getItem("info"),
       cmt_content: value,
       // cmt_dt: new Date().toLocaleTimeString()
     };
-    console.log('여기는??????',comment)
+   // console.log('여기는??????',comment)
     setValue("")
     // ===============================================
     
