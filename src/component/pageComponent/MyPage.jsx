@@ -57,6 +57,7 @@ const MyPage = (props) => {
         console.log("loadMyTest 에러", err);
       });
   }, []);
+
   let testList = Object.values(MyTest);
   const navigate = useNavigate();
   const updateMember = (e) => {
@@ -88,6 +89,7 @@ const MyPage = (props) => {
     cmt_dt: "",
   })
   let comList = Object.values(com)
+
   const removeCom = (user_id) => { // 삭제
     setCom(com.filter(com => com.user_id !== user_id));
   };
@@ -198,7 +200,7 @@ const MyPage = (props) => {
                 onClick={updateMember}
                 style={{ marginLeft: "11vw", marginTop: "2vh" }}
               >
-                <ButtonLF100 value={"정보 수정"} />
+                <ButtonLF100 value={"SAVE"} />
               </div>
             </div>
           </div>
@@ -273,8 +275,8 @@ const MyPage = (props) => {
                 marginTop: "3vh",
               }}
             >
-              <ButtonLF50 value={"수정"} />
-              <ButtonLF50 value={"삭제"} />
+             {/* <ButtonLF50 value={"수정"} /> */}
+              <ButtonLF50 value={"DELETE"} />
             </div>
           </div>
         </div>
