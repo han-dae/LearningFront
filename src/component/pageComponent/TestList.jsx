@@ -31,6 +31,18 @@ const TestList = () => {
     test_content: ""
   });
   
+  const video =(data)=>{
+    axios.post('/video/file', data, {
+      
+      baseURL: 'http://localhost:8081/users'
+    })
+      .then((res) => {
+         console.log(res);
+      })
+      .catch((error) => {
+        // 예외 처리
+      })
+    }
   useEffect(() => {
     ApiService.loadTest()
     .then((res) => {
@@ -40,11 +52,7 @@ const TestList = () => {
     })
     .catch((err) => {
       console.log("load() 에러", err);
-    });
-    
-    //axios.get("http://localhost:8081/users/video",)
-
-    
+    });  
   }, 
   []);
   let testList = Object.values(Test);
@@ -123,7 +131,7 @@ const TestList = () => {
                       backgroundColor: "white",
                       display: "inline-block"
                     }}
-                  ><video src={value.test_video_realname} 
+                  ><video src={video(value.test_video_realname)}
                   controls autoPlay muted playsInline
                   style={{
                     width: "400px",

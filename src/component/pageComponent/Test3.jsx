@@ -35,7 +35,7 @@ const TestComponent3 = () => {
          reader.readAsDataURL(info.file.originFileObj);
          reader.onload= () =>{
           const url = reader.result;
-          console.log(url);
+          //console.log(url);
          }
     
   
