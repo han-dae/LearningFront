@@ -19,6 +19,7 @@ const TestComponent3 = () => {
   // fileName: "",
   // fillPath: ""
   // });
+  const fd = new FormData();
 
   const props =  {
     name: 'file',
@@ -30,34 +31,25 @@ const TestComponent3 = () => {
 
       sessionStorage.setItem('video_url', video_url);
       // sessionStorage.setItem('test_video_realname',video_url)
-      //   console.log(info.fileList[0].originFileObj);
-      //   const reader = new FileReader();
-      //   reader.readAsDataURL(info.fileList[0].originFileObj);
-      //   console.log(reader.result);
+         console.log(info.file.originFileObj);
+         const reader = new FileReader();
+         reader.readAsDataURL(info.file.originFileObj);
+         reader.onload= () =>{
+          const url = reader.result;
+          //console.log(url);
+         }
     
   
       console.log(info.file)
       console.log(info.file.name);
       const filename = info.file.name;
-      const fd = new FormData();
       Object.values(info.file).forEach((file) => fd.append("file", file));
       console.log(fd);
       sessionStorage.setItem('test_video', filename);
       console.log('test', sessionStorage.getItem('test_video'));
 
 
-      axios.post('/test/AxiosFileTest.do', fd, {
-        headers: {
-          "Content-Type": `multipart/form-data; `,
-        },
-        baseURL: 'http://localhost:8081/users'
-      })
-        .then((response) => {
-           sessionStorage.setItem('test_video_realname',response.data); 
-        })
-        .catch((error) => {
-          // 예외 처리
-        })
+      
 
 
 
@@ -124,6 +116,18 @@ const TestComponent3 = () => {
 
   const navigate = useNavigate();
   const clicked = () => {
+    axios.post('/test/AxiosFileTest.do', fd, {
+      headers: {
+        "Content-Type": `multipart/form-data; `,
+      },
+      baseURL: 'http://localhost:8081/users'
+    })
+      .then((response) => {
+         sessionStorage.setItem('test_video_realname',response.data); 
+      })
+      .catch((error) => {
+        // 예외 처리
+      })
     sessionStorage.setItem('test_title',state.test_title);
     sessionStorage.setItem('test_price',state.test_price);
     sessionStorage.setItem('test_content',state.test_content);
