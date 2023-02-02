@@ -31,18 +31,18 @@ const TestList = () => {
     test_content: ""
   });
   
-  const video =(data)=>{
-    axios.post('/video/file', data, {
-      
-      baseURL: 'http://localhost:8081/users'
-    })
-      .then((res) => {
-         console.log(res);
-      })
-      .catch((error) => {
-        // 예외 처리
-      })
-    }
+  // const video =(data)=>{
+  //   axios.post('http://localhost:8081/users/video', data)
+  //     .then((res) => {
+  //        console.log(res.data);
+        
+  //     })
+  //     .catch((error) => {
+  //       // 예외 처리
+  //     })
+       
+    
+  //  }
   useEffect(() => {
     ApiService.loadTest()
     .then((res) => {
@@ -116,22 +116,17 @@ const TestList = () => {
                   {/* 비디오 컨텐츠 넣는곳*/}
                   
 
-                  <div
-                    className="liked"
-                    style={{ width: "400px", marginLeft: "350px", marginBottom: "0px" ,}}
-                  >
-                    <Liked />
-                  </div>
 
                   <div
-                    style={{
+                    // style={{
 
-                      width: "400px",
-                      height: "300px",
-                      backgroundColor: "white",
-                      display: "inline-block"
-                    }}
-                  ><video src={video(value.test_video_realname)}
+                    //   width: "400px",
+                    //   height: "200px",
+                    //   marginBottom:"-100px",
+                    //   backgroundColor: "white",
+                    //   display: "inline-block"
+                    // }}
+                  ><video src={`${process.env.PUBLIC_URL}/file/${value.test_video_realname}`}
                   controls autoPlay muted playsInline
                   style={{
                     width: "400px",
@@ -139,6 +134,12 @@ const TestList = () => {
                   }}></video>
 
                   </div>
+                    <div
+                      className="liked"
+                      style={{ width: "400px", marginLeft: "350px", marginBottom: "0px" ,}}
+                    >
+                      <Liked />
+                    </div>
                   <Link
                     to={"/testPage?test_seq=" + value.test_seq}
                     style={{ textDecoration: "none", color: "black" }}
