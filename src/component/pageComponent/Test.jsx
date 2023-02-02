@@ -75,11 +75,12 @@ const TestComponent = () => {
             marginLeft: "20vw",
             width: "20vw",
             height: "10vh",
-            paddingLeft: "10px",
-            backgroundColor: "#F7D5D4",
+          
+            backgroundColor: "#404040",
             borderRadius: 20,
-            overflow: "hidden",
+            textAlign :"center",
             boxShadow: "5px 5px #b4b4b4",
+            
           }}
         >
           <div
@@ -88,12 +89,11 @@ const TestComponent = () => {
               display: "inline-block",
               width: "100%",
               textShadow: "2px 2px 2px gray",
+              color :"white"
             }}
           >
-            <h1>Chapter1. 큐시트 분석</h1>
-            <h3 style={{ marginTop: "-25px" }}>
-              높은 조회 수와 매출을 기록한 큐시트에요.
-            </h3>
+            <h1> 큐시트 예시 자료</h1>
+            
           </div>
         </div>
         <div>
@@ -131,7 +131,7 @@ const TestComponent = () => {
             marginTop: "10px",
             marginLeft: "20vw",
             opacity: "1",
-            border: "5px solid #f7d5d4",
+            border: "5px solid #404040",
             borderRight: "none",
             backgroundColor: "white",
             overflowY: "scroll",
@@ -149,16 +149,17 @@ const TestComponent = () => {
           <div
             style={{
               position: "absolute",
-              color: "black",
+              color: "white",
               padding: "5px 10px 5px 10px",
               borderRadius: "10px",
               display: "inline-block",
               marginLeft: "50px",
-              marginTop: "150px",
+              marginTop: "110px",
               fontSize: "18px",
               fontWeight: "bold",
-              backgroundColor: "#F7D5D4",
+              backgroundColor: "#404040",
               boxShadow: "3px 3px #b4b4b4",
+              
             }}
           >
             Ready Cast에서 단어별 영향을 분석해봤어요.
@@ -206,7 +207,7 @@ const TestComponent = () => {
                 width: "5vw",
                 marginLeft: "35vw",
                 marginTop: "7vh",
-                borderBottom: "4px solid #F7D5D4",
+                borderBottom: "4px solid #404040",
               }}
             ></div>
           </Link>

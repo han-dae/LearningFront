@@ -6,8 +6,8 @@ const ButtonLF100 = (props) => {
             style={{
                 borderRadius: "20px",
                 width: "100px",
-                backgroundColor: "#FE8F8D",
-                color: "white",
+                backgroundColor: "white",
+                color: "black",
                 padding:"1px 1px 1px 1px",
                 margin:"3px"
             }}>
@@ -22,8 +22,8 @@ const ButtonLF50 = (props) => {
             style={{
                 borderRadius: "20px",
                 width: "50px",
-                backgroundColor: "#FE8F8D",
-                color: "white",
+                backgroundColor: "white",
+                color: "black",
                 padding:"1px 1px 1px 1px",
                 margin:"3px"
             }}>

@@ -36,6 +36,7 @@ const TestList = () => {
         console.log(res.status);
         console.log(res.data);
         setTest(res.data);
+        console.log("setTest결과",Test)
       })
       .catch((err) => {
         console.log("load() 에러", err);

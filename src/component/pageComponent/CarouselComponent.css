@@ -1,11 +1,11 @@
 .slick-slider .banner {
-    width:90%;
+    width:95%;
     height: 100%;
 
 
 ;
     opacity: 0.5;
-    padding: 10px;
+margin-top: -10px;
     
 
 }
@@ -20,12 +20,12 @@
 .slick-center .banner {
 
     opacity: 1;
-    padding: 10px;
+    
 }
 
 .slick-slider {
-    width: 70vw;
-    margin-left: -36%;
+    width: 85vw;
+    margin-left: -51%;
     align-content: center;
     text-align: center;
 }
