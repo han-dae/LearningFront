@@ -44,7 +44,7 @@ const AddComment = ({ handelComment }) => {
   }
 
   const enterHandle = (e) => {
-    console.log(e.code)
+    
     e.code === 'Enter' && btnHandle()
   }
 
