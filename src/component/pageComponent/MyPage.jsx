@@ -83,8 +83,9 @@ const MyPage = (props) => {
   // 내 댓글 수정
   
     const [com, setCom] = useState([])
+    let comList = Object.values(com)
     const removeCom = (user_id) => { // 삭제
-        return setCom(com.filter((com) => com.user_id !== user_id));
+         setCom(com.filter(com => com.user_id !== user_id));
     };
 
 
@@ -222,19 +223,21 @@ const MyPage = (props) => {
           }}
         >
           <div>
-            <div key={`${com.user_id}`}>
-              <div>
-                <p>{com.userName}</p>
+            {comList.map((value, idx)=>(
+              <div key={`${com.user_id}`}> 
+                <div>
+                <p>{com.user_id}</p>
                 <button
-                  onClick={() => removeCom(com.id)}
+                  onClick={() => removeCom(com.user_id)}
                   className="btn_comDel"
                   style={{ marginLeft: "30vw" }}
                 >
                   X
                 </button>
               </div>
-              {com.content}
-            </div>
+              {com.cmt_content}
+              </div>
+            ))} 
           </div>
           <div
             className="com_edit"
