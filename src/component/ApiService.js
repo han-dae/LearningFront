@@ -29,7 +29,11 @@ class ApiService {
     return axios.get(USER_API_BASE_URL+"/");
   }
   cuesheet(){
-    return axios.get(GUIDE_API_BASE_URL);
+    return axios.get(GUIDE_API_BASE_URL+"/");
+  }
+
+  review(){
+    return axios.post(GUIDE_API_BASE_URL + "/review");
   }
   // sendComment(value) {
   //   return axios.get(COMMENT_API_BASE_URL);
