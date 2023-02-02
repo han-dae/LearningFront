@@ -26,12 +26,14 @@ const TestComponent = () => {
   const [Guide, setGuide] = useState({
     guide_seq: "",
     cuesheet: "",
-    design: "",
-    price: "",
-    used: "",
     category_seq: "",
+    stt : "",
+    score : ""
   });
-
+  const [Word, setWord] = useState({
+    stt : "",
+    score :""
+  });
   const [WordCloudNum, setWordCloudNum] = useState("0");
   useEffect(() => {
     ApiService.cuesheet()
@@ -39,7 +41,10 @@ const TestComponent = () => {
         console.log(res.status);
         console.log(res.data);
         setGuide(res.data);
-        console.log(res.data[0]);
+        console.log(res.data.length);
+        for(let i = 0; res.data.length ; i++){
+          console.log("fewf");
+        }
         sessionStorage.setItem("category_seq", res.data[0].category_seq);
       })
       .catch((err) => {
@@ -47,8 +52,10 @@ const TestComponent = () => {
       });
   }, []);
 
-  let cueSheet = Object.values(Guide);
-  console.log(cueSheet);
+  let cueSheet = Object.values(cueSheet);
+  console.log(Word);
+  
+  
 
   const onChange = (value) => {
     console.log(`selected ${value}`);

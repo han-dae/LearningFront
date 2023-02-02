@@ -2,76 +2,88 @@ import React, { PureComponent } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import ApiService from '../ApiService';
 //import '../ApiService.js'
 
-const data = [
-  {
-    name: '대찬',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
- 
-];
+
+
 const TFIDF_API_BASE_URL = "http://localhost:8081/users/tfidf";
 
 // async function test(){
 //   const test = await axios.get(TFIDF_API_BASE_URL)
 //   console.log("Test "+test)
 // }
+const Example = () => {
+  //let demoUrl = 'https://codesandbox.io/s/simple-bar-chart-tpz8r';
+  useEffect(() => {
+    ApiService.review()
+      .then((res) => {
+        console.log(res.status);
+        console.log(res.data);
+        
+        
+        
+      })
+      .catch((err) => {
+        console.log("reviuew() 에러", err);
+      });
+  }, []);
 
-export default class Example extends PureComponent {
-  static demoUrl = 'https://codesandbox.io/s/simple-bar-chart-tpz8r';
+  const data = [
+    {
+      name: '대찬',
+      uv: 4000,
+      pv: 2400,
+      amt: 2400,
+    },
+   
+  ];
+  return (
+    <ResponsiveContainer width="100%" height="100%">
+      <BarChart
+        width={500}
+        height={300}
+        data={data}
+        margin={{
+          top: 5,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="pv" fill="#8884d8" />
+        <Bar dataKey="uv" fill="#82ca9d" />
+      </BarChart>
+    </ResponsiveContainer>
+  );
+}
+export default Example;
+// export default class Example extends PureComponent {
   
-  //const TFIDF_API_BASE_URL = "http://localhost:8081/users/tfidf";
-  constructor(props) {
-    //현재 클래스형 컴포넌트가 상속받고 있는 
-    //리액트의 Component 클래스가 지닌 생성자 함수를 호출해 준다.
-    super(props);
-    //state의 초깃값 설정하기 
-    this.state = {
-        keyW : "",
-        value : "",
-        getData : async function(){
-          await axios.get(TFIDF_API_BASE_URL)
-        }
-    };
-}
+//   //const TFIDF_API_BASE_URL = "http://localhost:8081/users/tfidf";
+//   constructor(props) {
+//     //현재 클래스형 컴포넌트가 상속받고 있는 
+//     //리액트의 Component 클래스가 지닌 생성자 함수를 호출해 준다.
+//     super(props);
+//     //state의 초깃값 설정하기 
+//     this.state = {
+//         keyW : "",
+//         value : "",
+//         getData : async function(){
+//           await axios.get(TFIDF_API_BASE_URL+"/review") 
+          
+//         },
+//         success: function(result){
+//           console.log(result)
+//         }
+//     };
+// }
 
 
 
-componentDidMount() {
-  // fetch(TFIDF_API_BASE_URL + "/")
-  // .then((res)=>{
-  //   console.log(res)
-  // })
-  this.state.getData()
-}
-
-
-  render() {
-    return (
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="pv" fill="#8884d8" />
-          <Bar dataKey="uv" fill="#82ca9d" />
-        </BarChart>
-      </ResponsiveContainer>
-    );
-  }
-}
+ 
