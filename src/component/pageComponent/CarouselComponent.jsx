@@ -55,10 +55,10 @@ const CarouselComponent = () => {
   return (
     <div><Link  to={"/test1"}>
     <Slider {...settings}>
-      <div className="banner" style={{width: "80vw"}}><div style={{width : "100%"}}><img src={Demo0} style={{width : "400px", height :"300px"}}/></div></div>
-      <div className="banner" style={{width: "80vw"}}><div style={{width : "100%", backgroundColor : "transparent"}}><img src={Demo1} style={{width : "400px", height :"300px"}}/></div></div>
-      <div className="banner" style={{width: "80vw"}}><div style={{width : "100%",  backgroundColor : "transparent"}}><img src={Demo2} style={{width : "400px", height :"300px"}}/></div></div>
-      <div className="banner" style={{width: "80vw"}}><div style={{width : "100%",  backgroundColor : "transparent"}}><img src={Demo4} style={{width : "400px", height :"300px"}}/></div></div>
+      <div className="banner" style={{width: "100vw"}}><div style={{width : "100%"}}><img src={Demo0} style={{width : "500px", height :"300px"}}/></div></div>
+      <div className="banner" style={{width: "100vw"}}><div style={{width : "100%", backgroundColor : "transparent"}}><img src={Demo1} style={{width : "500px", height :"300px"}}/></div></div>
+      <div className="banner" style={{width: "100vw"}}><div style={{width : "100%",  backgroundColor : "transparent"}}><img src={Demo2} style={{width : "500px", height :"300px"}}/></div></div>
+      <div className="banner" style={{width: "100vw"}}><div style={{width : "100%",  backgroundColor : "transparent"}}><img src={Demo4} style={{width : "500px", height :"300px"}}/></div></div>
 
     </Slider>
     </Link>

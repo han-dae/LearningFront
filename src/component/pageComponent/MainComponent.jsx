@@ -12,7 +12,7 @@ function MainComponent() {
   const { Content,Footer } = Layout;
  
   return (
-    <div>
+    <div style={{backgroundColor :"#404040"}}>
       <MainHeader />
       
       
@@ -21,7 +21,7 @@ function MainComponent() {
         <div style={{ width: "800px", margin: "auto" }}>
           <CarouselComponent />
         </div>
-        <div style={{marginTop : "0",marginLeft :"250px",width : "1400px" , height :"400px" ,backgroundColor : "white"}}>
+        <div style={{marginTop : "0",marginLeft :"250px",width : "1400px" , height :"400px" ,backgroundColor : "#404040"}}>
         <MainBoard/>
         
         </div>

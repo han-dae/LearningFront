@@ -81,12 +81,16 @@ const MyPage = (props) => {
     window.location.reload(); // 새로고침
   };
   // 내 댓글 수정
-  
-    const [com, setCom] = useState([])
-    let comList = Object.values(com)
-    const removeCom = (user_id) => { // 삭제
-         setCom(com.filter(com => com.user_id !== user_id));
-    };
+
+  const [com, setCom] = useState({
+    user_id: "",
+    cmt_content: "",
+    cmt_dt: "",
+  })
+  let comList = Object.values(com)
+  const removeCom = (user_id) => { // 삭제
+    setCom(com.filter(com => com.user_id !== user_id));
+  };
 
 
   // 내 영상 리스트
@@ -94,7 +98,7 @@ const MyPage = (props) => {
     name: "",
     pic: "",
   };
- 
+
   return (
     <div>
       <MainHeader />
@@ -121,7 +125,7 @@ const MyPage = (props) => {
             paddingLeft: "10px",
             backgroundColor: "#F7D5D4",
             borderRadius: 20,
-            opacity:"1"
+            opacity: "1"
           }}
         >
           <div
@@ -223,21 +227,21 @@ const MyPage = (props) => {
           }}
         >
           <div>
-            {comList.map((value, idx)=>(
-              <div key={`${com.user_id}`}> 
+            {comList.map((value, idx) => (
+              <div key={`${com.user_id}`}>
                 <div>
-                <p>{com.user_id}</p>
-                <button
-                  onClick={() => removeCom(com.user_id)}
-                  className="btn_comDel"
-                  style={{ marginLeft: "30vw" }}
-                >
-                  X
-                </button>
+                  <p>{com.user_id}</p>
+                  <button
+                    onClick={() => removeCom(com.user_id)}
+                    className="btn_comDel"
+                    style={{ marginLeft: "30vw" }}
+                  >
+                    X
+                  </button>
+                </div>
+                {com.cmt_content}
               </div>
-              {com.cmt_content}
-              </div>
-            ))} 
+            ))}
           </div>
           <div
             className="com_edit"
@@ -297,11 +301,11 @@ const MyPage = (props) => {
               style={{
                 display: "block",
                 maxHeight: "300px",
-                height :"300px",
+                height: "300px",
                 backgroundColor: "#f7d5d4",
                 marginLeft: "20vw",
                 overflowY: "hidden",
-                
+
               }}
             >
               {testList.map((value, idx) => (
@@ -317,11 +321,11 @@ const MyPage = (props) => {
                     marginRight: "20px",
                   }}
                 >
-                
-                    fefswefsf
-                    
-                    {value.test_seq}
-                  
+
+                  fefswefsf
+
+                  {value.test_seq}
+
                 </div>
               ))}
             </div>

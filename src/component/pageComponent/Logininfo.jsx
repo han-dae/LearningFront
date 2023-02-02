@@ -16,7 +16,7 @@ const Logininfo = () => {
     return (
       <div style={{ float: "right", marginTop: "-40px", marginRight: "12%" }}>
         <Link to="/Login">
-          <ButtonLF100 value={'로그인'} />
+          <ButtonLF100 value={'LOGIN'} />
         </Link>
       </div>
     )
@@ -25,11 +25,11 @@ const Logininfo = () => {
       <div>
         <div style={{ float: "right", marginTop: "-40px", marginRight: "12%" }}>
           <Link to="/MyPage">
-            <ButtonLF100 value={'마이페이지'} />
+            <ButtonLF100 value={'MY PAGE'} />
           </Link>
         </div>
         <div style={{ float: "right", marginTop: "-40px", marginRight: "18%" }} onClick={logout}>
-          <ButtonLF100 value={'로그아웃'} />
+          <ButtonLF100 value={'LOG OUT'} />
         </div>
       </div>
     )
