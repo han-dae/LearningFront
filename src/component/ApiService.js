@@ -43,8 +43,9 @@ class ApiService {
     console.log(COMMENT_API_BASE_URL+"/");
     return axios.post(COMMENT_API_BASE_URL + "/", comment);
   }
-  showComment(){
-    return axios.get(COMMENT_API_BASE_URL + "/");
+  showComment(test_seq){
+    console.log(test_seq,'api썰비스 쇼코멘트야~');
+    return axios.get(COMMENT_API_BASE_URL + "/showComment", test_seq);
   }
   bed(){
     return axios.get(TFIDF_API_BASE_URL + "/");
