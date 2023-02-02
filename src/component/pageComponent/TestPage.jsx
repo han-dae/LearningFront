@@ -38,8 +38,8 @@ const TestPage = () => {
     useEffect(() => {
         ApiService.detailTest(test_seq)
             .then((res) => {
-                console.log(res.status);
-                console.log(res.data);
+                console.log('디테일',res.status);
+                console.log('디텔데터',res.data,"seq타입",typeof(test_seq));
                 setTestDetail(res.data);
             })
             .catch((err) => {
