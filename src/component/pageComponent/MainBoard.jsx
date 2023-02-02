@@ -25,15 +25,16 @@ const MainBoard = () => {
         className="Board"
         style={{
           position: "absolute",
-          left: "18%",
-          backgroundColor: "#F7D5D4",
-          width: "25%",
-          height: "300px",
+          left: "10%",
+          backgroundColor: "Lightgray",
+          width: "35%",
+          height: "230px",
           marginTop: "40px",
           borderRadius: 30,
           padding: "10px",
           display: "inline-block",
           boxShadow :"10px 10px #b4b4b4"
+         
         }}
       >
         
@@ -41,11 +42,11 @@ const MainBoard = () => {
           className="title"
           style={{
             textAlign: "center",
-            width: 800,
+            width: 1000,
             height: 400
           }}>
-            
-          <div style={{ marginLeft: "-17vw" , fontSize :"20px",fontWeight :"bold", marginTop :"20px",marginBottom : "20px",textShadow :"3px 3px 2px gray"}}>플랫폼 점유율 비교</div>
+            <div style={{width :"300px", marginTop :"-20px",marginLeft :"160px",height :"40px", borderRadius :"30px", boxShadow :"3px 3px 1px gray" ,color :"white",backgroundColor :"#0d0d73"}}>
+          <div style={{ marginLeft: "0px" , fontSize :"20px",fontWeight :"bold", marginTop :"20px",marginBottom : "20px", paddingTop :"5px"}}>PLATFORM RANK</div></div>
           <div className="logoImg"
           style={{height:'18vh',
                   width:'3.5vw',
@@ -88,15 +89,18 @@ const MainBoard = () => {
         className="Board"
         style={{
           position: "absolute",
-          backgroundColor: "#F7D5D4",
-          width: "25%",
-          height: "300px",
+          //backgroundColor: "#FFECEC",
+          backgroundColor :"Lightgray",
+          width: "35%",
+          height: "230px",
           marginTop: "40px",
-          right: "20%",
+          right: "10%",
           borderRadius: 30,
           padding: "10px",
           display: "inline-block",
-          boxShadow :"10px 10px #b4b4b4"
+          boxShadow :"10px 10px #b4b4b4",
+          
+
 
         }}
       >
@@ -107,8 +111,8 @@ const MainBoard = () => {
             width: 800,
             height: 400,
             
-          }}>
-          <h4 style={{ marginLeft: "-17vw" , fontSize :"20px",fontWeight :"bold", marginTop :"20px",marginBottom : "20px",textShadow :"3px 3px 2px gray"}}>플랫폼 매출액 비교</h4>
+          }}><div style={{width :"300px", marginTop :"-20px",marginLeft :"180px",height :"40px", borderRadius :"30px", backgroundColor :"#0d0d73", boxShadow :"3px 3px 1px gray"}}>
+          <h4 style={{ marginLeft: "-1vw" , fontSize :"20px",fontWeight :"bold", marginTop :"30px",marginBottom : "40px",paddingTop:"5px",paddingLeft:"20px", color :"white"}}>PLATFORM REVENUE</h4></div>
           <div className="logoImg"
           style={{height:'18vh',
                   width:'2.5vw',
