@@ -46,7 +46,7 @@ class Join extends Component {
   render() {
     return (
 
-      <div>
+      <div style={{backgroundColor:'#404040'}}>
          <MainHeader />
        
          <div
@@ -54,33 +54,33 @@ class Join extends Component {
             width: "400px",
             position: "absolute",
             height: "300px",
-            backgroundColor: "#F7D5D4",
+            backgroundColor: "white",
             padding: "30px",
        marginTop:"140px",
             marginLeft: "40vw",
             textAlign: "left",
-            boxShadow :"10px 10px 10px black",
+            boxShadow :"3px 3px 3px grey",
             borderRadius : "30px"
            
           }}
         >
        
         <div style={{ textAlign: "left" , marginLeft : "50px" }}>
-          <h2>회원가입</h2>
+          <h2>JOIN</h2>
           <form>
             <table style={{ textAlign: "left" }}>
               <div>
                 <tr>
                   <td style={{ width: "40%" }}>
                     <label className="label" style={{ textAlign: "left" }}>
-                      ID :
+                      ID 
                     </label>
                   </td>
 
                   <td>
                     <input
                       type="text"
-                      placeholder="아이디 입력"
+                      placeholder="ID 입력"
                       name="user_id"
                       value={this.state.user_id}
                       onChange={this.onChange}
@@ -93,12 +93,12 @@ class Join extends Component {
               <div>
                 <tr>
                   <td style={{ width: "120px" }}>
-                    <label className="label">Password :</label>
+                    <label className="label">Password </label>
                   </td>
                   <td>
                     <input
                       type="password"
-                      placeholder="비밀번호 입력"
+                      placeholder="PW 입력"
                       name="user_pw"
                       value={this.state.user_pw}
                       onChange={this.onChange}
@@ -113,13 +113,13 @@ class Join extends Component {
               <div>
                 <tr>
                   <td style={{ width: "120px" }}>
-                    <label className="label">H.P :</label>
+                    <label className="label">H.P </label>
                   </td>
 
                   <td>
                     <input
                       type="text"
-                      placeholder="전화번호 입력"
+                      placeholder="H.P 입력"
                       name="user_hp"
                       value={this.state.user_hp}
                       onChange={this.onChange}
@@ -131,12 +131,12 @@ class Join extends Component {
               <div>
                 <tr>
                   <td style={{ width: "120px" }}>
-                    <label className="label">email :</label>
+                    <label className="label">Email </label>
                   </td>
                   <td>
                     <input
                       type="email"
-                      placeholder="이메일 입력"
+                      placeholder="Email 입력"
                       name="user_email"
                       value={this.state.user_email}
                       onChange={this.onChange}
@@ -147,8 +147,8 @@ class Join extends Component {
               </div>
             </table>
 
-            <Button className="btn_login" onClick={this.saveUser} style={{ borderRadius: "20px", width: "100px", float: "right", marginRight: "30px",marginTop :"10px", backgroundColor: "#FE8F8D", color: "white" }}>Save</Button>
-            <p style={{fontSize :"14px"}}><a href="/Login">로그인</a> 페이지로 돌아가기</p>
+            <Button className="btn_login" onClick={this.saveUser} style={{ borderRadius: "20px", width: "100px", float: "right", marginRight: "30px",marginTop :"10px", backgroundColor: "#404040", color: "white" }}>JOIN</Button>
+            <p style={{fontSize :"14px"}}><a href="/Login" >LOGIN</a> 페이지로 돌아가기</p>
           </form>
         </div>
         </div>

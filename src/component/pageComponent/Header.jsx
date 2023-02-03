@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Layout, Menu } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import Logininfo from "./Logininfo";
-import Logo from "../../img/Logo.png";
+import Logo3 from "../../img/Logo3.png";
 const { Header } = Layout;
 function MainHeader() {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ function MainHeader() {
     <>
       <Header
         style={{
-          backgroundColor: "white",
+          backgroundColor: "#404040",
           position: "sticky",
           top: 0,
           zIndex: 1,
@@ -33,7 +33,7 @@ function MainHeader() {
           {" "}
           <div
             style={{
-              backgroundImage: `url(${Logo})`,
+              backgroundImage: `url(${Logo3})`,
               backgroundSize: "60px",
               backgroundRepeat: "no-repeat",
               display: "inline-block",
@@ -44,8 +44,8 @@ function MainHeader() {
           ></div>
         </Link>
         <div style={{ marginLeft :"340px",marginTop : "-50px",width: "50%", height: "80%" }} className="categoryList">
-          <Button onClick={clicked} style={{color :"black",border:"none",backgroundColor:"white"}}><div style={{display :"inline-block", margin : "10px 20px 10px 20px" ,borderBottom : "4px solid #F7D5D4",fontSize :"18px" ,fontWeight :"bold",paddingBottom : "10px"}}>모의 테스트</div></Button>
-          <Link to={"/testlist"} style={{color :"black"}}><div style={{display :"inline-block",margin : "10px 20px 10px 20px", borderBottom : "4px solid #F7D5D4",paddingBottom : "10px",fontSize :"18px" ,fontWeight :"bold"}}>모의 테스트 리스트</div></Link>
+          <Button onClick={clicked} style={{color :"black",border:"none",backgroundColor:"#404040"}}><div style={{display :"inline-block", margin : "10px 20px 10px 20px" ,borderBottom : "4px solid #0d0d73",fontSize :"18px" ,fontWeight :"bold",paddingBottom : "10px",color :"white"}}>TEST</div></Button>
+          <Link to={"/testlist"} style={{color :"black"}}><div style={{display :"inline-block",margin : "10px 20px 10px 20px", borderBottom : "4px solid #0d0d73",paddingBottom : "10px",fontSize :"18px" ,fontWeight :"bold", color :"white"}}>TEST LIST</div></Link>
         </div>
         <div style={{ position: "relative", right: "0px" }}>
           <Logininfo></Logininfo>

@@ -6,6 +6,7 @@ import Liked from "./Liked";
 import ApiService from "../ApiService";
 
 import Banner0 from "../../img/banner0.png";
+import axios from "axios";
 
 
 const TestList = () => {
@@ -29,18 +30,32 @@ const TestList = () => {
     user_id: "",
     test_content: ""
   });
-
+  
+  // const video =(data)=>{
+  //   axios.post('http://localhost:8081/users/video', data)
+  //     .then((res) => {
+  //        console.log(res.data);
+        
+  //     })
+  //     .catch((error) => {
+  //       // 예외 처리
+  //     })
+       
+    
+  //  }
   useEffect(() => {
     ApiService.loadTest()
       .then((res) => {
         console.log(res.status);
         console.log(res.data);
         setTest(res.data);
+        console.log("setTest결과",Test)
       })
       .catch((err) => {
         console.log("load() 에러", err);
       });
   }, []);
+
   let testList = Object.values(Test);
   //let TestPhoto = (testList[4]).test_photo;
 
@@ -102,28 +117,30 @@ const TestList = () => {
                   {/* 비디오 컨텐츠 넣는곳*/}
                   
 
-                  <div
-                    className="liked"
-                    style={{ width: "400px", marginLeft: "350px", marginBottom: "0px" ,}}
-                  >
-                    <Liked />
-                  </div>
 
                   <div
-                    style={{
+                    // style={{
 
-                      width: "400px",
-                      height: "300px",
-                      backgroundColor: "white",
-                      display: "inline-block"
-                    }}
-                  ><video src={value.test_video_realname} controls autoPlay muted playsInline
+                    //   width: "400px",
+                    //   height: "200px",
+                    //   marginBottom:"-100px",
+                    //   backgroundColor: "white",
+                    //   display: "inline-block"
+                    // }}
+                  ><video src={`${process.env.PUBLIC_URL}/file/${value.test_video_realname}`}
+                  controls autoPlay muted playsInline
                   style={{
                     width: "400px",
                     height: "300px"
                   }}></video>
 
                   </div>
+                    <div
+                      className="liked"
+                      style={{ width: "400px", marginLeft: "350px", marginBottom: "0px" ,}}
+                    >
+                      <Liked />
+                    </div>
                   <Link
                     to={"/testPage?test_seq=" + value.test_seq}
                     style={{ textDecoration: "none", color: "black" }}

@@ -34,7 +34,7 @@ export default class Example extends PureComponent {
 
     render() {
         return (
-            <ResponsiveContainer width="53%" height="55%">
+            <ResponsiveContainer width="80%" height="55%" >
                 <ComposedChart
                     layout="vertical"
                     width={500}
@@ -45,8 +45,10 @@ export default class Example extends PureComponent {
                         right: 20,
                         bottom: 20,
                         left: 20,
-                    }}>
-                    <CartesianGrid strokeDasharray="3 3" />
+                    }}
+                    
+                    >
+                    
                     <XAxis
                         display="none" 
                         type="number"
@@ -60,8 +62,9 @@ export default class Example extends PureComponent {
                     <Legend />
 
                     <Bar
+                    
                         dataKey="price"
-                        fill="#413ea0"
+                        fill="#0d0d73"
                         isAnimationActive={false}    
                     />
 

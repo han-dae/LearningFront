@@ -44,27 +44,27 @@ const Login = (props) => {
       });
   };
   return (
-    <div>
+    <div style={{backgroundColor:'#404040'}} >
       <MainHeader />
-
+      <div style={{backgroundColor:'#404040'}}>
       <div
         style={{
           width: "400px",
           position: "absolute",
           height: "300px",
-          backgroundColor: "#F7D5D4",
+          backgroundColor: "white",
           padding: "30px",
           marginTop: "140px",
           marginLeft: "40vw",
           textAlign: "center",
-          boxShadow: "10px 10px 10px black",
+          boxShadow: "3px 3px 3px grey",
           borderRadius: "30px",
         }}
       >
         <div
           style={{ marginLeft: "50px", textAlign: "left", marginTop: "5vh" }}
         >
-          <h2>로그인</h2>
+          <h2>LOGIN</h2>
           <form>
             <div>
               <label
@@ -113,7 +113,7 @@ const Login = (props) => {
                 float: "right",
                 marginRight: "60px",
                 marginTop: "10px",
-                backgroundColor: "#FE8F8D",
+                backgroundColor: "#404040",
                 color: "white",
               }}
             >
@@ -121,13 +121,14 @@ const Login = (props) => {
             </button>
             <p style={{ fontSize: "14px", marginTop: "10px" }}>
               아직 회원이 아니신가요?
-              <a href={"/Join"}>
+              <a href={"/Join"} >
                 <br />
-                회원가입
+                JOIN
               </a>
             </p>
           </form>
         </div>
+      </div>
       </div>
     </div>
   );

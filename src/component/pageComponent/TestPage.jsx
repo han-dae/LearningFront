@@ -38,8 +38,8 @@ const TestPage = () => {
     useEffect(() => {
         ApiService.detailTest(test_seq)
             .then((res) => {
-                console.log(res.status);
-                console.log(res.data);
+                console.log('디테일',res.status);
+                console.log('디텔데터',res.data,"seq타입",typeof(test_seq));
                 setTestDetail(res.data);
             })
             .catch((err) => {
@@ -48,18 +48,14 @@ const TestPage = () => {
     }, []);
 
     // 댓글 작성
-    const [com, setCom] = useState({
-            user_id:"",
-            cmt_content: "",
-            cmt_dt: "",
-    });
+    const [com, setCom] = useState([]);
     // console.log('현재 아이디', user_id)
     const handelComment = (newCom) => {
-        console.log("handleComment", newCom);
+        //console.log("handleComment", newCom);
         let comList = Object.values(com)
         let user_id = sessionStorage.getItem('info')
+       // console.log('야야야야야야야 나와라 좀 ')
         let currentTime = new Date().toLocaleTimeString();
-        console.log('야야야야야야야 나와라 좀 ')
         setCom(
             comList.concat({
                 user_id: user_id,
