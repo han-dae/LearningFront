@@ -76,13 +76,20 @@ const TestPage = () => {
                         style={{
                             width: "700px",
                             height: "69vh",
-                            marginTop: "82px",
+                            marginTop: "72px",
                             marginLeft: "15vw",
-                            backgroundColor: "gray",
+                            backgroundColor: "white",
                             borderRadius: 10,
                         }}
-                    ></div>
-                    <div style={{ marginLeft: "15%" }}>
+                    ><video src={`${process.env.PUBLIC_URL}/file/${TestDetail.test_video_realname}`}
+                    controls autoPlay muted playsInline
+                    style={{
+                        width: "700px",
+                        height: "75vh",
+                        marginTop:"-100px",
+                    }}
+                    ></video></div>
+                    <div style={{ marginLeft: "15%",marginTop:"-30px" }}>
                         <div
                             className="nameSpace"
                             style={{ marginTop: "-15px", marginleft: "15%" }}

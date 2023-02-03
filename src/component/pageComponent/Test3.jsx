@@ -5,7 +5,8 @@ import { Button, message, Upload } from "antd";
 import { InboxOutlined, LeftCircleOutlined } from "@ant-design/icons";
 import { RightCircleOutlined } from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
-import UploadPic from "./UploadPic";
+//import UploadPic, {img} from "./UploadPic";
+import { UploadPic,img } from "./UploadPic"; 
 import TextArea from "antd/es/input/TextArea";
 
 import Footer from "./Footer";
@@ -59,6 +60,9 @@ const TestComponent3 = () => {
     //   console.log('Dropped files', e.dataTransfer.files);
     // }
   }
+ 
+    
+  
 
   //console.log('값확인',Object.keys(fd));
   //sessionStorage.setItem('file',fd);
@@ -128,6 +132,21 @@ const TestComponent3 = () => {
       .catch((error) => {
         // 예외 처리
       })
+        axios.post('/test/AxiosFileTest.do', img(), {
+       headers: {
+         "Content-Type": `multipart/form-data; `,
+       },
+       baseURL: 'http://localhost:8081/users'
+     })
+     .then((response) => {
+      console.log(response.data);
+         //sessionStorage.setItem('photo',response.data); 
+       })
+       .catch((error) => {
+         // 예외 처리
+       })
+
+      axios.post('/test/')
     sessionStorage.setItem('test_title',state.test_title);
     sessionStorage.setItem('test_price',state.test_price);
     sessionStorage.setItem('test_content',state.test_content);

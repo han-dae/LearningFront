@@ -2,6 +2,7 @@ import { Upload } from 'antd';
 import ImgCrop from 'antd-img-crop';
 import axios from 'axios';
 import { useState } from 'react';
+const photo = new FormData();
 const UploadPic = () => {
   const [fileList, setFileList] = useState([
     {
@@ -13,22 +14,26 @@ const UploadPic = () => {
   ]);
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
-    console.log(fileList[0])
-    const photo = new FormData();
+    console.log(fileList)
     Object.values(fileList[0]).forEach((file) => photo.append("file", file));
-    axios.post('/test/AxiosFileTest.do', photo, {
-      headers: {
-        "Content-Type": `multipart/form-data; `,
-      },
-      baseURL: 'http://localhost:8081/users'
-    })
-    .then((response) => {
-        sessionStorage.setItem('photo',response.data); 
-      })
-      .catch((error) => {
-        // 예외 처리
-      })
+    console.log(photo);
+
+    // sessionStorage.setItem('img',JSON.stringify(photo));
+    //console.log('img',sessionStorage.getItem('img'));
+    // axios.post('/test/AxiosFileTest.do', photo, {
+    //   headers: {
+    //     "Content-Type": `multipart/form-data; `,
+    //   },
+    //   baseURL: 'http://localhost:8081/users'
+    // })
+    // .then((response) => {
+    //     sessionStorage.setItem('photo',response.data); 
+    //   })
+    //   .catch((error) => {
+    //     // 예외 처리
+    //   })
   };
+  
   const onPreview = async (file) => {
     console.log(file)
     let src = file.url;
@@ -51,10 +56,16 @@ const UploadPic = () => {
         //fileList={fileList}l
         onChange={onChange}
         onPreview={onPreview}
-      >
-        {fileList.length <2 && '+ Upload'}
+        >
+        {fileList.length < 2 && '+ Upload'}
       </Upload>
     </ImgCrop>
   );
 };
-export default UploadPic;
+const img =()=>{
+const imgdata = photo;
+return (imgdata)
+}
+
+export { UploadPic,  img }
+
