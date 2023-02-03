@@ -30,7 +30,11 @@ class ApiService {
     return axios.get(USER_API_BASE_URL+"/");
   }
   cuesheet(){
-    return axios.get(GUIDE_API_BASE_URL);
+    return axios.get(GUIDE_API_BASE_URL+"/");
+  }
+
+  review(){
+    return axios.post(GUIDE_API_BASE_URL + "/review");
   }
   stt(){
     return axios.get(STT_API_BASE_URL);
@@ -43,8 +47,9 @@ class ApiService {
     console.log(COMMENT_API_BASE_URL+"/");
     return axios.post(COMMENT_API_BASE_URL + "/", comment);
   }
-  showComment(){
-    return axios.get(COMMENT_API_BASE_URL + "/");
+  showComment(test_seq){
+    console.log(test_seq,'api썰비스 쇼코멘트야~');
+    return axios.get(COMMENT_API_BASE_URL + "/showComment", test_seq);
   }
   review(){
     return axios.get(TFIDF_API_BASE_URL + "/review");

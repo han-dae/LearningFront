@@ -34,6 +34,7 @@ const TestComponent = () => {
     stt : "",
     score :""
   });
+  
   const [WordCloudNum, setWordCloudNum] = useState("0");
   useEffect(() => {
     ApiService.cuesheet()
@@ -42,17 +43,15 @@ const TestComponent = () => {
         console.log(res.data);
         setGuide(res.data);
         console.log(res.data.length);
-        for(let i = 0; res.data.length ; i++){
-          console.log("fewf");
-        }
+       
         sessionStorage.setItem("category_seq", res.data[0].category_seq);
       })
       .catch((err) => {
         console.log("cuesheet() 에러", err);
       });
-  }, []);
+  },[])
 
-  let cueSheet = Object.values(cueSheet);
+  let cueSheet = Object.values(Guide);
   console.log(Word);
   
   
@@ -86,7 +85,7 @@ const TestComponent = () => {
             backgroundColor: "#F7D5D4",
             borderRadius: 20,
             overflow: "hidden",
-            boxShadow :"5px 5px #b4b4b4"
+            boxShadow: "5px 5px #b4b4b4",
           }}
         >
           <div
@@ -94,7 +93,7 @@ const TestComponent = () => {
             style={{
               display: "inline-block",
               width: "100%",
-              textShadow :"2px 2px 2px gray"
+              textShadow: "2px 2px 2px gray",
             }}
           >
             <h1>Chapter1. 큐시트 분석</h1>
@@ -142,7 +141,7 @@ const TestComponent = () => {
             borderRight: "none",
             backgroundColor: "white",
             overflowY: "scroll",
-           
+
             fontSize: "10px",
             color: "black",
             whiteSpace: "pre-wrap",
@@ -165,7 +164,7 @@ const TestComponent = () => {
               fontSize: "18px",
               fontWeight: "bold",
               backgroundColor: "#F7D5D4",
-              boxShadow :"3px 3px #b4b4b4"
+              boxShadow: "3px 3px #b4b4b4",
             }}
           >
             Ready Cast에서 단어별 영향을 분석해봤어요.
