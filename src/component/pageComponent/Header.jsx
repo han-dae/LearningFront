@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Layout, Menu } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import Logininfo from "./Logininfo";
-import Logo3 from "../../img/Logo3.png";
+import Logo4 from "../../img/Logo4.png";
 const { Header } = Layout;
 function MainHeader() {
   const navigate = useNavigate();
@@ -33,7 +33,7 @@ function MainHeader() {
           {" "}
           <div
             style={{
-              backgroundImage: `url(${Logo3})`,
+              backgroundImage: `url(${Logo4})`,
               backgroundSize: "60px",
               backgroundRepeat: "no-repeat",
               display: "inline-block",
