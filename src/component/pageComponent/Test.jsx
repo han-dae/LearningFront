@@ -71,13 +71,13 @@ const TestComponent = () => {
 
         <div
           style={{
-            marginTop: "10px",
+            marginTop: "20px",
             marginLeft: "20vw",
             width: "20vw",
-            height: "10vh",
+            height: "50px",
           
             backgroundColor: "#404040",
-            borderRadius: 20,
+            borderRadius: 0,
             textAlign :"center",
             boxShadow: "5px 5px #b4b4b4",
             
@@ -89,7 +89,8 @@ const TestComponent = () => {
               display: "inline-block",
               width: "100%",
               textShadow: "2px 2px 2px gray",
-              color :"white"
+              color :"white",
+              marginTop :"-20px"
             }}
           >
             <h1> 큐시트 예시 자료</h1>
