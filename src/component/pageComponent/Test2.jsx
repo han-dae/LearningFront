@@ -36,8 +36,8 @@ import LFBarChart from "../Chart/LFBarChart";
 
 const TestComponent2 = () => {
   const [state, setState] = useState({
-     test_cuesheet:""
-    
+    test_cuesheet: ""
+
   })
   const onChange = (e) => {
     setState({
@@ -45,31 +45,32 @@ const TestComponent2 = () => {
       [e.target.name]: e.target.value,
     })
   }
-  const cuesheetSave =() =>{
-     
-    const test_cuesheet = state.test_cuesheet; 
+  const cuesheetSave = () => {
+
+    const test_cuesheet = state.test_cuesheet;
     console.log(test_cuesheet);
-    sessionStorage.setItem('cuesheet',test_cuesheet);
+    sessionStorage.setItem('cuesheet', test_cuesheet);
     console.log(sessionStorage.getItem('cuesheet'));
   }
 
-  
+
   return (
     <div>
       <form>
-        
+
         <MainHeader />
 
         <div
           style={{
             marginTop: "10px",
-            marginLeft: "20vw",
-            width: "40vh",
+            marginLeft: "19.5vw",
+            width: "55vh",
             height: "10vh",
             paddingLeft: "10px",
-            backgroundColor: "#F7D5D4",
-            borderRadius: 20,
-            boxShadow :"5px 5px #b4b4b4"
+            backgroundColor: "#404040",
+            // borderRadius: 20,
+            textAlign: "center",
+            boxShadow: "5px 5px #b4b4b4"
           }}
         >
           <div
@@ -77,13 +78,31 @@ const TestComponent2 = () => {
             style={{
               display: "inline-block",
               width: "50vh",
-              textShadow :"2px 2px 2px gray"
+              textShadow: "2px 2px 2px gray",
+              color: "white"
             }}
           >
-            <h1 style={{ marginTop: "1vh" }}>Chapter2. 큐시트 작성</h1>
-            <h3 style={{ marginTop: "-25px" }}>
+            <h1> 큐시트 작성 </h1>
+            <div
+              style={{
+                position: "absolute",
+                color: "white",
+                padding: "5px 10px 5px 10px",
+                // borderRadius: "10px",
+                display: "inline-block",
+                marginLeft: "-14vw",
+                marginTop: "38vh",
+                fontSize: "18px",
+                fontWeight: "bold",
+                backgroundColor: "#404040",
+                boxShadow: "3px 3px #b4b4b4",
+
+              }}
+            >
               분석결과를 바탕으로 큐시트를 작성해보세요.
-            </h3>
+            </div>
+
+
           </div>
         </div>
         <div
@@ -97,12 +116,12 @@ const TestComponent2 = () => {
             borderRadius: 10,
           }}
         >
-         
-        </div>
-       
-        <LFBarChart/>
 
-        <div style={{  marginLeft: "24vw" }}>
+        </div>
+
+        <LFBarChart />
+
+        <div style={{ marginLeft: "19.5vw" }}>
           <TextArea
             name="test_cuesheet"
             value={state.test_cuesheet}
@@ -110,7 +129,7 @@ const TestComponent2 = () => {
             maxLength={800}
             style={{
               height: "30vh",
-              width: "50vw",
+              width: "60vw",
               resize: "none",
               overflowY: "scroll",
             }}
@@ -128,7 +147,7 @@ const TestComponent2 = () => {
                 position: "absolute",
                 bottom: "50px",
                 marginTop: "0px",
-                left: "400px",
+                left: "14%",
                 fontSize: "300%",
                 color: "black",
               }}
@@ -136,19 +155,19 @@ const TestComponent2 = () => {
           </Link>
           <Link to={"/test3"}>
             <RightCircleOutlined
-            onClick={cuesheetSave}
+              onClick={cuesheetSave}
               style={{
                 position: "absolute",
                 bottom: "50px",
                 marginTop: "0px",
-                right: "400px",
+                right: "14%",
                 fontSize: "300%",
                 color: "black",
               }}
             />
           </Link>
         </div>
-        <div className="testBtn" style={{ marginTop:"79vh", position: "absolute", bottom:"2vh", right:"36vw" }}>
+        <div className="testBtn" style={{ marginTop: "79vh", position: "absolute", bottom: "2vh", right: "40vw" }}>
           <Link to={"/test1"}>
             <div className='test1'
               style={{
@@ -165,7 +184,7 @@ const TestComponent2 = () => {
                 width: "5vw",
                 marginLeft: "41vw",
                 marginTop: "-0.5vh",
-                borderBottom: "4px solid #F7D5D4"
+                borderBottom: "4px solid #0d0d73"
               }}></div>
           </Link>
 
@@ -190,7 +209,7 @@ const TestComponent2 = () => {
           </Link>
         </div>
       </form>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

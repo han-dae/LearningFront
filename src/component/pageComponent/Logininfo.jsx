@@ -29,7 +29,7 @@ const Logininfo = () => {
           </Link>
         </div>
         <div style={{ float: "right", marginTop: "-40px", marginRight: "18%" }} onClick={logout}>
-          <ButtonLF100 value={'LOG OUT'} />
+          <ButtonLF100 value={'LOGOUT'} />
         </div>
       </div>
     )

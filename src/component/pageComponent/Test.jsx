@@ -198,7 +198,7 @@ const TestComponent = () => {
 
         <div
           className="testBtn"
-          style={{ position: "absolute", bottom: "2vh", right: "36vw" }}
+          style={{ position: "absolute", bottom: "2vh", right: "40vw" }}
         >
           <Link to={"/test1"}>
             <div
@@ -207,7 +207,7 @@ const TestComponent = () => {
                 width: "5vw",
                 marginLeft: "35vw",
                 marginTop: "7vh",
-                borderBottom: "4px solid #404040",
+                borderBottom: "4px solid #0d0d73",
               }}
             ></div>
           </Link>
