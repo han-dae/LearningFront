@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Layout, Menu } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import Logininfo from "./Logininfo";
-import Logo4 from "../../img/Logo4.png";
+import Logo6 from "../../img/Logo6.png";
 const { Header } = Layout;
 function MainHeader() {
   const navigate = useNavigate();
@@ -33,17 +33,17 @@ function MainHeader() {
           {" "}
           <div
             style={{
-              backgroundImage: `url(${Logo4})`,
-              backgroundSize: "60px",
+              backgroundImage: `url(${Logo6})`,
+              backgroundSize: "180px",
               backgroundRepeat: "no-repeat",
               display: "inline-block",
-              width: "70px",
-              height: "55px",
-              marginLeft: "12%",
+              width: "200px",
+              height: "67px",
+              marginLeft: "8%",
             }}
           ></div>
         </Link>
-        <div style={{ marginLeft :"340px",marginTop : "-50px",width: "50%", height: "80%" }} className="categoryList">
+        <div style={{ marginLeft :"340px",marginTop : "-70px",width: "50%", height: "80%" }} className="categoryList">
           <Button onClick={clicked} style={{color :"black",border:"none",backgroundColor:"#404040"}}><div style={{display :"inline-block", margin : "10px 20px 10px 20px" ,borderBottom : "4px solid #0d0d73",fontSize :"18px" ,fontWeight :"bold",paddingBottom : "10px",color :"white"}}>TEST</div></Button>
           <Link to={"/testlist"} style={{color :"black"}}><div style={{display :"inline-block",margin : "10px 20px 10px 20px", borderBottom : "4px solid #0d0d73",paddingBottom : "10px",fontSize :"18px" ,fontWeight :"bold", color :"white"}}>TEST LIST</div></Link>
         </div>

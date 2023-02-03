@@ -59,7 +59,7 @@ export default class Example extends PureComponent {
                         dataKey="name"
                         type="category" />
                     <Tooltip />
-                    <Legend />
+                    
 
                     <Bar
                     

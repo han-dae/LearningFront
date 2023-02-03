@@ -82,14 +82,16 @@ const MainBoard = () => {
                   }}><img src={LotteLogo} style={{width :"60px"}}/></div>
 
           </div>
+          
           <VertiBar />
+          
         </div>
       </div>
       <div
         className="Board"
         style={{
           position: "absolute",
-          //backgroundColor: "#FFECEC",
+          // backgroundColor: "#FFECEC",
           backgroundColor :"Lightgray",
           width: "35%",
           height: "230px",
