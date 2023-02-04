@@ -106,28 +106,42 @@ const MyPage = (props) => {
       <MainHeader />
 
       <Content>
-        <div>
+        <div style={{ 
+            marginTop: "10px",
+            marginLeft: "20vw",
+            width: "51vh",
+            height: "5vh",
+            paddingLeft: "10px",
+            backgroundColor: "#404040",
+            // borderRadius: 20,
+            textAlign: "center",
+            boxShadow: "5px 5px #b4b4b4",
+            color:'white'}}>
+          
           <h1
             style={{
               textUnderlineOffset: "auto",
-              marginTop: "2vh",
-              marginLeft: "20vw",
+              marginTop: "4vh",
+             // marginLeft: "20vw",
             }}
           >
-            {" "}
+            
             개인정보수정
           </h1>
+          
         </div>
         <div
           style={{
-            marginTop: "0vh",
+            marginTop: "2vh",
             marginLeft: "20vw",
             width: "25vw",
             height: "30vh",
             paddingLeft: "10px",
-            backgroundColor: "#F7D5D4",
+            backgroundColor: "lightgray",
             borderRadius: 20,
-            opacity: "1"
+           // opacity: "1",
+            // color:'white',
+            fontWeight:'bold'
           }}
         >
           <div
@@ -205,12 +219,22 @@ const MyPage = (props) => {
             </div>
           </div>
         </div>
-        <div>
+        <div style={{ 
+           // marginTop: "10px",
+            marginLeft: "47vw",
+            width: "64vh",
+            height: "5vh",
+            paddingLeft: "10px",
+            backgroundColor: "#404040",
+            // borderRadius: 20,
+            textAlign: "center",
+            boxShadow: "5px 5px #b4b4b4",
+            color:'white'}}>
           <h1
             style={{
-              textUnderlineOffset: "auto",
+             // textUnderlineOffset: "auto",
               marginTop: "-37vh",
-              marginLeft: "47vw",
+              // marginLeft: "47vw",
             }}
           >
             내가 쓴 댓글
@@ -223,23 +247,22 @@ const MyPage = (props) => {
             width: "31.5vw",
             height: "30vh",
             paddingLeft: "10px",
-            backgroundColor: "#F7D5D4",
+            backgroundColor: "lightgray",
 
             borderRadius: 20,
           }}
         >
-          <div>
+          <div style={{marginLeft:'28.5vw'}} >
             {comList.map((value, idx) => (
               <div key={`${com.user_id}`}>
                 <div>
                   <p>{com.user_id}</p>
-                  <button
+                  <ButtonLF50
                     onClick={() => removeCom(com.user_id)}
-                    className="btn_comDel"
-                    style={{ marginLeft: "30vw" }}
-                  >
-                    X
-                  </button>
+                    style={{marginLeft:'28.5vw'}} 
+                    value={'Del'}>
+                    
+                  </ButtonLF50>
                 </div>
                 {com.cmt_content}
               </div>
@@ -255,13 +278,24 @@ const MyPage = (props) => {
           ></div>
         </div>
         <div>
-          <div>
+          <div
+          style={{ 
+            marginTop: "10px",
+            marginLeft: "20vw",
+            width: "121vh",
+            height: "5vh",
+            paddingLeft: "10px",
+            backgroundColor: "#404040",
+            // borderRadius: 20,
+            textAlign: "center",
+            boxShadow: "5px 5px #b4b4b4",
+            color:'white'}}>
             <h1
               style={{
-                display: "inline-block",
+                // display: "inline-block",
                 textUnderlineOffset: "auto",
-                marginTop: "3vh",
-                marginLeft: "20vw",
+               // marginTop: "3vh",
+                marginLeft: "-2vw",
                 marginBottom: "20px",
               }}
             >
@@ -271,12 +305,12 @@ const MyPage = (props) => {
             <div
               style={{
                 float: "right",
-                marginRight: "20%",
-                marginTop: "3vh",
+               // marginRight: "20%",
+                marginTop: "-0.5vh",
               }}
             >
-             {/* <ButtonLF50 value={"수정"} /> */}
-              <ButtonLF50 value={"DELETE"} />
+            
+              <ButtonLF100 value={"DELETE"} />
             </div>
           </div>
         </div>
@@ -295,7 +329,7 @@ const MyPage = (props) => {
             className="video_edit"
             style={{
               width: "80%",
-              marginTop: "0px",
+              marginTop: "55px",
               textAlign: "center",
             }}
           >
@@ -304,7 +338,7 @@ const MyPage = (props) => {
                 display: "block",
                 maxHeight: "300px",
                 height: "300px",
-                backgroundColor: "#f7d5d4",
+                backgroundColor: "lightgray",
                 marginLeft: "20vw",
                 overflowY: "hidden",
 
