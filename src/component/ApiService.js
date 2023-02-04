@@ -52,6 +52,7 @@ class ApiService {
   }
   showComment(test_seq){
     console.log("쇼코멘트 api 이동 ",COMMENT_API_BASE_URL + "/" + test_seq);
+    
     return axios.get(COMMENT_API_BASE_URL + "/" +test_seq);
   }
   review(){

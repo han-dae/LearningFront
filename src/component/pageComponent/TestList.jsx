@@ -8,15 +8,14 @@ import ApiService from "../ApiService";
 import Banner0 from "../../img/banner0.png";
 import axios from "axios";
 
-
 const TestList = () => {
   const clicked = () => {
-    let info = sessionStorage.getItem('info');
+    let info = sessionStorage.getItem("info");
     if (info) {
     } else {
-      <Button disabled={true}></Button>
+      <Button disabled={true}></Button>;
     }
-  }
+  };
   const [Test, setTest] = useState({
     category_seq: "",
     reg_dt: "",
@@ -28,20 +27,19 @@ const TestList = () => {
     test_video: "",
     test_video_realname: "",
     user_id: "",
-    test_content: ""
+    test_content: "",
   });
-  
+
   // const video =(data)=>{
   //   axios.post('http://localhost:8081/users/video', data)
   //     .then((res) => {
   //        console.log(res.data);
-        
+
   //     })
   //     .catch((error) => {
   //       // 예외 처리
   //     })
-       
-    
+
   //  }
   useEffect(() => {
     ApiService.loadTest()
@@ -49,7 +47,7 @@ const TestList = () => {
         console.log(res.status);
         console.log(res.data);
         setTest(res.data);
-        console.log("setTest결과",Test)
+        console.log("setTest결과", Test);
       })
       .catch((err) => {
         console.log("load() 에러", err);
@@ -81,7 +79,6 @@ const TestList = () => {
             </h3>
           </div>
 
-
           <Link to={"/test1"}>
             <Button
               style={{
@@ -90,8 +87,9 @@ const TestList = () => {
                 float: "right",
                 marginTop: "-50px",
                 marginRight: "0%",
-                backgroundColor: "#FE8F8D",
-                color: "white",
+                backgroundColor: "white",
+                color: "black",
+                boxShadow: "2px 2px 1px black",
               }}
             >
               업로드
@@ -103,57 +101,79 @@ const TestList = () => {
               padding: "30px 20px 30px 20px",
               width: "1380px",
 
-              backgroundColor: "#f7d5d4",
+              backgroundColor: "#404040",
               borderRadius: "20px",
               display: "inline-block",
               marginBottom: "40px",
-              overflow: "visible"
+              overflow: "visible",
             }}
           >
             {testList.map((value, idx) => (
-              <div key={idx} style={{ width: "30%", display: "inline-block", marginLeft: "20px", marginRight: "20px" }}>
-
-                <div className="videoContents" style={{ marginLeft: "15px" }} >
+              <div
+                key={idx}
+                style={{
+                  width: "30%",
+                  display: "inline-block",
+                  marginLeft: "20px",
+                  marginRight: "20px",
+                }}
+              >
+                <div className="videoContents" style={{ marginLeft: "15px" }}>
                   {/* 비디오 컨텐츠 넣는곳*/}
-                  
-
 
                   <div
-                    // style={{
+                  // style={{
 
-                    //   width: "400px",
-                    //   height: "200px",
-                    //   marginBottom:"-100px",
-                    //   backgroundColor: "white",
-                    //   display: "inline-block"
-                    // }}
-                  ><video src={`${process.env.PUBLIC_URL}/file/${value.test_video_realname}`}
-                  controls autoPlay muted playsInline
-                  style={{
-                    width: "400px",
-                    height: "300px"
-                  }}></video>
-
-                  </div>
-                    <div
-                      className="liked"
-                      style={{ width: "400px", marginLeft: "350px", marginBottom: "0px" ,}}
+                  //   width: "400px",
+                  //   height: "200px",
+                  //   marginBottom:"-100px",
+                  //   backgroundColor: "white",
+                  //   display: "inline-block"
+                  // }}
+                  >
+                    <video
+                      src={`${process.env.PUBLIC_URL}/file/${value.test_video_realname}`}
+                      controls
+                      autoPlay
+                      muted
+                      playsInline
+                      style={{
+                        width: "400px",
+                        height: "280px",
+                      }}
                     >
+                      {" "}
+                    </video>
+                    <div style={{ float: "right", marginTop: "-18px" }}>
                       <Liked />
                     </div>
+                  </div>
+
                   <Link
                     to={"/testPage?test_seq=" + value.test_seq}
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <div
                       className="ExSpace"
-                      style={{ marginLeft: "10px", width: "380px", marginBottom: "20px" }}
+                      style={{
+                        marginLeft: "10px",
+                        width: "380px",
+                        marginBottom: "20px",
+                      }}
                     >
-                      <div className="content" style={{ fontSize: "14px" }}>
+                      {/*  <div className="content" style={{ fontSize: "14px" }}>
                         {value.test_content}
                       </div>
-
-                      <p style={{ fontSize: "20px", height: "45px", fontWeight: "bold" }}>
+*/}
+                      <p
+                        style={{
+                          fontSize: "20px",
+                          height: "45px",
+                          fontWeight: "bold",
+                          marginTop: "0px",
+                          color :"white"
+                        }}
+                      >
                         {value.test_title}
                       </p>
 
@@ -198,7 +218,6 @@ const TestList = () => {
 
       {/**/}
     </div>
-
   );
 };
 export default TestList;

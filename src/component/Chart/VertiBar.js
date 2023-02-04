@@ -62,7 +62,7 @@ export default class Example extends PureComponent {
                         display="none"
                         type="category" />
                     <Tooltip />
-                    <Legend />
+                    
 
                     <Bar
                         dataKey="percent"
