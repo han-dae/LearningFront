@@ -82,7 +82,10 @@ class ApiService {
     console.log("api 이동 ",TEST_API_BASE_URL + "/" + test_seq);
     return axios.get(TEST_API_BASE_URL + "/" + test_seq);
   }
-  
+  // LikeTest(user_id){
+  //   console.log("좋아요를 늘렸나?");
+  //   return axios.get(TEST_API_BASE_URL + "/LikeCount", user);
+  // }
 }
 
 export default new ApiService();
