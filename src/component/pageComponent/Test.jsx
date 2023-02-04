@@ -79,11 +79,11 @@ const TestComponent = () => {
           style={{
             marginTop: "20px",
             marginLeft: "20vw",
-            width: "20vw",
+            width: "31vw",
             height: "50px",
           
             backgroundColor: "#404040",
-            borderRadius: 30,
+            // borderRadius: 30,
             textAlign :"center",
             boxShadow: "5px 5px #b4b4b4",
             
@@ -94,7 +94,7 @@ const TestComponent = () => {
             style={{
               display: "inline-block",
               width: "100%",
-              textShadow: "2px 2px 2px gray",
+              // textShadow: "2px 2px 2px gray",
               color :"white",
               marginTop :"-20px"
             }}
@@ -158,19 +158,21 @@ const TestComponent = () => {
               position: "absolute",
               color: "white",
               padding: "5px 10px 5px 10px",
-              borderRadius: "10px",
+              // borderRadius: "10px",
               display: "inline-block",
               marginLeft: "50px",
-              marginTop: "133px",
+              marginTop: "12.5vh",
               fontSize: "18px",
               fontWeight: "bold",
               backgroundColor: "#404040",
-              boxShadow: "3px 3px #b4b4b4",
-              width:'31vw'
+              boxShadow: "5px 5px #b4b4b4",
+              width:'30vw',
+              height:'4vh'
               
             }}
           >
-           <h5> Ready Cast에서 단어별 영향을 분석해봤어요. </h5>
+          <h3 style={{marginTop:'0.5vh', textAlign:'center'}}> 
+            Ready Cast에서 단어별 영향을 분석해봤어요. </h3>
           </div>
           <div
             className="WordCloud1"

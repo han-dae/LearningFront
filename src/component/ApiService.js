@@ -57,9 +57,7 @@ class ApiService {
     
     return axios.get(COMMENT_API_BASE_URL + "/" +test_seq);
   }
-  review(){
-    return axios.get(TFIDF_API_BASE_URL + "/review");
-  }
+
   recommendADD(test_seq_id){
     console.log('api 들어옴 좋아요 넣을거야')
     return axios.post(RECOMMEND_API_BASE_URL+"/add",test_seq_id);
