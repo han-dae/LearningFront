@@ -7,6 +7,7 @@ import AddComment from "./AddComment";
 import CommenList from "./CommentList";
 import queryString from "query-string";
 import ApiService from "../ApiService";
+import Liked from "./Liked";
 // import { UserContext } from "../datas/User/UserContextAPI";
 
 const TestPage = () => {
@@ -47,7 +48,11 @@ const TestPage = () => {
                 console.log("load() 에러", err);
             });
     }, []);
-
+    let my_id = sessionStorage.getItem('info');
+    const test_seq_id = {
+        test_seq : test_seq,
+        user_id : my_id
+    }
     // 댓글 작성
     const [com, setCom] = useState([]);
     // console.log('현재 아이디', user_id)
@@ -127,6 +132,7 @@ const TestPage = () => {
                         >
                             {TestDetail.test_price} 원
                         </div>
+                        <Liked test_seq_id={test_seq_id}/>
                     </div>
                 </div>
 
