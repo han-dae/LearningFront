@@ -50,24 +50,6 @@ class ApiService {
     
     return axios.get(COMMENT_API_BASE_URL + "/" +test_seq);
   }
-  bed(){
-    return axios.get(TFIDF_API_BASE_URL + "/");
-  }
-  blanket(){
-    return axios.get(TFIDF_API_BASE_URL + "/");
-  }
-  chair(){
-    return axios.get(TFIDF_API_BASE_URL + "/");
-  }
-  negabed(){
-    return axios.get(TFIDF_API_BASE_URL + "/");
-  }
-  negablanket(){
-    return axios.get(TFIDF_API_BASE_URL + "/");
-  }
-  negachair(){
-    return axios.get(TFIDF_API_BASE_URL + "/");
-  }
 
 
   loadTest(){
