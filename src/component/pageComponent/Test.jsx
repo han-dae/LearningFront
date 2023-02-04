@@ -73,8 +73,8 @@ const TestComponent = () => {
           style={{
             marginTop: "20px",
             marginLeft: "20vw",
-            width: "20vw",
-            height: "50px",
+            width: "31vw",
+            height: "5vh",
           
             backgroundColor: "#404040",
             borderRadius: 0,
@@ -152,18 +152,19 @@ const TestComponent = () => {
               position: "absolute",
               color: "white",
               padding: "5px 10px 5px 10px",
-              borderRadius: "10px",
+             //  borderRadius: "10px",
               display: "inline-block",
               marginLeft: "50px",
-              marginTop: "110px",
+              marginTop: "133px",
               fontSize: "18px",
               fontWeight: "bold",
               backgroundColor: "#404040",
               boxShadow: "3px 3px #b4b4b4",
+              width:'31vw'
               
             }}
           >
-            Ready Cast에서 단어별 영향을 분석해봤어요.
+           <h5> Ready Cast에서 단어별 영향을 분석해봤어요. </h5>
           </div>
           <div
             className="WordCloud1"
