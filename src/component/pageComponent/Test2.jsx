@@ -140,7 +140,8 @@ const TestComponent2 = () => {
               resize: "none",
               overflowY: "scroll",
               marginTop:'1vw',
-              marginLeft:'1vw'
+              marginLeft:'1vw',
+              border: "1px solid #404040"
             }}
             onChange={onChange}
             placeholder="위 그래프를 토대로 스크립트를 작성해보세요."
