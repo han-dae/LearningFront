@@ -90,10 +90,11 @@ const TestComponent = () => {
               display: "inline-block",
               width: "100%",
               textShadow: "2px 2px 2px gray",
-              color :"white"
+              color :"white",
+              marginTop :"-20px"
             }}
           >
-            <h1> 큐시트 예시 자료</h1>
+            <h1> Ex) Cue Sheet</h1>
             
           </div>
         </div>
@@ -155,15 +156,16 @@ const TestComponent = () => {
               borderRadius: "10px",
               display: "inline-block",
               marginLeft: "50px",
-              marginTop: "110px",
+              marginTop: "133px",
               fontSize: "18px",
               fontWeight: "bold",
               backgroundColor: "#404040",
               boxShadow: "3px 3px #b4b4b4",
+              width:'31vw'
               
             }}
           >
-            Ready Cast에서 단어별 영향을 분석해봤어요.
+           <h5> Ready Cast에서 단어별 영향을 분석해봤어요. </h5>
           </div>
           <div
             className="WordCloud1"
