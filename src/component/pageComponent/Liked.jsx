@@ -12,10 +12,10 @@ const Liked =() => {
      
 return(
 
-    <button onClick={() => setLike(!liked)}>
+    <button onClick={() => setLike(!liked)} style={{marginTop :"20px", backgroundColor :"transparent", border :"none"}}>
         
-        <img src = {img} style={{width :"25px", height :"25px", opacity :"0.7", border : "none"}}></img>
-        <div style={{fontWeight :"bold", fontSize :"10px"}}>좋아요</div>
+        <img src = {img} style={{width :"25px", height :"25px", opacity :"0.7", border : "none", marginTop:"-0px", zIndex :"3000"}}></img>
+        
     </button>
 )
    

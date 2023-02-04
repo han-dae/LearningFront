@@ -21,6 +21,7 @@ const TestPage = () => {
         test_video: "",
         test_video_realname: "",
         user_id: "",
+        test_content:""
     });
 
     {
@@ -75,8 +76,8 @@ const TestPage = () => {
                         className="video"
                         style={{
                             width: "700px",
-                            height: "69vh",
-                            marginTop: "72px",
+                            height: "65vh",
+                            marginTop: "82px",
                             marginLeft: "15vw",
                             backgroundColor: "white",
                             borderRadius: 10,
@@ -133,25 +134,25 @@ const TestPage = () => {
                     <div
                         className="img1"
                         style={{
-                            width: "350px",
-                            height: "25vh",
+                            width: "200px",
+                            height: "200px",
                             marginTop: "-78.5vh",
                             marginLeft: "53vw",
                             backgroundColor: "gray",
                             borderRadius: 10,
                         }}
-                    ></div>
-                    <div
+                    > <img src={`${process.env.PUBLIC_URL}/file/${TestDetail.test_photo}`} alt="" /> </div>
+                     <div
                         className="img2"
                         style={{
-                            width: "350px",
-                            height: "25vh",
+                            width: "500px",
+                            height: "200px",
                             marginTop: "-25vh",
-                            marginLeft: "72vw",
+                            marginLeft: "67vw",
                             backgroundColor: "gray",
                             borderRadius: 10,
                         }}
-                    ></div>
+                    >{TestDetail.test_content}</div> 
                     <div
                         className="prod_info"
                         style={{

@@ -104,12 +104,14 @@ class Test4 extends Component {
           <div
             style={{
               marginTop: "10px",
-              marginLeft: "20vw",
-              width: "20vw",
+              marginLeft: "19.5vw",
+              width: "27.5vw",
               height: "10vh",
               paddingLeft: "10px",
-              backgroundColor: "#F7D5D4",
-              borderRadius: 20,
+              backgroundColor: "#404040",
+              // borderRadius: 20,
+              textAlign:'center',
+              color:'white',
               boxShadow :"5px 5px #b4b4b4"
             }}
           >
@@ -121,7 +123,7 @@ class Test4 extends Component {
                 textShadow :"2px 2px 2px gray"
               }}
             >
-              <h1>Chapter4. 모의 영상 생성</h1>
+              <h1>모의 영상 생성</h1>
             </div>
           </div>
 
@@ -139,36 +141,37 @@ class Test4 extends Component {
           ><video src={this.state.video_url} controls autoPlay muted playsInline
           style={{
             width: "700px",
-            height: "50vh",
+            height: "40vh",
             marginTop: "10px",
-            marginLeft: "0vw",}}></video></div>
+            marginLeft: "-0.5vw",}}></video></div>
           <div
             className="itemContents"
             style={{
               display: "inline-block",
               width: "700px",
-              marginLeft: "20vw",
-              backgroundColor: "#F7D5D4",
-              marginTop: "20px",
+              marginLeft: "19.5vw",
+              backgroundColor: "#404040",
+              marginTop: "-50px",
               borderRadius :"10px",
               boxShadow :"3px 3px #b4b4b4"
+              
             }}
           >
             <div className="nameSpace" style={{ marginTop: "-20px" , }}>
-              <p style={{fontSize :"24px", fontWeight :"bold"}}>
-                [뷰티쓱세일]공동판매구역 랑콤편! 전 구매고객 럭키 박스 증정
+              <p style={{fontSize :"20px", fontWeight :"bold", color:'white'}}>
+               {this.state.test_title}
               </p>
             </div>
-            <div className="userName" style={{fontSize : "18px"}}>작성자 : {this.state.user_id}</div>
-            <div
+            <div className="userName" style={{fontSize : "16px", color:'white'}}>작성자 : {this.state.user_id}</div>
+            {/* <div
               className="telNumber"
-              style={{ width: "20vw", marginLeft: "30%", marginTop: "-21px" ,fontSize : "18px"}}
+              style={{ width: "20vw", marginLeft: "30%", marginTop: "-21px" ,fontSize : "18px", color:'white'}}
             >
               Tel : 000 - 1234 - 5678
-            </div>
+            </div> */}
             <div
               className="price"
-              style={{ width: "20vw", marginLeft: "70%", marginTop: "-21px",fontSize : "18px" }}
+              style={{ width: "20vw", marginLeft: "70%", marginTop: "-21px",fontSize : "18px", color:'white' }}
             >
               가격 : {this.state.test_price}
             </div>
@@ -183,7 +186,10 @@ class Test4 extends Component {
                 marginLeft: "1100px",
                 marginTop: "-590px",
                 overflowY: "scroll",
-                backgroundColor: "greenyellow",
+                backgroundColor: "white",
+                position :"relative",
+                border: "5px solid #404040",
+                
               }}
             >{this.state.test_cuesheet}</div>
             <div style={{ marginLeft: "1140px" }}>
@@ -205,7 +211,7 @@ class Test4 extends Component {
                   position: "absolute",
                   bottom: "50px",
                   marginTop: "0px",
-                  left: "400px",
+                  left: "14%",
                   fontSize: "300%",
                   color: "black",
                 }}
@@ -219,14 +225,14 @@ class Test4 extends Component {
               position: "absolute",
               bottom: "50px",
               marginTop: "0px",
-              right: "400px",
+              right: "14%",
               fontSize: "300%",
               color: "black",
             }}
             />
             </Link>
           
-          <div className="testBtn" style={{ position: "absolute", bottom:"2vh", right:"36vw" }}>
+          <div className="testBtn" style={{ position: "absolute", bottom:"2vh", right:"40vw" }}>
           <Link to={"/test1"}>
             <div className='test1'
               style={{
@@ -263,7 +269,7 @@ class Test4 extends Component {
                 width: "5vw",
                 marginLeft: "53vw",
                 marginTop: "-0.4vh",
-                borderBottom: "4px solid #F7D5D4"
+                borderBottom: "4px solid #0d0d73"
               }}></div>
           </Link>
         </div>

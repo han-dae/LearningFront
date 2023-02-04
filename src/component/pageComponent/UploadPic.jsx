@@ -15,23 +15,22 @@ const UploadPic = () => {
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
     console.log(fileList)
-    Object.values(fileList[0]).forEach((file) => photo.append("file", file));
+    Object.values(fileList).forEach((file) => photo.append("file", file));
     console.log(photo);
 
-    // sessionStorage.setItem('img',JSON.stringify(photo));
-    //console.log('img',sessionStorage.getItem('img'));
-    // axios.post('/test/AxiosFileTest.do', photo, {
-    //   headers: {
-    //     "Content-Type": `multipart/form-data; `,
-    //   },
-    //   baseURL: 'http://localhost:8081/users'
-    // })
-    // .then((response) => {
-    //     sessionStorage.setItem('photo',response.data); 
-    //   })
-    //   .catch((error) => {
-    //     // 예외 처리
-    //   })
+  
+     axios.post('/test/AxiosFileTest.do', photo, {
+       headers: {
+         "Content-Type": `multipart/form-data; `,
+       },
+       baseURL: 'http://localhost:8081/users'
+     })
+     .then((response) => {
+         sessionStorage.setItem('photo',response.data); 
+       })
+       .catch((error) => {
+         // 예외 처리
+       })
   };
   
   const onPreview = async (file) => {
@@ -62,10 +61,10 @@ const UploadPic = () => {
     </ImgCrop>
   );
 };
-const img =()=>{
-const imgdata = photo;
-return (imgdata)
-}
+// const img =()=>{
+// const imgdata = photo;
+// return (imgdata)
+// }
 
-export { UploadPic,  img }
+export default UploadPic
 

@@ -41,6 +41,7 @@ const CommentList = ({ com }) => {
                 console.log(Www);
 
                 console.log('배열가져온거 어케 함? 모르겠다 아', comList);
+                
             })
             .catch((err) => {
                 console.log("show() 에러", err);
@@ -51,12 +52,12 @@ const CommentList = ({ com }) => {
     // console.log('값 가져왔니?');
 
     return (
-        <div>
+        <div style={{ position :"relative",height :"200px",overflowY :"scroll", padding :"10px 20px 10px 20px"}}>
             {Www11.map((item, idx) => (
                 <p key={'num' + idx + item.cmt_content}>
                     <div style={idText}>{item.user_id}</div>
                     {item.cmt_content}
-                    <span style={timeText}> {Date(item.cmt_dt)}</span>
+                    <span style={timeText}> {item.cmt_dt}</span>
                     <br></br>
                 </p>
             ))}
