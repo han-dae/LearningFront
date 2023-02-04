@@ -8,8 +8,9 @@ import { RightCircleOutlined, LeftCircleOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import TextArea from "antd/es/input/TextArea";
 import Footer from "./Footer";
-import { BarChart } from "recharts";
+
 import LFBarChart from "../Chart/LFBarChart";
+import Example from "../Chart/LFBarChart";
 
 // function bed (){
 //   function bedreview(){
@@ -62,15 +63,15 @@ const TestComponent2 = () => {
 
         <div
           style={{
-            marginTop: "10px",
-            marginLeft: "19.5vw",
-            width: "55vh",
-            height: "10vh",
-            paddingLeft: "10px",
+            mmarginTop: "20px",
+            marginLeft: "20vw",
+            width: "31vw",
+            height: "5vh",   
             backgroundColor: "#404040",
-            // borderRadius: 20,
-            textAlign: "center",
-            boxShadow: "5px 5px #b4b4b4"
+            borderRadius: 0,
+            textAlign :"center",
+            boxShadow: "5px 5px #b4b4b4",
+            marginTop:'2vh'
           }}
         >
           <div
@@ -78,11 +79,12 @@ const TestComponent2 = () => {
             style={{
               display: "inline-block",
               width: "50vh",
-              textShadow: "2px 2px 2px gray",
-              color: "white"
+             // textShadow: "2px 2px 2px gray",
+              color: "white",
+              textAlign:'center'
             }}
           >
-            <h1> 큐시트 작성 </h1>
+            <h1 style={{marginTop:'0vh'}}> Create Cue Sheet </h1>
             <div
               style={{
                 position: "absolute",
@@ -90,12 +92,13 @@ const TestComponent2 = () => {
                 padding: "5px 10px 5px 10px",
                 // borderRadius: "10px",
                 display: "inline-block",
-                marginLeft: "-14vw",
-                marginTop: "38vh",
+                marginLeft: "-15vw",
+                marginTop: "36vh",
                 fontSize: "18px",
                 fontWeight: "bold",
                 backgroundColor: "#404040",
-                boxShadow: "3px 3px #b4b4b4",
+                boxShadow: "5px 5px #b4b4b4",
+                width:'29.5vw'
 
               }}
             >
@@ -116,8 +119,12 @@ const TestComponent2 = () => {
             borderRadius: 10,
           }}
         >
-
+         
         </div>
+       
+
+
+       
 
         <LFBarChart />
 
@@ -132,6 +139,8 @@ const TestComponent2 = () => {
               width: "60vw",
               resize: "none",
               overflowY: "scroll",
+              marginTop:'1vw',
+              marginLeft:'1vw'
             }}
             onChange={onChange}
             placeholder="위 그래프를 토대로 스크립트를 작성해보세요."
@@ -147,7 +156,7 @@ const TestComponent2 = () => {
                 position: "absolute",
                 bottom: "50px",
                 marginTop: "0px",
-                left: "14%",
+                left: "10vw",
                 fontSize: "300%",
                 color: "black",
               }}
@@ -160,7 +169,7 @@ const TestComponent2 = () => {
                 position: "absolute",
                 bottom: "50px",
                 marginTop: "0px",
-                right: "14%",
+                right: "10vw",
                 fontSize: "300%",
                 color: "black",
               }}

@@ -7,6 +7,7 @@ import AddComment from "./AddComment";
 import CommenList from "./CommentList";
 import queryString from "query-string";
 import ApiService from "../ApiService";
+import Liked from "./Liked";
 // import { UserContext } from "../datas/User/UserContextAPI";
 
 const TestPage = () => {
@@ -21,6 +22,7 @@ const TestPage = () => {
         test_video: "",
         test_video_realname: "",
         user_id: "",
+        test_content:""
     });
 
     {
@@ -46,7 +48,11 @@ const TestPage = () => {
                 console.log("load() 에러", err);
             });
     }, []);
-
+    let my_id = sessionStorage.getItem('info');
+    const test_seq_id = {
+        test_seq : test_seq,
+        user_id : my_id
+    }
     // 댓글 작성
     const [com, setCom] = useState([]);
     // console.log('현재 아이디', user_id)
@@ -75,14 +81,21 @@ const TestPage = () => {
                         className="video"
                         style={{
                             width: "700px",
-                            height: "69vh",
+                            height: "50vh",
                             marginTop: "82px",
                             marginLeft: "15vw",
-                            backgroundColor: "gray",
+                            backgroundColor: "white",
                             borderRadius: 10,
                         }}
-                    ></div>
-                    <div style={{ marginLeft: "15%" }}>
+                    ><video src={`${process.env.PUBLIC_URL}/file/${TestDetail.test_video_realname}`}
+                    controls autoPlay muted playsInline
+                    style={{
+                        width: "700px",
+                        height: "75vh",
+                        marginTop:"-100px",
+                    }}
+                    ></video></div>
+                    <div style={{ marginLeft: "15%",marginTop:"-30px" }}>
                         <div
                             className="nameSpace"
                             style={{ marginTop: "-15px", marginleft: "15%" }}
@@ -119,6 +132,7 @@ const TestPage = () => {
                         >
                             {TestDetail.test_price} 원
                         </div>
+                        <Liked test_seq_id={test_seq_id}/>
                     </div>
                 </div>
 
@@ -126,31 +140,31 @@ const TestPage = () => {
                     <div
                         className="img1"
                         style={{
-                            width: "350px",
-                            height: "25vh",
+                            width: "200px",
+                            height: "200px",
                             marginTop: "-78.5vh",
                             marginLeft: "53vw",
                             backgroundColor: "gray",
                             borderRadius: 10,
                         }}
-                    ></div>
-                    <div
+                    > <img src={`${process.env.PUBLIC_URL}/file/${TestDetail.test_photo}`} alt="" /> </div>
+                     <div
                         className="img2"
                         style={{
-                            width: "350px",
-                            height: "25vh",
+                            width: "500px",
+                            height: "200px",
                             marginTop: "-25vh",
-                            marginLeft: "72vw",
+                            marginLeft: "67vw",
                             backgroundColor: "gray",
                             borderRadius: 10,
                         }}
-                    ></div>
+                    >{TestDetail.test_content}</div> 
                     <div
                         className="prod_info"
                         style={{
                             fontSize: "18px",
                             marginLeft: "53vw",
-                            marginTop: "1vh",
+                            
                             width: "713px",
                             height: "20vh",
                             backgroundColor: "#FFECEC",
