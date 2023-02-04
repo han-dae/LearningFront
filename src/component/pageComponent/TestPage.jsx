@@ -75,7 +75,7 @@ const TestPage = () => {
                         className="video"
                         style={{
                             width: "700px",
-                            height: "65vh",
+                            height: "69vh",
                             marginTop: "82px",
                             marginLeft: "15vw",
                             backgroundColor: "gray",
@@ -113,12 +113,12 @@ const TestPage = () => {
                                 width: "20vw",
                                 marginLeft: "37%",
                                 marginTop: "-1.5%",
-                                fontSize: "20px",
+                                fontSize: "25px",
                                 fontFamily: "bold",
                             }}
                         >
                             {TestDetail.test_price} 원
-                        </div>
+                        </div>ㅋ
                     </div>
                 </div>
 
@@ -201,11 +201,10 @@ const TestPage = () => {
                             marginLeft: "53vw",
                             marginTop: "1vh",
                             width: "700px",
-                            //height: "25vh",
+                            height: "25vh",
                             backgroundColor: "#FFECEC",
                             borderRadius: 10,
-                            overflowY :"scroll",
-                            overflow:"visible"
+                            overflowY: "scroll",
                         }}
                     >
                         <AddComment handelComment={handelComment} style={{marginTop:'-3vh'}}/>
