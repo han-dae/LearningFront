@@ -157,11 +157,12 @@ class Test4 extends Component {
               
             }}
           >
-            <div className="nameSpace" style={{ marginTop: "-20px" , }}>
+            <div className="nameSpace" style={{ marginTop: "-20px"}}>
               <p style={{fontSize :"24px", fontWeight :"bold", color:'white', marginLeft:'1vw'}}>
                 [뷰티쓱세일]공동판매구역 랑콤편! 전 구매고객 럭키 박스 증정
               </p>
             </div>
+            <div>
             <div className="userName" style={{fontSize : "18px", color:'white'}}>작성자 : {this.state.user_id}</div>
             <div
               className="telNumber"
@@ -175,6 +176,7 @@ class Test4 extends Component {
             >
               가격 : {this.state.test_price}
             </div>
+            </div>
           </div>
 
           <div className="Script">
@@ -182,22 +184,34 @@ class Test4 extends Component {
               className="ScriptContents"
               style={{
                 width: "500px",
-                height: "480px",
+                height: "464px",
                 marginLeft: "1100px",
-                marginTop: "-590px",
+                marginTop: "-570px",
                 overflowY: "scroll",
-                backgroundColor: "greenyellow",
+                backgroundColor: "white",
+                border:'2px solid #404040'
               }}
             >{this.state.test_cuesheet}</div>
-            <div style={{ marginLeft: "1140px" }}>
-              <h3>1. 작성했던 스크립트와 영상을 확인해보세요.</h3>
-              <h3>2. 모두 올바르게 작성되었다면 확인을 누르세요.</h3>
+            <div 
+            style={{ 
+              marginLeft: "1100px",
+              width:'26.5vw',
+              color:'white',
+              height:'4vh',
+              marginTop:'-1vh'
+             }}>
+              <div style={{backgroundColor:'#404040', height:'4vh'}}>
+              <h3 style={{padding:'5px'}}>1. 작성했던 스크립트와 영상을 확인해보세요.</h3>
+              </div>
+              <div style={{backgroundColor:'#404040', height:'4vh'}}>
+              <h3 style={{padding:'5px'}}>2. 모두 올바르게 작성되었다면 확인을 누르세요.</h3>
+              </div>
             </div>
           </div>
 
-          <div style={{marginLeft :"1140px"}}>
+          <div style={{marginLeft :"66vw", marginTop:'7vh'}}>
             <form >
-            <input type="checkbox" value="agree" name="agreement1" style={{marginLeft:"10px"}}/>개인정보 동의하십니까
+            <input type="checkbox" value="agree" name="agreement1" style={{marginLeft:"10px"}}/>개인정보 동의 여부 
             <input type="checkbox" value="agree" name="agreement2" style={{marginLeft:"60px"}}/>영상 정보 공개
             </form>
           </div>
