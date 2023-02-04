@@ -5,7 +5,6 @@ import EmptyHeart from "../../img/heart0.png"
 import ApiService from '../ApiService'
 const Liked =({test_seq_id}) => {
 
-    const [liked, setLike] = useState(false)
     const [likeCheck, setLikeCheck] = useState(0)
 
     ApiService.recommendCheck(test_seq_id)

@@ -146,9 +146,6 @@ const TestList = () => {
                     >
                       {" "}
                     </video>
-                    <div style={{ float: "right", marginTop: "-18px" }}>
-                      <Liked />
-                    </div>
                   </div>
 
                   <Link
