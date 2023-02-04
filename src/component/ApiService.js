@@ -6,6 +6,7 @@ const GUIDE_API_BASE_URL = "http://localhost:8081/users/guide";
 const COMMENT_API_BASE_URL = "http://localhost:8081/users/comment";
 const TFIDF_API_BASE_URL = "http://localhost:8081/users/tfidf";
 const STT_API_BASE_URL = "http://localhost:8081/users/sttchart";
+const RECOMMEND_API_BASE_URL = "http://localhost:8081/users/recommend";
 class ApiService {
   fetchUser() {
     return axios.get(USER_API_BASE_URL);
@@ -37,6 +38,12 @@ class ApiService {
     console.log("review axios",guide_seq);
     return axios.post(STT_API_BASE_URL + "/", guide_seq);
   }
+  stt(){
+    return axios.get(STT_API_BASE_URL);
+  }
+  likeselect(){
+    return axios.post(TEST_API_BASE_URL + "/likeselect");
+  }
   // sendComment(value) {
   //   return axios.get(COMMENT_API_BASE_URL);
   // }
@@ -50,7 +57,24 @@ class ApiService {
     
     return axios.get(COMMENT_API_BASE_URL + "/" +test_seq);
   }
+<<<<<<< HEAD
+=======
 
+  recommendADD(test_seq_id){
+    console.log('api 들어옴 좋아요 넣을거야')
+    return axios.post(RECOMMEND_API_BASE_URL+"/add",test_seq_id);
+  }
+>>>>>>> 436b7c60f60856c3631aedfa1cf8b0121a124184
+
+  recommendDelete(test_seq_id){
+    console.log('api 들어옴 좋아요 지울거야')
+    return axios.post(RECOMMEND_API_BASE_URL+"/del",test_seq_id);
+  }
+  
+  recommendCheck(test_seq_id){
+    console.log('api 들어옴 좋아요 눌렀나 체크할거야')
+    return axios.post(RECOMMEND_API_BASE_URL+"/check",test_seq_id);
+  }
 
   loadTest(){
     return axios.get(TEST_API_BASE_URL);

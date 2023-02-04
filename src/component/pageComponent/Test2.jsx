@@ -8,8 +8,9 @@ import { RightCircleOutlined, LeftCircleOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import TextArea from "antd/es/input/TextArea";
 import Footer from "./Footer";
-import { BarChart } from "recharts";
+
 import LFBarChart from "../Chart/LFBarChart";
+import Example from "../Chart/LFBarChart";
 
 // function bed (){
 //   function bedreview(){
@@ -118,8 +119,12 @@ const TestComponent2 = () => {
             borderRadius: 10,
           }}
         >
-
+         
         </div>
+       
+
+
+       
 
         <LFBarChart />
 
