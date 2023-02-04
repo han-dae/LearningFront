@@ -132,8 +132,8 @@ const TestPage = () => {
                         >
                             {TestDetail.test_price} 원
                         </div>
-                        <Liked test_seq_id={test_seq_id}/>
                     </div>
+                        <Liked test_seq_id={test_seq_id}/>
                 </div>
 
                 <div className="left">

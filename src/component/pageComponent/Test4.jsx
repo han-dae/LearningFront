@@ -98,11 +98,17 @@ class Test4 extends Component {
             }}
           >
             <div
-              className="start"
               style={{
-                display: "inline-block",
-                width: "100%",
-                textShadow :"2px 2px 2px gray"
+                marginTop: "10px",
+                marginLeft: "19.5vw",
+                width: "27.5vw",
+                height: "10vh",
+                paddingLeft: "10px",
+                backgroundColor: "#404040",
+                // borderRadius: 20,
+                textAlign:'center',
+                color:'white',
+                boxShadow :"5px 5px #B4B4B4"
               }}
             >
               <h1>모의 영상 생성</h1>
@@ -188,7 +194,48 @@ class Test4 extends Component {
                   fontSize: "300%",
                   color: "black",
                 }}
+              />{this.state.test_cuesheet}</Link>
+              <div style={{ marginLeft: "1140px" }}>
+                <h3>1. 작성했던 스크립트와 영상을 확인해보세요.</h3>
+                <h3>2. 모두 올바르게 작성되었다면 확인을 누르세요.</h3>
+              </div>
+           
+           
+            <Link to={"/test3"}>
+                <LeftCircleOutlined
+                  style={{
+                    position: "absolute",
+                    bottom: "50px",
+                    marginTop: "0px",
+                    left: "14%",
+                    fontSize: "300%",
+                    color: "black",
+                  }}
+                />
+              </Link>
+            <Link to={"/testlist"}>
+              <RightCircleOutlined
+              type="Button"
+              onClick={this.submit}
+              style={{
+                position: "absolute",
+                bottom: "50px",
+                marginTop: "0px",
+                right: "14%",
+                fontSize: "300%",
+                color: "black",
+              }}
               />
+              </Link>
+            <div className="testBtn" style={{ position: "absolute", bottom:"2vh", right:"40vw" }}></div>
+            <Link to={"/test1"}>
+              <div className='test1'
+                style={{
+                  width: "5vw",
+                  marginLeft: "35vw",
+                  marginTop: "7vh",
+                  borderBottom: "4px solid gray"
+                }}></div>
             </Link>
           <Link to={"/testlist"}>
             <RightCircleOutlined
