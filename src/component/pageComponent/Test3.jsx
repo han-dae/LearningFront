@@ -14,13 +14,13 @@ import axios from "axios";
 const { Dragger } = Upload;
 
 
+const fd = new FormData();
 const TestComponent3 = () => {
   // const [content, setContent] = useState("");
   // const [uploadedImg, setUploadedImg] = useState({
   // fileName: "",
   // fillPath: ""
   // });
-  const fd = new FormData();
 
   const props =  {
     name: 'file',
@@ -48,8 +48,7 @@ const TestComponent3 = () => {
       console.log(fd);
       sessionStorage.setItem('test_video', filename);
       console.log('test', sessionStorage.getItem('test_video'));
-
-
+      
       
 
 
@@ -120,6 +119,7 @@ const TestComponent3 = () => {
 
   const navigate = useNavigate();
   const clicked = () => {
+    
     axios.post('/test/AxiosFileTest.do', fd, {
       headers: {
         "Content-Type": `multipart/form-data; `,
@@ -128,10 +128,12 @@ const TestComponent3 = () => {
     })
       .then((response) => {
          sessionStorage.setItem('test_video_realname',response.data); 
+         console.log(sessionStorage.getItem('test_video_realname'));
       })
       .catch((error) => {
         // 예외 처리
       })
+
     //     axios.post('/test/AxiosFileTest.do', img(), {
     //    headers: {
     //      "Content-Type": `multipart/form-data; `,
@@ -146,7 +148,6 @@ const TestComponent3 = () => {
     //      // 예외 처리
     //    })
 
-      axios.post('/test/')
     sessionStorage.setItem('test_title',state.test_title);
     sessionStorage.setItem('test_price',state.test_price);
     sessionStorage.setItem('test_content',state.test_content);

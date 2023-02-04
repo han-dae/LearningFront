@@ -2,8 +2,8 @@ import { Upload } from 'antd';
 import ImgCrop from 'antd-img-crop';
 import axios from 'axios';
 import { useState } from 'react';
-const photo = new FormData();
 const UploadPic = () => {
+  const photo = new FormData();
   const [fileList, setFileList] = useState([
     {
       uid: '',
@@ -15,7 +15,7 @@ const UploadPic = () => {
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
     console.log(fileList)
-    Object.values(fileList).forEach((file) => photo.append("file", file));
+    Object.values(fileList[0]).forEach((file) => photo.append("file", file));
     console.log(photo);
 
   
@@ -26,7 +26,9 @@ const UploadPic = () => {
        baseURL: 'http://localhost:8081/users'
      })
      .then((response) => {
-         sessionStorage.setItem('photo',response.data); 
+        console.log("ddd",response.data);
+         sessionStorage.setItem('photo',response.data);
+         console.log(sessionStorage.getItem('photo')); 
        })
        .catch((error) => {
          // 예외 처리

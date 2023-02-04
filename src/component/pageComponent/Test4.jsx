@@ -36,7 +36,7 @@ class Test4 extends Component {
     };
   }
   componentDidMount() {
-    
+    window.location.reload();
 
     console.log('category_seq',sessionStorage.getItem('category_seq'));
 
