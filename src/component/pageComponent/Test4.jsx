@@ -103,10 +103,10 @@ class Test4 extends Component {
 
           <div
             style={{
-              marginTop: "10px",
+              marginTop: "2vh",
               marginLeft: "19.5vw",
-              width: "27.5vw",
-              height: "10vh",
+              width: "31vw",
+              height: "5vh",
               paddingLeft: "10px",
               backgroundColor: "#404040",
               // borderRadius: 20,
@@ -123,7 +123,7 @@ class Test4 extends Component {
                 textShadow :"2px 2px 2px gray"
               }}
             >
-              <h1>모의 영상 생성</h1>
+              <h1 style={{marginTop:'0vh'}}>모의 영상 생성</h1>
             </div>
           </div>
 
@@ -157,8 +157,8 @@ class Test4 extends Component {
               
             }}
           >
-            <div className="nameSpace" style={{ marginTop: "-20px" , }}>
-              <p style={{fontSize :"20px", fontWeight :"bold", color:'white'}}>
+            <div className="nameSpace" style={{ marginTop: "-20px"}}>
+              <p style={{fontSize :"20px", fontWeight :"bold", color:'white', marginLeft:'1vw'}}>
                {this.state.test_title}
               </p>
             </div>
@@ -175,6 +175,7 @@ class Test4 extends Component {
             >
               가격 : {this.state.test_price}
             </div>
+            </div>
           </div>
 
           <div className="Script">
@@ -182,9 +183,9 @@ class Test4 extends Component {
               className="ScriptContents"
               style={{
                 width: "500px",
-                height: "480px",
+                height: "464px",
                 marginLeft: "1100px",
-                marginTop: "-590px",
+                marginTop: "-570px",
                 overflowY: "scroll",
                 backgroundColor: "white",
                 position :"relative",
@@ -192,15 +193,26 @@ class Test4 extends Component {
                 
               }}
             >{this.state.test_cuesheet}</div>
-            <div style={{ marginLeft: "1140px" }}>
-              <h3>1. 작성했던 스크립트와 영상을 확인해보세요.</h3>
-              <h3>2. 모두 올바르게 작성되었다면 확인을 누르세요.</h3>
+            <div 
+            style={{ 
+              marginLeft: "1100px",
+              width:'26.5vw',
+              color:'white',
+              height:'4vh',
+              marginTop:'-1vh'
+             }}>
+              <div style={{backgroundColor:'#404040', height:'4vh'}}>
+              <h3 style={{padding:'5px'}}>1. 작성했던 스크립트와 영상을 확인해보세요.</h3>
+              </div>
+              <div style={{backgroundColor:'#404040', height:'4vh'}}>
+              <h3 style={{padding:'5px'}}>2. 모두 올바르게 작성되었다면 확인을 누르세요.</h3>
+              </div>
             </div>
           </div>
 
-          <div style={{marginLeft :"1140px"}}>
+          <div style={{marginLeft :"66vw", marginTop:'7vh'}}>
             <form >
-            <input type="checkbox" value="agree" name="agreement1" style={{marginLeft:"10px"}}/>개인정보 동의하십니까
+            <input type="checkbox" value="agree" name="agreement1" style={{marginLeft:"10px"}}/>개인정보 동의 여부 
             <input type="checkbox" value="agree" name="agreement2" style={{marginLeft:"60px"}}/>영상 정보 공개
             </form>
           </div>
@@ -211,7 +223,7 @@ class Test4 extends Component {
                   position: "absolute",
                   bottom: "50px",
                   marginTop: "0px",
-                  left: "14%",
+                  left: "10vw",
                   fontSize: "300%",
                   color: "black",
                 }}
@@ -225,7 +237,7 @@ class Test4 extends Component {
               position: "absolute",
               bottom: "50px",
               marginTop: "0px",
-              right: "14%",
+              right: "10vw",
               fontSize: "300%",
               color: "black",
             }}
