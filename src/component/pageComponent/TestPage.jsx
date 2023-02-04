@@ -134,15 +134,9 @@ const TestPage = () => {
                     <div
                         className="img1"
                         style={{
-<<<<<<< HEAD
-                            width: "200px",
-                            height: "200px",
-                            marginTop: "-78.5vh",
-=======
                             width: "250px",
                             height: "250px",
                             marginTop: "-60vh",
->>>>>>> e04c8694d2ce3cf085a2778d938a4450f8795cfe
                             marginLeft: "53vw",
                             backgroundColor: "gray",
                             borderRadius: 10,
@@ -152,11 +146,7 @@ const TestPage = () => {
                         className="img2"
                         style={{
                             width: "500px",
-<<<<<<< HEAD
-                            height: "200px",
-=======
                             height: "25vh",
->>>>>>> e04c8694d2ce3cf085a2778d938a4450f8795cfe
                             marginTop: "-25vh",
                             marginLeft: "67vw",
                             backgroundColor: "gray",
