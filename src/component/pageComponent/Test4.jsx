@@ -103,10 +103,10 @@ class Test4 extends Component {
 
           <div
             style={{
-              marginTop: "10px",
+              marginTop: "2vh",
               marginLeft: "19.5vw",
-              width: "27.5vw",
-              height: "10vh",
+              width: "31vw",
+              height: "5vh",
               paddingLeft: "10px",
               backgroundColor: "#404040",
               // borderRadius: 20,
@@ -123,7 +123,7 @@ class Test4 extends Component {
                 textShadow :"2px 2px 2px gray"
               }}
             >
-              <h1>모의 영상 생성</h1>
+              <h1 style={{marginTop:'0vh'}}>모의 영상 생성</h1>
             </div>
           </div>
 
@@ -158,7 +158,7 @@ class Test4 extends Component {
             }}
           >
             <div className="nameSpace" style={{ marginTop: "-20px" , }}>
-              <p style={{fontSize :"24px", fontWeight :"bold", color:'white'}}>
+              <p style={{fontSize :"24px", fontWeight :"bold", color:'white', marginLeft:'1vw'}}>
                 [뷰티쓱세일]공동판매구역 랑콤편! 전 구매고객 럭키 박스 증정
               </p>
             </div>
@@ -208,7 +208,7 @@ class Test4 extends Component {
                   position: "absolute",
                   bottom: "50px",
                   marginTop: "0px",
-                  left: "14%",
+                  left: "10vw",
                   fontSize: "300%",
                   color: "black",
                 }}
@@ -222,7 +222,7 @@ class Test4 extends Component {
               position: "absolute",
               bottom: "50px",
               marginTop: "0px",
-              right: "14%",
+              right: "10vw",
               fontSize: "300%",
               color: "black",
             }}
