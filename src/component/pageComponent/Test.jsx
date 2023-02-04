@@ -196,7 +196,7 @@ const TestComponent = () => {
                 position: "absolute",
                 bottom: "50px",
                 marginTop: "0px",
-                right: "400px",
+                right: "10vw",
                 fontSize: "300%",
                 color: "black",
               }}

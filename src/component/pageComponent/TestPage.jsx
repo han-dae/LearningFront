@@ -22,6 +22,7 @@ const TestPage = () => {
         test_video: "",
         test_video_realname: "",
         user_id: "",
+        test_content:""
     });
 
     {
@@ -83,11 +84,18 @@ const TestPage = () => {
                             height: "50vh",
                             marginTop: "82px",
                             marginLeft: "15vw",
-                            backgroundColor: "gray",
+                            backgroundColor: "white",
                             borderRadius: 10,
                         }}
-                    ></div>
-                    <div style={{ marginLeft: "15%" }}>
+                    ><video src={`${process.env.PUBLIC_URL}/file/${TestDetail.test_video_realname}`}
+                    controls autoPlay muted playsInline
+                    style={{
+                        width: "700px",
+                        height: "75vh",
+                        marginTop:"-100px",
+                    }}
+                    ></video></div>
+                    <div style={{ marginLeft: "15%",marginTop:"-30px" }}>
                         <div
                             className="nameSpace"
                             style={{ marginTop: "-15px", marginleft: "15%" }}
@@ -118,7 +126,7 @@ const TestPage = () => {
                                 width: "20vw",
                                 marginLeft: "37%",
                                 marginTop: "-1.5%",
-                                fontSize: "20px",
+                                fontSize: "25px",
                                 fontFamily: "bold",
                             }}
                         >
@@ -132,25 +140,25 @@ const TestPage = () => {
                     <div
                         className="img1"
                         style={{
-                            width: "250px",
-                            height: "250px",
-                            marginTop: "-60vh",
+                            width: "200px",
+                            height: "200px",
+                            marginTop: "-78.5vh",
                             marginLeft: "53vw",
                             backgroundColor: "gray",
                             borderRadius: 10,
                         }}
-                    ></div>
-                    <div
+                    > <img src={`${process.env.PUBLIC_URL}/file/${TestDetail.test_photo}`} alt="" /> </div>
+                     <div
                         className="img2"
                         style={{
                             width: "500px",
-                            height: "25vh",
+                            height: "200px",
                             marginTop: "-25vh",
-                            marginLeft: "72vw",
+                            marginLeft: "67vw",
                             backgroundColor: "gray",
                             borderRadius: 10,
                         }}
-                    ></div>
+                    >{TestDetail.test_content}</div> 
                     <div
                         className="prod_info"
                         style={{
@@ -207,11 +215,10 @@ const TestPage = () => {
                             marginLeft: "53vw",
                             marginTop: "1vh",
                             width: "700px",
-                            //height: "25vh",
+                            height: "25vh",
                             backgroundColor: "#FFECEC",
                             borderRadius: 10,
-                            overflowY :"scroll",
-                            overflow:"visible"
+                            overflowY: "scroll",
                         }}
                     >
                         <AddComment handelComment={handelComment} style={{marginTop:'-3vh'}}/>

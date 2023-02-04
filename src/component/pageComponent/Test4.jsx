@@ -10,15 +10,10 @@ import ScrollBottom from "./Dont_Touch/ScrollBottom";
 import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons";
 import Footer from "./Footer";
 import axios from "axios";
-
 // 등록
-
 class Test4 extends Component {
-
-
   constructor(props) {
     super(props);
-
     this.state = {
       test_seq: "",
       test_title: "",
@@ -36,10 +31,7 @@ class Test4 extends Component {
     };
   }
   componentDidMount() {
-    
-
     console.log('category_seq',sessionStorage.getItem('category_seq'));
-
     let getUrl = sessionStorage.getItem("video_url");
     let test_title = sessionStorage.getItem('test_title');
     let test_photo = sessionStorage.getItem("photo");
@@ -50,7 +42,6 @@ class Test4 extends Component {
     let user_id = sessionStorage.getItem('info');
     let test_content = sessionStorage.getItem('test_content');
     let category_seq = sessionStorage.getItem('category_seq');
-    
     this.setState({video_url:getUrl});
     this.setState({test_title : test_title});
     this.setState({test_photo : test_photo});
@@ -75,32 +66,23 @@ class Test4 extends Component {
       user_id : this.state.user_id,
       category_seq : this.state.category_seq
     }
-
     axios.post('/test/test',test, {
-     
       baseURL: 'http://localhost:8081/users'
     })
       .then((response) => {
          //if(response.data == '/testlist'){
           //this.navigate('/testlist');
-
          //}
       })
       .catch((error) => {
         // 예외 처리
       })
   }
-
   render() {
     return (
       <div>
-
-
-
         <form>
-     
           <MainHeader />
-
           <div
             style={{
               marginTop: "10px",
@@ -112,7 +94,7 @@ class Test4 extends Component {
               // borderRadius: 20,
               textAlign:'center',
               color:'white',
-              boxShadow :"5px 5px #b4b4b4"
+              boxShadow :"5px 5px #B4B4B4"
             }}
           >
             <div
@@ -126,7 +108,6 @@ class Test4 extends Component {
               <h1>모의 영상 생성</h1>
             </div>
           </div>
-
           <div
             className="Chart01"
             style={{
@@ -135,7 +116,6 @@ class Test4 extends Component {
               marginTop: "10px",
               marginLeft: "20vw",
               backgroundColor: "white",
-
               borderRadius: 10,
             }}
           ><video src={this.state.video_url} controls autoPlay muted playsInline
@@ -153,8 +133,7 @@ class Test4 extends Component {
               backgroundColor: "#404040",
               marginTop: "20px",
               borderRadius :"10px",
-              boxShadow :"3px 3px #b4b4b4"
-              
+              boxShadow :"3px 3px #B4B4B4"
             }}
           >
             <div className="nameSpace" style={{ marginTop: "-20px" , }}>
@@ -176,7 +155,6 @@ class Test4 extends Component {
               가격 : {this.state.test_price}
             </div>
           </div>
-
           <div className="Script">
             <div
               className="ScriptContents"
@@ -194,14 +172,12 @@ class Test4 extends Component {
               <h3>2. 모두 올바르게 작성되었다면 확인을 누르세요.</h3>
             </div>
           </div>
-
           <div style={{marginLeft :"1140px"}}>
             <form >
             <input type="checkbox" value="agree" name="agreement1" style={{marginLeft:"10px"}}/>개인정보 동의하십니까
             <input type="checkbox" value="agree" name="agreement2" style={{marginLeft:"60px"}}/>영상 정보 공개
             </form>
           </div>
-
           <Link to={"/test3"}>
               <LeftCircleOutlined
                 style={{
@@ -228,7 +204,6 @@ class Test4 extends Component {
             }}
             />
             </Link>
-          
           <div className="testBtn" style={{ position: "absolute", bottom:"2vh", right:"40vw" }}>
           <Link to={"/test1"}>
             <div className='test1'
@@ -239,7 +214,6 @@ class Test4 extends Component {
                 borderBottom: "4px solid gray"
               }}></div>
           </Link>
-
           <Link to={"/test2"}>
             <div className='test2'
               style={{
@@ -249,7 +223,6 @@ class Test4 extends Component {
                 borderBottom: "4px solid gray"
               }}></div>
           </Link>
-
           <Link to={"/test3"}>
             <div className='test3'
               style={{
@@ -259,18 +232,16 @@ class Test4 extends Component {
                 borderBottom: "4px solid gray"
               }}></div>
           </Link>
-
           <Link to={"/test4"}>
             <div className='test4'
               style={{
                 width: "5vw",
                 marginLeft: "53vw",
                 marginTop: "-0.4vh",
-                borderBottom: "4px solid #0d0d73"
+                borderBottom: "4px solid #0D0D73"
               }}></div>
           </Link>
         </div>
-          
         </form>
         <Footer/>
       </div>
