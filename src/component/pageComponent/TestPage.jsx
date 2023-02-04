@@ -75,7 +75,7 @@ const TestPage = () => {
                         className="video"
                         style={{
                             width: "700px",
-                            height: "65vh",
+                            height: "50vh",
                             marginTop: "82px",
                             marginLeft: "15vw",
                             backgroundColor: "gray",
@@ -126,9 +126,9 @@ const TestPage = () => {
                     <div
                         className="img1"
                         style={{
-                            width: "350px",
-                            height: "25vh",
-                            marginTop: "-78.5vh",
+                            width: "250px",
+                            height: "250px",
+                            marginTop: "-60vh",
                             marginLeft: "53vw",
                             backgroundColor: "gray",
                             borderRadius: 10,
@@ -137,7 +137,7 @@ const TestPage = () => {
                     <div
                         className="img2"
                         style={{
-                            width: "350px",
+                            width: "500px",
                             height: "25vh",
                             marginTop: "-25vh",
                             marginLeft: "72vw",
@@ -150,7 +150,7 @@ const TestPage = () => {
                         style={{
                             fontSize: "18px",
                             marginLeft: "53vw",
-                            marginTop: "1vh",
+                            
                             width: "713px",
                             height: "20vh",
                             backgroundColor: "#FFECEC",

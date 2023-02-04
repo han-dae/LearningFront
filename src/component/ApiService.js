@@ -5,6 +5,7 @@ const TEST_API_BASE_URL = "http://localhost:8081/users/test";
 const GUIDE_API_BASE_URL = "http://localhost:8081/users/guide";
 const COMMENT_API_BASE_URL = "http://localhost:8081/users/comment";
 const TFIDF_API_BASE_URL = "http://localhost:8081/users/tfidf";
+const STT_API_BASE_URL = "http://localhost:8081/users/sttchart";
 class ApiService {
   fetchUser() {
     return axios.get(USER_API_BASE_URL);
@@ -32,8 +33,9 @@ class ApiService {
     return axios.get(GUIDE_API_BASE_URL+"/");
   }
 
-  review(){
-    return axios.post(GUIDE_API_BASE_URL + "/review");
+  review(guide_seq){
+    console.log("review axios",guide_seq);
+    return axios.post(STT_API_BASE_URL + "/", guide_seq);
   }
   // sendComment(value) {
   //   return axios.get(COMMENT_API_BASE_URL);
