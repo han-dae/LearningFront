@@ -46,7 +46,7 @@ const MainBoard = () => {
             height: 400
           }}>
             <div style={{width :"300px", marginTop :"-20px",marginLeft :"200px",height :"40px", borderRadius :"30px", boxShadow :"3px 3px 1px gray" ,color :"white",backgroundColor :"#0d0d73"}}>
-          <div style={{ marginLeft: "0px" , fontSize :"20px",fontWeight :"bold", marginTop :"20px",marginBottom : "20px", paddingTop :"5px"}}>PLATFORM RANK</div></div>
+          <div style={{ marginLeft: "0px" , fontSize :"20px",fontWeight :"bold", marginTop :"31px",marginBottom : "20px", paddingTop :"5px"}}>PLATFORM RANK</div></div>
           <div className="logoImg"
           style={{height:'18vh',
                   width:'3.5vw',
