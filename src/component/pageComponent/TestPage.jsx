@@ -118,7 +118,7 @@ const TestPage = () => {
                             }}
                         >
                             {TestDetail.test_price} 원
-                        </div>ㅋ
+                        </div>
                     </div>
                 </div>
 
