@@ -40,7 +40,8 @@ const TestComponent = () => {
         console.log(res.data);
         setGuide(res.data);
         console.log(res.data[0]);
-        sessionStorage.setItem("category_seq", res.data[0].category_seq);
+        setCategory( res.data[0].category_seq);
+        
       })
       .catch((err) => {
         console.log("cuesheet() 에러", err);
@@ -73,11 +74,11 @@ const TestComponent = () => {
           style={{
             marginTop: "20px",
             marginLeft: "20vw",
-            width: "31vw",
-            height: "5vh",
+            width: "20vw",
+            height: "50px",
           
             backgroundColor: "#404040",
-            borderRadius: 0,
+            borderRadius: 30,
             textAlign :"center",
             boxShadow: "5px 5px #b4b4b4",
             
@@ -88,7 +89,7 @@ const TestComponent = () => {
             style={{
               display: "inline-block",
               width: "100%",
-              // textShadow: "2px 2px 2px gray",
+              textShadow: "2px 2px 2px gray",
               color :"white",
               marginTop :"-20px"
             }}
@@ -152,20 +153,19 @@ const TestComponent = () => {
               position: "absolute",
               color: "white",
               padding: "5px 10px 5px 10px",
-             //  borderRadius: "10px",
+              borderRadius: "10px",
               display: "inline-block",
               marginLeft: "50px",
-              marginTop: "13vh",
+              marginTop: "133px",
               fontSize: "18px",
               fontWeight: "bold",
               backgroundColor: "#404040",
-              boxShadow: "5px 5px #b4b4b4",
-              width:'30vw',
-              height:'4vh'
+              boxShadow: "3px 3px #b4b4b4",
+              width:'31vw'
               
             }}
           >
-           <h3 style={{marginTop:'0.5vh', textAlign:'center'}}> Ready Cast에서 단어별 영향을 분석해봤어요. </h3>
+           <h5> Ready Cast에서 단어별 영향을 분석해봤어요. </h5>
           </div>
           <div
             className="WordCloud1"
@@ -179,7 +179,7 @@ const TestComponent = () => {
           ></div>
 
           <div className="dataSpace">
-            <Chart />
+            <Chart data={Category.category_seq}/>
 
             <div className="chart_dh">
               <div style={{ width: 500, height: 300 }}></div>
@@ -201,7 +201,7 @@ const TestComponent = () => {
 
         <div
           className="testBtn"
-          style={{ position: "absolute", bottom: "2vh", right: "40vw" }}
+          style={{ position: "absolute", bottom: "2vh", right: "36vw" }}
         >
           <Link to={"/test1"}>
             <div
@@ -210,7 +210,7 @@ const TestComponent = () => {
                 width: "5vw",
                 marginLeft: "35vw",
                 marginTop: "7vh",
-                borderBottom: "4px solid #0d0d73",
+                borderBottom: "4px solid #404040",
               }}
             ></div>
           </Link>
