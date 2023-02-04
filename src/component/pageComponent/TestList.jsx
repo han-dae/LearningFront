@@ -28,6 +28,8 @@ const TestList = () => {
     test_video_realname: "",
     user_id: "",
     test_content: "",
+    test_view_count: "",
+    test_like_count: ""
   });
 
   // const video =(data)=>{
