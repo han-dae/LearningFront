@@ -39,6 +39,9 @@ class ApiService {
   stt(){
     return axios.get(STT_API_BASE_URL);
   }
+  likeselect(){
+    return axios.post(TEST_API_BASE_URL + "/likeselect");
+  }
   // sendComment(value) {
   //   return axios.get(COMMENT_API_BASE_URL);
   // }
