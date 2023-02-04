@@ -42,9 +42,9 @@ const TestComponent = () => {
         console.log(res.status);
         console.log(res.data);
         setGuide(res.data);
-        console.log(res.data.length);
-       
-        sessionStorage.setItem("category_seq", res.data[0].category_seq);
+        console.log(res.data[0]);
+        setCategory( res.data[0].category_seq);
+        
       })
       .catch((err) => {
         console.log("cuesheet() 에러", err);
@@ -79,11 +79,11 @@ const TestComponent = () => {
           style={{
             marginTop: "20px",
             marginLeft: "20vw",
-            width: "31vw",
-            height: "5vh",
+            width: "20vw",
+            height: "50px",
           
             backgroundColor: "#404040",
-            borderRadius: 0,
+            borderRadius: 30,
             textAlign :"center",
             boxShadow: "5px 5px #b4b4b4",
             
@@ -99,7 +99,7 @@ const TestComponent = () => {
               marginTop :"-20px"
             }}
           >
-            <h1> 큐시트 예시 자료</h1>
+            <h1> Ex) Cue Sheet</h1>
             
           </div>
         </div>
@@ -158,7 +158,7 @@ const TestComponent = () => {
               position: "absolute",
               color: "white",
               padding: "5px 10px 5px 10px",
-             //  borderRadius: "10px",
+              borderRadius: "10px",
               display: "inline-block",
               marginLeft: "50px",
               marginTop: "133px",
@@ -184,7 +184,7 @@ const TestComponent = () => {
           ></div>
 
           <div className="dataSpace">
-            <Chart />
+            <Chart data={Category.category_seq}/>
 
             <div className="chart_dh">
               <div style={{ width: 500, height: 300 }}></div>
@@ -206,7 +206,7 @@ const TestComponent = () => {
 
         <div
           className="testBtn"
-          style={{ position: "absolute", bottom: "2vh", right: "40vw" }}
+          style={{ position: "absolute", bottom: "2vh", right: "36vw" }}
         >
           <Link to={"/test1"}>
             <div
@@ -215,7 +215,7 @@ const TestComponent = () => {
                 width: "5vw",
                 marginLeft: "35vw",
                 marginTop: "7vh",
-                borderBottom: "4px solid #0d0d73",
+                borderBottom: "4px solid #404040",
               }}
             ></div>
           </Link>
