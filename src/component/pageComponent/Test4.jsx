@@ -130,7 +130,7 @@ class Test4 extends Component {
           >
             <div className="nameSpace" style={{ marginTop: "-20px" , }}>
               <p style={{fontSize :"24px", fontWeight :"bold", color:'white', textAlign:'center'}}>
-                [뷰티쓱세일]공동판매구역 랑콤편! 전 구매고객 럭키 박스 증정
+                {this.state.test_title}
               </p>
             </div>
             <div className="userName" style={{fontSize : "18px", color:'white'}}>작성자 : {this.state.user_id}</div>
@@ -138,7 +138,7 @@ class Test4 extends Component {
               className="telNumber"
               style={{ width: "20vw", marginLeft: "30%", marginTop: "-21px" ,fontSize : "18px", color:'white'}}
             >
-              Tel : 000 - 1234 - 5678
+              
             </div>
             <div
               className="price"
@@ -205,7 +205,7 @@ class Test4 extends Component {
                   fontSize: "300%",
                   color: "black",
                 }}
-              />{this.state.test_cuesheet}</Link>
+              /></Link>
         
            
             <Link to={"/testlist"}>
