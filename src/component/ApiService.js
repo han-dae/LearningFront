@@ -66,7 +66,12 @@ class ApiService {
     console.log('api 들어옴 좋아요 눌렀나 체크할거야')
     return axios.post(RECOMMEND_API_BASE_URL+"/check",test_seq_id);
   }
-
+  loadMyComment(user_id){
+    return axios.post(COMMENT_API_BASE_URL + "/comment", user_id);
+  }
+  commentDelete(cmt_seq){
+    return axios.post(COMMENT_API_BASE_URL + "/deleteComment", cmt_seq);
+  }
   loadTest(){
     return axios.get(TEST_API_BASE_URL);
   }

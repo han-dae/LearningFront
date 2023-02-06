@@ -275,18 +275,12 @@ const MyPage = (props) => {
           }}
         >
           <div style={{marginLeft:'28.5vw'}} >
-          <table
-                style={{
-                  borderSpacing: "10px",
-                  marginTop: "-2vh",
-                  marginLeft: "-1vw",
-                }}
-              >
+          
                 
             {comList.map((value,idx) => (
                 //   <div key={`${value.user_id}`}>
                 
-                <div value={`${value.cmt_seq}`}
+                <div 
                 style={{marginLeft:'-28vw',paddingTop:'20px',}}>
 
                   {value.cmt_content}
@@ -302,7 +296,7 @@ const MyPage = (props) => {
                 </div>
               </div>
             ))}
-          </table>
+          
           </div>
           <div
             className="com_edit"
