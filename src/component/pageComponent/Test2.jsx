@@ -112,7 +112,7 @@ const [Category, setCategory] =useState({
                 label: "의자",
               },
             ]}
-            style={{ width: "20vw", marginLeft: "40vw", marginTop: "10px" }}
+            style={{ width: "20vw", marginLeft: "36vw", marginTop: "10px" }}
           />
         </div>
         
