@@ -9,18 +9,13 @@ import { Link } from "react-router-dom";
 import TextArea from "antd/es/input/TextArea";
 import Footer from "./Footer";
 
-import LFBarChart from "../Chart/LFBarChart";
-import Example from "../Chart/LFBarChart";
 
-// function bed (){
-//   function bedreview(){
-//     var bed = [];
-//     for(var i =0; i<bed.length; i++){
-//       bed.length.push()
-//     }
-//     return bed
-//   }
-// }
+
+import { Select } from "antd";
+import LFBar from "../../component/Chart/LFBarChart";
+import NegaLFBar from "../Chart/NegaBarChart";
+
+
 
 // useEffect(() => {
 //   ApiService.bed()
@@ -40,6 +35,17 @@ const TestComponent2 = () => {
     test_cuesheet: ""
 
   })
+const [Category, setCategory] =useState({
+  category_seq :""
+})
+
+  const onChange1 = (value) => {
+    console.log(`selected ${value}`);
+   setCategory(value);
+   console.log("이거 들어감??" , value);
+   console.log(Category); 
+  };
+  
   const onChange = (e) => {
     setState({
       ...state,
@@ -83,7 +89,36 @@ const TestComponent2 = () => {
               color: "white",
               textAlign:'center'
             }}
-          >
+          > <div>
+          <Select
+            showSearch
+            placeholder="카테고리를 선택해주세요"
+            optionFilterProp="children"
+            onChange={onChange1}
+            filterOption={(input, option) =>
+              (option?.label ?? "").toLowerCase().includes(input.toLowerCase())
+            }
+            options={[
+              {
+                value: 21,
+                label: "침구류",
+              },
+              {
+                value: 22,
+                label: "이불",
+              },
+              {
+                value: 23,
+                label: "의자",
+              },
+            ]}
+            style={{ width: "20vw", marginLeft: "40vw", marginTop: "10px" }}
+          />
+        </div>
+        
+        
+        
+        
             <h1 style={{marginTop:'0vh'}}> Create Cue Sheet </h1>
             <div
               style={{
@@ -106,27 +141,38 @@ const TestComponent2 = () => {
             </div>
 
 
+         
+          
+          
+          
           </div>
         </div>
         <div
           className="Chart02"
           style={{
-            width: "35vw",
+            display :"inline-block",
+            width: "70vw",
             height: "40vh",
             marginTop: "25px",
-            marginLeft: "20vw",
-
+            marginLeft: "15vw",
+float :"left",
             borderRadius: 10,
+            
           }}
         >
-         
+         <div >
+        <LFBar data={Category}/>
+
+
+
+     
+        <NegaLFBar data={Category}/>
+        </div>
         </div>
        
 
 
-       
 
-        <LFBarChart />
 
         <div style={{ marginLeft: "19.5vw" }}>
           <TextArea
