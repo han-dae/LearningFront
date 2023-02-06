@@ -31,7 +31,7 @@ const Login = (props) => {
         console.log(res.status);
         console.log(res.data);
         console.log("if통과");
-        if(res.data ==''){
+        if(res.data =='/login'){
           alert('로그인실패');
           window.location.reload();
         }else{

@@ -119,7 +119,7 @@ const [Category, setCategory] =useState({
         
         
         
-            <h1 style={{marginTop:'0vh'}}> Create Cue Sheet </h1>
+            <h1 style={{marginTop:'-4.5vh'}}> Create Cue Sheet </h1>
             <div
               style={{
                 position: "absolute",
