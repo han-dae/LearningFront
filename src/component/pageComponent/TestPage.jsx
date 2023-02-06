@@ -211,7 +211,8 @@ const TestPage = () => {
                             backgroundColor: "#404040",
                             borderRadius: 10,
                             color:'white',
-                            boxShadow: "5px 5px #B4B4B4"
+                            boxShadow: "5px 5px #B4B4B4",
+                            overflowY:'scroll'
                         }}
                     >
                         {TestDetail.test_cuesheet}

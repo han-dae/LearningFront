@@ -85,8 +85,9 @@ const AddComment = ({ handelComment }) => {
 
         </input>
        <div onClick={btnHandle}
-       style={{marginLeft:'34.8vw',
-       marginTop:'-3.8vh'}} >
+       style={{
+        marginLeft:'34.8vw',
+        marginTop:'-3.8vh'}} >
         <ButtonLF50 value={'댓글'} style={btnStlyed} ></ButtonLF50>
        </div>
       </div>
