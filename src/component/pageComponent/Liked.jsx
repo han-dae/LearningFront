@@ -1,7 +1,7 @@
 import React ,{useState} from 'react'
 import { useEffect } from 'react'
 import FullHeart from "../../img/heart.png"
-import EmptyHeart from "../../img/heart0.png"
+import EmptyHeart from "../../img/heart00.png"
 import ApiService from '../ApiService'
 const Liked =({test_seq_id}) => {
 

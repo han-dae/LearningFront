@@ -12,8 +12,9 @@ const CommentList = ({ com }) => {
     }
     const idText = {
         color: 'black',
-        fontSize: '10px',
-        fontWeight: 'bold'
+        fontSize: '15px',
+        fontWeight: 'bold',
+        color:'white'
     }
 
     // console.log('이제 값을 꺼내오자 !');
@@ -47,6 +48,8 @@ const CommentList = ({ com }) => {
                 console.log("show() 에러", err);
             })
     }, []);
+    
+
     let Www11 = Object.values(Www);
     console.log("ㅋㅋ~",Www11);
     // console.log('값 가져왔니?');
