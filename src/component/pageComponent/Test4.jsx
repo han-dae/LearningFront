@@ -138,7 +138,7 @@ class Test4 extends Component {
               className="telNumber"
               style={{ width: "20vw", marginLeft: "30%", marginTop: "-21px" ,fontSize : "18px", color:'white'}}
             >
-              Tel : 000 - 1234 - 5678
+              
             </div>
             <div
               className="price"
