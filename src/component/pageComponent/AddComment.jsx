@@ -67,16 +67,16 @@ const AddComment = ({ handelComment }) => {
         <input className="cmt_content"
 
           style={{
-            //marginLeft: "53vw", 
-            //marginTop: "22.5vh",
+            // marginLeft: "53vw", 
+            // marginTop: "22.5vh",
             width: "660px",
             height:"3vh",
             backgroundColor: "#404040",
             borderRadius: 10,
-            marginTop: '26vh',
+          
             fontSize: '12px',
             color:'white',
-            
+            marginTop:'26vh'
           }}
           onChange={inputHaldle}
           value={value}
@@ -84,7 +84,9 @@ const AddComment = ({ handelComment }) => {
          >
 
         </input>
-       <div onClick={btnHandle} >
+       <div onClick={btnHandle}
+       style={{marginLeft:'34.8vw',
+       marginTop:'-3.8vh'}} >
         <ButtonLF50 value={'댓글'} style={btnStlyed} ></ButtonLF50>
        </div>
       </div>

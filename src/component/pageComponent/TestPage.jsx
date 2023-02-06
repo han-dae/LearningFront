@@ -78,7 +78,9 @@ const TestPage = () => {
             <Content>
                 <div className="left"
                     style={{
-                        marginTop:'20vh'
+                        position:'absolute',
+                        top:'2%',
+                        left:'-3%'
                     }} >
                     <div
                         className="video"
@@ -94,14 +96,14 @@ const TestPage = () => {
                         controls autoPlay muted playsInline
                         style={{
                             width: "700px",
-                            height: "53vh",
-                            marginTop: "-100px",
+                            height: "43vh",
+                            marginTop: "-6vh",
                         }}
                     ></video></div>
                     <div
                         style={{
-                            marginLeft: "15%",
-                            marginTop: "-7vh",
+                            marginLeft: "15vw",
+                            marginTop: "-13vh",
                             width: '700px',
                             backgroundColor: "#404040",
                             // borderRadius: 20,
@@ -159,7 +161,9 @@ const TestPage = () => {
 
                 <div className="right" 
                 style={{
-                    marginTop:'20vh'
+                    position:'absolute',
+                    top:'97%',
+                    right:'12%'
                 }}>
                     <div>
                     <div
@@ -169,7 +173,7 @@ const TestPage = () => {
                             height: "200px",
                             marginTop: "-78.5vh",
                             marginLeft: "53vw",
-                            backgroundColor: "gray",
+                            backgroundColor: "#404040",
                             borderRadius: 10,
                            // boxShadow: "5px 5px #B4B4B4"
                         }}> 
@@ -186,9 +190,10 @@ const TestPage = () => {
                         style={{
                             width: "500px",
                             height: "200px",
-                            marginTop: "-25vh",
-                            marginLeft: "67vw",
-                            backgroundColor: "gray",
+                            marginTop: "-21vh",
+                            marginBottom:'1vh',
+                            marginLeft: "64vw",
+                            backgroundColor: "#404040",
                             borderRadius: 10,
                             color:'white',
                             boxShadow: "5px 5px #B4B4B4"
@@ -258,7 +263,7 @@ const TestPage = () => {
                             borderRadius: 10,
                             overflowY: "scroll",
                             color:'white',
-                            boxShadow: "5px 5px #B4B4B4"
+                            boxShadow: "5px  #B4B4B4"
                         }}
                     >
                         <AddComment handelComment={handelComment} style={{ marginTop: '-3vh' }} />
