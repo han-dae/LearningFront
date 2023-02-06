@@ -86,9 +86,9 @@ class Test4 extends Component {
           <div
             style={{
               marginTop: "10px",
-              marginLeft: "19.5vw",
-              width: "27.5vw",
-              height: "10vh",
+              marginLeft: "20vw",
+              width: "35.7vw",
+              height: "5vh",
               paddingLeft: "10px",
               backgroundColor: "#404040",
               // borderRadius: 20,
@@ -97,23 +97,9 @@ class Test4 extends Component {
               boxShadow :"5px 5px #B4B4B4"
             }}
           >
-            <div
-              style={{
-                marginTop: "10px",
-                marginLeft: "19.5vw",
-                width: "27.5vw",
-                height: "10vh",
-                paddingLeft: "10px",
-                backgroundColor: "#404040",
-                // borderRadius: 20,
-                textAlign:'center',
-                color:'white',
-                boxShadow :"5px 5px #B4B4B4"
-              }}
-            >
-              <h1>모의 영상 생성</h1>
+              <h1>Check Video</h1>
             </div>
-          </div>
+          
           <div
             className="Chart01"
             style={{
@@ -129,13 +115,13 @@ class Test4 extends Component {
             width: "700px",
             height: "50vh",
             marginTop: "10px",
-            marginLeft: "-0.5vw",}}></video></div>
+            marginLeft: "0vw",}}></video></div>
           <div
             className="itemContents"
             style={{
               display: "inline-block",
               width: "700px",
-              marginLeft: "19.5vw",
+              marginLeft: "20vw",
               backgroundColor: "#404040",
               marginTop: "20px",
               borderRadius :"10px",
@@ -143,7 +129,7 @@ class Test4 extends Component {
             }}
           >
             <div className="nameSpace" style={{ marginTop: "-20px" , }}>
-              <p style={{fontSize :"24px", fontWeight :"bold", color:'white'}}>
+              <p style={{fontSize :"24px", fontWeight :"bold", color:'white', textAlign:'center'}}>
                 [뷰티쓱세일]공동판매구역 랑콤편! 전 구매고객 럭키 박스 증정
               </p>
             </div>
@@ -166,19 +152,44 @@ class Test4 extends Component {
               className="ScriptContents"
               style={{
                 width: "500px",
-                height: "480px",
+                height: "468px",
                 marginLeft: "1100px",
-                marginTop: "-590px",
+                marginTop: "-570px",
                 overflowY: "scroll",
-                backgroundColor: "greenyellow",
+                backgroundColor: "white",
+                border:'1px solid #404040'
               }}
             >{this.state.test_cuesheet}</div>
             <div style={{ marginLeft: "1140px" }}>
-              <h3>1. 작성했던 스크립트와 영상을 확인해보세요.</h3>
-              <h3>2. 모두 올바르게 작성되었다면 확인을 누르세요.</h3>
+             <div
+             style={{
+              position:"absolute",
+              color: "white",
+              padding: "5px 10px 5px 10px",
+              marginLeft: "-4vh",
+              marginTop: "1vh",
+              backgroundColor: "#404040",
+              boxShadow: "5px 5px #b4b4b4",
+              width:'25vw',
+              height:'2vh'
+            }}
+             ><h3 style={{marginTop:'0vh'}} >1. 작성했던 스크립트와 영상을 확인해보세요.</h3> </div> 
+             <div
+             style={{
+              position:"absolute",
+              color: "white",
+              padding: "5px 10px 5px 10px",
+              marginLeft: "-4vh",
+              marginTop: "7vh",
+              backgroundColor: "#404040",
+              boxShadow: "5px 5px #b4b4b4",
+              width:'25vw',
+              height:'2vh'
+            }}
+             > <h3 style={{marginTop:'0vh'}}>2. 모두 올바르게 작성되었다면 확인을 누르세요.</h3> </div>
             </div>
           </div>
-          <div style={{marginLeft :"1140px"}}>
+          <div style={{marginLeft :"1233px", marginTop:'12vh'}}>
             <form >
             <input type="checkbox" value="agree" name="agreement1" style={{marginLeft:"10px"}}/>개인정보 동의하십니까
             <input type="checkbox" value="agree" name="agreement2" style={{marginLeft:"60px"}}/>영상 정보 공개
@@ -195,24 +206,8 @@ class Test4 extends Component {
                   color: "black",
                 }}
               />{this.state.test_cuesheet}</Link>
-              <div style={{ marginLeft: "1140px" }}>
-                <h3>1. 작성했던 스크립트와 영상을 확인해보세요.</h3>
-                <h3>2. 모두 올바르게 작성되었다면 확인을 누르세요.</h3>
-              </div>
+        
            
-           
-            <Link to={"/test3"}>
-                <LeftCircleOutlined
-                  style={{
-                    position: "absolute",
-                    bottom: "50px",
-                    marginTop: "0px",
-                    left: "14%",
-                    fontSize: "300%",
-                    color: "black",
-                  }}
-                />
-              </Link>
             <Link to={"/testlist"}>
               <RightCircleOutlined
               type="Button"
@@ -221,22 +216,14 @@ class Test4 extends Component {
                 position: "absolute",
                 bottom: "50px",
                 marginTop: "0px",
-                right: "14%",
+                right: "10vw",
                 fontSize: "300%",
                 color: "black",
               }}
               />
               </Link>
             <div className="testBtn" style={{ position: "absolute", bottom:"2vh", right:"40vw" }}></div>
-            <Link to={"/test1"}>
-              <div className='test1'
-                style={{
-                  width: "5vw",
-                  marginLeft: "35vw",
-                  marginTop: "7vh",
-                  borderBottom: "4px solid gray"
-                }}></div>
-            </Link>
+           
           <Link to={"/testlist"}>
             <RightCircleOutlined
             type="Button"
@@ -245,7 +232,7 @@ class Test4 extends Component {
               position: "absolute",
               bottom: "50px",
               marginTop: "0px",
-              right: "14%",
+              right: "10vw",
               fontSize: "300%",
               color: "black",
             }}
