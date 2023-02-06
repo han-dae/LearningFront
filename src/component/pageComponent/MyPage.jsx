@@ -99,14 +99,20 @@ const MyPage = (props) => {
   })
   let comList = Object.values(com)
   console.log('comlist확인',comList);
-  const removeCom = (cmt_seq) => { // 삭제
-    // setCom(com.filter(com => com.user_id !== user_id));
+  const removeCom = (e,cmt_seq) =>{ // 삭제
+    e.preventDefault();
+    console.log(cmt_seq);
+    //setCom(com.filter(com => com.cmt_seq !== cmt_seq));
     ApiService.commentDelete(cmt_seq)
     .then((res) =>{
         console.log("삭제 완료");
-    })
+            window.location.reload();
+      
+            //alert('다시 시도하세요');
+        }
+    )
     .catch((err) => {
-        console.log("updateMember() 에러", err);
+        console.log('삭제에러',err);
       });
   };
   
@@ -264,34 +270,50 @@ const MyPage = (props) => {
             height: "30vh",
             paddingLeft: "10px",
             backgroundColor: "lightgray",
-
+            overflowY:'scroll',
             borderRadius: 20,
           }}
         >
           <div style={{marginLeft:'28.5vw'}} >
+          <table
+                style={{
+                  borderSpacing: "10px",
+                  marginTop: "-2vh",
+                  marginLeft: "-1vw",
+                }}
+              >
+                
             {comList.map((value,idx) => (
-            //   <div key={`${value.user_id}`}>
-            <div key={idx}>
-                <div>
+                //   <div key={`${value.user_id}`}>
+                
+                <div value={`${value.cmt_seq}`}
+                style={{marginLeft:'-28vw',paddingTop:'20px',}}>
+
+                  {value.cmt_content}
+                <div style={{marginLeft :'26.5vw',
+            marginTop:'-1.5vw'}} >
                   {/* <p>{com.user_id}</p> */}
+                  <div onClick={(e)=>removeCom(e,value.cmt_seq)}>
                   <ButtonLF50
-                    onClick={() => removeCom(value.cmt_seq)}
                     style={{marginLeft:'28.5vw'}} 
                     value={'Del'}>
                   </ButtonLF50>
+                    </div>
                 </div>
-                {value.cmt_content}
               </div>
             ))}
+          </table>
           </div>
           <div
             className="com_edit"
             style={{
-              display: "inline-block",
-              width: "100%",
-              marginTop: "-10px",
+                display: "inline-block",
+                width: "100%",
+                marginTop: "-10px",
             }}
-          ></div>
+            >
+
+            </div>
         </div>
         <div>
           <div
@@ -364,7 +386,6 @@ const MyPage = (props) => {
                 <div key={idx}
                   style={{
                     display: "inline-block",
-                    backgroundColor: "white",
                     width: "300px",
                     height: "250px",
                     marginTop: "25px",
@@ -373,10 +394,17 @@ const MyPage = (props) => {
                     marginRight: "20px",
                   }}
                 >
+                    {value.test_video}
+                    <video src={`${process.env.PUBLIC_URL}/file/${value.test_video_realname}`}
+                controls
+                autoPlay
+                muted
+                playsInline
+                style={{
+                    width: "300px",
+                    height: "250px",
+                }}></video>
 
-                  fefswefsf
-
-                  {value.test_seq}
 
                 </div>
               ))}

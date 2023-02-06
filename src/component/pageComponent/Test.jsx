@@ -126,7 +126,7 @@ const TestComponent = () => {
                 label: "의자",
               },
             ]}
-            style={{ width: "31.5vw", marginLeft: "20vw", marginTop: "10px" }}
+            style={{ width: "31.1vw", marginLeft: "20vw", marginTop: "10px" }}
           />
         </div>
 

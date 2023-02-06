@@ -31,7 +31,7 @@ const Chart =props=> {
  console.log("시발",props.data);
     return (
       <LineChart
-        width={600}
+        width={660}
         height={300}
         data={Data}
         margin={{
