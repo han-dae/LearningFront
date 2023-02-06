@@ -56,7 +56,15 @@ const MyPage = (props) => {
       .catch((err) => {
         console.log("loadMyTest 에러", err);
       });
-  }, []);
+    ApiService.loadMyComment(sessionStorage.getItem('info'))
+    .then((res) => {
+        console.log('댓글 확인',res.data);
+        setCom(res.data);
+    })
+    .catch((err) => {
+        console.log("loadMyTest 에러", err);
+      });
+    }, []);
 
   let testList = Object.values(MyTest);
   const navigate = useNavigate();
@@ -87,13 +95,21 @@ const MyPage = (props) => {
     user_id: "",
     cmt_content: "",
     cmt_dt: "",
+    cmt_seq:""
   })
   let comList = Object.values(com)
-
-  const removeCom = (user_id) => { // 삭제
-    setCom(com.filter(com => com.user_id !== user_id));
+  console.log('comlist확인',comList);
+  const removeCom = (cmt_seq) => { // 삭제
+    // setCom(com.filter(com => com.user_id !== user_id));
+    ApiService.commentDelete(cmt_seq)
+    .then((res) =>{
+        console.log("삭제 완료");
+    })
+    .catch((err) => {
+        console.log("updateMember() 에러", err);
+      });
   };
-
+  
 
   // 내 영상 리스트
   const platform = {
@@ -253,18 +269,18 @@ const MyPage = (props) => {
           }}
         >
           <div style={{marginLeft:'28.5vw'}} >
-            {comList.map((value, idx) => (
-              <div key={`${com.user_id}`}>
+            {comList.map((value,idx) => (
+            //   <div key={`${value.user_id}`}>
+            <div key={idx}>
                 <div>
-                  <p>{com.user_id}</p>
+                  {/* <p>{com.user_id}</p> */}
                   <ButtonLF50
-                    onClick={() => removeCom(com.user_id)}
+                    onClick={() => removeCom(value.cmt_seq)}
                     style={{marginLeft:'28.5vw'}} 
                     value={'Del'}>
-                    
                   </ButtonLF50>
                 </div>
-                {com.cmt_content}
+                {value.cmt_content}
               </div>
             ))}
           </div>

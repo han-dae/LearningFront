@@ -99,7 +99,7 @@ const TestComponent = () => {
               marginTop :"-20px"
             }}
           >
-            <h1> Ex) Cue Sheet</h1>
+            <h1> Show Cue Sheet</h1>
             
           </div>
         </div>
@@ -126,7 +126,7 @@ const TestComponent = () => {
                 label: "의자",
               },
             ]}
-            style={{ width: "20vw", marginLeft: "20vw", marginTop: "10px" }}
+            style={{ width: "31.5vw", marginLeft: "20vw", marginTop: "10px" }}
           />
         </div>
 
@@ -138,7 +138,7 @@ const TestComponent = () => {
             marginTop: "10px",
             marginLeft: "20vw",
             opacity: "1",
-            border: "5px solid #404040",
+            border: "1px solid #404040",
             borderRight: "none",
             backgroundColor: "white",
             overflowY: "scroll",
@@ -160,8 +160,8 @@ const TestComponent = () => {
               padding: "5px 10px 5px 10px",
               // borderRadius: "10px",
               display: "inline-block",
-              marginLeft: "50px",
-              marginTop: "12.5vh",
+              marginLeft: "-15.5vw",
+             //  marginTop: "12.5vh",
               fontSize: "18px",
               fontWeight: "bold",
               backgroundColor: "#404040",
@@ -208,7 +208,7 @@ const TestComponent = () => {
 
         <div
           className="testBtn"
-          style={{ position: "absolute", bottom: "2vh", right: "36vw" }}
+          style={{ position: "absolute", bottom: "2vh", right: "40vw" }}
         >
           <Link to={"/test1"}>
             <div
