@@ -86,7 +86,7 @@ const TestPage = () => {
                         className="video"
                         style={{
                             width: "700px",
-                            height: "50vh",
+                            height: "52vh",
                             marginTop: "20vh",
                             marginLeft: "15vw",
                             backgroundColor: "white",
@@ -96,14 +96,14 @@ const TestPage = () => {
                         controls autoPlay muted playsInline
                         style={{
                             width: "700px",
-                            height: "43vh",
+                            height: "45vh",
                             marginTop: "-6vh",
                         }}
                     ></video></div>
                     <div
                         style={{
                             marginLeft: "15vw",
-                            marginTop: "-13vh",
+                            marginTop: "-5vh",
                             width: '700px',
                             backgroundColor: "#404040",
                             // borderRadius: 20,
