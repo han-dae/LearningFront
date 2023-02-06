@@ -98,7 +98,7 @@ const TestPage = () => {
                 <div
                     style={{
                         marginLeft: "13vw",
-                         marginTop: "-6vh",
+                         marginTop: "-7vh",
                         width: '700px',
                         backgroundColor: "#404040",
                         // borderRadius: 20,
@@ -173,7 +173,7 @@ const TestPage = () => {
                         <img src={`${process.env.PUBLIC_URL}/file/${TestDetail.test_photo}`}
                             style={{
                                 width: "200px",
-                                height: "210px"
+                                height: "200px"
                             }}
                             alt="" />
                     </div>
@@ -183,7 +183,7 @@ const TestPage = () => {
                         style={{
                             width: "510px",
                             height: "200px",
-                            marginTop: "-22vh",
+                            marginTop: "-23vh",
                             marginBottom: '1vh',
                             marginLeft: "61vw",
                             backgroundColor: "#404040",
