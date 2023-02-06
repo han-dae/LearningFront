@@ -269,10 +269,17 @@ const MyPage = (props) => {
           }}
         >
           <div style={{marginLeft:'28.5vw'}} >
+          
+                
             {comList.map((value,idx) => (
-            //   <div key={`${value.user_id}`}>
-            <div key={idx}>
-                <div>
+                //   <div key={`${value.user_id}`}>
+                
+                <div 
+                style={{marginLeft:'-28vw',paddingTop:'20px',}}>
+
+                  {value.cmt_content}
+                <div style={{marginLeft :'26.5vw',
+            marginTop:'-1.5vw'}} >
                   {/* <p>{com.user_id}</p> */}
                   <ButtonLF50
                     onClick={() => removeCom(value.cmt_seq)}
@@ -283,6 +290,7 @@ const MyPage = (props) => {
                 {value.cmt_content}
               </div>
             ))}
+          
           </div>
           <div
             className="com_edit"

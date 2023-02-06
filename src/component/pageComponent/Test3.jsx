@@ -269,7 +269,7 @@ const TestComponent3 = () => {
             className="title"
             placeholder="영상의 제목을 입력해주세요."
             style={{
-              width: "28vw",
+              width: "31vw",
               padding: "10px 10px 10px 10px",
               
               boxSizing: "border-box",
@@ -285,7 +285,7 @@ const TestComponent3 = () => {
             placeholder="가격을 책정해주세요."
             style={{
               marginTop: "25px",
-              width: "28vw",
+              width: "31vw",
               padding: "10px 10px 10px 10px",
               marginBottom : "20px",
               boxSizing: "border-box",
@@ -337,7 +337,7 @@ const TestComponent3 = () => {
               width:'30vw',
               height:'2vh'
             }}>
-              <h3 style={{marginTop:'0vh'}}>1.영상과 이미지를 업로드하세요.</h3></div>
+              <h4 style={{marginTop:'0vh'}}>1.영상과 이미지를 업로드하세요.</h4></div>
             <div
             style={{
               position:"absolute",
@@ -349,7 +349,7 @@ const TestComponent3 = () => {
               boxShadow: "5px 5px #b4b4b4",
               width:'30vw',
               height:'2vh'
-            }}><h3 style={{marginTop:'0vh'}}>2.라이브 커머스의 제목과 가격을 입력하세요.</h3></div>
+            }}><h4 style={{marginTop:'0vh'}}>2.라이브 커머스의 제목과 가격을 입력하세요.</h4></div>
             <div
             style={{
               position:"absolute",
@@ -361,7 +361,7 @@ const TestComponent3 = () => {
               boxShadow: "5px 5px #b4b4b4",
               width:'30vw',
               height:'2vh'
-            }}><h3 style={{marginTop:'0vh'}}>3.라이브 커머스 영상을 업로드해주세요.</h3></div>
+            }}><h4 style={{marginTop:'0vh'}}>3.라이브 커머스 영상을 업로드해주세요.</h4></div>
            {/* <div
             style={{
               position:"absolute",

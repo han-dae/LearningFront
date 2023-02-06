@@ -173,7 +173,7 @@ class Test4 extends Component {
               width:'25vw',
               height:'2vh'
             }}
-             ><h3 style={{marginTop:'0vh'}} >1. 작성했던 스크립트와 영상을 확인해보세요.</h3> </div> 
+             ><h4 style={{marginTop:'0vh'}} >1. 작성했던 스크립트와 영상을 확인해보세요.</h4> </div> 
              <div
              style={{
               position:"absolute",
@@ -186,12 +186,12 @@ class Test4 extends Component {
               width:'25vw',
               height:'2vh'
             }}
-             > <h3 style={{marginTop:'0vh'}}>2. 모두 올바르게 작성되었다면 확인을 누르세요.</h3> </div>
+             > <h4 style={{marginTop:'0vh'}}>2. 모두 올바르게 작성되었다면 확인을 누르세요.</h4> </div>
             </div>
           </div>
-          <div style={{marginLeft :"1233px", marginTop:'12vh'}}>
+          <div style={{marginLeft :"1280px", marginTop:'12vh'}}>
             <form >
-            <input type="checkbox" value="agree" name="agreement1" style={{marginLeft:"10px"}}/>개인정보 동의하십니까
+            <input type="checkbox" value="agree" name="agreement1" style={{marginLeft:"10px"}}/>개인정보 동의
             <input type="checkbox" value="agree" name="agreement2" style={{marginLeft:"60px"}}/>영상 정보 공개
             </form>
           </div>
