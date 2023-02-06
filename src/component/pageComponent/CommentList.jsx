@@ -52,7 +52,7 @@ const CommentList = ({ com }) => {
     // console.log('값 가져왔니?');
 
     return (
-        <div style={{ position :"relative",height :"200px",overflowY :"scroll", padding :"10px 20px 10px 20px"}}>
+        <div style={{ position :"relative",height :"200px",padding :"10px 20px 10px 20px", color:'white'}}>
             {Www11.map((item, idx) => (
                 <p key={'num' + idx + item.cmt_content}>
                     <div style={idText}>{item.user_id}</div>
