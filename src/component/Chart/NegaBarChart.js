@@ -6,8 +6,9 @@ import ApiService from '../ApiService';
 
 
 
-const LFBar = props => {
-  const [PosiData, setPosiData] = useState({
+const NegaLFBar = props => {
+  
+  const [NegaData, setNegaData] = useState({
     category_seq: "",
     tfidf_category: "",
     tfidf_keyword: "",
@@ -15,35 +16,35 @@ const LFBar = props => {
     tfidf_seq: "",
     tfidf_value: "",
   });
- 
 
 
 
   useEffect(() => {
-   
-    ApiService.posiBarChart(props.data)
+    ApiService.negaBarChart(props.data)
       .then((res1) => {
         console.log("이거야 이거 찾아", props.data);
         console.log(res1.status);
-        setPosiData(res1.data);
+        setNegaData(res1.data);
 
 
 
       })
       .catch((err) => {
-        console.log("posiBar) 에러", err);
+        console.log("negaBar) 에러", err);
       });
+   
   }, [props]);
   console.log("시발", props.data);
   return (
    
-    <BarChart  width={600} height={300} data={PosiData} style={{float :"right"}}>
-      <CartesianGrid strokeDasharray="2 2" />
+    <BarChart width={600} height={300} data={NegaData}>
+      <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="tfidf_keyword" />
       <YAxis />
       <Tooltip />
- 
-      <Bar dataKey="tfidf_value" fill="red" />
+
+      <Bar dataKey="tfidf_value" fill="blue" />
+     
     </BarChart>
    
 
@@ -51,4 +52,4 @@ const LFBar = props => {
 }
 
 
-export default LFBar
+export default NegaLFBar

@@ -6,6 +6,7 @@ const GUIDE_API_BASE_URL = "http://localhost:8081/users/guide";
 const COMMENT_API_BASE_URL = "http://localhost:8081/users/comment";
 const TFIDF_API_BASE_URL = "http://localhost:8081/users/tfidf";
 const STT_API_BASE_URL = "http://localhost:8081/users/sttchart";
+const RECOMMEND_API_BASE_URL = "http://localhost:8081/users/recommend"
 class ApiService {
   fetchUser() {
     return axios.get(USER_API_BASE_URL);
@@ -51,7 +52,6 @@ class ApiService {
     return axios.get(COMMENT_API_BASE_URL + "/" +test_seq);
   }
 
-
   recommendADD(test_seq_id){
     console.log('api 들어옴 좋아요 넣을거야')
     return axios.post(RECOMMEND_API_BASE_URL+"/add",test_seq_id);
@@ -81,10 +81,14 @@ class ApiService {
     console.log("api 이동 ",TEST_API_BASE_URL + "/" + test_seq);
     return axios.get(TEST_API_BASE_URL + "/" + test_seq);
   }
-  // LikeTest(user_id){
-  //   console.log("좋아요를 늘렸나?");
-  //   return axios.get(TEST_API_BASE_URL + "/LikeCount", user);
-  // }
+ posiBarChart(category_seq){
+  console.log("api 이동", category_seq);
+  return axios.post(TFIDF_API_BASE_URL + "/barChart", category_seq);
+ }
+ negaBarChart(category_seq){
+  console.log("nega", category_seq);
+  return axios.post(TFIDF_API_BASE_URL + "/NegabarChart", category_seq);
+ }
 }
 
 export default new ApiService();
