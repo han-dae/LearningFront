@@ -197,6 +197,7 @@ const TestPage = () => {
                             borderRadius: 10,
                             color:'white',
                             boxShadow: "5px 5px #B4B4B4",
+                            whiteSpace: "pre-wrap"
                             
                         }}
                     >{TestDetail.test_content}</div>
