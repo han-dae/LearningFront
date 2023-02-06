@@ -7,7 +7,7 @@ const Logininfo = () => {
   const logout = () => {
     console.log('로그아웃클릭')
     sessionStorage.clear();
-    window.location.reload();
+    window.location.replace("/")
 
   }
   const info1 = sessionStorage.getItem('info');
