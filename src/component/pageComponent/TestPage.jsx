@@ -181,26 +181,26 @@ const TestPage = () => {
                     <div
                         className="test_content"
                         style={{
-                            width: "500px",
+                            width: "510px",
                             height: "200px",
-                            marginTop: "-21vh",
+                            marginTop: "-22vh",
                             marginBottom: '1vh',
                             marginLeft: "61vw",
                             backgroundColor: "#404040",
                             borderRadius: 10,
                             color: 'white',
-                            padding:'5px'
+                           // padding:'5px'
                             // boxShadow: "5px 5px #B4B4B4",
 
                         }}
-                    >{TestDetail.test_content}</div>
+                    ><p style={{padding:'1vw'}}>{TestDetail.test_content}</p></div>
 
                     <div
                         className="test_cuesheet"
                         style={{
                             fontSize: "18px",
                             marginLeft: "50vw",
-                            width: "713px",
+                            width: "723px",
                             height: "20vh",
                             backgroundColor: "#404040",
                             borderRadius: 10,
@@ -208,10 +208,10 @@ const TestPage = () => {
                             // boxShadow: "5px 5px #B4B4B4",
                             overflowY: 'scroll',
                             whiteSpace: "pre-wrap",
-                            padding:'5px'
+                            
                         }}
                     >
-                        {TestDetail.test_cuesheet}
+                       <p style={{paddingLeft:'1vw'}}> {TestDetail.test_cuesheet} </p>
                     </div>
 
                     {/*} <div
