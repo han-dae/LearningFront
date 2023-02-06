@@ -7,6 +7,7 @@ import ApiService from "../ApiService";
 
 import Banner0 from "../../img/banner0.png";
 import axios from "axios";
+import { ButtonLF100 } from "./ButtonLF";
 
 const TestList = () => {
   const clicked = () => {
@@ -73,29 +74,46 @@ const TestList = () => {
             backgroundColor: "white",
           }}
         >
-          <div className="categoryEx">
-            <h1>모의 테스트 리스트</h1>
-
+          <div className="categoryEx"
+            style={{
+              marginTop: "-6vh",
+              marginLeft: "7vw",
+              width: "60vw",
+              height: "5vh",
+              paddingLeft: "10px",
+              backgroundColor: "#404040",
+              // borderRadius: 20,
+              textAlign: 'center',
+              color: 'white',
+              boxShadow: "5px 5px #B4B4B4"
+            }} >
+            <h1>Video List</h1>
+            {/*} <div
+            style={{
+              marginTop: "4vh",
+              marginLeft: "0vw",
+              width: "35.7vw",
+              height: "5vh",
+              paddingLeft: "10px",
+              backgroundColor: "#404040",
+              // borderRadius: 20,
+              textAlign:'center',
+              color:'white',
+              boxShadow :"5px 5px #B4B4B4"
+            }}>
             <h3 style={{ marginTop: "-25px" }}>
               : 사용자들이 직접 시연한 영상을 볼 수 있습니다.
             </h3>
+          </div>*/}
           </div>
 
           <Link to={"/test1"}>
-            <Button
-              style={{
-                borderRadius: "20px",
-                width: "100px",
-                float: "right",
-                marginTop: "-50px",
-                marginRight: "0%",
-                backgroundColor: "white",
-                color: "black",
-                boxShadow: "2px 2px 1px black",
-              }}
-            >
-              업로드
-            </Button>
+            <div style={{
+            marginTop:'5vh',
+            marginLeft:'68vw'
+            }}>
+            <ButtonLF100 value={'UPLOAD'}></ButtonLF100>
+            </div>
           </Link>
           <div
             className="videoSpace"
@@ -108,6 +126,7 @@ const TestList = () => {
               display: "inline-block",
               marginBottom: "40px",
               overflow: "visible",
+              marginTop: '5vh'
             }}
           >
             {testList.map((value, idx) => (
@@ -163,14 +182,14 @@ const TestList = () => {
                       {/*  <div className="content" style={{ fontSize: "14px" }}>
                         {value.test_content}
                       </div>
-*/}
+                      */}
                       <p
                         style={{
                           fontSize: "20px",
                           height: "45px",
                           fontWeight: "bold",
                           marginTop: "0px",
-                          color :"white"
+                          color: "white"
                         }}
                       >
                         {value.test_title}
@@ -215,7 +234,7 @@ const TestList = () => {
         </div>
       </div>
 
-      {/**/}
+     
     </div>
   );
 };

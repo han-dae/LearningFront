@@ -22,7 +22,7 @@ const TestPage = () => {
         test_video: "",
         test_video_realname: "",
         user_id: "",
-        test_content:""
+        test_content: ""
     });
 
     {
@@ -40,8 +40,8 @@ const TestPage = () => {
     useEffect(() => {
         ApiService.detailTest(test_seq)
             .then((res) => {
-                console.log('디테일',res.status);
-                console.log('디텔데터',res.data,"seq타입",typeof(test_seq));
+                console.log('디테일', res.status);
+                console.log('디텔데터', res.data, "seq타입", typeof (test_seq));
                 setTestDetail(res.data);
             })
             .catch((err) => {
@@ -50,8 +50,8 @@ const TestPage = () => {
     }, []);
     let my_id = sessionStorage.getItem('info');
     const test_seq_id = {
-        test_seq : test_seq,
-        user_id : my_id
+        test_seq: test_seq,
+        user_id: my_id
     }
     // 댓글 작성
     const [com, setCom] = useState([]);
@@ -60,13 +60,13 @@ const TestPage = () => {
         //console.log("handleComment", newCom);
         let comList = Object.values(com)
         let user_id = sessionStorage.getItem('info')
-       // console.log('야야야야야야야 나와라 좀 ')
+        // console.log('야야야야야야야 나와라 좀 ')
         let currentTime = new Date().toLocaleTimeString();
         setCom(
             comList.concat({
                 user_id: user_id,
-                cmt_content : newCom,
-                cmt_dt : currentTime,
+                cmt_content: newCom,
+                cmt_dt: currentTime,
             })
         );
     };
@@ -76,67 +76,92 @@ const TestPage = () => {
             <ScrollBottom />
             <MainHeader />
             <Content>
-                <div className="right">
+                <div className="left"
+                    style={{
+                        marginTop:'20vh'
+                    }} >
                     <div
                         className="video"
                         style={{
                             width: "700px",
                             height: "50vh",
-                            marginTop: "82px",
+                            marginTop: "20vh",
                             marginLeft: "15vw",
                             backgroundColor: "white",
-                            borderRadius: 10,
+                           // borderRadius: 10,
                         }}
                     ><video src={`${process.env.PUBLIC_URL}/file/${TestDetail.test_video_realname}`}
-                    controls autoPlay muted playsInline
-                    style={{
-                        width: "700px",
-                        height: "75vh",
-                        marginTop:"-100px",
-                    }}
+                        controls autoPlay muted playsInline
+                        style={{
+                            width: "700px",
+                            height: "53vh",
+                            marginTop: "-100px",
+                        }}
                     ></video></div>
-                    <div style={{ marginLeft: "15%",marginTop:"-30px" }}>
+                    <div
+                        style={{
+                            marginLeft: "15%",
+                            marginTop: "-7vh",
+                            width: '700px',
+                            backgroundColor: "#404040",
+                            // borderRadius: 20,
+                            // textAlign: 'center',
+                            color: 'white',
+                            boxShadow: "5px 5px #B4B4B4"
+                        }}>
                         <div
-                            className="nameSpace"
-                            style={{ marginTop: "-15px", marginleft: "15%" }}
+                            className="test_title"
+                            style={{ marginTop: "-15px", marginleft: "15%", padding:'3px' }}
                         >
-                            <p style={{ fontSize: "24px" }}>{TestDetail.test_title}</p>
+                            <p style={{ fontSize: "24px", marginTop:'0vh' }}>{TestDetail.test_title}</p>
                         </div>
 
                         <div
-                            className="userName"
-                            style={{ fontSize: "18px", marginleft: "35%", marginTop: "-1%" }}
+                            className="user_id"
+                            style={{ fontSize: "16px", marginleft: "5%", marginTop: "-4%", padding:'3px' }}
                         >
                             작성자 : {TestDetail.user_id}
                         </div>
                         <div
-                            className="telNumber"
+                            className="reg_dt"
                             style={{
                                 width: "20vw",
-                                marginLeft: "10%",
+                                marginLeft: "32vw",
                                 marginTop: "-1.5%",
                                 fontSize: "18px",
+                                padding:'3px',
+                                
                             }}
                         >
                             {TestDetail.reg_dt}
                         </div>
                         <div
-                            className="price"
+                            className="test_price"
                             style={{
                                 width: "20vw",
-                                marginLeft: "37%",
-                                marginTop: "-1.5%",
+                                marginLeft: "29vw",
+                                // marginTop: "-1.5%",
                                 fontSize: "25px",
                                 fontFamily: "bold",
+                                padding:'3px'
                             }}
                         >
                             {TestDetail.test_price} 원
                         </div>
                     </div>
-                        <Liked test_seq_id={test_seq_id}/>
+                    <div className="liked"
+                    style={{
+                        marginTop:'-14vh',
+                        marginLeft:'49vw'}}>
+                    <Liked test_seq_id={test_seq_id}  />
+                    </div>
                 </div>
 
-                <div className="left">
+                <div className="right" 
+                style={{
+                    marginTop:'20vh'
+                }}>
+                    <div>
                     <div
                         className="img1"
                         style={{
@@ -146,10 +171,18 @@ const TestPage = () => {
                             marginLeft: "53vw",
                             backgroundColor: "gray",
                             borderRadius: 10,
+                           // boxShadow: "5px 5px #B4B4B4"
+                        }}> 
+                        <img src={`${process.env.PUBLIC_URL}/file/${TestDetail.test_photo}`}
+                        style={{
+                            width: "200px",
+                            height: "200px"
                         }}
-                    > <img src={`${process.env.PUBLIC_URL}/file/${TestDetail.test_photo}`} alt="" /> </div>
-                     <div
-                        className="img2"
+                        alt="" /> 
+                    </div>
+
+                    <div
+                        className="test_content"
                         style={{
                             width: "500px",
                             height: "200px",
@@ -157,24 +190,29 @@ const TestPage = () => {
                             marginLeft: "67vw",
                             backgroundColor: "gray",
                             borderRadius: 10,
+                            color:'white',
+                            boxShadow: "5px 5px #B4B4B4"
                         }}
-                    >{TestDetail.test_content}</div> 
+                    >{TestDetail.test_content}</div>
+
                     <div
-                        className="prod_info"
+                        className="test_cuesheet"
                         style={{
                             fontSize: "18px",
                             marginLeft: "53vw",
-                            
+
                             width: "713px",
                             height: "20vh",
-                            backgroundColor: "#FFECEC",
+                            backgroundColor: "#404040",
                             borderRadius: 10,
+                            color:'white',
+                            boxShadow: "5px 5px #B4B4B4"
                         }}
                     >
                         {TestDetail.test_cuesheet}
                     </div>
 
-                    <div
+                   {/*} <div
                         className="price"
                         style={{
                             width: "20vw",
@@ -185,7 +223,7 @@ const TestPage = () => {
                         }}
                     >
                         가격 : {TestDetail.test_price} 원
-                    </div>
+                    </div> */}
 
                     {/* <div className="comment" 
                         style={{
@@ -211,19 +249,22 @@ const TestPage = () => {
                             </input>
                         </div>*/}
                     <div
-                        style={{  
+                        style={{
                             marginLeft: "53vw",
                             marginTop: "1vh",
-                            width: "700px",
+                            width: "713px",
                             height: "25vh",
-                            backgroundColor: "#FFECEC",
+                            backgroundColor: "#404040",
                             borderRadius: 10,
                             overflowY: "scroll",
+                            color:'white',
+                            boxShadow: "5px 5px #B4B4B4"
                         }}
                     >
-                        <AddComment handelComment={handelComment} style={{marginTop:'-3vh'}}/>
+                        <AddComment handelComment={handelComment} style={{ marginTop: '-3vh' }} />
                         <CommenList com={com} />
                     </div>
+                </div>
                 </div>
 
 
