@@ -45,7 +45,7 @@ const TestList = () => {
 
   //  }
   useEffect(() => {
-    window.location.reload();
+    
     ApiService.loadTest()
       .then((res) => {
         console.log(res.status);
