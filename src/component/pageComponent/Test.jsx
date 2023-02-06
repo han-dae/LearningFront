@@ -19,8 +19,8 @@ const TestComponent = () => {
 
   const WordCloud = [
     { id: 0, url: WordCloud0 },
-    { id: 1, url: WordCloud1 },
-    { id: 2, url: WordCloud2 },
+    { id: 1, url: WordCloud2 },
+    { id: 2, url: WordCloud1 },
   ];
 
   const [Guide, setGuide] = useState({
@@ -42,7 +42,7 @@ const TestComponent = () => {
         console.log(res.status);
         console.log(res.data);
         setGuide(res.data);
-        console.log(res.data[0]);
+        console.log("워클", res.data[0].category_seq);
         setCategory( res.data[0].category_seq);
         
       })
