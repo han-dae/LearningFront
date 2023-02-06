@@ -40,7 +40,7 @@ const AddComment = ({ handelComment }) => {
                 console.log("btnHandle() 에러", err);
             });
 
-       // window.location.reload(); // 새로고침
+       window.location.reload(); // 새로고침
 
   }
 
