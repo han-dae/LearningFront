@@ -5,6 +5,7 @@ import "./Login.css";
 import MainHeader from "./Header";
 import styles from "./Login.css";
 import { Button } from "antd";
+import { useNavigate } from "react-router-dom";
 class Join extends Component {
   constructor(props) {
     super(props);
@@ -35,12 +36,19 @@ class Join extends Component {
     ApiService.addUser(user)
       .then((res) => {
         console.log("완료");
+        if(res.data=='su'){
+          alert('회원가입 완료');
+          window.location.replace("/Login")
+        }else{
+          alert('회원가입 실패');
+          window.location.reload()
+        }
       })
       .catch((err) => {
         console.log("saveUser() 에러", err);
       });
 
-    window.location.reload();
+     
   };
 
   render() {
