@@ -379,7 +379,6 @@ const MyPage = (props) => {
                 <div key={idx}
                   style={{
                     display: "inline-block",
-                    backgroundColor: "white",
                     width: "300px",
                     height: "250px",
                     marginTop: "15px",
