@@ -1,11 +1,8 @@
 .slick-slider .banner {
     width:95%;
     height: 100%;
+    opacity: 0.4;
 
-
-;
-    opacity: 0.5;
-margin-top: -10px;
     
 
 }
@@ -13,8 +10,8 @@ margin-top: -10px;
 .slick-center {
 
     opacity: 1;
-    padding: 10px;
-    z-index: 5000;
+   margin: 10px; 
+
 }
 
 .slick-center .banner {
@@ -31,8 +28,9 @@ margin-top: -10px;
 }
 
 .slick-track {
-    margin: auto;
-    height: 180px;
+    
+    margin: -10px;
+    height: 200px;
 }
 
 
