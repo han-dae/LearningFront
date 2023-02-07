@@ -23,12 +23,12 @@ const Logininfo = () => {
   } else {
     return (
       <div>
-        <div style={{ float: "right", marginTop: "-40px", marginRight: "12%" }}>
+        <div style={{ float: "right", marginTop: "-40px", marginRight: "10%" }}>
           <Link to="/MyPage">
             <ButtonLF100 value={'MY PAGE'} />
           </Link>
         </div>
-        <div style={{ float: "right", marginTop: "-40px", marginRight: "18%" }} onClick={logout}>
+        <div style={{ float: "right", marginTop: "-40px", marginRight: "17%" }} onClick={logout}>
           <ButtonLF100 value={'LOGOUT'} />
         </div>
       </div>

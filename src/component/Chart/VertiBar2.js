@@ -41,10 +41,10 @@ export default class Example extends PureComponent {
                     height={100}
                     data={data}
                     margin={{
-                        top: 20,
-                        right: 20,
-                        bottom: 20,
-                        left: 20,
+                        top: 27,
+                        right: 27,
+                        bottom: 27,
+                        left: 27,
                     }}
                     
                     >

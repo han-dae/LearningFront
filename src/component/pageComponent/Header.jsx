@@ -36,18 +36,18 @@ function MainHeader() {
           <div
             style={{
               backgroundImage: `url(${Logo6})`,
-              backgroundSize: "180px",
+              backgroundSize: "210px",
               backgroundRepeat: "no-repeat",
               display: "inline-block",
-              width: "200px",
+              width: "240px",
               height: "67px",
-              marginLeft: "8%",
+              marginLeft: "45%",
             }}
           ></div>
         </Link>
-        <div style={{ marginLeft :"340px",marginTop : "-70px",width: "50%", height: "80%" }} className="categoryList">
-          <button onClick={clicked} style={{color :"black",border:"none",backgroundColor:"#404040"}}><div style={{display :"inline-block", margin : "10px 20px 10px 20px" ,borderBottom : "4px solid #0d0d73",fontSize :"18px" ,fontWeight :"bold",paddingBottom : "10px",color :"white"}}>TEST</div></button>
-          <Link to={"/testlist"} style={{color :"black"}}><div style={{display :"inline-block",margin : "10px 20px 10px 20px", borderBottom : "4px solid #0d0d73",paddingBottom : "10px",fontSize :"18px" ,fontWeight :"bold", color :"white"}}>TEST LIST</div></Link>
+        <div style={{ marginLeft :"180px",marginTop : "-70px",width: "50%", height: "80%",fontFamily:'S-CoreDream-3Light' }} className="categoryList">
+          <button onClick={clicked} style={{color :"black",border:"none",backgroundColor:"#404040"}}><div style={{display :"inline-block", margin : "15px 40px 10px 20px" ,fontSize :"18px" ,fontFamily:'S-CoreDream-3Light',fontWeight :"bold",paddingBottom : "10px",color :"white", fontStyle :"italic", textShadow :"-3px -3px 1px #0d0d73", fontSize :"20px"}}>TEST</div></button>
+          <Link to={"/testlist"} style={{color :"black"}}><div style={{display :"inline-block",margin : "10px 20px 10px 20px",paddingBottom : "5px",fontSize :"18px" ,fontWeight :"bold", color :"white", fontStyle :"italic", fontSize :"20px",textShadow :"-3px -3px 1px #0d0d73"}}>TEST LIST</div></Link>
         </div>
         <div style={{ position: "relative", right: "0px" }}>
           <Logininfo></Logininfo>
