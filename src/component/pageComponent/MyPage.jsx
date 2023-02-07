@@ -287,7 +287,6 @@ const MyPage = (props) => {
                     value={'Del'}>
                   </ButtonLF50>
                 </div>
-                {value.cmt_content}
               </div>
             ))}
           
