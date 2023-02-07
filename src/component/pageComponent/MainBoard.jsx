@@ -46,7 +46,7 @@ const MainBoard = () => {
             height: 400
           }}>
             <div style={{width :"300px", marginTop :"-20px",marginLeft :"200px",height :"40px", borderRadius :"30px", boxShadow :"3px 3px 1px gray" ,color :"white",backgroundColor :"#0d0d73"}}>
-          <div style={{ marginLeft: "0px" , fontSize :"20px",fontWeight :"bold", marginTop :"31px",marginBottom : "20px", paddingTop :"5px"}}>PLATFORM RANK</div></div>
+          <div style={{ marginLeft: "0px" , fontSize :"16px",fontWeight :"bold", marginTop :"31px",marginBottom : "20px", paddingTop :"5px",fontFamily:'S-CoreDream-3Light'}}>PLATFORM RANK</div></div>
           <div className="logoImg"
           style={{height:'18vh',
                   width:'3.5vw',
@@ -114,7 +114,7 @@ const MainBoard = () => {
             height: 400,
             
           }}><div style={{width :"300px", marginTop :"-20px",marginLeft :"180px",height :"40px", borderRadius :"30px", backgroundColor :"#0d0d73", boxShadow :"3px 3px 1px gray"}}>
-          <h4 style={{ marginLeft: "-1vw" , fontSize :"20px",fontWeight :"bold", marginTop :"30px",marginBottom : "40px",paddingTop:"5px",paddingLeft:"20px", color :"white"}}>PLATFORM REVENUE</h4></div>
+          <h4 style={{ marginLeft: "-1vw" , fontSize :"16px",fontWeight :"bold", marginTop :"30px",marginBottom : "40px",paddingTop:"5px",paddingLeft:"20px", color :"white",fontFamily:'S-CoreDream-3Light'}}>PLATFORM REVENUE</h4></div>
           <div className="logoImg"
           style={{height:'18vh',
                   width:'2.5vw',
