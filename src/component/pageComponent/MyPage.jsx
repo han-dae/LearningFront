@@ -57,14 +57,14 @@ const MyPage = (props) => {
         console.log("loadMyTest 에러", err);
       });
     ApiService.loadMyComment(sessionStorage.getItem('info'))
-    .then((res) => {
-        console.log('댓글 확인',res.data);
+      .then((res) => {
+        console.log('댓글 확인', res.data);
         setCom(res.data);
-    })
-    .catch((err) => {
+      })
+      .catch((err) => {
         console.log("loadMyTest 에러", err);
       });
-    }, []);
+  }, []);
 
   let testList = Object.values(MyTest);
   const navigate = useNavigate();
@@ -95,23 +95,23 @@ const MyPage = (props) => {
     user_id: "",
     cmt_content: "",
     cmt_dt: "",
-    cmt_seq:""
+    cmt_seq: ""
   })
   let comList = Object.values(com)
-  console.log('comlist확인',comList);
-  const removeCom = (e,cmt_seq) => { // 삭제
+  console.log('comlist확인', comList);
+  const removeCom = (e, cmt_seq) => { // 삭제
     e.preventDefault();
     // setCom(com.filter(com => com.user_id !== user_id));
     ApiService.commentDelete(cmt_seq)
-    .then((res) =>{
+      .then((res) => {
         console.log("삭제 완료");
         window.location.reload();
-    })
-    .catch((err) => {
+      })
+      .catch((err) => {
         console.log("updateMember() 에러", err);
       });
   };
-  
+
 
   // 내 영상 리스트
   const platform = {
@@ -124,29 +124,30 @@ const MyPage = (props) => {
       <MainHeader />
 
       <Content>
-        <div style={{ 
-            marginTop: "10px",
-            marginLeft: "20vw",
-            width: "51vh",
-            height: "5vh",
-            paddingLeft: "10px",
-            backgroundColor: "#404040",
-            // borderRadius: 20,
-            textAlign: "center",
-            boxShadow: "5px 5px #b4b4b4",
-            color:'white'}}>
-          
+        <div style={{
+          marginTop: "10px",
+          marginLeft: "20vw",
+          width: "51vh",
+          height: "5vh",
+          paddingLeft: "10px",
+          backgroundColor: "#404040",
+          // borderRadius: 20,
+          textAlign: "center",
+          boxShadow: "5px 5px #b4b4b4",
+          color: 'white'
+        }}>
+
           <h1
             style={{
               textUnderlineOffset: "auto",
               marginTop: "4vh",
-             // marginLeft: "20vw",
+              // marginLeft: "20vw",
             }}
           >
-            
+
             개인정보수정
           </h1>
-          
+
         </div>
         <div
           style={{
@@ -157,9 +158,9 @@ const MyPage = (props) => {
             paddingLeft: "10px",
             backgroundColor: "lightgray",
             borderRadius: 20,
-           // opacity: "1",
+            // opacity: "1",
             // color:'white',
-            fontWeight:'bold'
+            fontWeight: 'bold'
           }}
         >
           <div
@@ -237,20 +238,21 @@ const MyPage = (props) => {
             </div>
           </div>
         </div>
-        <div style={{ 
-           // marginTop: "10px",
-            marginLeft: "47vw",
-            width: "64vh",
-            height: "5vh",
-            paddingLeft: "10px",
-            backgroundColor: "#404040",
-            // borderRadius: 20,
-            textAlign: "center",
-            boxShadow: "5px 5px #b4b4b4",
-            color:'white'}}>
+        <div style={{
+          // marginTop: "10px",
+          marginLeft: "47vw",
+          width: "64vh",
+          height: "5vh",
+          paddingLeft: "10px",
+          backgroundColor: "#404040",
+          // borderRadius: 20,
+          textAlign: "center",
+          boxShadow: "5px 5px #b4b4b4",
+          color: 'white'
+        }}>
           <h1
             style={{
-             // textUnderlineOffset: "auto",
+              // textUnderlineOffset: "auto",
               marginTop: "-37vh",
               // marginLeft: "47vw",
             }}
@@ -270,29 +272,31 @@ const MyPage = (props) => {
             borderRadius: 20,
           }}
         >
-          <div style={{marginLeft:'28.5vw'}} >
-          
-                
-            {comList.map((value,idx) => (
-                //   <div key={`${value.user_id}`}>
-                
-                <div 
-                style={{marginLeft:'-28vw',paddingTop:'20px',}}>
+          <div style={{ marginLeft: '28.5vw' }} >
 
-                  {value.cmt_content}
-                <div style={{marginLeft :'26.5vw',
-            marginTop:'-1.5vw'}} >
+
+            {comList.map((value, idx) => (
+              //   <div key={`${value.user_id}`}>
+
+              <div
+                style={{ marginLeft: '-28vw', paddingTop: '20px', }}>
+
+                {value.cmt_content}
+                <div style={{
+                  marginLeft: '26.5vw',
+                  marginTop: '-1.5vw'
+                }} >
                   {/* <p>{com.user_id}</p> */}
-                  <div onClick={(e) => removeCom(e,value.cmt_seq)}>
-                  <ButtonLF50
-                    style={{marginLeft:'28.5vw'}} 
-                    value={'Del'}>
-                   </ButtonLF50>
-                        </div>
+                  <div onClick={(e) => removeCom(e, value.cmt_seq)}>
+                    <ButtonLF50
+                      style={{ marginLeft: '28.5vw' }}
+                      value={'Del'}>
+                    </ButtonLF50>
+                  </div>
                 </div>
               </div>
             ))}
-          
+
           </div>
           <div
             className="com_edit"
@@ -305,22 +309,23 @@ const MyPage = (props) => {
         </div>
         <div>
           <div
-          style={{ 
-            marginTop: "10px",
-            marginLeft: "20vw",
-            width: "121vh",
-            height: "5vh",
-            paddingLeft: "10px",
-            backgroundColor: "#404040",
-            // borderRadius: 20,
-            textAlign: "center",
-            boxShadow: "5px 5px #b4b4b4",
-            color:'white'}}>
+            style={{
+              marginTop: "10px",
+              marginLeft: "20vw",
+              width: "121vh",
+              height: "5vh",
+              paddingLeft: "10px",
+              backgroundColor: "#404040",
+              // borderRadius: 20,
+              textAlign: "center",
+              boxShadow: "5px 5px #b4b4b4",
+              color: 'white'
+            }}>
             <h1
               style={{
                 // display: "inline-block",
                 textUnderlineOffset: "auto",
-               // marginTop: "3vh",
+                // marginTop: "3vh",
                 marginLeft: "-2vw",
                 marginBottom: "20px",
               }}
@@ -331,11 +336,11 @@ const MyPage = (props) => {
             <div
               style={{
                 float: "right",
-               // marginRight: "20%",
+                // marginRight: "20%",
                 marginTop: "-0.5vh",
               }}
             >
-            
+
               <ButtonLF100 value={"DELETE"} />
             </div>
           </div>
@@ -374,19 +379,31 @@ const MyPage = (props) => {
                 <div key={idx}
                   style={{
                     display: "inline-block",
-                    backgroundColor: "white",
                     width: "300px",
                     height: "250px",
-                    marginTop: "25px",
+                    marginTop: "15px",
                     marginBottom: "25px",
                     marginLeft: "10px",
                     marginRight: "20px",
                   }}
                 >
+                  <video
+                    src={`${process.env.PUBLIC_URL}/file/${value.test_video_realname}`}
+                    controls
+                    autoPlay
+                    muted
+                    playsInline
+                    style={{
+                      width: "300px",
+                      height: "250px",
+                      border: "2px solid gray",
+                      opacity: "1"
+                    }}
+                  >
+                    {" "}
+                  </video>
 
-                  fefswefsf
-
-                  {value.test_seq}
+                  {value.test_title}
 
                 </div>
               ))}
