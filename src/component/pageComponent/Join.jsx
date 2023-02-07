@@ -59,104 +59,114 @@ class Join extends Component {
        
          <div
           style={{
+            fontSize:"14px",
             width: "400px",
             position: "absolute",
-            height: "300px",
+            height: "420px",
             backgroundColor: "white",
             padding: "30px",
-       marginTop:"140px",
+            marginTop:"140px",
             marginLeft: "40vw",
             textAlign: "left",
-            boxShadow :"3px 3px 3px grey",
+            boxShadow :"4px 3px 3px navy",
             borderRadius : "30px"
            
           }}
         >
        
         <div style={{ textAlign: "left" , marginLeft : "50px" }}>
-          <h2>JOIN</h2>
+          <div style={{
+            textAligh:"center",
+            borderRadius: "20px",
+            width:"130px",
+            marginLeft:"0px",
+            backgroundColor: "#404040",
+            color: "white" 
+          }}>
+          <h2 style={{borderRadius: "5px",textAlign:"center", marginRight:"0px", color:"white",background:"gray"}}>JOIN</h2>
+          </div>
           <form>
-            <table style={{ textAlign: "left" }}>
+            <table style={{ textAlign: "left" ,borderSpacing: "5px"}}>
               <div>
-                <tr>
-                  <td style={{ width: "40%" }}>
+                <tr style={{ width: "40%" }}>
+                 
                     <label className="label" style={{ textAlign: "left" }}>
-                      ID 
+                      아이디 
                     </label>
-                  </td>
+                  
 
-                  <td>
+                  </tr>
+                  <tr>
                     <input
                       type="text"
-                      placeholder="ID 입력"
+                      placeholder="id 입력"
                       name="user_id"
                       value={this.state.user_id}
                       onChange={this.onChange}
-                      style={{ padding: "5px" }}
+                      style={{ padding: "5px", width:"270px",borderRadius:"7px" }}
+                      
                     />
-                  </td>
-                </tr>
+                    </tr>
+               
               </div>
 
               <div>
-                <tr>
-                  <td style={{ width: "120px" }}>
-                    <label className="label">Password </label>
-                  </td>
-                  <td>
+                <tr style={{ width: "120px" }}>
+                  
+                    <label className="label">패스워드 </label>
+                  </tr>
+                  <tr>
                     <input
                       type="password"
-                      placeholder="PW 입력"
+                      placeholder="password 입력"
                       name="user_pw"
                       value={this.state.user_pw}
                       onChange={this.onChange}
-                      style={{ padding: "5px" }}
+                      style={{ padding: "5px", width:"270px",borderRadius:"7px" }}
                     />
-                  </td>
-                </tr>
+                  </tr>
+                
               </div>
-              <tr>
-           
-              </tr>
+              
               <div>
-                <tr>
-                  <td style={{ width: "120px" }}>
-                    <label className="label">H.P </label>
-                  </td>
+                <tr style={{ width: "120px" }}>
+                 
+                    <label className="label">연락처 </label>
+                  </tr>
 
-                  <td>
+                  <tr>
                     <input
                       type="text"
                       placeholder="H.P 입력"
                       name="user_hp"
                       value={this.state.user_hp}
                       onChange={this.onChange}
-                      style={{ padding: "5px" }}
+                      style={{ padding: "5px", width:"270px",borderRadius:"7px" }}
                     />
-                  </td>
-                </tr>
+                  </tr>
+                
               </div>
               <div>
-                <tr>
-                  <td style={{ width: "120px" }}>
-                    <label className="label">Email </label>
-                  </td>
-                  <td>
+                <tr style={{ width: "120px" }}>
+                  
+                    <label className="label">이메일 </label>
+                  </tr>
+                  <tr>
                     <input
                       type="email"
                       placeholder="Email 입력"
                       name="user_email"
                       value={this.state.user_email}
                       onChange={this.onChange}
-                      style={{ padding: "5px" }}
+                      style={{ padding: "5px", width:"270px",borderRadius:"7px" }}
                     />
-                  </td>
-                </tr>
+                  </tr>
+                
               </div>
             </table>
 
-            <Button className="btn_login" onClick={this.saveUser} style={{ borderRadius: "20px", width: "100px", float: "right", marginRight: "30px",marginTop :"10px", backgroundColor: "#404040", color: "white" }}>JOIN</Button>
-            <p style={{fontSize :"14px"}}><a href="/Login" >LOGIN</a> 페이지로 돌아가기</p>
+            <Button className="btn_login" onClick={this.saveUser} style={{ borderRadius: "20px", width: "100px", float: "right", marginRight: "30px",marginTop :"40px", backgroundColor: "#404040", color: "white" }}>SUBMIT</Button>
+           <Button style={{ borderRadius: "20px", width: "100px", float: "left", marginRight: "30px",marginTop :"40px", backgroundColor: "#404040", color: "white" }}><a href="/Login" >LOGIN</a></Button> 
           </form>
         </div>
         </div>
