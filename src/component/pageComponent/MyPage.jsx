@@ -6,7 +6,7 @@ import MainBoard from "./MainBoard";
 import CarouselComponent from "./CarouselComponent";
 import { render } from "@testing-library/react";
 import ApiService from "../ApiService";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ButtonLF50, ButtonLF100 } from "./ButtonLF";
 
 import MainComponen from "./MainComponent";
@@ -402,9 +402,9 @@ const MyPage = (props) => {
                   >
                     {" "}
                   </video>
-
+                  <Link to={"/testPage?test_seq="+value.test_seq}>
                   {value.test_title}
-
+                  </Link>
                 </div>
               ))}
             </div>
