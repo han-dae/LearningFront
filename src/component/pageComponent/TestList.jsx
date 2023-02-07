@@ -112,17 +112,11 @@ const TestList = () => {
           </div>
 
          
-            <div onClick={clicked} style={{
-            marginTop:'5vh',
-            marginLeft:'68vw'
-            }}>
-            <ButtonLF100 value={'UPLOAD'}> </ButtonLF100>
-            </div>
-          
+           
           <div
             className="videoSpace"
             style={{
-              padding: "30px 20px 30px 20px",
+              padding: "10px 20px 20px 20px",
               width: "1380px",
 
               backgroundColor: "#404040",
@@ -133,6 +127,13 @@ const TestList = () => {
               marginTop: '5vh'
             }}
           >
+             <div onClick={clicked} style={{
+            padding:'15px',
+            marginLeft:'64vw'
+            }}>
+            <ButtonLF100 value={'UPLOAD'}> </ButtonLF100>
+            </div>
+          
             {testList.map((value, idx) => (
               <div
                 key={idx}

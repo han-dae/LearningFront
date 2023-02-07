@@ -99,11 +99,13 @@ const MyPage = (props) => {
   })
   let comList = Object.values(com)
   console.log('comlist확인',comList);
-  const removeCom = (cmt_seq) => { // 삭제
+  const removeCom = (e,cmt_seq) => { // 삭제
+    e.preventDefault();
     // setCom(com.filter(com => com.user_id !== user_id));
     ApiService.commentDelete(cmt_seq)
     .then((res) =>{
         console.log("삭제 완료");
+        window.location.reload();
     })
     .catch((err) => {
         console.log("updateMember() 에러", err);
@@ -264,7 +266,7 @@ const MyPage = (props) => {
             height: "30vh",
             paddingLeft: "10px",
             backgroundColor: "lightgray",
-
+            overflowY: 'scroll',
             borderRadius: 20,
           }}
         >
@@ -281,13 +283,13 @@ const MyPage = (props) => {
                 <div style={{marginLeft :'26.5vw',
             marginTop:'-1.5vw'}} >
                   {/* <p>{com.user_id}</p> */}
+                  <div onClick={(e) => removeCom(e,value.cmt_seq)}>
                   <ButtonLF50
-                    onClick={() => removeCom(value.cmt_seq)}
                     style={{marginLeft:'28.5vw'}} 
                     value={'Del'}>
-                  </ButtonLF50>
+                   </ButtonLF50>
+                        </div>
                 </div>
-                {value.cmt_content}
               </div>
             ))}
           
