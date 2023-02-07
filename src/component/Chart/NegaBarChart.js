@@ -37,18 +37,19 @@ const NegaLFBar = props => {
   }, [props]);
   console.log("시발", props.data);
   return (
-   
-    <BarChart width={600} height={300} data={NegaData}>
+   <div>
+    <div style={{position:"absolute",display :"inline-block", marginLeft :"0px",marginTop :"120px"}}><div style={{  width : "40px", height :"30px", backgroundColor :"#ff7f00", }}/><div style={{color :"#ff7f00", fontWeight :"bold"}}>Negative Value</div></div>
+    <div style={{position:"absolute", display :"inline-block",marginLeft :"0px",marginTop :"50px"}}><div style={{display :"inline-block", width : "40px", height :"30px", backgroundColor :"#0d0d73"}}/><div style={{color :"#0d0d73", fontWeight :"bold"}}>Positive Value</div></div>
+    <BarChart width={500} height={300} data={NegaData}  style={{marginTop :"-300px", marginLeft :"100px"}}>
      
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="tfidf_keyword" />
+      <XAxis dataKey="tfidf_keyword" style={{color :"white"}}/>
       <YAxis />
       <Tooltip />
-<Legend id='긍정'/>
-      <Bar dataKey="tfidf_value" fill="red"/>
+      <Bar dataKey="tfidf_value" fill="#ff7f00"/>
      
     </BarChart>
-   
+    </div>
 
 );
 }

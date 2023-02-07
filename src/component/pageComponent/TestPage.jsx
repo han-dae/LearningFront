@@ -76,149 +76,145 @@ const TestPage = () => {
             <ScrollBottom />
             <MainHeader />
             <Content>
-                <div className="left"
-                    style={{
-                        position:'absolute',
-                        top:'2%',
-                        left:'-3%'
-                    }} >
-                    <div
-                        className="video"
-                        style={{
-                            width: "700px",
-                            height: "52vh",
-                            marginTop: "20vh",
-                            marginLeft: "15vw",
-                            backgroundColor: "white",
-                           // borderRadius: 10,
-                        }}
-                    ><video src={`${process.env.PUBLIC_URL}/file/${TestDetail.test_video_realname}`}
-                        controls autoPlay muted playsInline
-                        style={{
-                            width: "700px",
-                            height: "45vh",
-                            marginTop: "-6vh",
-                        }}
-                    ></video></div>
-                    <div
-                        style={{
-                            marginLeft: "15vw",
-                            marginTop: "-5vh",
-                            width: '700px',
-                            backgroundColor: "#404040",
-                            // borderRadius: 20,
-                            // textAlign: 'center',
-                            color: 'white',
-                            boxShadow: "5px 5px #B4B4B4"
-                        }}>
-                        <div
-                            className="test_title"
-                            style={{ marginTop: "-15px", marginleft: "15%", padding:'3px' }}
-                        >
-                            <p style={{ fontSize: "24px", marginTop:'0vh' }}>{TestDetail.test_title}</p>
-                        </div>
 
-                        <div
-                            className="user_id"
-                            style={{ fontSize: "16px", marginleft: "5%", marginTop: "-4%", padding:'3px' }}
-                        >
-                            작성자 : {TestDetail.user_id}
-                        </div>
-                        <div
-                            className="reg_dt"
-                            style={{
-                                width: "20vw",
-                                marginLeft: "32vw",
-                                marginTop: "-1.5%",
-                                fontSize: "18px",
-                                padding:'3px',
-                                
-                            }}
-                        >
-                            {TestDetail.reg_dt}
-                        </div>
-                        <div
-                            className="test_price"
-                            style={{
-                                width: "20vw",
-                                marginLeft: "29vw",
-                                // marginTop: "-1.5%",
-                                fontSize: "25px",
-                                fontFamily: "bold",
-                                padding:'3px'
-                            }}
-                        >
-                            {TestDetail.test_price} 원
-                        </div>
-                    </div>
-                    <div className="liked"
+                <div
+                    className="video"
                     style={{
-                        marginTop:'-14vh',
-                        marginLeft:'49vw'}}>
-                    <Liked test_seq_id={test_seq_id}  />
+                        width: "700px",
+                        height: "50vh",
+                        marginTop: "20vh",
+                        marginLeft: "13vw",
+                        backgroundColor: "white",
+                        // borderRadius: 10,
+                    }}
+                ><video src={`${process.env.PUBLIC_URL}/file/${TestDetail.test_video_realname}`}
+                    controls autoPlay muted playsInline
+                    style={{
+                        width: "700px",
+                        height: "55vh",
+                        marginTop: "-13vh",
+                    }}
+                ></video></div>
+                <div
+                    style={{
+                        marginLeft: "13vw",
+                         marginTop: "-7vh",
+                        width: '700px',
+                        backgroundColor: "#404040",
+                        // borderRadius: 20,
+                        // textAlign: 'center',
+                        color: 'white',
+                        boxShadow: "5px 5px #B4B4B4",
+                        position:'absolute',
+                        height:'18vh'
+                    }}>
+                    <div
+                        className="test_title"
+                        style={{ marginTop: "-15px", marginleft: "15%",  }}
+                    >
+                        <p style={{ fontSize: "24px", marginTop: '1vh', padding: '1vw', paddingBottom:'0vh' }}>{TestDetail.test_title}</p>
+                    </div>
+
+                    <div
+                        className="user_id"
+                        style={{  marginleft: "5%", marginTop: "-4%", padding: '3px' }}
+                    >
+                        <p style={{fontSize: "16px", paddingLeft: '1vw'}}>작성자  {TestDetail.user_id} </p>
+                    </div>
+                    <div
+                        className="reg_dt"
+                        style={{
+                            width: "20vw",
+                            marginLeft: "32vw",
+                            marginTop: "-1.5%",
+                            fontSize: "18px",
+                            padding: '3px',
+
+                        }}
+                    >
+                        <p style={{fontSize: "16px", margin:'0vh'}}> {TestDetail.reg_dt} </p>
+                    </div>
+                    <div
+                        className="test_price"
+                        style={{
+                            width: "7vw",
+                            marginLeft: "29vw",
+                            // marginTop: "-1.5%",
+                            fontSize: "25px",
+                            fontFamily: "bold",
+                            padding: '5px'
+                        }}
+                    >
+                        {TestDetail.test_price} 원
                     </div>
                 </div>
+                <div className="liked"
+                    style={{
+                        marginTop: '-6.5vh',
+                        marginLeft: '47vw',
+                        width:'2vw',
+                        zIndex:'1000',
+                        position:'absolute'
+                    }}>
+                    <Liked test_seq_id={test_seq_id} />
+                </div>
 
-                <div className="right" 
-                style={{
-                    position:'absolute',
-                    top:'97%',
-                    right:'12%'
-                }}>
-                    <div>
                     <div
                         className="img1"
                         style={{
                             width: "200px",
                             height: "200px",
-                            marginTop: "-78.5vh",
-                            marginLeft: "53vw",
+                            marginTop: "-63vh",
+                            marginLeft: "50vw",
                             backgroundColor: "#404040",
                             borderRadius: 10,
-                           // boxShadow: "5px 5px #B4B4B4"
-                        }}> 
+                            // boxShadow: "5px 5px #B4B4B4"
+                        }}>
                         <img src={`${process.env.PUBLIC_URL}/file/${TestDetail.test_photo}`}
-                        style={{
-                            width: "200px",
-                            height: "200px"
-                        }}
-                        alt="" /> 
+                            style={{
+                                width: "200px",
+                                height: "200px"
+                            }}
+                            alt="" />
                     </div>
 
                     <div
                         className="test_content"
                         style={{
-                            width: "500px",
+                            width: "510px",
                             height: "200px",
-                            marginTop: "-21vh",
-                            marginBottom:'1vh',
-                            marginLeft: "64vw",
+                            marginTop: "-23vh",
+                            marginBottom: '1vh',
+                            marginLeft: "61vw",
                             backgroundColor: "#404040",
                             borderRadius: 10,
-                            color:'white',
-                            boxShadow: "5px 5px #B4B4B4"
+                            color: 'white',
+                           // padding:'5px'
+                            // boxShadow: "5px 5px #B4B4B4",
+
                         }}
-                    >{TestDetail.test_content}</div>
+                    ><p style={{padding:'1vw'}}>{TestDetail.test_content}</p></div>
 
                     <div
                         className="test_cuesheet"
                         style={{
                             fontSize: "18px",
-                            marginLeft: "53vw",
-
-                            width: "713px",
+                            marginLeft: "50vw",
+                            width: "723px",
                             height: "20vh",
                             backgroundColor: "#404040",
                             borderRadius: 10,
-                            color:'white',
-                            boxShadow: "5px 5px #B4B4B4",
-                            overflowY:'scroll'
+                            color: 'white',
+                            // boxShadow: "5px 5px #B4B4B4",
+                            overflowY: 'scroll',
+                            whiteSpace: "pre-wrap",
+                            
                         }}
                     >
-                        {TestDetail.test_cuesheet}
+                       <p style={{paddingLeft:'1vw'}}> {TestDetail.test_cuesheet} </p>
                     </div>
 
-                   {/*} <div
+                    {/*} <div
                         className="price"
                         style={{
                             width: "20vw",
@@ -256,22 +252,23 @@ const TestPage = () => {
                         </div>*/}
                     <div
                         style={{
-                            marginLeft: "53vw",
+                            marginLeft: "50vw",
                             marginTop: "1vh",
                             width: "713px",
                             height: "25vh",
                             backgroundColor: "#404040",
                             borderRadius: 10,
                             overflowY: "scroll",
-                            color:'white',
-                            boxShadow: "5px  #B4B4B4"
+                            color: 'white',
+                            padding:'5px'
+                            // boxShadow: "5px  #B4B4B4"
                         }}
                     >
                         <AddComment handelComment={handelComment} style={{ marginTop: '-3vh' }} />
                         <CommenList com={com} />
                     </div>
-                </div>
-                </div>
+               
+
 
 
             </Content>

@@ -66,7 +66,12 @@ class ApiService {
     console.log('api 들어옴 좋아요 눌렀나 체크할거야')
     return axios.post(RECOMMEND_API_BASE_URL+"/check",test_seq_id);
   }
-
+  loadMyComment(user_id){
+    return axios.post(COMMENT_API_BASE_URL + "/comment", user_id);
+  }
+  commentDelete(cmt_seq){
+    return axios.post(COMMENT_API_BASE_URL + "/deleteComment", cmt_seq);
+  }
   loadTest(){
     return axios.get(TEST_API_BASE_URL);
   }
@@ -76,14 +81,6 @@ class ApiService {
 
     console.log(typeof(user_id));
     return axios.post(TEST_API_BASE_URL + "/Mypage", user_id);
-  }
-  loadMyComment(user_id){
-    console.log('loadMyComment 들어옴');
-    return axios.post(COMMENT_API_BASE_URL + "/comment", user_id);
-  }
-  commentDelete(cmt_seq){
-    console.log('delete들어옴');
-    return axios.post(COMMENT_API_BASE_URL + "/deleteComment", cmt_seq)
   }
   detailTest(test_seq) {
     console.log("api 이동 ",TEST_API_BASE_URL + "/" + test_seq);

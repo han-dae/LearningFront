@@ -112,7 +112,7 @@ const [Category, setCategory] =useState({
                 label: "의자",
               },
             ]}
-            style={{ width: "20vw", marginLeft: "40vw", marginTop: "10px" }}
+            style={{ width: "20vw", marginLeft: "36vw", marginTop: "10px", border :"2px solid black", borderRadius :"10px" }}
           />
         </div>
         
@@ -154,19 +154,21 @@ const [Category, setCategory] =useState({
             width: "70vw",
             height: "40vh",
             marginTop: "25px",
-            marginLeft: "15vw",
+            marginLeft: "20vw",
 float :"left",
             borderRadius: 10,
             
           }}
         >
          <div >
+         <div style={{marginLeft :"-200px"}}>
         <LFBar data={Category}  label={{ key :"시발", fontSize: 20 }}/>
-
+        </div>
 
 
      
         <NegaLFBar data={Category}/>
+        
         </div>
         </div>
        
