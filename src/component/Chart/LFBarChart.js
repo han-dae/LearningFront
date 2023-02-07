@@ -43,7 +43,7 @@ const LFBar = props => {
       <YAxis />
       <Tooltip />
  
-      <Bar dataKey="tfidf_value" fill="red" />
+      <Bar dataKey="tfidf_value" fill="blue" />
     </BarChart>
    
 

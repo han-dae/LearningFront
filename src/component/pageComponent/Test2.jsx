@@ -161,7 +161,7 @@ float :"left",
           }}
         >
          <div >
-        <LFBar data={Category}/>
+        <LFBar data={Category}  label={{ key :"시발", fontSize: 20 }}/>
 
 
 

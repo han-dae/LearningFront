@@ -1,6 +1,7 @@
+import Title from 'antd/es/typography/Title';
 import React, { PureComponent, useEffect, useState } from 'react';
 import {
-  XAxis, YAxis, CartesianGrid, Tooltip, Legend, BarChart, Bar,
+  XAxis, YAxis, CartesianGrid, Tooltip, Legend, BarChart, Bar, 
 } from 'recharts';
 import ApiService from '../ApiService';
 
@@ -38,12 +39,13 @@ const NegaLFBar = props => {
   return (
    
     <BarChart width={600} height={300} data={NegaData}>
+     
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="tfidf_keyword" />
       <YAxis />
       <Tooltip />
-
-      <Bar dataKey="tfidf_value" fill="blue" />
+<Legend id='긍정'/>
+      <Bar dataKey="tfidf_value" fill="red"/>
      
     </BarChart>
    
