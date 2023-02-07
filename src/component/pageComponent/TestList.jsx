@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
 import MainHeader from "./Header";
 import { Button } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Liked from "./Liked";
 import ApiService from "../ApiService";
 
@@ -10,13 +10,16 @@ import axios from "axios";
 import { ButtonLF100 } from "./ButtonLF";
 
 const TestList = () => {
+  const navigate = useNavigate();
   const clicked = () => {
     let info = sessionStorage.getItem("info");
     if (info) {
+      navigate("/test1");
     } else {
-      <Button disabled={true}></Button>;
+      alert("로그인을 해주세요");
     }
   };
+ 
   const [Test, setTest] = useState({
     category_seq: "",
     reg_dt: "",
@@ -108,14 +111,14 @@ const TestList = () => {
           </div>*/}
           </div>
 
-          <Link to={"/test1"}>
-            <div style={{
+         
+            <div onClick={clicked} style={{
             marginTop:'5vh',
             marginLeft:'68vw'
             }}>
-            <ButtonLF100 value={'UPLOAD'}></ButtonLF100>
+            <ButtonLF100 value={'UPLOAD'}> </ButtonLF100>
             </div>
-          </Link>
+          
           <div
             className="videoSpace"
             style={{
@@ -162,6 +165,8 @@ const TestList = () => {
                       style={{
                         width: "400px",
                         height: "280px",
+                        border:"2px solid gray",
+                        opacity:"1"
                       }}
                     >
                       {" "}
@@ -196,8 +201,8 @@ const TestList = () => {
                         {value.test_title}
                       </p>
 
-                      <div className="userName" style={{ fontSize: "14px" }}>
-                        {value.user_id}
+                      <div className="userName" style={{ fontSize: "14px" ,color:"white"}}>
+                        작성자 : {value.user_id}
                       </div>
                       <div
                         className="telNumber"
@@ -208,7 +213,6 @@ const TestList = () => {
                           fontSize: "14px",
                         }}
                       >
-                        Tel : 000 - 1234 - 5678
                       </div>
                       <div
                         className="price"
@@ -217,6 +221,7 @@ const TestList = () => {
                           marginLeft: "80%",
                           marginTop: "-20px",
                           fontSize: "14px",
+                          color:"white"
                         }}
                       >
                         {value.reg_dt}

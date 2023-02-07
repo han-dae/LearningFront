@@ -36,7 +36,7 @@ const CarouselComponent = () => {
     centerMode :true,
     centerPadding : '10px',
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 5000,
     pauseOnHover: true,
     rows : 1,
     nextArrow: (
@@ -46,7 +46,7 @@ const CarouselComponent = () => {
     ),
     prevArrow: (
       <Pre>
-        {""}
+       
         <img src={Right} />
       </Pre>
     ),
@@ -56,9 +56,9 @@ const CarouselComponent = () => {
     <div><Link  to={"/test1"}>
     <Slider {...settings}>
       <div className="banner" style={{width: "100vw"}}><div style={{width : "100%"}}><img src={Demo0} style={{width : "500px", height :"300px"}}/></div></div>
-      <div className="banner" style={{width: "100vw"}}><div style={{width : "100%", backgroundColor : "transparent"}}><img src={Demo1} style={{width : "500px", height :"300px"}}/></div></div>
-      <div className="banner" style={{width: "100vw"}}><div style={{width : "100%",  backgroundColor : "transparent"}}><img src={Demo2} style={{width : "500px", height :"300px"}}/></div></div>
-      <div className="banner" style={{width: "100vw"}}><div style={{width : "100%",  backgroundColor : "transparent"}}><img src={Demo4} style={{width : "500px", height :"300px"}}/></div></div>
+      <div className="banner" style={{width: "100vw"}}><div style={{width : "100%"}}><img src={Demo1} style={{width : "500px", height :"300px"}}/></div></div>
+      <div className="banner" style={{width: "100vw"}}><div style={{width : "100%"}}><img src={Demo2} style={{width : "500px", height :"300px"}}/></div></div>
+      <div className="banner" style={{width: "100vw"}}><div style={{width : "100%"}}><img src={Demo4} style={{width : "500px", height :"300px"}}/></div></div>
 
     </Slider>
     </Link>

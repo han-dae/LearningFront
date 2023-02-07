@@ -22,7 +22,7 @@ const TestComponent3 = () => {
   // fillPath: ""
   // });
 
-  const props =  {
+  const props = {
     name: 'file',
     multiple: true,
     onChange(info) {
@@ -32,15 +32,15 @@ const TestComponent3 = () => {
 
       sessionStorage.setItem('video_url', video_url);
       // sessionStorage.setItem('test_video_realname',video_url)
-         console.log(info.file.originFileObj);
-         const reader = new FileReader();
-         reader.readAsDataURL(info.file.originFileObj);
-         reader.onload= () =>{
-          const url = reader.result;
-          //console.log(url);
-         }
-    
-  
+      console.log(info.file.originFileObj);
+      const reader = new FileReader();
+      reader.readAsDataURL(info.file.originFileObj);
+      reader.onload = () => {
+        const url = reader.result;
+        //console.log(url);
+      }
+
+
       console.log(info.file)
       console.log(info.file.name);
       const filename = info.file.name;
@@ -48,8 +48,8 @@ const TestComponent3 = () => {
       console.log(fd);
       sessionStorage.setItem('test_video', filename);
       console.log('test', sessionStorage.getItem('test_video'));
-      
-      
+
+
 
 
 
@@ -59,9 +59,9 @@ const TestComponent3 = () => {
     //   console.log('Dropped files', e.dataTransfer.files);
     // }
   }
- 
-    
-  
+
+
+
 
   //console.log('값확인',Object.keys(fd));
   //sessionStorage.setItem('file',fd);
@@ -102,7 +102,7 @@ const TestComponent3 = () => {
     user_id: "",
     category_seq: "",
     category_name: "",
-    test_content : ""
+    test_content: ""
   })
   //  const [file, setFile] = useState(null);	//파일	
   //  const handleChangeFile = (event) => {
@@ -119,7 +119,7 @@ const TestComponent3 = () => {
 
   const navigate = useNavigate();
   const clicked = () => {
-    
+
     axios.post('/test/AxiosFileTest.do', fd, {
       headers: {
         "Content-Type": `multipart/form-data; `,
@@ -127,10 +127,18 @@ const TestComponent3 = () => {
       baseURL: 'http://localhost:8081/users'
     })
       .then((response) => {
-         sessionStorage.setItem('test_video_realname',response.data); 
-         console.log(sessionStorage.getItem('test_video_realname'));
+        console.log('리폰데', response.data);
+        sessionStorage.setItem('test_video_realname', response.data);
+        console.log(sessionStorage.getItem('test_video_realname'));
+        if (response.data != null) {
+          sessionStorage.setItem('test_title', state.test_title);
+          sessionStorage.setItem('test_price', state.test_price);
+          sessionStorage.setItem('test_content', state.test_content);
+          navigate("/test4");
+        }
       })
       .catch((error) => {
+        alert('영상 등록해주세요');
         // 예외 처리
       })
 
@@ -148,36 +156,34 @@ const TestComponent3 = () => {
     //      // 예외 처리
     //    })
 
-    sessionStorage.setItem('test_title',state.test_title);
-    sessionStorage.setItem('test_price',state.test_price);
-    sessionStorage.setItem('test_content',state.test_content);
 
-    let test = {
-      test_title: sessionStorage.getItem('test_title'),
-      test_photo: sessionStorage.getItem('photo'),
-      test_price: sessionStorage.getItem('test_price'),
-      test_cuesheet: sessionStorage.getItem('cuesheet'),
-      test_video: sessionStorage.getItem('test_video'),
-      test_video_realname: sessionStorage.getItem('test_video_realname'),
-      test_content : sessionStorage.getItem('test_content')
+    // let test = {
+    //   test_title: sessionStorage.getItem('test_title'),
+    //   test_photo: sessionStorage.getItem('photo'),
+    //   test_price: sessionStorage.getItem('test_price'),
+    //   test_cuesheet: sessionStorage.getItem('cuesheet'),
+    //   test_video: sessionStorage.getItem('test_video'),
+    //   test_video_realname: sessionStorage.getItem('test_video_realname'),
+    //   test_content : sessionStorage.getItem('test_content')
 
-    }
+    // }
 
-    navigate('/test4',
-      {
-        state:
-        {
-          test_title: test.test_title,
-          test_photo: test.test_photo,
-          test_price: test.test_price,
-          test_cuesheet: test.test_cuesheet,
-          test_video: test.test_video,
-          test_content : test.test_content
-        }
-      });
+    // navigate('/test4',
+    //   {
+    //     state:
+    //     {
+    //       test_title: test.test_title,
+    //       test_photo: test.test_photo,
+    //       test_price: test.test_price,
+    //       test_cuesheet: test.test_cuesheet,
+    //       test_video: test.test_video,
+    //       test_content : test.test_content
+    //     }
+    // });
     //sessionStorage.setItem('test_video',test.test_video);
     //sessionStorage.setItem('test_cuesheet',test.test_cuesheet);
-    console.log('데이터 확인', test)
+    console.log('데이터 확인1', test)
+    console.log('데이터 확인2', state)
   }
   return (
     <div>
@@ -191,12 +197,12 @@ const TestComponent3 = () => {
             marginLeft: "20vw",
             width: "31vw",
             height: "50px",
-          
+
             backgroundColor: "#404040",
             // borderRadius: 30,
-            textAlign :"center",
+            textAlign: "center",
             boxShadow: "5px 5px #b4b4b4",
-            
+
           }}
         >
           <div
@@ -205,30 +211,30 @@ const TestComponent3 = () => {
               // display: "inline-block",
               width: "100%",
               // textShadow :"2px 2px 2px gray"
-              color:'white'
+              color: 'white'
 
             }}
           >
             <h1>Upload Video</h1>
-            
+
           </div>
           <div style={{
-              position: "absolute",
-              color: "white",
-              padding: "5px 10px 5px 10px",
-              // borderRadius: "10px",
-              display: "inline-block",
-              marginLeft: "-31.5vh",
-              marginTop: "0vh",
-              fontSize: "18px",
-              fontWeight: "bold",
-              backgroundColor: "#404040",
-              boxShadow: "5px 5px #b4b4b4",
-              width:'30vw',
-              height:'3vh'
-              
-            }}>
-          <h4 style={{ marginTop: "0vh" }}>
+            position: "absolute",
+            color: "white",
+            padding: "5px 10px 5px 10px",
+            // borderRadius: "10px",
+            display: "inline-block",
+            marginLeft: "-31.5vh",
+            marginTop: "0vh",
+            fontSize: "18px",
+            fontWeight: "bold",
+            backgroundColor: "#404040",
+            boxShadow: "5px 5px #b4b4b4",
+            width: '30vw',
+            height: '3vh'
+
+          }}>
+            <h4 style={{ marginTop: "0vh" }}>
               ReadyCast에 본인 영상을 업로드 해보세요.
             </h4>
           </div>
@@ -271,27 +277,27 @@ const TestComponent3 = () => {
             style={{
               width: "31vw",
               padding: "10px 10px 10px 10px",
-              
+
               boxSizing: "border-box",
             }}
           ></input>
           <div style={{ marginTop: "0px" }}>
-          <input
-            name="test_price"
-            value={state.test_price}
-            onChange={onChange}
-            type="text"
-            className="price"
-            placeholder="가격을 책정해주세요."
-            style={{
-              marginTop: "25px",
-              width: "31vw",
-              padding: "10px 10px 10px 10px",
-              marginBottom : "20px",
-              boxSizing: "border-box",
-            }}
-          ></input>
-            <UploadPic/>
+            <input
+              name="test_price"
+              value={state.test_price}
+              onChange={onChange}
+              type="text"
+              className="price"
+              placeholder="가격을 책정해주세요."
+              style={{
+                marginTop: "25px",
+                width: "31vw",
+                padding: "10px 10px 10px 10px",
+                marginBottom: "20px",
+                boxSizing: "border-box",
+              }}
+            ></input>
+            <UploadPic />
           </div>
         </div>
         {/*<div
@@ -308,8 +314,8 @@ const TestComponent3 = () => {
 
         <div style={{ marginTop: "-525px", marginLeft: "52vw" }}>
           <TextArea
-          name="test_content"
-          value={state.test_content}
+            name="test_content"
+            value={state.test_content}
             showCount
             maxLength={800}
             style={{
@@ -322,47 +328,47 @@ const TestComponent3 = () => {
             onChange={onChange}
             placeholder="라이브 커머스 영상, 상품정보에 대해  간략하게 설명해주세요."
           />
-          
+
 
           <div style={{ marginLeft: "20px", marginTop: "52px" }}>
-            <div 
-            style={{
-              position:"absolute",
-              color: "white",
-              padding: "5px 10px 5px 10px",
-              marginLeft: "-2vh",
-              marginTop: "-4vh",
-              backgroundColor: "#404040",
-              boxShadow: "5px 5px #b4b4b4",
-              width:'30vw',
-              height:'2vh'
-            }}>
-              <h4 style={{marginTop:'0vh'}}>1.영상과 이미지를 업로드하세요.</h4></div>
             <div
-            style={{
-              position:"absolute",
-              color: "white",
-              padding: "5px 10px 5px 10px",
-              marginLeft: "-2vh",
-              marginTop: "0vh",
-              backgroundColor: "#404040",
-              boxShadow: "5px 5px #b4b4b4",
-              width:'30vw',
-              height:'2vh'
-            }}><h4 style={{marginTop:'0vh'}}>2.라이브 커머스의 제목과 가격을 입력하세요.</h4></div>
+              style={{
+                position: "absolute",
+                color: "white",
+                padding: "5px 10px 5px 10px",
+                marginLeft: "-2vh",
+                marginTop: "-4vh",
+                backgroundColor: "#404040",
+                boxShadow: "5px 5px #b4b4b4",
+                width: '30vw',
+                height: '2vh'
+              }}>
+              <h4 style={{ marginTop: '0vh' }}>1.영상과 이미지를 업로드하세요.</h4></div>
             <div
-            style={{
-              position:"absolute",
-              color: "white",
-              padding: "5px 10px 5px 10px",
-              marginLeft: "-2vh",
-              marginTop: "4vh",
-              backgroundColor: "#404040",
-              boxShadow: "5px 5px #b4b4b4",
-              width:'30vw',
-              height:'2vh'
-            }}><h4 style={{marginTop:'0vh'}}>3.라이브 커머스 영상을 업로드해주세요.</h4></div>
-           {/* <div
+              style={{
+                position: "absolute",
+                color: "white",
+                padding: "5px 10px 5px 10px",
+                marginLeft: "-2vh",
+                marginTop: "0vh",
+                backgroundColor: "#404040",
+                boxShadow: "5px 5px #b4b4b4",
+                width: '30vw',
+                height: '2vh'
+              }}><h4 style={{ marginTop: '0vh' }}>2.라이브 커머스의 제목과 가격을 입력하세요.</h4></div>
+            <div
+              style={{
+                position: "absolute",
+                color: "white",
+                padding: "5px 10px 5px 10px",
+                marginLeft: "-2vh",
+                marginTop: "4vh",
+                backgroundColor: "#404040",
+                boxShadow: "5px 5px #b4b4b4",
+                width: '30vw',
+                height: '2vh'
+              }}><h4 style={{ marginTop: '0vh' }}>3.라이브 커머스 영상을 업로드해주세요.</h4></div>
+            {/* <div
             style={{
               position:"absolute",
               color: "white",

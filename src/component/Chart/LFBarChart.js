@@ -37,13 +37,13 @@ const LFBar = props => {
   console.log("시발", props.data);
   return (
    
-    <BarChart  width={600} height={300} data={PosiData} style={{float :"right"}}>
+    <BarChart  width={500} height={300} data={PosiData} style={{marginLeft :"850px"}}>
       <CartesianGrid strokeDasharray="2 2" />
-      <XAxis dataKey="tfidf_keyword" />
+      <XAxis dataKey="tfidf_keyword" fill="black"/>
       <YAxis />
       <Tooltip />
  
-      <Bar dataKey="tfidf_value" fill="red" />
+      <Bar dataKey="tfidf_value" fill="#0d0d73" />
     </BarChart>
    
 
