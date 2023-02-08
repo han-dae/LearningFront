@@ -206,7 +206,7 @@ class Test4 extends Component {
                   fontFamily:'S-CoreDream-3Light',
                   fontSize:'13px'
                 }}
-              > <h4 style={{ marginTop: '0vh' }}>2. 모두 올바르게 작성되었다면 확인을 누르세요.</h4> </div>
+              > <h4 style={{ marginTop: '0vh' }}>2. 모두 올바르게 작성되었다면 화살표 버튼을 누르세요.</h4> </div>
             </div>
           </div>
           <div style={{ marginLeft: "1280px", marginTop: '12vh', fontFamily:'S-CoreDream-3Light'}}>

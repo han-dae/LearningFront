@@ -73,7 +73,6 @@ const TestPage = () => {
 
     return (
         <div>
-            <ScrollBottom />
             <MainHeader />
             <Content>
 
