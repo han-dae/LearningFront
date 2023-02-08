@@ -78,9 +78,9 @@ const Login = (props) => {
               backgroundSize: "20px",
               backgroundRepeat: "no-repeat",
               display: "inline-block",
-              width: "104px",
+              width: "50px",
               height: "20px",
-              marginLeft: "5px",
+              marginLeft: "30px",
               marginTop:"15px"
             }}
           ></div>
@@ -90,7 +90,7 @@ const Login = (props) => {
                 name="user_id"
                 value={state.user_id}
                 onChange={onChange}
-                style={{ padding: "5px", marginBottom: "10px" }}
+                style={{ padding: "8px", marginBottom: "10px" ,width:"200px",height:"18px" }}
               />
             </div>
 
@@ -101,19 +101,21 @@ const Login = (props) => {
               backgroundSize: "20px",
               backgroundRepeat: "no-repeat",
               display: "inline-block",
-              width: "104px",
+              width: "50px",
               height: "20px",
-              marginLeft: "5px",
-              marginTop:"5px"
+              marginLeft: "30px",
+              marginTop:"5px",
+              
             }}
           ></div>
+          
               <input
                 type="password"
                 placeholder="비밀번호 입력"
                 name="user_pw"
                 value={state.user_pw}
                 onChange={onChange}
-                style={{ padding: "5px", marginBottom: "10px"}}
+                style={{ padding: "8px", marginBottom: "10px",height:"18px", width:"200px"}}
               />
             </div>
             {/* <Button className="btn_login" onClick={this.saveUser} style={{ borderRadius: "20px", width: "100px", float: "right", marginRight: "30px",marginTop :"10px", backgroundColor: "#FE8F8D", color: "white" }}>Save</Button>*/}
