@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import ApiService from "../ApiService";
 import MainHeader from "./Header";
 import styles from "./Login.css";
+import login from "../../img/login.png";
+ import lock from "../../img/lock.png";
 
 const Login = (props) => {
   const [state, setState] = useState({
@@ -65,19 +67,20 @@ const Login = (props) => {
         <div
           style={{ marginLeft: "50px", textAlign: "left", marginTop: "5vh" }}
         >
-          <h2>LOGIN</h2>
+          <h2 style={{borderRadius: "5px",textAlign:"center", marginRight:"220px", color:"white",background:"gray"}}>LOGIN</h2>
           <form>
             <div>
-              <label
-                className="label"
-                style={{
-                  marginRight: "75px",
-                  padding: "5px",
-                  marginBottom: "10vh",
-                }}
-              >
-                ID:
-              </label>
+            <div
+            style={{
+              backgroundImage: `url(${login})`,
+              backgroundSize: "15px",
+              backgroundRepeat: "no-repeat",
+              display: "inline-block",
+              width: "104px",
+              height: "10px",
+              marginLeft: "0px",
+            }}
+          ></div>
               <input
                 type="text"
                 placeholder="아이디 입력"
@@ -89,12 +92,17 @@ const Login = (props) => {
             </div>
 
             <div>
-              <label
-                className="label"
-                style={{ marginRight: "20px", padding: "5px" }}
-              >
-                Password :
-              </label>
+            <div
+            style={{
+              backgroundImage: `url(${lock})`,
+              backgroundSize: "15px",
+              backgroundRepeat: "no-repeat",
+              display: "inline-block",
+              width: "104px",
+              height: "10px",
+              marginLeft: "0px",
+            }}
+          ></div>
               <input
                 type="password"
                 placeholder="비밀번호 입력"
@@ -112,21 +120,21 @@ const Login = (props) => {
                 borderRadius: "20px",
                 width: "100px",
                 float: "right",
-                marginRight: "60px",
-                marginTop: "10px",
+                marginRight: "30px",
+                marginTop: "30px",
                 backgroundColor: "#404040",
                 color: "white",
               }}
             >
               Login
             </button>
-            <p style={{ fontSize: "14px", marginTop: "10px" }}>
-              아직 회원이 아니신가요?
+            
+              <button style={{ borderRadius: "20px", width: "100px", float: "left", marginRight: "30px",marginTop :"20px", backgroundColor: "#404040", color: "white" }}>
               <a href={"/Join"} >
-                <br />
                 JOIN
               </a>
-            </p>
+              </button>
+            
           </form>
         </div>
       </div>
