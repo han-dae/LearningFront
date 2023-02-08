@@ -69,7 +69,7 @@ const Login = (props) => {
         <div
           style={{ marginLeft: "50px", textAlign: "left", marginTop: "5vh" }}
         >
-          <h2 style={{borderRadius: "5px",textAlign:"center", marginRight:"220px", color:"white",background:"gray", marginTop:"0px"}}>LOGIN</h2>
+          <h2 style={{borderRadius: "5px",textAlign:"center", marginRight:"220px", color:"white",background:"gray", marginTop:"0px",fontFamily:'S-CoreDream-6bold'}}>LOGIN</h2>
           <form>
             <div>
             <div
@@ -90,7 +90,7 @@ const Login = (props) => {
                 name="user_id"
                 value={state.user_id}
                 onChange={onChange}
-                style={{ padding: "8px", marginBottom: "10px" ,width:"200px",height:"18px" }}
+                style={{ padding: "8px", marginBottom: "10px" ,width:"200px",height:"18px",fontFamily:'S-CoreDream-3Light' }}
               />
             </div>
 
@@ -115,7 +115,7 @@ const Login = (props) => {
                 name="user_pw"
                 value={state.user_pw}
                 onChange={onChange}
-                style={{ padding: "8px", marginBottom: "10px",height:"18px", width:"200px"}}
+                style={{ padding: "8px", marginBottom: "10px",height:"18px", width:"200px",fontFamily:'S-CoreDream-3Light'}}
               />
             </div>
             {/* <Button className="btn_login" onClick={this.saveUser} style={{ borderRadius: "20px", width: "100px", float: "right", marginRight: "30px",marginTop :"10px", backgroundColor: "#FE8F8D", color: "white" }}>Save</Button>*/}
@@ -130,12 +130,13 @@ const Login = (props) => {
                 marginTop: "30px",
                 backgroundColor: "#404040",
                 color: "white",
+                fontFamily:'S-CoreDream-3Light'
               }}
             >
               Login
             </button>
             
-              <Button style={{ borderRadius: "20px", width: "100px", float: "left", marginRight: "30px",marginTop :"29px", backgroundColor: "#404040", color: "white" }}>
+              <Button style={{ borderRadius: "20px", width: "100px", float: "left", marginRight: "30px",marginTop :"29px", backgroundColor: "#404040", color: "white",fontFamily:'S-CoreDream-3Light'}}>
               <a href={"/Join"} >
                 JOIN
               </a>
