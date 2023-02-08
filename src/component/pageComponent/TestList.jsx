@@ -172,7 +172,7 @@ const TestList = () => {
 
                   <Link
                     to={"/testPage?test_seq=" + value.test_seq}
-                    style={{ textDecoration: "none", color: "black" }}
+                    style={{ textDecoration: "none", color: "black", fontFamily:"Noto Sans Korean" }}
                   >
                     <div
                       className="ExSpace"
