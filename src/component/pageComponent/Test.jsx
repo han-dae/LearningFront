@@ -13,7 +13,7 @@ import WordCloud0 from "../../img/wordCloud/wc0.png";
 import WordCloud1 from "../../img/wordCloud/wc1.png";
 import WordCloud2 from "../../img/wordCloud/wc2.png";
 import Chart from "../../component/Chart/LineChart";
-
+import "./Textarea.css";
 const TestComponent = () => {
   const [Category, setCategory] = useState("0");
 
