@@ -176,7 +176,8 @@ const TestPage = () => {
                             style={{
                                 width: "200px",
                                 height: "200px",
-                                marginTop:'-7px'
+                                marginTop:'-7px',
+                                borderRadius: 10,
                             }}
                             alt="" />
                     </div>
