@@ -6,6 +6,7 @@ import MainHeader from "./Header";
 import styles from "./Login.css";
 import login from "../../img/login.png";
  import lock from "../../img/lock.png";
+ import { Button } from "antd";
 
 const Login = (props) => {
   const [state, setState] = useState({
@@ -52,6 +53,7 @@ const Login = (props) => {
       <div style={{backgroundColor:'#404040'}}>
       <div
         style={{
+          fontSize:"14px",
           width: "400px",
           position: "absolute",
           height: "300px",
@@ -60,25 +62,26 @@ const Login = (props) => {
           marginTop: "140px",
           marginLeft: "40vw",
           textAlign: "center",
-          boxShadow: "3px 3px 3px grey",
+          boxShadow: "4px 3px 3px navy",
           borderRadius: "30px",
         }}
       >
         <div
           style={{ marginLeft: "50px", textAlign: "left", marginTop: "5vh" }}
         >
-          <h2 style={{borderRadius: "5px",textAlign:"center", marginRight:"220px", color:"white",background:"gray"}}>LOGIN</h2>
+          <h2 style={{borderRadius: "5px",textAlign:"center", marginRight:"220px", color:"white",background:"gray", marginTop:"0px"}}>LOGIN</h2>
           <form>
             <div>
             <div
             style={{
               backgroundImage: `url(${login})`,
-              backgroundSize: "15px",
+              backgroundSize: "20px",
               backgroundRepeat: "no-repeat",
               display: "inline-block",
               width: "104px",
-              height: "10px",
-              marginLeft: "0px",
+              height: "20px",
+              marginLeft: "5px",
+              marginTop:"15px"
             }}
           ></div>
               <input
@@ -95,12 +98,13 @@ const Login = (props) => {
             <div
             style={{
               backgroundImage: `url(${lock})`,
-              backgroundSize: "15px",
+              backgroundSize: "20px",
               backgroundRepeat: "no-repeat",
               display: "inline-block",
               width: "104px",
-              height: "10px",
-              marginLeft: "0px",
+              height: "20px",
+              marginLeft: "5px",
+              marginTop:"5px"
             }}
           ></div>
               <input
@@ -109,7 +113,7 @@ const Login = (props) => {
                 name="user_pw"
                 value={state.user_pw}
                 onChange={onChange}
-                style={{ padding: "5px" }}
+                style={{ padding: "5px", marginBottom: "10px"}}
               />
             </div>
             {/* <Button className="btn_login" onClick={this.saveUser} style={{ borderRadius: "20px", width: "100px", float: "right", marginRight: "30px",marginTop :"10px", backgroundColor: "#FE8F8D", color: "white" }}>Save</Button>*/}
@@ -129,11 +133,11 @@ const Login = (props) => {
               Login
             </button>
             
-              <button style={{ borderRadius: "20px", width: "100px", float: "left", marginRight: "30px",marginTop :"20px", backgroundColor: "#404040", color: "white" }}>
+              <Button style={{ borderRadius: "20px", width: "100px", float: "left", marginRight: "30px",marginTop :"29px", backgroundColor: "#404040", color: "white" }}>
               <a href={"/Join"} >
                 JOIN
               </a>
-              </button>
+              </Button>
             
           </form>
         </div>
