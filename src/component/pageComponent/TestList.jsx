@@ -74,24 +74,22 @@ const TestList = () => {
             marginBottom: "50px",
             marginLeft: "250px",
             width: "1400px",
-            height: "400px",
+            height: "100px",
             backgroundColor: "white",
           }}
         >
           <div className="categoryEx"
             style={{
               marginTop: "-6vh",
-              marginLeft: "7vw",
-              width: "60vw",
-              height: "5vh",
-              paddingLeft: "10px",
+              width: "360px",
+              height: "45px",
               backgroundColor: "#404040",
-              // borderRadius: 20,
+              borderRadius: "5px",
               textAlign: 'center',
               color: 'white',
               boxShadow: "5px 5px #B4B4B4"
             }} >
-            <h1 style={{fontFamily:'S-CoreDream-6Bold'}}>Video List</h1>
+            <h1 style={{fontFamily:'S-CoreDream-4Regular'}}>Video List</h1>
             {/*} <div
             style={{
               marginTop: "4vh",
@@ -116,11 +114,11 @@ const TestList = () => {
           <div
             className="videoSpace"
             style={{
-              padding: "10px 20px 20px 20px",
+              padding: "10px 20px 10px 20px",
               width: "1380px",
 
               backgroundColor: "#404040",
-              borderRadius: "20px",
+              borderRadius: "15px",
               display: "inline-block",
               marginBottom: "40px",
               overflow: "visible",
@@ -128,7 +126,7 @@ const TestList = () => {
             }}
           >
              <div onClick={clicked} style={{
-            padding:'15px',
+            padding:'10px 15px 15px 15px',
             marginLeft:'64vw'
             }}>
             <ButtonLF100 value={'UPLOAD'}> </ButtonLF100>
@@ -140,8 +138,7 @@ const TestList = () => {
                 style={{
                   width: "30%",
                   display: "inline-block",
-                  marginLeft: "20px",
-                  marginRight: "20px",
+                  margin : "20px",
                 }}
               >
                 <div className="videoContents" style={{ marginLeft: "15px" }}>
@@ -159,7 +156,6 @@ const TestList = () => {
                   >
                     <video
                       src={`${process.env.PUBLIC_URL}/file/${value.test_video_realname}`}
-                      controls
                       autoPlay
                       muted
                       playsInline
@@ -176,7 +172,7 @@ const TestList = () => {
 
                   <Link
                     to={"/testPage?test_seq=" + value.test_seq}
-                    style={{ textDecoration: "none", color: "black" }}
+                    style={{ textDecoration: "none", color: "black", fontFamily:"Noto Sans Korean" }}
                   >
                     <div
                       className="ExSpace"
@@ -194,7 +190,7 @@ const TestList = () => {
                         style={{
                           fontSize: "20px",
                           height: "45px",
-                          
+                          marginBottom:"0px",
                           marginTop: "0px",
                           color: "white",
                           fontFamily:'S-CoreDream-3Light'
@@ -203,24 +199,13 @@ const TestList = () => {
                         {value.test_title}
                       </p>
 
-                      <div className="userName" style={{ fontSize: "14px" ,color:"white", fontFamily:'S-CoreDream-1Thin'}}>
+                      <div className="userinfo" style={{ fontSize: "14px" ,color:"white", fontFamily:'S-CoreDream-1Thin'}}>
                         작성자 : {value.user_id}
-                      </div>
-                      <div
-                        className="telNumber"
+                        <div
+                        className="upload_date"
                         style={{
-                          width: "20vw",
-                          marginLeft: "30%",
-                          marginTop: "-20px",
-                          fontSize: "14px",
-                        }}
-                      >
-                      </div>
-                      <div
-                        className="price"
-                        style={{
-                          width: "20vw",
-                          marginLeft: "80%",
+                          width: "80px",
+                          marginLeft: "87%",
                           marginTop: "-20px",
                           fontSize: "14px",
                           color:"white",
@@ -229,6 +214,9 @@ const TestList = () => {
                       >
                         {value.reg_dt}
                       </div>
+                      </div>
+                     
+                     
                     </div>
                   </Link>
                 </div>
