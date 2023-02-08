@@ -96,7 +96,9 @@ const TestComponent = () => {
               width: "100%",
               // textShadow: "2px 2px 2px gray",
               color :"white",
-              marginTop :"-20px"
+              marginTop :"-12px",
+              fontFamily:'S-CoreDream-6Bold',
+              fontSize :'13px'
             }}
           >
             <h1> Show Cue Sheet</h1>

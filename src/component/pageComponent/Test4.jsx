@@ -109,10 +109,13 @@ class Test4 extends Component {
               // borderRadius: 20,
               textAlign: 'center',
               color: 'white',
-              boxShadow: "5px 5px #B4B4B4"
+              boxShadow: "5px 5px #B4B4B4",
+              fontFamily:'S-CoreDream-6Bold',
+              fontSize :'13px',
+
             }}
           >
-            <h1>Check Video</h1>
+            <h1 style={{paddingTop:'6px'}}>Check Video</h1>
           </div>
 
           <div
@@ -140,27 +143,23 @@ class Test4 extends Component {
               marginLeft: "20vw",
               backgroundColor: "#404040",
               marginTop: "20px",
-              borderRadius: "10px",
               boxShadow: "3px 3px #B4B4B4"
             }}
           >
-            <div className="nameSpace" style={{ marginTop: "-20px", }}>
-              <p style={{ fontSize: "24px", fontWeight: "bold", color: 'white', textAlign: 'center' }}>
+            <div className="nameSpace" style={{ marginTop: "-23px" }}>
+              <p style={{ fontSize: "24px", fontWeight: "bold", color: 'white', textAlign: 'center',fontFamily:'S-CoreDream-3Light' }}>
                 {this.state.test_title}
               </p>
             </div>
-            <div className="userName" style={{ fontSize: "18px", color: 'white' }}>작성자 : {this.state.user_id}</div>
-            <div
-              className="telNumber"
-              style={{ width: "20vw", marginLeft: "30%", marginTop: "-21px", fontSize: "18px", color: 'white' }}
-            >
-
+            <div className="userName" style={{ fontSize: "18px", color: 'white',fontFamily:'S-CoreDream-3Light',paddingLeft:'4px' }}>작성자 : {this.state.user_id}
             </div>
+            <div>
             <div
               className="price"
-              style={{ width: "20vw", marginLeft: "70%", marginTop: "-21px", fontSize: "18px", color: 'white' }}
+              style={{ width: "20vw", marginLeft: "70%", marginTop: "-26px", fontSize: "18px", color: 'white',fontFamily:'S-CoreDream-3Light' , position:'absolute', right:'36vw'}}
             >
               가격 : {this.state.test_price}
+            </div>
             </div>
           </div>
           <div className="Script">
@@ -173,7 +172,8 @@ class Test4 extends Component {
                 marginTop: "-570px",
                 overflowY: "scroll",
                 backgroundColor: "white",
-                border: '1px solid #404040'
+                border: '1px solid #404040',
+                fontFamily:'S-CoreDream-3Light'
               }}
             >{this.state.test_cuesheet}</div>
             <div style={{ marginLeft: "1140px" }}>
@@ -183,13 +183,15 @@ class Test4 extends Component {
                   color: "white",
                   padding: "5px 10px 5px 10px",
                   marginLeft: "-4vh",
-                  marginTop: "1vh",
+                  marginTop: "2vh",
                   backgroundColor: "#404040",
                   boxShadow: "5px 5px #b4b4b4",
                   width: '25vw',
-                  height: '2vh'
+                  height: '2vh',
+                  fontFamily:'S-CoreDream-3Light',
+                  fontSize:'13px'
                 }}
-              ><h4 style={{ marginTop: '0vh' }} >1. 작성했던 스크립트와 영상을 확인해보세요.</h4> </div>
+              ><h4 style={{ marginTop: '0vh'}} >1. 작성했던 스크립트와 영상을 확인 해보세요.</h4> </div>
               <div
                 style={{
                   position: "absolute",
@@ -200,15 +202,17 @@ class Test4 extends Component {
                   backgroundColor: "#404040",
                   boxShadow: "5px 5px #b4b4b4",
                   width: '25vw',
-                  height: '2vh'
+                  height: '2vh',
+                  fontFamily:'S-CoreDream-3Light',
+                  fontSize:'13px'
                 }}
               > <h4 style={{ marginTop: '0vh' }}>2. 모두 올바르게 작성되었다면 확인을 누르세요.</h4> </div>
             </div>
           </div>
-          <div style={{ marginLeft: "1280px", marginTop: '12vh' }}>
+          <div style={{ marginLeft: "1280px", marginTop: '12vh', fontFamily:'S-CoreDream-3Light'}}>
             <form >
-              <input type="checkbox" value="agree" name="agreement1" style={{ marginLeft: "10px" }} />개인정보 동의
-              <input type="checkbox" value="agree" name="agreement2" style={{ marginLeft: "60px" }} />영상 정보 공개
+              <input type="checkbox" value="agree" name="agreement1" style={{ marginLeft: "10px"}} />개인정보 동의
+              <input type="checkbox" value="agree" name="agreement2" style={{ marginLeft: "60px"}} />영상 정보 공개
             </form>
           </div>
           <Link to={"/test3"}>
@@ -240,7 +244,7 @@ class Test4 extends Component {
               </Link> */}
           <div className="testBtn" style={{ position: "absolute", bottom: "2vh", right: "40vw" }}></div>
 
-          //<Link to={"/testlist"}>
+          <Link to={"/testlist"}>
             <RightCircleOutlined
               type="Button"
               onClick={this.submit}
@@ -253,7 +257,7 @@ class Test4 extends Component {
                 color: "black",
               }}
             />
-            //</Link>
+            </Link>
           <div className="testBtn" style={{ position: "absolute", bottom: "2vh", right: "40vw" }}>
             <Link to={"/test1"}>
               <div className='test1'
