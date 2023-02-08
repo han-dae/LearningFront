@@ -76,7 +76,7 @@ const AddComment = ({ handelComment }) => {
           
             fontSize: '12px',
             color:'white',
-            marginTop:'26vh'
+            marginTop:'28.5vh'
           }}
           onChange={inputHaldle}
           value={value}

@@ -97,7 +97,7 @@ const TestPage = () => {
                 <div
                     style={{
                         marginLeft: "13vw",
-                         marginTop: "-7vh",
+                         marginTop: "-6.5vh",
                         width: '700px',
                         backgroundColor: "#404040",
                         // borderRadius: 20,
@@ -165,7 +165,7 @@ const TestPage = () => {
                         style={{
                             width: "200px",
                             height: "200px",
-                            marginTop: "-63vh",
+                            marginTop: "-62.5vh",
                             marginLeft: "50vw",
                             backgroundColor: "white",
                             borderRadius: 10,
@@ -260,7 +260,7 @@ const TestPage = () => {
                             marginLeft: "50vw",
                             marginTop: "1vh",
                             width: "713px",
-                            height: "25vh",
+                            height: "27vh",
                             backgroundColor: "#404040",
                             borderRadius: 10,
                             overflowY: "scroll",
