@@ -11,6 +11,7 @@ const ButtonLF100 = (props) => {
                 padding:"1px 1px 1px 1px",
                 margin:"3px",
                 fontWeight:'bold'
+                
             }}>
             {props.value}
         </Button>

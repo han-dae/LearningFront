@@ -240,7 +240,7 @@ class Test4 extends Component {
               </Link> */}
           <div className="testBtn" style={{ position: "absolute", bottom: "2vh", right: "40vw" }}></div>
 
-          //<Link to={"/testlist"}>
+          <Link to={"/testlist"}>
             <RightCircleOutlined
               type="Button"
               onClick={this.submit}
@@ -253,7 +253,7 @@ class Test4 extends Component {
                 color: "black",
               }}
             />
-            //</Link>
+            </Link>
           <div className="testBtn" style={{ position: "absolute", bottom: "2vh", right: "40vw" }}>
             <Link to={"/test1"}>
               <div className='test1'

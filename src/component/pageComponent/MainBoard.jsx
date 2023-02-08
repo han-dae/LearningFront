@@ -45,8 +45,8 @@ const MainBoard = () => {
             width: 1000,
             height: 400
           }}>
-            <div style={{width :"300px", marginTop :"-20px",marginLeft :"200px",height :"40px", borderRadius :"30px", boxShadow :"3px 3px 1px gray" ,color :"white",backgroundColor :"#0d0d73"}}>
-          <div style={{ marginLeft: "0px" , fontSize :"20px",fontWeight :"bold", marginTop :"31px",marginBottom : "20px", paddingTop :"5px"}}>PLATFORM RANK</div></div>
+            <div style={{width :"300px", marginTop :"-20px",marginLeft :"200px",height :"40px", borderRadius :"10px", boxShadow :"3px 3px 1px gray" ,color :"white",backgroundColor :"#0d0d73"}}>
+          <div style={{ marginLeft: "0px" , fontSize :"20px",fontWeight :"bold", marginTop :"31px",marginBottom : "20px", paddingTop :"5px", fontFamily :"Unbounded"}}>PLATFORM RANK</div></div>
           <div className="logoImg"
           style={{height:'18vh',
                   width:'3.5vw',
@@ -113,8 +113,8 @@ const MainBoard = () => {
             width: 800,
             height: 400,
             
-          }}><div style={{width :"300px", marginTop :"-20px",marginLeft :"180px",height :"40px", borderRadius :"30px", backgroundColor :"#0d0d73", boxShadow :"3px 3px 1px gray"}}>
-          <h4 style={{ marginLeft: "-1vw" , fontSize :"20px",fontWeight :"bold", marginTop :"30px",marginBottom : "40px",paddingTop:"5px",paddingLeft:"20px", color :"white"}}>PLATFORM REVENUE</h4></div>
+          }}><div style={{width :"300px", marginTop :"-20px",marginLeft :"180px",height :"40px", borderRadius :"10px", backgroundColor :"#0d0d73", boxShadow :"3px 3px 1px gray"}}>
+          <h4 style={{ marginLeft: "-1vw" , fontSize :"20px",fontWeight :"bold", marginTop :"30px",marginBottom : "40px",paddingTop:"5px",paddingLeft:"20px", color :"white",  fontFamily :"Unbounded"}}>PLATFORM REVENUE</h4></div>
           <div className="logoImg"
           style={{height:'18vh',
                   width:'2.5vw',

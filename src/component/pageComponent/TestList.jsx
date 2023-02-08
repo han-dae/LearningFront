@@ -176,7 +176,7 @@ const TestList = () => {
 
                   <Link
                     to={"/testPage?test_seq=" + value.test_seq}
-                    style={{ textDecoration: "none", color: "black" }}
+                    style={{ textDecoration: "none", color: "black", fontFamily:"Noto Sans Korean" }}
                   >
                     <div
                       className="ExSpace"
@@ -196,13 +196,14 @@ const TestList = () => {
                           height: "45px",
                           fontWeight: "bold",
                           marginTop: "0px",
-                          color: "white"
+                          color: "white",
+                         
                         }}
                       >
                         {value.test_title}
                       </p>
 
-                      <div className="userName" style={{ fontSize: "14px" ,color:"white"}}>
+                      <div className="userName" style={{ fontSize: "14px" ,color:"white", }}>
                         작성자 : {value.user_id}
                       </div>
                       <div
