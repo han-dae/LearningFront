@@ -14,7 +14,8 @@ const Pre = styled.div`
   width: 50px;
   height: 30px;
   position: absolute;
-left : -70px;
+left : -120px;
+
 
 `;
 const NextTo = styled.div`
@@ -41,7 +42,7 @@ const CarouselComponent = () => {
     rows : 1,
     nextArrow: (
       <NextTo>
-        <img src={Left} />
+        <img src={Left}/>
       </NextTo>
     ),
     prevArrow: (

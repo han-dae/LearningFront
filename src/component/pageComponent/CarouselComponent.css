@@ -1,42 +1,37 @@
 .slick-slider .banner {
-    width:95%;
-    height: 100%;
-    opacity: 0.4;
+     width:80%;
+    height: 80%;
+    opacity: 0.4; 
 
     
 
 }
-
 .slick-center {
 
-    opacity: 1;
-   margin: 10px; 
+     opacity: 1;
+    margin-left: 10px; 
+    margin-right: 10px;  
 
 }
-
 .slick-center .banner {
 
     opacity: 1;
     
 }
-
 .slick-slider {
-    width: 85vw;
-    margin-left: -51%;
+    width: 80vw;
+    height: 450px;
+    margin-left: -45%;
     align-content: center;
     text-align: center;
 }
-
+.slick-dots{
+    margin-bottom: 80px;
+}
 .slick-track {
     
-    margin: -10px;
-    height: 200px;
-}
+    margin-left: -30px;
+    height: 500px; 
 
 
-.slick-prev::before,
-.slick-next::before {
-
-    opacity: 0;
-    display: none;
 }
