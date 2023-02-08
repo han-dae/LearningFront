@@ -91,7 +91,7 @@ const TestList = () => {
               color: 'white',
               boxShadow: "5px 5px #B4B4B4"
             }} >
-            <h1>Video List</h1>
+            <h1 style={{fontFamily:'S-CoreDream-6Bold'}}>Video List</h1>
             {/*} <div
             style={{
               marginTop: "4vh",
@@ -194,16 +194,16 @@ const TestList = () => {
                         style={{
                           fontSize: "20px",
                           height: "45px",
-                          fontWeight: "bold",
+                          
                           marginTop: "0px",
                           color: "white",
-                         
+                          fontFamily:'S-CoreDream-3Light'
                         }}
                       >
                         {value.test_title}
                       </p>
 
-                      <div className="userName" style={{ fontSize: "14px" ,color:"white", }}>
+                      <div className="userName" style={{ fontSize: "14px" ,color:"white", fontFamily:'S-CoreDream-1Thin'}}>
                         작성자 : {value.user_id}
                       </div>
                       <div
@@ -223,7 +223,8 @@ const TestList = () => {
                           marginLeft: "80%",
                           marginTop: "-20px",
                           fontSize: "14px",
-                          color:"white"
+                          color:"white",
+                          fontFamily:'S-CoreDream-1Thin'
                         }}
                       >
                         {value.reg_dt}

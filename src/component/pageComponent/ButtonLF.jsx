@@ -10,8 +10,13 @@ const ButtonLF100 = (props) => {
                 color: "black",
                 padding:"1px 1px 1px 1px",
                 margin:"3px",
+<<<<<<< HEAD
                 fontWeight:'bold'
                 
+=======
+                fontWeight:'bold',
+                fontFamily:'S-CoreDream-3Light'
+>>>>>>> f548119d67c8f6fda2a9cafecc2429e6dc7950b0
             }}>
             {props.value}
         </Button>
@@ -28,7 +33,8 @@ const ButtonLF50 = (props) => {
                 color: "black",
                 padding:"1px 1px 1px 1px",
                 margin:"3px",
-                fontWeight:'bold'
+                fontWeight:'bold',
+                fontFamily:'S-CoreDream-3Light'
             }}>
             {props.value}
         </Button>
