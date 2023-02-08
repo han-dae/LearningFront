@@ -120,7 +120,7 @@ const [Category, setCategory] =useState({
         
         
             <h1 style={{marginTop:'-4.2vh',fontFamily:'S-CoreDream-6Bold',
-              fontSize :'25px'}}> Create Cue Sheet </h1>
+              fontSize :'26px'}}> Create Cue Sheet </h1>
             <div
               style={{
                 position: "absolute",
@@ -191,7 +191,7 @@ float :"left",
               overflowY: "scroll",
               marginTop:'1vw',
               marginLeft:'1vw',
-              border: "1px solid #404040"
+              border: "1px solid #404040",fontFamily:'S-CoreDream-3Light'
             }}
             onChange={onChange}
             placeholder="위 그래프를 토대로 스크립트를 작성해보세요."

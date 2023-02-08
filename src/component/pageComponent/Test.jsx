@@ -128,7 +128,7 @@ const TestComponent = () => {
                 label: "의자",
               },
             ]}
-            style={{ width: "31.1vw", marginLeft: "20vw", marginTop: "10px" }}
+            style={{ width: "31.1vw", marginLeft: "20vw", marginTop: "10px",fontFamily:'S-CoreDream-3Light' }}
           />
         </div>
 
@@ -151,7 +151,7 @@ const TestComponent = () => {
             padding: "5px 10px 5px 10px",
           }}
         >
-          <h3 style={{ fontSize: "16px" }}>{Category.cuesheet}</h3>
+          <h3 style={{ fontSize: "16px",fontFamily:'S-CoreDream-3Light'}}>{Category.cuesheet}</h3>
         </div>
 
         <div className="InputCategory" style={{ marginLeft: "52vw" }}>

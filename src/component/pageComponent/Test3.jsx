@@ -237,7 +237,7 @@ const TestComponent3 = () => {
             fontFamily:"S-CoreDream-3Light",
 
           }}>
-            <h4 style={{ marginTop: "0.3vh" }}>
+            <h4 style={{ marginTop: "0.3vh" ,fontFamily:'S-CoreDream-3Light'}}>
               ReadyCast에 본인 영상을 업로드 해보세요.
             </h4>
           </div>
@@ -280,7 +280,7 @@ const TestComponent3 = () => {
             style={{
               width: "31vw",
               padding: "10px 10px 10px 10px",
-
+              fontFamily:'S-CoreDream-3Light',
               boxSizing: "border-box",
             }}
           ></input>
@@ -298,6 +298,7 @@ const TestComponent3 = () => {
                 padding: "10px 10px 10px 10px",
                 marginBottom: "20px",
                 boxSizing: "border-box",
+                fontFamily:'S-CoreDream-3Light'
               }}
             ></input>
             <UploadPic />
@@ -327,6 +328,7 @@ const TestComponent3 = () => {
               resize: "none",
               overflowY: "scroll",
               border: "1px solid #404040",
+              fontFamily:'S-CoreDream-3Light'
             }}
             onChange={onChange}
             placeholder="라이브 커머스 영상, 상품정보에 대해  간략하게 설명해주세요."

@@ -106,7 +106,8 @@ const TestPage = () => {
                         color: 'white',
                         boxShadow: "5px 5px #B4B4B4",
                         position:'absolute',
-                        height:'18vh'
+                        height:'18vh',
+                        fontFamily:'S-CoreDream-3Light'
                     }}>
                     <div
                         className="test_title"
@@ -154,7 +155,8 @@ const TestPage = () => {
                         marginLeft: '47vw',
                         width:'2vw',
                         zIndex:'1000',
-                        position:'absolute'
+                        position:'absolute',
+                        fontFamily:'S-CoreDream-3Light'
                     }}>
                     <Liked test_seq_id={test_seq_id} />
                 </div>
@@ -189,6 +191,7 @@ const TestPage = () => {
                             backgroundColor: "#404040",
                             borderRadius: 10,
                             color: 'white',
+                            fontFamily:'S-CoreDream-3Light'
                            // padding:'5px'
                             // boxShadow: "5px 5px #B4B4B4",
 
@@ -208,6 +211,7 @@ const TestPage = () => {
                             // boxShadow: "5px 5px #B4B4B4",
                             overflowY: 'scroll',
                             whiteSpace: "pre-wrap",
+                            fontFamily:'S-CoreDream-3Light'
                             
                         }}
                     >
@@ -260,7 +264,8 @@ const TestPage = () => {
                             borderRadius: 10,
                             overflowY: "scroll",
                             color: 'white',
-                            padding:'5px'
+                            padding:'5px',
+                            fontFamily:'S-CoreDream-3Light'
                             // boxShadow: "5px  #B4B4B4"
                         }}
                     >
