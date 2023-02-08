@@ -168,14 +168,15 @@ const TestPage = () => {
                             height: "200px",
                             marginTop: "-63vh",
                             marginLeft: "50vw",
-                            backgroundColor: "#404040",
+                            backgroundColor: "white",
                             borderRadius: 10,
                             // boxShadow: "5px 5px #B4B4B4"
                         }}>
                         <img src={`${process.env.PUBLIC_URL}/file/${TestDetail.test_photo}`}
                             style={{
                                 width: "200px",
-                                height: "200px"
+                                height: "200px",
+                                marginTop:'-7px'
                             }}
                             alt="" />
                     </div>
