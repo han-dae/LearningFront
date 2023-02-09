@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const USER_API_BASE_URL = "http://3.35.132.238:8080/users";
+const USER_API_BASE_URL = "http://3.35.132.238:8080/users/users";
 const TEST_API_BASE_URL = "http://3.35.132.238:8080/users/test";
 const GUIDE_API_BASE_URL = "http://3.35.132.238:8080/users/guide";
 const COMMENT_API_BASE_URL = "http://3.35.132.238:8080/users/comment";
