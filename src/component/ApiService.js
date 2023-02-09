@@ -38,9 +38,7 @@ class ApiService {
     console.log("review axios",guide_seq);
     return axios.post(STT_API_BASE_URL + "/", guide_seq);
   }
-  // sendComment(value) {
-  //   return axios.get(COMMENT_API_BASE_URL);
-  // }
+ 
   comment(comment){
     console.log(comment.cmt_content+'박상현메롱')
     console.log(COMMENT_API_BASE_URL+"/");
