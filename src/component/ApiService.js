@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const USER_API_BASE_URL = "http://localhost:8081/users/users";
-const TEST_API_BASE_URL = "http://localhost:8081/users/test";
-const GUIDE_API_BASE_URL = "http://localhost:8081/users/guide";
-const COMMENT_API_BASE_URL = "http://localhost:8081/users/comment";
-const TFIDF_API_BASE_URL = "http://localhost:8081/users/tfidf";
-const STT_API_BASE_URL = "http://localhost:8081/users/sttchart";
-const RECOMMEND_API_BASE_URL = "http://localhost:8081/users/recommend"
+const USER_API_BASE_URL = "http://3.35.132.238:8080/users";
+const TEST_API_BASE_URL = "http://3.35.132.238:8080/users/test";
+const GUIDE_API_BASE_URL = "http://3.35.132.238:8080/users/guide";
+const COMMENT_API_BASE_URL = "http://3.35.132.238:8080/users/comment";
+const TFIDF_API_BASE_URL = "http://3.35.132.238:8080/users/tfidf";
+const STT_API_BASE_URL = "http://3.35.132.238:8080/users/sttchart";
+const RECOMMEND_API_BASE_URL = "http://3.35.132.238:8080/users/recommend"
 class ApiService {
   fetchUser() {
     return axios.get(USER_API_BASE_URL);
