@@ -119,7 +119,8 @@ const [Category, setCategory] =useState({
         
         
         
-            <h1 style={{marginTop:'-4.5vh'}}> Create Cue Sheet </h1>
+            <h1 style={{marginTop:'-4.2vh',fontFamily:'S-CoreDream-6Bold',
+              fontSize :'26px'}}> Create Cue Sheet </h1>
             <div
               style={{
                 position: "absolute",
@@ -129,11 +130,12 @@ const [Category, setCategory] =useState({
                 display: "inline-block",
                 marginLeft: "-15vw",
                 marginTop: "36vh",
-                fontSize: "18px",
+                fontSize: "15px",
                 fontWeight: "bold",
                 backgroundColor: "#404040",
                 boxShadow: "5px 5px #b4b4b4",
-                width:'29.5vw'
+                width:'29.5vw',
+                fontFamily:"S-CoreDream-3Light"
 
               }}
             >
@@ -189,7 +191,7 @@ float :"left",
               overflowY: "scroll",
               marginTop:'1vw',
               marginLeft:'1vw',
-              border: "1px solid #404040"
+              border: "1px solid #404040",fontFamily:'S-CoreDream-3Light'
             }}
             onChange={onChange}
             placeholder="위 그래프를 토대로 스크립트를 작성해보세요."

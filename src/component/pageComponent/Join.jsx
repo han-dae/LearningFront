@@ -83,10 +83,10 @@ class Join extends Component {
             backgroundColor: "#404040",
             color: "white" 
           }}>
-          <h2 style={{borderRadius: "5px",textAlign:"center", marginRight:"0px", color:"white",background:"gray"}}>JOIN</h2>
+          <h2 style={{borderRadius: "5px",textAlign:"center", marginRight:"0px", color:"white",background:"gray", fontFamily:'S-CoreDream-6bold'}}>JOIN</h2>
           </div>
           <form>
-            <table style={{ textAlign: "left" ,borderSpacing: "5px"}}>
+            <table style={{ textAlign: "left" ,borderSpacing: "5px", fontFamily:'S-CoreDream-3Light'}}>
               <div>
                 <tr style={{ width: "40%" }}>
                  
@@ -103,7 +103,7 @@ class Join extends Component {
                       name="user_id"
                       value={this.state.user_id}
                       onChange={this.onChange}
-                      style={{ padding: "5px", width:"270px",borderRadius:"7px" }}
+                      style={{ padding: "5px", width:"270px",borderRadius:"7px",fontFamily:'S-CoreDream-3Light' }}
                       
                     />
                     </tr>
@@ -122,7 +122,7 @@ class Join extends Component {
                       name="user_pw"
                       value={this.state.user_pw}
                       onChange={this.onChange}
-                      style={{ padding: "5px", width:"270px",borderRadius:"7px" }}
+                      style={{ padding: "5px", width:"270px",borderRadius:"7px",fontFamily:'S-CoreDream-3Light' }}
                     />
                   </tr>
                 
@@ -141,7 +141,7 @@ class Join extends Component {
                       name="user_hp"
                       value={this.state.user_hp}
                       onChange={this.onChange}
-                      style={{ padding: "5px", width:"270px",borderRadius:"7px" }}
+                      style={{ padding: "5px", width:"270px",borderRadius:"7px",fontFamily:'S-CoreDream-3Light' }}
                     />
                   </tr>
                 
@@ -158,15 +158,15 @@ class Join extends Component {
                       name="user_email"
                       value={this.state.user_email}
                       onChange={this.onChange}
-                      style={{ padding: "5px", width:"270px",borderRadius:"7px" }}
+                      style={{ padding: "5px", width:"270px",borderRadius:"7px",fontFamily:'S-CoreDream-3Light' }}
                     />
                   </tr>
                 
               </div>
             </table>
 
-            <Button className="btn_login" onClick={this.saveUser} style={{ borderRadius: "20px", width: "100px", float: "right", marginRight: "30px",marginTop :"40px", backgroundColor: "#404040", color: "white" }}>SUBMIT</Button>
-           <Button style={{ borderRadius: "20px", width: "100px", float: "left", marginRight: "30px",marginTop :"40px", backgroundColor: "#404040", color: "white" }}><a href="/Login" >LOGIN</a></Button> 
+            <Button className="btn_login" onClick={this.saveUser} style={{ borderRadius: "20px", width: "100px", float: "right", marginRight: "30px",marginTop :"40px", backgroundColor: "#404040", color: "white",fontFamily:'S-CoreDream-3Light' }}>SUBMIT</Button>
+           <Button style={{ borderRadius: "20px", width: "100px", float: "left", marginRight: "30px",marginTop :"40px", backgroundColor: "#404040", color: "white",fontFamily:'S-CoreDream-3Light' }}><a href="/Login" >LOGIN</a></Button> 
           </form>
         </div>
         </div>

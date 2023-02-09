@@ -211,11 +211,13 @@ const TestComponent3 = () => {
               // display: "inline-block",
               width: "100%",
               // textShadow :"2px 2px 2px gray"
-              color: 'white'
+              color: 'white',
+              fontFamily:'S-CoreDream-6Bold',
+              fontSize :'13px',
 
             }}
           >
-            <h1>Upload Video</h1>
+            <h1 style={{paddingTop:'6px'}}>Upload Video</h1>
 
           </div>
           <div style={{
@@ -224,17 +226,18 @@ const TestComponent3 = () => {
             padding: "5px 10px 5px 10px",
             // borderRadius: "10px",
             display: "inline-block",
-            marginLeft: "-31.5vh",
-            marginTop: "0vh",
-            fontSize: "18px",
+            marginLeft: "-31vh",
+            marginTop: "2vh",
+            fontSize: "15px",
             fontWeight: "bold",
             backgroundColor: "#404040",
             boxShadow: "5px 5px #b4b4b4",
             width: '30vw',
-            height: '3vh'
+            height: '3vh',
+            fontFamily:"S-CoreDream-3Light",
 
           }}>
-            <h4 style={{ marginTop: "0vh" }}>
+            <h4 style={{ marginTop: "0.3vh" ,fontFamily:'S-CoreDream-3Light'}}>
               ReadyCast에 본인 영상을 업로드 해보세요.
             </h4>
           </div>
@@ -253,9 +256,9 @@ const TestComponent3 = () => {
             <p className="ant-upload-drag-icon">
               <InboxOutlined />
             </p>
-            <p className="ant-upload-text">Click</p>
-            <p className="ant-upload-hint">이곳에 파일을 드래그 하세요.</p>
-            <h3 style={{}}>10분 이내의 영상을 업로드 해주세요.</h3>
+            <p className="ant-upload-text" style={{fontFamily:"S-CoreDream-3Light",}}>Click</p>
+            <p className="ant-upload-hint" style={{fontFamily:"S-CoreDream-3Light",}}>이곳에 파일을 드래그 하세요.</p>
+            <h3 style={{fontFamily:"S-CoreDream-3Light",}}>10분 이내의 영상을 업로드 해주세요.</h3>
           </Dragger>
 
         </div>
@@ -277,7 +280,7 @@ const TestComponent3 = () => {
             style={{
               width: "31vw",
               padding: "10px 10px 10px 10px",
-
+              fontFamily:'S-CoreDream-3Light',
               boxSizing: "border-box",
             }}
           ></input>
@@ -295,6 +298,7 @@ const TestComponent3 = () => {
                 padding: "10px 10px 10px 10px",
                 marginBottom: "20px",
                 boxSizing: "border-box",
+                fontFamily:'S-CoreDream-3Light'
               }}
             ></input>
             <UploadPic />
@@ -312,7 +316,7 @@ const TestComponent3 = () => {
           }}
         ></div> */}
 
-        <div style={{ marginTop: "-525px", marginLeft: "52vw" }}>
+        <div style={{ marginTop: "-600px", marginLeft: "52vw" }}>
           <TextArea
             name="test_content"
             value={state.test_content}
@@ -324,6 +328,7 @@ const TestComponent3 = () => {
               resize: "none",
               overflowY: "scroll",
               border: "1px solid #404040",
+              fontFamily:'S-CoreDream-3Light'
             }}
             onChange={onChange}
             placeholder="라이브 커머스 영상, 상품정보에 대해  간략하게 설명해주세요."
@@ -341,7 +346,9 @@ const TestComponent3 = () => {
                 backgroundColor: "#404040",
                 boxShadow: "5px 5px #b4b4b4",
                 width: '30vw',
-                height: '2vh'
+                height: '2vh',
+                fontFamily:"S-CoreDream-3Light",
+                fontSize: '14px'
               }}>
               <h4 style={{ marginTop: '0vh' }}>1.영상과 이미지를 업로드하세요.</h4></div>
             <div
@@ -354,7 +361,9 @@ const TestComponent3 = () => {
                 backgroundColor: "#404040",
                 boxShadow: "5px 5px #b4b4b4",
                 width: '30vw',
-                height: '2vh'
+                height: '2vh',
+                fontFamily:"S-CoreDream-3Light",
+                fontSize: '14px'
               }}><h4 style={{ marginTop: '0vh' }}>2.라이브 커머스의 제목과 가격을 입력하세요.</h4></div>
             <div
               style={{
@@ -366,7 +375,9 @@ const TestComponent3 = () => {
                 backgroundColor: "#404040",
                 boxShadow: "5px 5px #b4b4b4",
                 width: '30vw',
-                height: '2vh'
+                height: '2vh',
+                fontFamily:"S-CoreDream-3Light",
+                fontSize: '14px'
               }}><h4 style={{ marginTop: '0vh' }}>3.라이브 커머스 영상을 업로드해주세요.</h4></div>
             {/* <div
             style={{

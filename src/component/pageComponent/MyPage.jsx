@@ -137,16 +137,18 @@ const MyPage = (props) => {
           color: 'white'
         }}>
 
-          <h1
+          <div
             style={{
               textUnderlineOffset: "auto",
               marginTop: "4vh",
+              padding:"10px",
+              fontSize:"23px"
+              ,fontFamily:'S-CoreDream-6Bold'
               // marginLeft: "20vw",
             }}
           >
-
             개인정보수정
-          </h1>
+          </div>
 
         </div>
         <div
@@ -185,7 +187,7 @@ const MyPage = (props) => {
               >
                 <tr>
                   <td style={{ width: "120px" }}>
-                    <label className="label">PW</label>
+                    <label className="label"  style={{fontFamily:'S-CoreDream-3Light'}}>PW</label>
                   </td>
                   <td>
                     <input
@@ -194,13 +196,13 @@ const MyPage = (props) => {
                       //value={}
                       onChange={onChange}
                       placeholder="수정할 PW 입력"
-                      style={{ padding: "5px" }}
+                      style={{ padding: "5px",fontFamily:'S-CoreDream-3Light' }}
                     />
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <label className="label">H.P</label>
+                    <label className="label" style={{fontFamily:'S-CoreDream-3Light'}}>H.P</label>
                   </td>
                   <td>
                     <input
@@ -209,13 +211,13 @@ const MyPage = (props) => {
                       //value={}
                       onChange={onChange}
                       placeholder="수정할 H.P 입력"
-                      style={{ padding: "5px" }}
+                      style={{ padding: "5px",fontFamily:'S-CoreDream-3Light' }}
                     />
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <label className="label">EMAIL</label>
+                    <label className="label" style={{fontFamily:'S-CoreDream-3Light'}}>EMAIL</label>
                   </td>
                   <td>
                     <input
@@ -224,7 +226,7 @@ const MyPage = (props) => {
                       //value={}
                       onChange={onChange}
                       placeholder="수정할 Email 입력"
-                      style={{ padding: "5px" }}
+                      style={{ padding: "5px" ,fontFamily:'S-CoreDream-3Light'}}
                     />
                   </td>
                 </tr>
@@ -250,26 +252,30 @@ const MyPage = (props) => {
           boxShadow: "5px 5px #b4b4b4",
           color: 'white'
         }}>
-          <h1
+          <div
             style={{
               // textUnderlineOffset: "auto",
               marginTop: "-37vh",
+              fontSize:"23px",
+              padding:"10px"
+              ,fontFamily:'S-CoreDream-6Bold'
               // marginLeft: "47vw",
             }}
           >
             내가 쓴 댓글
-          </h1>
+          </div>
         </div>
         <div
           style={{
             marginTop: "2.5vh",
             marginLeft: "47vw",
-            width: "31.5vw",
+            width: "32.5vw",
             height: "30vh",
             paddingLeft: "10px",
             backgroundColor: "lightgray",
             overflowY: 'scroll',
             borderRadius: 20,
+            
           }}
         >
           <div style={{ marginLeft: '28.5vw' }} >
@@ -279,7 +285,7 @@ const MyPage = (props) => {
               //   <div key={`${value.user_id}`}>
 
               <div
-                style={{ marginLeft: '-28vw', paddingTop: '20px', }}>
+                style={{ marginLeft: '-28vw', paddingTop: '20px',fontFamily:'S-CoreDream-3Light' }}>
 
                 {value.cmt_content}
                 <div style={{
@@ -312,7 +318,7 @@ const MyPage = (props) => {
             style={{
               marginTop: "10px",
               marginLeft: "20vw",
-              width: "121vh",
+              width: "118vh",
               height: "5vh",
               paddingLeft: "10px",
               backgroundColor: "#404040",
@@ -321,17 +327,21 @@ const MyPage = (props) => {
               boxShadow: "5px 5px #b4b4b4",
               color: 'white'
             }}>
-            <h1
+            <div
               style={{
                 // display: "inline-block",
                 textUnderlineOffset: "auto",
                 // marginTop: "3vh",
                 marginLeft: "-2vw",
                 marginBottom: "20px",
+                fontSize:"24px",
+                padding:"10px"
+                ,fontFamily:'S-CoreDream-6Bold'
+
               }}
             >
               내 영상 확인하기
-            </h1>
+            </div>
 
             <div
               style={{
@@ -359,7 +369,7 @@ const MyPage = (props) => {
           <div
             className="video_edit"
             style={{
-              width: "80%",
+              width: "800%",
               marginTop: "55px",
               textAlign: "center",
             }}
@@ -368,10 +378,12 @@ const MyPage = (props) => {
               style={{
                 display: "block",
                 maxHeight: "300px",
+                width:'1150px',
                 height: "300px",
                 backgroundColor: "lightgray",
                 marginLeft: "20vw",
                 overflowY: "hidden",
+                marginTop:'3.5vw'
 
               }}
             >
@@ -385,6 +397,7 @@ const MyPage = (props) => {
                     marginBottom: "25px",
                     marginLeft: "10px",
                     marginRight: "20px",
+                    fontFamily:'S-CoreDream-3Light'
                   }}
                 >
                   <video

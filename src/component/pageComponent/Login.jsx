@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import ApiService from "../ApiService";
 import MainHeader from "./Header";
 import styles from "./Login.css";
+import login from "../../img/login.png";
+ import lock from "../../img/lock.png";
+ import { Button } from "antd";
 
 const Login = (props) => {
   const [state, setState] = useState({
@@ -46,9 +49,11 @@ const Login = (props) => {
   return (
     <div style={{backgroundColor:'#404040'}} >
       <MainHeader />
+      
       <div style={{backgroundColor:'#404040'}}>
       <div
         style={{
+          fontSize:"14px",
           width: "400px",
           position: "absolute",
           height: "300px",
@@ -57,50 +62,60 @@ const Login = (props) => {
           marginTop: "140px",
           marginLeft: "40vw",
           textAlign: "center",
-          boxShadow: "3px 3px 3px grey",
+          boxShadow: "4px 3px 3px navy",
           borderRadius: "30px",
         }}
       >
         <div
           style={{ marginLeft: "50px", textAlign: "left", marginTop: "5vh" }}
         >
-          <h2>LOGIN</h2>
+          <h2 style={{borderRadius: "5px",textAlign:"center", marginRight:"220px", color:"white",background:"gray", marginTop:"0px",fontFamily:'S-CoreDream-6bold'}}>LOGIN</h2>
           <form>
             <div>
-              <label
-                className="label"
-                style={{
-                  marginRight: "75px",
-                  padding: "5px",
-                  marginBottom: "10vh",
-                }}
-              >
-                ID:
-              </label>
+            <div
+            style={{
+              backgroundImage: `url(${login})`,
+              backgroundSize: "20px",
+              backgroundRepeat: "no-repeat",
+              display: "inline-block",
+              width: "50px",
+              height: "20px",
+              marginLeft: "30px",
+              marginTop:"15px"
+            }}
+          ></div>
               <input
                 type="text"
                 placeholder="아이디 입력"
                 name="user_id"
                 value={state.user_id}
                 onChange={onChange}
-                style={{ padding: "5px", marginBottom: "10px" }}
+                style={{ padding: "8px", marginBottom: "10px" ,width:"200px",height:"18px",fontFamily:'S-CoreDream-3Light' }}
               />
             </div>
 
             <div>
-              <label
-                className="label"
-                style={{ marginRight: "20px", padding: "5px" }}
-              >
-                Password :
-              </label>
+            <div
+            style={{
+              backgroundImage: `url(${lock})`,
+              backgroundSize: "20px",
+              backgroundRepeat: "no-repeat",
+              display: "inline-block",
+              width: "50px",
+              height: "20px",
+              marginLeft: "30px",
+              marginTop:"5px",
+              
+            }}
+          ></div>
+          
               <input
                 type="password"
                 placeholder="비밀번호 입력"
                 name="user_pw"
                 value={state.user_pw}
                 onChange={onChange}
-                style={{ padding: "5px" }}
+                style={{ padding: "8px", marginBottom: "10px",height:"18px", width:"200px",fontFamily:'S-CoreDream-3Light'}}
               />
             </div>
             {/* <Button className="btn_login" onClick={this.saveUser} style={{ borderRadius: "20px", width: "100px", float: "right", marginRight: "30px",marginTop :"10px", backgroundColor: "#FE8F8D", color: "white" }}>Save</Button>*/}
@@ -111,21 +126,22 @@ const Login = (props) => {
                 borderRadius: "20px",
                 width: "100px",
                 float: "right",
-                marginRight: "60px",
-                marginTop: "10px",
+                marginRight: "30px",
+                marginTop: "30px",
                 backgroundColor: "#404040",
                 color: "white",
+                fontFamily:'S-CoreDream-3Light'
               }}
             >
               Login
             </button>
-            <p style={{ fontSize: "14px", marginTop: "10px" }}>
-              아직 회원이 아니신가요?
+            
+              <Button style={{ borderRadius: "20px", width: "100px", float: "left", marginRight: "30px",marginTop :"29px", backgroundColor: "#404040", color: "white",fontFamily:'S-CoreDream-3Light'}}>
               <a href={"/Join"} >
-                <br />
                 JOIN
               </a>
-            </p>
+              </Button>
+            
           </form>
         </div>
       </div>

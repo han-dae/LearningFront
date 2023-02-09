@@ -13,7 +13,7 @@ import WordCloud0 from "../../img/wordCloud/wc0.png";
 import WordCloud1 from "../../img/wordCloud/wc1.png";
 import WordCloud2 from "../../img/wordCloud/wc2.png";
 import Chart from "../../component/Chart/LineChart";
-
+import "./Textarea.css";
 const TestComponent = () => {
   const [Category, setCategory] = useState("0");
 
@@ -96,7 +96,9 @@ const TestComponent = () => {
               width: "100%",
               // textShadow: "2px 2px 2px gray",
               color :"white",
-              marginTop :"-20px"
+              marginTop :"-12px",
+              fontFamily:'S-CoreDream-6Bold',
+              fontSize :'13px'
             }}
           >
             <h1> Show Cue Sheet</h1>
@@ -126,7 +128,7 @@ const TestComponent = () => {
                 label: "의자",
               },
             ]}
-            style={{ width: "31.1vw", marginLeft: "20vw", marginTop: "10px" }}
+            style={{ width: "31.1vw", marginLeft: "20vw", marginTop: "10px",fontFamily:'S-CoreDream-3Light' }}
           />
         </div>
 
@@ -149,7 +151,7 @@ const TestComponent = () => {
             padding: "5px 10px 5px 10px",
           }}
         >
-          <h3 style={{ fontSize: "16px" }}>{Category.cuesheet}</h3>
+          <h3 style={{ fontSize: "16px",fontFamily:'S-CoreDream-3Light'}}>{Category.cuesheet}</h3>
         </div>
 
         <div className="InputCategory" style={{ marginLeft: "52vw" }}>

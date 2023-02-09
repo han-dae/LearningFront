@@ -73,7 +73,6 @@ const TestPage = () => {
 
     return (
         <div>
-            <ScrollBottom />
             <MainHeader />
             <Content>
 
@@ -98,7 +97,7 @@ const TestPage = () => {
                 <div
                     style={{
                         marginLeft: "13vw",
-                         marginTop: "-7vh",
+                         marginTop: "-6.5vh",
                         width: '700px',
                         backgroundColor: "#404040",
                         // borderRadius: 20,
@@ -106,7 +105,8 @@ const TestPage = () => {
                         color: 'white',
                         boxShadow: "5px 5px #B4B4B4",
                         position:'absolute',
-                        height:'18vh'
+                        height:'18vh',
+                        fontFamily:'S-CoreDream-3Light'
                     }}>
                     <div
                         className="test_title"
@@ -154,7 +154,8 @@ const TestPage = () => {
                         marginLeft: '47vw',
                         width:'2vw',
                         zIndex:'1000',
-                        position:'absolute'
+                        position:'absolute',
+                        fontFamily:'S-CoreDream-3Light'
                     }}>
                     <Liked test_seq_id={test_seq_id} />
                 </div>
@@ -164,16 +165,18 @@ const TestPage = () => {
                         style={{
                             width: "200px",
                             height: "200px",
-                            marginTop: "-63vh",
+                            marginTop: "-62.5vh",
                             marginLeft: "50vw",
-                            backgroundColor: "#404040",
+                            backgroundColor: "white",
                             borderRadius: 10,
                             // boxShadow: "5px 5px #B4B4B4"
                         }}>
                         <img src={`${process.env.PUBLIC_URL}/file/${TestDetail.test_photo}`}
                             style={{
                                 width: "200px",
-                                height: "200px"
+                                height: "200px",
+                                marginTop:'-7px',
+                                borderRadius: 10,
                             }}
                             alt="" />
                     </div>
@@ -189,6 +192,7 @@ const TestPage = () => {
                             backgroundColor: "#404040",
                             borderRadius: 10,
                             color: 'white',
+                            fontFamily:'S-CoreDream-3Light'
                            // padding:'5px'
                             // boxShadow: "5px 5px #B4B4B4",
 
@@ -208,6 +212,7 @@ const TestPage = () => {
                             // boxShadow: "5px 5px #B4B4B4",
                             overflowY: 'scroll',
                             whiteSpace: "pre-wrap",
+                            fontFamily:'S-CoreDream-3Light'
                             
                         }}
                     >
@@ -255,12 +260,13 @@ const TestPage = () => {
                             marginLeft: "50vw",
                             marginTop: "1vh",
                             width: "713px",
-                            height: "25vh",
+                            height: "27vh",
                             backgroundColor: "#404040",
                             borderRadius: 10,
                             overflowY: "scroll",
                             color: 'white',
-                            padding:'5px'
+                            padding:'5px',
+                            fontFamily:'S-CoreDream-3Light'
                             // boxShadow: "5px  #B4B4B4"
                         }}
                     >
